@@ -1,0 +1,2855 @@
+[
+  {
+    "recolte": "Pas d'export. Récolte : partout (10 dents par rat)",
+    "monnaie": "PA",
+    "effet": "Une simple dent arrachée à un rat standard, mort ou vivant. C'est plus sympa s'il est mort.",
+    "nom": "Dent de rat",
+    "id": "1",
+    "poids": "20",
+    "prix": "1"
+  },
+  {
+    "recolte": "Pas d'export. Récolte : partout",
+    "prix": "1",
+    "nom": "Queue de rat",
+    "id": "2",
+    "monnaie": "PA",
+    "poids": "100",
+    "effet": "La queue coupée d'un rat standard, vivant ou mort depuis peu."
+  },
+  {
+    "nom": "Cresson (frais)",
+    "id": "3",
+    "monnaie": "PA",
+    "poids": "100",
+    "prix": "1",
+    "effet": "Un simple bouquet de cresson, qui constitue une dose du produit pour un usage magique.",
+    "recolte": "Pas d'export. Récolte : forêt et campagne"
+  },
+  {
+    "poids": "100",
+    "recolte": "Pas d'export. Récolte : vol ou élevage",
+    "prix": "1",
+    "effet": "Rien de plus bête qu'un oeuf. Il doit être daté de moins de 15 jours. Mais attention, c'est fragile...",
+    "monnaie": "PA",
+    "id": "4",
+    "nom": "Oeuf de poule"
+  },
+  {
+    "nom": "Crapeau séché",
+    "effet": "N'importe quelle espèce de crapaud, l'animal ayant été mis à sécher dans un environnement aéré et protégé des mouches. Il doit avoir séché plus de 10 jours. C'est un peu fragile, mais pas trop.",
+    "monnaie": "PA",
+    "id": "5",
+    "poids": "100",
+    "prix": "1",
+    "recolte": "Produit d'exportation des marais. Récolte : marais"
+  },
+  {
+    "nom": "Sang de porc",
+    "id": "6",
+    "poids": "50",
+    "prix": "1",
+    "recolte": "Pas d'export. Récolte : forêt ou élevage (5 doses par porc ou sanglier)",
+    "effet": "Une denrée très périssable, à utiliser dans les quelques heures après récupération.",
+    "monnaie": "PA"
+  },
+  {
+    "effet": "Inflige 2 Pi aux vampires et monstres. Vendue traditionnellement dans un minuscule sachet de cuir. Il est possible de la fabriquer soi-même à partir de pièces d'argent et d'une bonne lime (mais c'est un peu long).",
+    "nom": "Poudre d'argent",
+    "id": "7",
+    "monnaie": "PA",
+    "prix": "2",
+    "poids": "50",
+    "recolte": "Produit d'exportation des montagnes. Récolte : Minage ou limage (1 par paire de pièces d'argent)"
+  },
+  {
+    "prix": "2",
+    "recolte": "Produit d'exportation des montagnes et régions côtières. Récolte : Minage",
+    "id": "8",
+    "effet": "Inflige 1D Pi aux spectres. Du sel traditionnel, de cuisine, qu'on peut conserver de n'importe quelle façon. Ne supporte pas l'immersion !",
+    "nom": "Sel",
+    "poids": "100",
+    "monnaie": "PA"
+  },
+  {
+    "prix": "2",
+    "effet": "Parasite des arbres fréquemment utilisé par les chamanes, mais qu'on retrouve aussi dans la magie traditionnelle. Il est à utiliser dans les quelques jours suivant la récolte. On peut le récolter soi-même en grimpant à un arbre, armé d'un simple canif.",
+    "id": "9",
+    "monnaie": "PA",
+    "nom": "Gui",
+    "poids": "100",
+    "recolte": "Pas d'export. Récolte : forêt"
+  },
+  {
+    "monnaie": "PA",
+    "effet": "La même cire qu'on utilise pour sceller le courrier, mais vendue sous forme de petites boules.",
+    "prix": "2",
+    "nom": "Boule de cire",
+    "recolte": "Produit d'exportation des villages. Récolte : Forêt, vol ou élevage",
+    "id": "10",
+    "poids": "50"
+  },
+  {
+    "recolte": "Produit d'exportation des villes et villages. Récolte : non",
+    "nom": "Bougie standard",
+    "poids": "100",
+    "id": "11",
+    "effet": "Une bougie classique, qui peut avoir n'importe quelle forme et n'importe quel parfum !",
+    "prix": "2",
+    "monnaie": "PA"
+  },
+  {
+    "prix": "2",
+    "nom": "Huile standard",
+    "poids": "50",
+    "recolte": "Produit d'exportation des villages et régions côtières. Récolte : non",
+    "monnaie": "PA",
+    "effet": "Une huile quelconque, de tournesol de préférence, qui peut aussi servir à faire les frites. On peut en acheter un peu partout, mais il n'est pas possible de la produire soi-même.",
+    "id": "12"
+  },
+  {
+    "effet": "Une simple dent arrachée à un ours standard, mort ou vivant. C'est moins dangereux s'il est mort.",
+    "id": "13",
+    "monnaie": "PA",
+    "recolte": "Produit d'exportation des régions sauvages. Récolte : chasse (10 dents par ours)",
+    "prix": "3",
+    "poids": "200",
+    "nom": "Dent d'ours"
+  },
+  {
+    "effet": "Une simple dent arrachée à un loup standard, mort ou vivant. C'est plus pratique s'il est mort.",
+    "id": "14",
+    "poids": "100",
+    "nom": "Dent de loup",
+    "prix": "3",
+    "recolte": "Produit d'exportation des régions sauvages. Récolte : chasse (10 dents par loup)",
+    "monnaie": "PA"
+  },
+  {
+    "id": "15",
+    "poids": "100",
+    "prix": "3",
+    "effet": "Du poivre absolument classique, mais noir.",
+    "monnaie": "PA",
+    "recolte": "Produit d'exportation du Birmilistan et Esturlie. Récolte : campagne, vol ou culture",
+    "nom": "Poivre noir"
+  },
+  {
+    "effet": "L'animal doit être décédé mais non décomposé. En fonction de la saison, sa durée de conservation peut varier de 2 jours à une semaine.",
+    "id": "16",
+    "poids": "600",
+    "recolte": "Produit d'exportation des régions sauvages. Récolte : chasse",
+    "prix": "3",
+    "nom": "Corbeau mort",
+    "monnaie": "PA"
+  },
+  {
+    "nom": "Sang de corbeau",
+    "id": "17",
+    "effet": "Une denrée très périssable, à utiliser dans les quelques heures après récupération.",
+    "monnaie": "PA",
+    "poids": "50",
+    "prix": "3",
+    "recolte": "Produit d'exportation des régions vampire. Récolte : chasse (1 dose par corbeau)"
+  },
+  {
+    "prix": "5",
+    "recolte": "Produit d'exportation des montagnes. Récolte : minage",
+    "monnaie": "PA",
+    "id": "18",
+    "effet": "Ingrédient fameux utilisé pour fabriquer les bonbons Chiantos ! En dehors de ça, il s'agit d'une poudre conditionnée en petit sachet de cuir. Il est possible de la fabriquer soi-même à partir de granite et d'une bonne lime.",
+    "nom": "Poudre de granite",
+    "poids": "50"
+  },
+  {
+    "poids": "100",
+    "recolte": "Pas d'export. Récolte : donjons",
+    "effet": "La queue coupée d'un rat zombi, donc forcément mort et magiquement conservé. Assez rare puisqu'en général les rats zombis se trouvent uniquement dans le voisinage des nécromants.",
+    "id": "19",
+    "prix": "5",
+    "monnaie": "PA",
+    "nom": "Queue de rat zombi"
+  },
+  {
+    "id": "20",
+    "prix": "5",
+    "nom": "Urine de bouc",
+    "poids": "50",
+    "recolte": "Produit d'exportation des villages. Récolte : montagnes, villages et élevage",
+    "effet": "Il est préférable d'acheter ce produit plutôt que de le récolter soi-même...",
+    "monnaie": "PA"
+  },
+  {
+    "monnaie": "PA",
+    "nom": "Alcool blanc",
+    "effet": "Un alcool distillé à partir de produits de base, qui est utilisé par certains fabricants de produits spiritueux, ou qui entre parfois dans les préparations culinaires.",
+    "poids": "50",
+    "prix": "5",
+    "recolte": "Produit d'exportation des villes. Récolte : brassage et distillation",
+    "id": "21"
+  },
+  {
+    "recolte": "Produit d'exportation des marais. Récolte : marais et campagne",
+    "nom": "Oeufs de grenouille",
+    "id": "22",
+    "monnaie": "PA",
+    "effet": "Des oeufs minuscules et gluants, fraîchement récoltés dans les marécages ou les mares d'eau peu profondes.",
+    "prix": "5",
+    "poids": "50"
+  },
+  {
+    "prix": "5",
+    "recolte": "Produit d'exportation des marais. Récolte : marais et campagne",
+    "poids": "100",
+    "monnaie": "PA",
+    "effet": "La patte coupée d'un triton standard, vivant ou mort depuis peu. Conservation : quelques jours au maximum.",
+    "id": "23",
+    "nom": "Patte de triton"
+  },
+  {
+    "nom": "Soufre en poudre",
+    "id": "24",
+    "prix": "1",
+    "monnaie": "PO",
+    "poids": "50",
+    "effet": "Ressource naturelle extraite habituellement par des spécialistes.",
+    "recolte": "Produit d'exportation des montagnes, déserts et régions côtières. Récolte : minage"
+  },
+  {
+    "effet": "Il s'agit d'un oeil frais, et dont la période de conservation est donc très courte (quelques jours). Vendu en fiole.",
+    "nom": "Oeil de crapeau",
+    "monnaie": "PO",
+    "poids": "100",
+    "recolte": "Produit d'exportation des marais. Récolte : marais",
+    "id": "25",
+    "prix": "1"
+  },
+  {
+    "nom": "Morceau de bois à usage magique",
+    "monnaie": "PO",
+    "poids": "100",
+    "prix": "1",
+    "recolte": "Produit d'exportation d'Efaizh et Fangh. Récolte : non",
+    "effet": "Ces morceaux de bois sont spécialement traités pour les pratiques magiques. Impossible de le faire soi-même.",
+    "id": "26"
+  },
+  {
+    "poids": "100",
+    "effet": "Produit d'exportation de l'Ouest de Fangh. Savon spécial, fabriqué par une entreprise familiale qui garde jalousement son secret depuis des siècles.",
+    "monnaie": "PO",
+    "prix": "1",
+    "recolte": "Produit d'exportation de l'est de Fangh. Récolte : non",
+    "id": "27",
+    "nom": "Savon de Fquiepou"
+  },
+  {
+    "prix": "1",
+    "id": "28",
+    "recolte": "Produit d'exportation des régions sauvages. Récolte : non",
+    "poids": "100",
+    "monnaie": "PO",
+    "effet": "C'est un modèle de bougie spécialement fabriqué pour les pratiques magiques. Impossible à faire soi-même.",
+    "nom": "Bougie à la graisse d’ours"
+  },
+  {
+    "monnaie": "PO",
+    "nom": "Bile de renard",
+    "recolte": "Produit d'exportation des régions sauvages. Récolte : chasse",
+    "id": "29",
+    "prix": "1",
+    "effet": "Liquide extrait de la vésicule d'un renard. Pour le faire soi-même, il faut que le cadavre soit frais. La bile ne se conserve pas plus d'une semaine, en fiole.",
+    "poids": "50"
+  },
+  {
+    "recolte": "Produit d'exportation des montagnes. Récolte : Minage ou limage (1 par paire de pièces d'or)",
+    "nom": "Poudre d’or",
+    "monnaie": "PO",
+    "id": "30",
+    "poids": "50",
+    "effet": "Vendue traditionnellement dans un minuscule sachet de cuir. Il est possible de la fabriquer soi-même à partir de pièces d'or ou d'objets en or, et d'une bonne lime (mais c'est un peu long).",
+    "prix": "2"
+  },
+  {
+    "prix": "2",
+    "nom": "Cendres d’un oiseau carbonisé",
+    "id": "31",
+    "effet": "Il n'est pas difficile de procéder soi-même à la récolte, mais ça demande un peu de temps... Et il est impératif que l'oiseau soit frais (et d'abord, il faut l'attraper). C'est souvent l'activité préférée des mages de bas niveau.",
+    "recolte": "Produit d'exportation d'Efaizh et Fangh. Récolte : forêt (rare) ou élevage",
+    "monnaie": "PO",
+    "poids": "50"
+  },
+  {
+    "prix": "2",
+    "recolte": "Produit d'exportation d'Efaizh et Fangh. Récolte : campagne (rare) ou élevage (30 plumes par coq)",
+    "monnaie": "PO",
+    "nom": "Plume de coq noir",
+    "id": "32",
+    "effet": "Les plumes des ailes sont utilisées uniquement. On peut en avoir jusqu'à 30 sur un seul coq ! Mais le coq doit être intégralement noir, d'où la relative rareté du produit.",
+    "poids": "50"
+  },
+  {
+    "id": "33",
+    "nom": "Aile de chauve-souris",
+    "monnaie": "PO",
+    "poids": "50",
+    "prix": "2",
+    "effet": "Vendue généralement séchée, elle se conserve bien. L'espèce de la chauve-souris n'est pas importante, mais c'est une bestiole très difficile à capturer : il vaut mieux s'adresser à un spécialiste.",
+    "recolte": "Produit d'exportation des régions sauvages et vampire. Récolte : forêt, montagne ou élevage"
+  },
+  {
+    "monnaie": "PO",
+    "prix": "2",
+    "id": "34",
+    "poids": "200",
+    "effet": "Généralement utilisés pour inscrire des formules. Il doit être certifié par un spécialiste.",
+    "nom": "Parchemin",
+    "recolte": "Produit d'exportation des villes. Récolte : vol ou élevage (2 par porc et 4 par veaux)"
+  },
+  {
+    "effet": "Un ingrédient généralement réservé aux nécromants. Nul ne sait pourquoi cet ingrédient est magique, en tout cas on utilise plusieurs organes de l'animal. Le cadavre doit être frais (conservation variable de 2 à 7 jours, selon la saison). C'est très encombrant et assez malodorant",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des villages. Récolte : vol ou élevage",
+    "id": "35",
+    "nom": "Chèvre morte",
+    "poids": "40000",
+    "prix": "2"
+  },
+  {
+    "monnaie": "PO",
+    "effet": "C'est un modèle de bougie spécialement fabriqué pour les pratiques magiques. Impossible à faire soi-même. Elle dégage un parfum atroce mais bon, on n'y peut rien.",
+    "nom": "Bougie noire au suint de bouc",
+    "poids": "100",
+    "prix": "2",
+    "id": "36",
+    "recolte": "Produit d'exportation des villages. Récolte : non"
+  },
+  {
+    "effet": "C'est un modèle de bougie spécialement fabriqué pour les pratiques magiques. Impossible à faire soi-même.",
+    "poids": "100",
+    "prix": "2",
+    "id": "37",
+    "recolte": "Produit d'exportation des villes. Récolte : non",
+    "monnaie": "PO",
+    "nom": "Bougie verte"
+  },
+  {
+    "id": "38",
+    "monnaie": "PO",
+    "effet": "Ingrédient généralement fourni par des Sylvains généreux. Il n'empêche que les humains en font un commerce. On peut bien sûr limer soi-même l'écorce (sèche) d'un Boulorne pour en tirer de la poudre. Les Boulornes se trouvent uniquement : dans la partie Est de Schlipak, dans la forêt de Groinsale, dans le Bois N'talamela etc.",
+    "nom": "Poudre d’écorce de boulorne",
+    "poids": "50",
+    "prix": "3",
+    "recolte": "Produit d'exportation des grandes forêts. Récolte : forêt"
+  },
+  {
+    "effet": "Produit d'exportation du Nord de Fangh, d'Efaizh et Ouest du Birmilistan.Une herbe particulière, qu'on utilise fraîche aussi bien que séchée. Elle pousse autour des flaques dans le Marécage de l'Éternelle Agonie.",
+    "id": "39",
+    "poids": "100",
+    "monnaie": "PO",
+    "nom": "Herbe grise du marais",
+    "prix": "3",
+    "recolte": "Produit d'exportation des marais. Récolte : marais"
+  },
+  {
+    "id": "40",
+    "poids": "100",
+    "monnaie": "PO",
+    "effet": "On trouve ces sarments au pied des vignes, mais généralement ça fait loin, alors on finit par les acheter.",
+    "prix": "3",
+    "nom": "Sarments de vigne séchés",
+    "recolte": "Produit d'exportation des villages. Récolte : villages et campagnes"
+  },
+  {
+    "recolte": "Produit d'exportation des régions sauvages. Récolte : chasse (Gros gibier et+)",
+    "effet": "Ces animaux sont nombreux dans les terres sauvages de Kwzprtt. On en trouve jusque dans les collines d'Altrouille et ils sont généralement trop fainéants pour traverser le fleuve Elibed. On extrait la poudre de leurs griffes, et elle est conditionnée en minuscule sachets de cuir. Il est possible de le faire soi-même à condition de récupérer la griffe en question ! Un seul animal fournit plusieurs centaines de doses, mais il faut du temps pour raper les griffes (et une bonne lime).",
+    "monnaie": "PO",
+    "nom": "Poudre de griffe de morshleg",
+    "id": "41",
+    "poids": "50",
+    "prix": "5"
+  },
+  {
+    "poids": "50",
+    "nom": "Poudre de diamant",
+    "id": "42",
+    "monnaie": "PO",
+    "effet": "Nul ne sait comment les Nains arrivent à faire de la poudre à partir de diamants. Mais ils le font.",
+    "prix": "5",
+    "recolte": "Produit d'exportation des nains. Récolte : minage"
+  },
+  {
+    "id": "43",
+    "nom": "Poudre de molaire de dantragor",
+    "effet": "Ces animaux sont un peu rares, mais on en trouve dans la partie centrale du pays, dans les terres sauvages de Kwzprtt, le marécage et le sud de Schlipak. On extrait la poudre de leurs molaires, et elle est conditionnée en minuscule sachets de cuir. Il est possible de le faire soi-même à condition de récupérer la molaire ! Un seul animal fournit plusieurs centaines de doses, mais il faut du temps pour raper les dents (et une bonne lime) car les dents sont extrêmement dures.",
+    "prix": "5",
+    "poids": "50",
+    "recolte": "Produit d'exportation des régions sauvages. Récolte : chasse (Grand félin et+) (1D100 doses)",
+    "monnaie": "PO"
+  },
+  {
+    "poids": "10",
+    "prix": "5",
+    "id": "44",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des elfes. Récolte : origine, vol ou combat (1D20) (1 fois)",
+    "nom": "Cheveu d'elfe",
+    "effet": "Les Elfes (Sylvains ou Hauts-Elfes) ont des cheveux comme tout le monde... Mais ils ne les perdent jamais ! Aussi, pour en avoir il faut leur demander gentiment (ou bien tirer dessus, mais c'est un autre genre). Le produit est vendu assez cher car il n'est pas aisé de trouver des Elfes capables de s'arracher les cheveux pour de l'argent."
+  },
+  {
+    "recolte": "Produit d'exportation des régions sauvages. Récolte : chasse (Grand félin et+) (1D10 doses)",
+    "poids": "10",
+    "id": "45",
+    "nom": "Poil de Dantragor",
+    "prix": "5",
+    "effet": "Ces animaux sont un peu rares, mais on en trouve dans la partie centrale du pays, dans les terres sauvages de Kwzprtt, le marécage et le sud de Schlipak. Un seul animal fournit plusieurs milliers de poils longs et gras, cependant on n'utilise en magie que certains poils gris poussant dans la barbiche et qui doivent être soigneusement triés. Il faut donc être un expert pour s'en tirer.",
+    "monnaie": "PO"
+  },
+  {
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation d'Efaizh, Nugh et Fangh. Récolte : non",
+    "id": "46",
+    "effet": "Une préparation spéciale, fabriquée par une entreprise familiale qui garde jalousement son secret depuis des siècles. Traditionnellement, on en retrouve dans beaucoup de recettes de Magie du Feu.",
+    "nom": "Onguent de feu d'Altela",
+    "poids": "100",
+    "prix": "5"
+  },
+  {
+    "id": "47",
+    "monnaie": "PO",
+    "prix": "5",
+    "recolte": "Produit d'exportation des grandes forêts. Récolte : forêt",
+    "effet": "Connues pour leurs propriétés régénérantes liées à la santé du cheveu, ces feuilles ne tombent pas d'elles-même et il faut aller les chercher dans le tiers le plus haut de l'arbre. Seules certaines feuilles sont utilisables donc.",
+    "nom": "Feuille de boulorne",
+    "poids": "100"
+  },
+  {
+    "effet": "Une herbe qui pousse uniquement dans certains sous-bois. Pour la reconnaître il faut être doué. Elle peut être utilisée fraîche ou séchée.",
+    "id": "48",
+    "nom": "Herbe de Nilla",
+    "poids": "100",
+    "prix": "5",
+    "recolte": "Produit d'exportation des grandes forêts. Récolte : forêt",
+    "monnaie": "PO"
+  },
+  {
+    "prix": "5",
+    "effet": "Cette variété d'ortie pousse exclusivement dans la partie sud du voisinage du château de Gzor. Elles peuvent être utilisées fraîches aussi bien que séchées.",
+    "id": "49",
+    "monnaie": "PO",
+    "nom": "Orties du Chaos",
+    "poids": "100",
+    "recolte": "Produit d'exportation de Fangh et des régions chaotique ou maudite. Récolte : forêt et campagne chaotique ou maudite"
+  },
+  {
+    "nom": "Spores de myconides",
+    "poids": "50",
+    "effet": "Les myconides sont des hommes-champignons vivant dans certaines cavernes. Leurs spores ont de nombreuses vertus hallucinogènes, et ils les troquent souvent contre des denrées diverses, mais ils sont timides et il n'est pas facile de trouver leurs villages. Les spores sont conditionnées en minuscules sachets de cuir.",
+    "id": "50",
+    "prix": "5",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des montagnes. Récolte : montagne"
+  },
+  {
+    "effet": "Un jus spécial, pressé par les Sylvains à partir des fruits des les meilleurs framboisiers de la forêt.",
+    "monnaie": "PO",
+    "nom": "Jus de framboises de Schlipak",
+    "poids": "160",
+    "id": "51",
+    "recolte": "Produit d'exportation de Fangh. Récolte : vol",
+    "prix": "5"
+  },
+  {
+    "effet": "Il existe une technique spéciale pour extraire la graisse des poils de castor, et vous ne la connaissez sans doute pas. Du coup, il ne vous reste plus qu'à vous rendre chez un marchand...",
+    "nom": "Graisse de poil de castor",
+    "poids": "100",
+    "prix": "5",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des forêts. Récolte : forêt",
+    "id": "52"
+  },
+  {
+    "prix": "6",
+    "recolte": "Produit d'exportation des régions côtières. Récolte : pêche (2D20 doses)",
+    "effet": "Vous n'avez quasiment aucune chance de trouver vous-même cet ingrédient, à moins d'avoir des amis pêcheurs sur la côte. La plupart des gens vivant en bord de mer en possèdent, à titre de souvenir, et n'en ont pas l'usage.",
+    "id": "53",
+    "monnaie": "PO",
+    "nom": "Dent de requin",
+    "poids": "200"
+  },
+  {
+    "nom": "Poudre de malachite",
+    "prix": "8",
+    "recolte": "Produit d'exportation des Nains. Récolte : minage",
+    "poids": "50",
+    "monnaie": "PO",
+    "effet": "Il s'agit d'un minerai difficile à trouver. Généralement, seuls les Nains arrivent à en faire de la poudre.",
+    "id": "54"
+  },
+  {
+    "effet": "Personne ne sait vraiment comment cette poudre est faite. Vous pouvez l'obtenir auprès de certaines communautés de peaux-vertes, mais vous y perdrez sans doute votre chemise.",
+    "monnaie": "PO",
+    "nom": "Poudre noire des gobelins",
+    "poids": "100",
+    "prix": "8",
+    "recolte": "Produit d'exportation des Peaux-vertes. Récolte : vol",
+    "id": "55"
+  },
+  {
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des grandes forêts. Récolte : forêt",
+    "nom": "Ecorce de boulorne",
+    "effet": "Une partie très spéciale de l'écorce de l'arbre est récupérée et traitée pour ses propriétés magiques. Vous ne pouvez donc pas le faire vous-même.",
+    "prix": "8",
+    "poids": "500",
+    "id": "56"
+  },
+  {
+    "id": "57",
+    "nom": "Poudre de trithil",
+    "effet": "Il s'agit d'un métal dur provenant des exploitations des Nains. Seuls les Nains arrivent à en faire de la poudre.",
+    "poids": "50",
+    "monnaie": "PO",
+    "prix": "10",
+    "recolte": "Produit d'exportation des Nains. Récolte : minage"
+  },
+  {
+    "effet": "Les Nains Bleus sont rares et vivent en communautés restreintes, perdus dans les montagnes. Il est quasiment impossible de les trouver. Ils acceptent de vendre leurs poils de barbe, aux vertus étonnantes, en échange de certains services. Mais comme ces poils ne repoussent pas, ils se paient.",
+    "prix": "10",
+    "recolte": "Produit d'exportation des Nains. Récolte : vol ou combat (1D20) (1 fois)",
+    "id": "58",
+    "nom": "Poil de barbe de Nain Bleu",
+    "monnaie": "PO",
+    "poids": "10"
+  },
+  {
+    "id": "59",
+    "monnaie": "PO",
+    "poids": "50",
+    "prix": "10",
+    "recolte": "Produit d'exportation des régions sauvages. Récolte : montagne",
+    "nom": "Plume d'aigle des montagnes",
+    "effet": "Le grand aigle des montagnes est un oiseau difficile à approcher. Seules les plumes de ses ailes sont utilisées pour les pratiques magiques, mais en général on ne peut lui en voler de son vivant car cela nuirait à sa mobilité. C'est donc une affaire des spécialiste, et c'est pourquoi ces plumes sont hors de prix."
+  },
+  {
+    "id": "60",
+    "effet": "Une variété spéciale de champignon, qui ne pousse que dans certaines grottes sous les forêts de feuillus. Ils sont explosifs uniquement au moment de la cueillette, ce qui explique leur prix... Il faut être un expert pour survivre à la récolte d'un panier. Ils sont séchés et se conservent bien.",
+    "monnaie": "PO",
+    "nom": "Champignon explosif",
+    "poids": "50",
+    "prix": "10",
+    "recolte": "Produit d'exportation des forêts. Récolte : forêt et jungles"
+  },
+  {
+    "effet": "Le trogylork est une variété magique d'orque vivant dans les profondeurs et l'obscurité. On peut donc leur arracher leurs griffes, mais à condition de les avoir occis avant. On ne les trouve pas facilement.",
+    "nom": "Griffe de trogylork",
+    "prix": "10",
+    "recolte": "Produit d'exportation des régions sauvages. Récolte :  combat (1D10)",
+    "poids": "300",
+    "monnaie": "PO",
+    "id": "61"
+  },
+  {
+    "prix": "10",
+    "recolte": "Produit d'exportation des montagnes. Récolte : montagne",
+    "nom": "Cimelweiss",
+    "monnaie": "PO",
+    "id": "62",
+    "poids": "200",
+    "effet": "Variété très particulière de fleur poussant sur les cimes des montagnes du Nord les plus froides, vendue séchée et très fragile. Il est déconseillé d'essayer de les cueillir soi-même, à moins de disposer de bons vêtements chauds et d'une carte correcte."
+  },
+  {
+    "prix": "10",
+    "recolte": "Produit d'exportation des Nains. Récolte : non",
+    "monnaie": "PO",
+    "nom": "Sphère d’or",
+    "id": "63",
+    "poids": "200",
+    "effet": "C'est une simple sphère d'or pur, mais il faut disposer d'un certain matériel pour la créer (sans compter la matière première). Généralement vendue par les Nains, mais on en trouve un peu partout."
+  },
+  {
+    "effet": "Un produit fabriqué essentiellement par les Sylvains, à base de plantes. Il sert à faire aussi des baumes.",
+    "monnaie": "PO",
+    "nom": "Essence de jujuba",
+    "id": "64",
+    "poids": "250",
+    "prix": "10",
+    "recolte": "Produit d'exportation des forêts. Récolte : forêt et jungle"
+  },
+  {
+    "recolte": "Produit d'exportation des forêts. Récolte : forêt et jungle",
+    "prix": "10",
+    "id": "65",
+    "poids": "250",
+    "effet": "Un produit fabriqué essentiellement par les Sylvains, à base de plantes. Il est bon pour la peau.",
+    "monnaie": "PO",
+    "nom": "Huile de jujuba"
+  },
+  {
+    "poids": "250",
+    "prix": "10",
+    "recolte": "Produit d'exportation des grandes forêts. Récolte : forêt",
+    "monnaie": "PO",
+    "id": "66",
+    "nom": "Essence de Boulorne",
+    "effet": "Un produit fabriqué essentiellement par les Sylvains, à base du précieux Boulorne."
+  },
+  {
+    "effet": "Il s'agit d'un métal dur provenant des mines du Nord. Seuls les Nains arrivent à en faire de la poudre.",
+    "nom": "Poudre de mithril",
+    "monnaie": "PO",
+    "prix": "12",
+    "recolte": "Produit d'exportation des Nains. Récolte : minage",
+    "poids": "50",
+    "id": "67"
+  },
+  {
+    "nom": "Poudre de berylium",
+    "monnaie": "PO",
+    "id": "68",
+    "recolte": "Produit d'exportation des Nains. Récolte : minage",
+    "effet": "Il s'agit d'un minerai énergétique provenant des mines du Nord. Seuls les Nains arrivent à en faire de la poudre.",
+    "poids": "50",
+    "prix": "15"
+  },
+  {
+    "poids": "50",
+    "prix": "15",
+    "effet": "Pour obtenir ces cendes, il faut avoir carbonisé un érudit jusqu'à ce qu'il n'en reste plus rien. Ordinairement récupéré lors des cérémonies funéraires (note : le concept d'érudit et un peu flou).",
+    "nom": "Cendres d’un érudit",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des villes. Récolte : cimetières et combat",
+    "id": "69"
+  },
+  {
+    "effet": "Plus que les Nains Bleus, les Géants Verts sont rares, très rares. Ils vivent en marge de la carte dans des territoires inhospitaliers, et vivent en se nourrissant de végétaux extraordinaires. Parfois, un explorateur parvient à en rencontrer un, et il récupère quelques poils de sa barbe aux propriétés étranges.",
+    "id": "70",
+    "prix": "15",
+    "recolte": "Produit d'exportation des régions sauvages. Récolte : combat (1D10)",
+    "monnaie": "PO",
+    "poids": "10",
+    "nom": "Poil de barbe de Géant Vert"
+  },
+  {
+    "prix": "15",
+    "monnaie": "PO",
+    "nom": "Cheveu de vierge",
+    "recolte": "Produit d'exportation d'Efaizh et Fangh et des régions vampires. Récolte : non",
+    "id": "71",
+    "effet": "Il n'est pas difficile de trouver des cheveux de vierge, dans la mesure où n'importe quel enfant devrait faire l'affaire. Cependant, les cheveux de vierge à usage magique doivent être récoltés sur une personne majeure et consentante, lorsque la lune est pleine et rouge, en hiver, et ils doivent être certifiés par un comité. Pas facile.",
+    "poids": "10"
+  },
+  {
+    "prix": "20",
+    "recolte": "Produit d'exportation de Fangh. Récolte : villages, campagnes ou élevage",
+    "id": "72",
+    "effet": "Plume prélevée au-dessus du croupion des légendaires montures épiques de Fangh : le chapon fanghien. Ce sont des animaux rares et assez susceptibles. On en trouve parfois dans les grandes forêts.",
+    "nom": "Plume de chapon fanghien",
+    "monnaie": "PO",
+    "poids": "50"
+  },
+  {
+    "nom": "Cendres d'un mage",
+    "recolte": "Produit d'exportation d'Efaizh, Fernol, Galzanie et Fangh. Récolte : cimetières et combat",
+    "prix": "25",
+    "id": "73",
+    "poids": "50",
+    "monnaie": "PO",
+    "effet": "Pour obtenir ces cendes, il faut avoir carbonisé un mage jusqu'à ce qu'il n'en reste plus rien. Il est possible de s'en procurer après une cérémonie funéraire, mais les duels entre mages ont souvent participé à ce commerce."
+  },
+  {
+    "nom": "Mousse des cavernes électriques",
+    "monnaie": "PO",
+    "poids": "100",
+    "recolte": "Produit d'exportation de Fangh. Récolte : marais, donjons et montagne",
+    "prix": "30",
+    "effet": "C'est une variété de mousse bleue, vendue séchée, qui pousse uniquement dans une région particulière : des grottes naturelles à l'ouest de Birtek. Pour les récolter, il suffit de gratter la pierre... Mais hélas, il faut pouvoir encaisser les décharges électriques fréquentes générées aléatoirement par une curiosité géologique. C'est donc une activité réservée aux spécialistes.",
+    "id": "74"
+  },
+  {
+    "effet": "Rien de plus bête qu'un oeuf, mais celui-ci est assez gros. Pour le trouver, il faut également grimper à un arbre et survivre au combat contre les parents.",
+    "id": "75",
+    "nom": "Oeuf de dragon des arbres",
+    "poids": "300",
+    "monnaie": "PO",
+    "prix": "30",
+    "recolte": "Produit d'exportation des forêts. Récolte : combat (1à3 œufs)"
+  },
+  {
+    "monnaie": "PO",
+    "poids": "500",
+    "prix": "30",
+    "nom": "Oisillon piétiné par un aurochs",
+    "id": "76",
+    "effet": "Nul ne sait qui a trouvé l'origine magique de cet ingrédient, généralement présenté sous la forme d'un petit tas sanglant, dont la durée de conservation n'excède pas deux jours. Il est possible d'organiser soi-même le piétinement des oisillons si vous trouvez un nid, mais vous aurez la plupart du temps à combattre l'aurochs après l'avoir attiré pour qu'il procède au carnage.",
+    "recolte": "Produit d'exportation des villages. Récolte : élevage"
+  },
+  {
+    "monnaie": "PO",
+    "prix": "30",
+    "effet": "Il n'est pas difficile de trouver du sang de vierge, dans la mesure où on peut en prélever sur n'importe quelle personne assez jeune. Cependant, le sang de vierge à usage magique doit être récolté sur une personne majeure et consentante, lorsque les étoiles sont alignées avec la constellation du morshleg, au printemps, et ils doit être certifié par un comité formé de vieux types barbus.",
+    "id": "77",
+    "nom": "Sang de vierge",
+    "poids": "50",
+    "recolte": "Produit d'exportation d'Efaizh et Fangh et des régions vampires. Récolte : non"
+  },
+  {
+    "id": "78",
+    "nom": "Sang d'érudit",
+    "monnaie": "PO",
+    "poids": "50",
+    "prix": "35",
+    "effet": "Contrairement au sang de vierge, le sang d'érudit à usage magique est quelconque, et peut être prélevé sur n'importe quel érudit sans trop altérer sa santé. Il faut néanmoins trouver un arrangement, souvent pécunier. Sa durée de conservation est cependant très courte : moins de deux heures dans une fiole propre. C'est pourquoi on n'en trouve pas dans le commerce, mais seulement à la commande.",
+    "recolte": "Produit d'exportation des villes et des régions vampires. Récolte : métier (1 dose par décade) ou combat (5 doses par corps)"
+  },
+  {
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des régions sauvages. Récolte : chasse (Ours et+) (1D20 doses)",
+    "effet": "Les rhinocéros fanghiens sont maintenant rares, car les Barbares leur ont longtemps fait la chasse. C'est pour cette simple raison qu'il est difficile de prélever leurs gros ongles robustes.",
+    "prix": "40",
+    "id": "79",
+    "poids": "200",
+    "nom": "Ongle de rinochéros"
+  },
+  {
+    "prix": "50",
+    "id": "80",
+    "nom": "Oeuf de griffon",
+    "recolte": "Produit d'exportation de Fangh, Galzanie et Nugh. Récolte : élevage et combat (1D4 œufs)",
+    "effet": "Pour trouver cet oeuf, il faut d'abord trouver le griffon... Et celui-ci ne se laissera pas facilement voler sa progéniture, et encore faut-il arriver quand c'est la saison. Bon courage ! Cherchez plutôt en magasin.",
+    "poids": "400",
+    "monnaie": "PO"
+  },
+  {
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des forêts, jungles, désert et régions sauvages. Récolte : montagne, jungle et désert",
+    "id": "81",
+    "nom": "Serpent mort de peur",
+    "prix": "50",
+    "poids": "2000",
+    "effet": "Parfois, très rarement, un serpent surpris dans son élément naturel meurt d'une crise cardiaque. Cet événement donne lieu à la création de cet étrange ingrédient magique. Le serpent est conservé dans un bocal d'alcool blanc."
+  },
+  {
+    "effet": "Le lamanthulu est une créature d'eau douce à forte corpulence et groin tentaculaire. Pour prélever cet ingrédient, vous devez au préalable trouver la femelle, vous assurer qu'elle est enceinte, la tuer, puis prélever le foetus. C'est un métier qui n'est pas facile !",
+    "id": "82",
+    "monnaie": "PO",
+    "nom": "Foetus de lamanthulu",
+    "poids": "4000",
+    "prix": "50",
+    "recolte": "Produit d'exportation d'Efaizh et des régions côtières. Récolte : pêche"
+  },
+  {
+    "poids": "20000",
+    "id": "83",
+    "monnaie": "PO",
+    "prix": "50",
+    "nom": "Brebis morte de honte",
+    "effet": "Je ne peux vous expliquer de quelle façon une brebis peut mourir de honte, car il faut respecter les choses secrètes et la vie privée des fermiers. Cependant, quand cela se produit, cela donne un ingrédient magique volumineux. Le cadavre doit être frais (conservation variable de 2 à 7 jours, selon la saison). C'est très encombrant.",
+    "recolte": "Produit d'exportation des villages. Récolte : élevage (rare)"
+  },
+  {
+    "recolte": "Produit d'exportation des Elfes et des régions vampires. Récolte : origine (1 dose par décade) ou combat (5 doses par corps)",
+    "id": "84",
+    "monnaie": "PO",
+    "nom": "Sang d'elfette vierge",
+    "effet": "Ce sang, théoriquement, ne serait pas difficile à trouver. Cependant, pour un usage magique il doit être récolté sur la troisième fille d'un quatrième fils, dans sa vingtième année, le premier jour de la décade de Lakkan, et il doit être certifié par un elfe vénérable.",
+    "poids": "50",
+    "prix": "50"
+  },
+  {
+    "id": "85",
+    "recolte": "Produit d'exportation de Fangh, d'Efaizh, Nugh et Dandiskar. Récolte : donjons",
+    "monnaie": "PO",
+    "nom": "Poudre de Graddik",
+    "effet": "C'est une poudre unique, qui fut créée en des temps reculés et qu'on n'arrive plus à refaire. Il en reste un peu.",
+    "poids": "50",
+    "prix": "50"
+  },
+  {
+    "nom": "Oreille de gnôme des forêts du Nord",
+    "poids": "10",
+    "effet": "Inutile de dire qu'aucun gnôme n'accepte de vendre ses oreilles. Il faut donc les récupérer sur un individu mort, et ça ne court pas les rues. Elles sont vendues séchées. Cet ingrédient est à la base d'une activité de braconnage assez sordide, et la plupart des gens préfèrent ne pas en parler.",
+    "prix": "60",
+    "recolte": "Produit d'exportation des Peaux-vertes. Récolte : cimetière ou combat",
+    "id": "86",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "Une véritable curiosité biologique... Ce qui explique son prix. Son état de fraîcheur importe peu, mais il faut faire attention à ne pas le briser avant de l'utiliser",
+    "prix": "80",
+    "monnaie": "PO",
+    "id": "87",
+    "nom": "Oeuf de coq",
+    "recolte": "Produit d'exportation des villages. Récolte : élevage (rare)",
+    "poids": "100"
+  },
+  {
+    "id": "88",
+    "monnaie": "PO",
+    "poids": "50",
+    "prix": "80",
+    "effet": "N'importe quel sang de mage peut faire l'affaire, mais il doit être de niveau supérieur à 10. Alors bien sûr, ensuite il faut le convaincre d'être coopératif. La durée de conservation de ce sang est de moins de deux heures.",
+    "recolte": "Produit d'exportation d'Efaizh et Fangh et des régions vampires. Récolte : métier (1 dose par décade) ou combat (5 doses par corps)",
+    "nom": "Sang de mage"
+  },
+  {
+    "prix": "100",
+    "poids": "50",
+    "recolte": "Produit d'exportation d'Efaizh et Fernol. Récolte : antre de dragon, donjons",
+    "monnaie": "PO",
+    "effet": "Inutile de vous expliquer pourquoi cet ingrédient est aussi rare que cher !",
+    "id": "89",
+    "nom": "Cendres de vierge tuée par un dragon"
+  },
+  {
+    "prix": "100",
+    "effet": "Tuer un démon de l'ancien monde relève de l'exploit, et ils ne sont pas très nombreux à fouler le sol de la Terre de Fangh. Cependant, si vous y parvenez, vous pourrez récupérer une bonne vingtaine de dents. Les dents peuvent être prélevées sur un squelette oublié.",
+    "recolte": "Produit d'exportation d'Efaizh, Fangh, Nugh, Birmilistan et Galzanie. Récolte : combat (1D20)",
+    "id": "90",
+    "monnaie": "PO",
+    "nom": "Dent de golbargh",
+    "poids": "500"
+  },
+  {
+    "nom": "Griffe de dragon",
+    "monnaie": "PO",
+    "effet": "Ce n'est pas la griffe de n'importe quel dragon qui est utilisée comme ingrédient magique : seulement les dragons des cavernes et les vouivres. Les griffes des autres dragons peuvent être collectées pour d'autres usages.",
+    "id": "91",
+    "poids": "1000",
+    "prix": "100",
+    "recolte": "Produit d'exportation de Fernol. Récolte : combat (1D10 griffes)"
+  },
+  {
+    "monnaie": "PO",
+    "poids": "4000",
+    "prix": "100",
+    "recolte": "Produit d'exportation de Fernol. Récolte : combat (1D4 oeufs)",
+    "effet": "Les dragons des cavernes pondent moins de cinq oeufs, tous les vingt ans. L'incubation dure deux ans. Il faut ajouter à cela le fait qu'ils acceptent généralement mal qu'on subtilise leur progéniture.",
+    "id": "92",
+    "nom": "Oeuf de dragon des cavernes"
+  },
+  {
+    "monnaie": "PO",
+    "poids": "100",
+    "recolte": "Pas d'export. Récolte : combat (1D20 sourcils)",
+    "effet": "Si vous pensez que cet ingrédient ne vaut pas son prix... Alors, essayez de le prélever vous-même. Il est bien entendu que l'hydre doit être vivante.",
+    "nom": "Sourcils d'hydre à trois tête",
+    "id": "93",
+    "prix": "100"
+  },
+  {
+    "id": "94",
+    "effet": "Les basilics sont rares et dangereux, et de plus ils n'acceptent jamais de donner leur queue. En conséquence, pour en avoir une, il faut payer ou ramener plusieurs copains. L'appendice peut être utilisé jusqu'à plusieurs années",
+    "monnaie": "PO",
+    "nom": "Queue de basilic",
+    "prix": "150",
+    "recolte": "Produit d'exportation de Nugh et Birmilistan. Récolte : combat",
+    "poids": "20000"
+  },
+  {
+    "recolte": "Produit d'exportation des régions côtières. Récolte : pêche (rare)",
+    "prix": "150",
+    "effet": "Une véritable curiosité biologique... Ce qui explique son prix. Les poissons noyés sont généralement conservés dans un bocal d'huile.",
+    "nom": "Poisson noyé",
+    "id": "95",
+    "monnaie": "PO",
+    "poids": "1000"
+  },
+  {
+    "recolte": "Produit d'exportation d'Efaizh, Fangh et Birmilistan. Récolte : combat (5 doses)",
+    "effet": "Le sang de ces créatures démoniaques féroce est aussi rare que légendaire, et consécutivement très cher. Il se conserve indéfiniment car aucune bactérie ne peut s'y loger. Il doit être prélevé quelques minutes après son décès.",
+    "nom": "Sang de gorgauth",
+    "id": "96",
+    "prix": "200",
+    "poids": "50",
+    "monnaie": "PO"
+  },
+  {
+    "nom": "Sang de golbargh",
+    "id": "97",
+    "prix": "250",
+    "poids": "50",
+    "recolte": "Produit d'exportation d'Efaizh, Fangh, Nugh, Birmilistan et Galzanie. Récolte : combat (1D10 doses)",
+    "monnaie": "PO",
+    "effet": "Le sang de ces créatures démoniaques est aussi rare que légendaire, et consécutivement très cher. Il se conserve indéfiniment car aucune bactérie ne peut s'y loger. Il doit être mis en fiole quelques minutes après son décès."
+  },
+  {
+    "recolte": "Produit d'exportation d'Efaizh, Fangh, Nugh, Birmilistan et Galzanie. Récolte : combat (1D10 doses)",
+    "monnaie": "PO",
+    "id": "98",
+    "poids": "1000",
+    "effet": "Un des plus puissants ingrédients qui soit. Pour l'obtenir, il faut une généralement disposer d'une armée.",
+    "nom": "Griffe de démon majeur",
+    "prix": "500"
+  },
+  {
+    "id": "99",
+    "monnaie": "PO",
+    "poids": "50",
+    "prix": "1000",
+    "recolte": "Produit d'exportation d'Efaizh, Fangh, Nugh, Birmilistan et Galzanie. Récolte : combat (1D10 doses)",
+    "effet": "Un des plus puissants ingrédients qui soit. Pour l'obtenir, il faut une généralement disposer d'une armée.",
+    "nom": "Sang de démon majeur"
+  },
+  {
+    "recolte": "Produit d'exportation de Galzanie et régions vampires. Récolte : combat (2 par vampire)",
+    "monnaie": "PO",
+    "effet": "Peut remplacer le sang d'elfette vierge",
+    "nom": "Crocs de vampire mineur",
+    "id": "100",
+    "poids": "100",
+    "prix": "25"
+  },
+  {
+    "monnaie": "PO",
+    "nom": "Crocs de vampire majeur",
+    "recolte": "Produit d'exportation de Galzanie et régions vampires. Récolte : combat (2 par vampire)",
+    "prix": "75",
+    "id": "101",
+    "effet": "Peut remplacer le sang de gorgauth",
+    "poids": "1000"
+  },
+  {
+    "effet": "Peut remplacer le sang de démon majeur",
+    "monnaie": "PO",
+    "nom": "Crocs de vampire supérieur",
+    "poids": "250",
+    "prix": "200",
+    "id": "102",
+    "recolte": "Produit d'exportation de Galzanie et régions vampires. Récolte : combat (2 par vampire)"
+  },
+  {
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation de Galzanie et régions vampires. Récolte : combat (1D10 doses)",
+    "effet": "Peut remplacer le sang de mage ou d'érudit",
+    "poids": "50",
+    "id": "103",
+    "nom": "Sang de vampire",
+    "prix": "10"
+  },
+  {
+    "id": "104",
+    "prix": "20",
+    "recolte": "Pas d'export. Récolte : combat (5 doses)",
+    "nom": "Sang de loup garou",
+    "poids": "50",
+    "effet": "Peut remplacer le sang de mage ou de vierge",
+    "monnaie": "PO"
+  },
+  {
+    "prix": "50",
+    "effet": "Peut remplacer tout ingrédient",
+    "id": "105",
+    "poids": "50",
+    "monnaie": "PO",
+    "recolte": "Pas d'export. Récolte : combat (25 doses)",
+    "nom": "Sang de dragon"
+  },
+  {
+    "poids": "5000",
+    "effet": "Peut remplacer n'importe quel dent, griffe ou poudre de dent",
+    "id": "106",
+    "prix": "25",
+    "recolte": "Produit d'exportation de Fernol. Récolte : combat (1D10 dents)",
+    "nom": "Dent de dragon intacte",
+    "monnaie": "PO"
+  },
+  {
+    "poids": "500",
+    "id": "107",
+    "recolte": "Produit d'exportation de Fernol. Récolte : combat (20 doses)",
+    "effet": "Augmente la PR mag de 1 et réduit la rupture de 1",
+    "monnaie": "PO",
+    "nom": "Cuir de Dragon",
+    "prix": "150"
+  },
+  {
+    "effet": "Remplace 3 doses de Thritil ou 6 doses d'alliage de guerre. Augmente la PR phy de 2 et la PR mag de 1.",
+    "id": "108",
+    "poids": "1000",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation de Fernol. Récolte : combat (25 doses)",
+    "nom": "Ecaille de Dragon",
+    "prix": "100"
+  },
+  {
+    "prix": "2",
+    "monnaie": "PO",
+    "effet": "Si ajouté à une recette : donne Protège du Froid I",
+    "id": "109",
+    "nom": "Epices communs",
+    "poids": "50",
+    "recolte": "Produit d'exportation de Fangh, Fernol, Galzanie et Dandiskar. Récolte : culture"
+  },
+  {
+    "recolte": "Produit d'exportation des régions sauvages. Récolte : non",
+    "prix": "4",
+    "effet": "Si ajouté à une recette : donne COU+1",
+    "nom": "Epices Syldériens",
+    "monnaie": "PO",
+    "id": "110",
+    "poids": "50"
+  },
+  {
+    "prix": "6",
+    "recolte": "Produit d'exportation d'Esturlie, Birmilistan et Sk'ka. Récolte : culture",
+    "monnaie": "PO",
+    "id": "111",
+    "nom": "Epices du Sud",
+    "effet": "Si ajouté à une recette : donne AD+1",
+    "poids": "50"
+  },
+  {
+    "nom": "Epices de Nugh",
+    "effet": "Si ajouté à une recette : donne PR feu+1",
+    "poids": "50",
+    "monnaie": "PO",
+    "id": "112",
+    "prix": "10",
+    "recolte": "Produit d'exportation de Nugh. Récolte : culture"
+  },
+  {
+    "prix": "10",
+    "effet": "Si ajouté à une recette : donne PR mag+1",
+    "recolte": "Produit d'exportation d'Efaizh. Récolte : culture",
+    "monnaie": "PO",
+    "id": "113",
+    "nom": "Epices d'Efaizh",
+    "poids": "50"
+  },
+  {
+    "effet": "Sert de monnaie pour faciliter les transactions avec les démons",
+    "nom": "Pièce infernale d'âme (PIA)",
+    "prix": "666",
+    "poids": "100",
+    "id": "114",
+    "recolte": "Pas d'export. Récolte : contrat d'âme infernal",
+    "monnaie": "PO"
+  },
+  {
+    "poids": "100",
+    "effet": "Lorsque 4 fragments sont rassemblés on gagne 1 point de destin",
+    "nom": "Fragment de relique divine",
+    "prix": "250",
+    "id": "115",
+    "monnaie": "PO",
+    "recolte": "Pas d'export. Récolte : non"
+  },
+  {
+    "poids": "50",
+    "monnaie": "PO",
+    "effet": "Si frotté contre une arme les Pi de l'arme deviennent magique durant 1 combat. Si ajouté à une fabrication : Donne PR mag+1",
+    "recolte": "Produit d'exportation d'Esturlie. Récolte : élevage (1D10) (1 fois)",
+    "prix": "200",
+    "id": "116",
+    "nom": "Crin de Licorne arc en ciel"
+  },
+  {
+    "nom": "Sang de Licorne arc en ciel",
+    "effet": "Permet de réparer la totalité de la PR mag d'un objet ou armure. Si ajouté à une recette : Double la quantité de liquide produit",
+    "poids": "50",
+    "recolte": "Produit d'exportation d'Esturlie. Récolte : combat (10 doses)",
+    "prix": "100",
+    "id": "117",
+    "monnaie": "PO"
+  },
+  {
+    "monnaie": "PO",
+    "effet": "Supprime un enchantement durant 5T. Si ajouté à un fabrication : Le produit détruit 1PR mag. pendant 8h",
+    "id": "118",
+    "prix": "500",
+    "nom": "Deutérium en fiole",
+    "recolte": "Produit d'exportation de Galzanie. Récolte : minage",
+    "poids": "100"
+  },
+  {
+    "nom": "Dent de renard bleu des songes",
+    "effet": "Remplace tout ingrédient et double la quantité produite",
+    "monnaie": "PO",
+    "poids": "100",
+    "prix": "1000",
+    "id": "119",
+    "recolte": "Pas d'export. Récolte : chasse (animal géant) (1D10 doses) (zone magique)"
+  },
+  {
+    "monnaie": "PO",
+    "recolte": "Pas d'export. Récolte : élevage ou chasse (animal géant) (1D10 doses) (zone maudite)",
+    "id": "120",
+    "effet": "Rend l'objet enduit éthéré pendant 5 min. Si ajouté à une fabrication : L'équipement produit permet de se téléporter 1 fois par jour à 10km",
+    "prix": "2000",
+    "poids": "50",
+    "nom": "Poil de chien de Tindalos"
+  },
+  {
+    "poids": "50",
+    "recolte": "Produit d'exportation des régions vampires. Récolte : cimetière, donjon ou combat (1 dose par spectre)",
+    "effet": "Permet de rendre une surface d'1m cube traversable durant 1h. Si ajouté à une fabrication : Permet de voir et de toucher les objets et entités éthérées",
+    "monnaie": "PO",
+    "prix": "35",
+    "id": "121",
+    "nom": "Ectoplasme"
+  },
+  {
+    "effet": "Permet de recharger pour 1 charge un objet magique rechargeable. Si ajouté à une recette : Remplace 1 ingrédient et supprime le coup en mana de la potion",
+    "nom": "Poudre de Perlimpinpin véritable",
+    "poids": "50",
+    "prix": "50",
+    "recolte": "Produit d'exportation des Kobolds. Récolte : minage",
+    "monnaie": "PO",
+    "id": "122"
+  },
+  {
+    "nom": "Poussière de fée",
+    "id": "123",
+    "monnaie": "PO",
+    "poids": "50",
+    "prix": "100",
+    "recolte": "Produit d'exportation des Fées. Récolte origine (1 dose par décade) ou combat (3 doses par corps)",
+    "effet": "Permet de recharger pour 2 charges un objet magique rechargeable.Si ajouté à une recette : Double le nombre de Pv ou Pa rendu par le liquide"
+  },
+  {
+    "id": "124",
+    "prix": "60",
+    "effet": "Si ajouté à une recette : Double la durée d'effet du produit",
+    "recolte": "Produit d'exportation des marais. Récolte : marais (zone magique)",
+    "poids": "100",
+    "monnaie": "PO",
+    "nom": "Lotus de jade des marais"
+  },
+  {
+    "poids": "100",
+    "recolte": "Produit d'exportation des montagnes. Récolte : montagne (zone magique)",
+    "prix": "100",
+    "effet": "Si ajouté à une recette : Donne PR mag.+2 au produit",
+    "id": "125",
+    "nom": "Lotus azur des monts (Lotus planeur)",
+    "monnaie": "PO"
+  },
+  {
+    "recolte": "Produit d'exportation des régions vampires. Récolte : cimetière (zone magique)",
+    "nom": "Lotus de sang (Carmin des morts)",
+    "monnaie": "PO",
+    "poids": "100",
+    "prix": "70",
+    "effet": "Si ajouté à une recette : Le produit rend 1D20pv/H",
+    "id": "126"
+  },
+  {
+    "recolte": "Produit d'exportation des Confins du Givre, Srölnagud et Dandiskar. Récolte : région enneigée (zone magique)",
+    "poids": "100",
+    "prix": "100",
+    "id": "127",
+    "nom": "Lotus d'argent des neiges",
+    "effet": "Si ajouté à une recette : Le produit immunise aux malédictions",
+    "monnaie": "PO"
+  },
+  {
+    "id": "128",
+    "monnaie": "PO",
+    "nom": "Lotus de jais des profondeurs",
+    "effet": "Si ajouté à une recette : Le produit donne Pi+6",
+    "prix": "60",
+    "poids": "100",
+    "recolte": "Produit d'exportation des Nains Duregar, Drows et Dracs. Récolte : soutterains et montagne (zone magique)"
+  },
+  {
+    "prix": "5",
+    "recolte": "Produit d'exportation des montagnes. Récolte : minage",
+    "poids": "500",
+    "nom": "Cuivre",
+    "monnaie": "PA",
+    "effet": "Permet de faire 1 casserole",
+    "id": "129"
+  },
+  {
+    "prix": "2",
+    "recolte": "Produit d'exportation des montagnes. Récolte : minage",
+    "effet": "Permet de faire 1 dague",
+    "id": "130",
+    "nom": "Acier de base",
+    "monnaie": "PO",
+    "poids": "500"
+  },
+  {
+    "effet": "Permet de faire 1 dague",
+    "poids": "500",
+    "prix": "5",
+    "recolte": "Produit d'exportation des montagnes. Récolte : minage",
+    "nom": "Bon acier",
+    "id": "131",
+    "monnaie": "PO"
+  },
+  {
+    "nom": "Alliage de guerre",
+    "poids": "1000",
+    "effet": "Permet de faire 1 dague",
+    "id": "132",
+    "prix": "30",
+    "recolte": "Produit d'exportation des montagnes. Récolte : minage",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "Permet de faire 1 dague",
+    "id": "133",
+    "prix": "100",
+    "recolte": "Produit d'exportation des Nains. Récolte : minage",
+    "monnaie": "PO",
+    "nom": "Thritil",
+    "poids": "50"
+  },
+  {
+    "poids": "200",
+    "id": "134",
+    "monnaie": "PA",
+    "effet": "Permet de faire 1 chaise",
+    "prix": "5",
+    "recolte": "Produit d'exportation des forêts et jungles. Récolte : forêt, jungle, marais et campagne",
+    "nom": "Bois brut"
+  },
+  {
+    "monnaie": "PO",
+    "poids": "500",
+    "nom": "Bois dur",
+    "prix": "1",
+    "recolte": "Produit d'exportation des forêts et jungles. Récolte : forêt, jungle, marais et campagne",
+    "id": "135",
+    "effet": "Permet de faire 1 manche de pelle"
+  },
+  {
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des forêts et jungles. Récolte : forêt, jungle, marais et campagne",
+    "effet": "Permet de faire 1 poignée d'arme",
+    "id": "136",
+    "nom": "Bois noble",
+    "prix": "10",
+    "poids": "1000"
+  },
+  {
+    "nom": "Pierre de base à sculpter",
+    "id": "137",
+    "prix": "1",
+    "recolte": "Produit d'exportation des montagnes. Récolte : minage",
+    "monnaie": "PO",
+    "poids": "5000",
+    "effet": "Permet de faire 1 buste"
+  },
+  {
+    "effet": "Permet de faire 1 buste",
+    "id": "138",
+    "monnaie": "PO",
+    "nom": "Pierre de qualité à sculpter",
+    "poids": "7000",
+    "prix": "10",
+    "recolte": "Produit d'exportation des montagnes. Récolte : minage"
+  },
+  {
+    "recolte": "Produit d'exportation des montagnes. Récolte : minage",
+    "nom": "Pierre d'exception",
+    "monnaie": "PO",
+    "effet": "Permet de faire 1 buste",
+    "poids": "9000",
+    "prix": "50",
+    "id": "139"
+  },
+  {
+    "id": "140",
+    "nom": "Cuir épais de base",
+    "poids": "200",
+    "prix": "2",
+    "recolte": "Produit d'exportation des villages. Récolte : chasse et tannage",
+    "effet": "Permet de faire 1 casque de cuir",
+    "monnaie": "PO"
+  },
+  {
+    "nom": "Cuir épais de qualité",
+    "prix": "5",
+    "poids": "300",
+    "monnaie": "PO",
+    "id": "141",
+    "recolte": "Produit d'exportation des villages. Récolte : chasse et tannage",
+    "effet": "Permet de faire 1 casque de cuir"
+  },
+  {
+    "prix": "5",
+    "recolte": "Produit d'exportation des villages. Récolte : chasse et tannage",
+    "effet": "Permet de faire 1 paire de bottes",
+    "id": "142",
+    "nom": "Cuir souple de base",
+    "poids": "150",
+    "monnaie": "PA"
+  },
+  {
+    "recolte": "Produit d'exportation des villages. Récolte : chasse et tannage",
+    "id": "143",
+    "poids": "100",
+    "prix": "2",
+    "effet": "Permet de faire 1 paire de bottes",
+    "monnaie": "PO",
+    "nom": "Cuir souple de qualité"
+  },
+  {
+    "prix": "35",
+    "nom": "Cuir exotique ou rare",
+    "poids": "400",
+    "recolte": "Produit d'exportation des villages. Récolte : chasse et tannage",
+    "id": "144",
+    "effet": "Permet de faire 1 paire de bottes",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "Permet de faire 1 chemise",
+    "monnaie": "PA",
+    "poids": "200",
+    "nom": "Tissu fin de base",
+    "id": "145",
+    "prix": "5",
+    "recolte": "Produit d'exportation des villes. Récolte : non"
+  },
+  {
+    "recolte": "Produit d'exportation des villes. Récolte : non",
+    "monnaie": "PO",
+    "poids": "300",
+    "id": "146",
+    "nom": "Tissu fin de qualité",
+    "prix": "2",
+    "effet": "Permet de faire 1 chemise"
+  },
+  {
+    "nom": "Tissu fin précieux",
+    "id": "147",
+    "effet": "Permet de faire 1 chemise",
+    "poids": "200",
+    "recolte": "Produit d'exportation de Nugh. Récolte : non",
+    "prix": "10",
+    "monnaie": "PO"
+  },
+  {
+    "nom": "Tissu épais de base",
+    "prix": "1",
+    "recolte": "Produit d'exportation des villes et villages. Récolte : non",
+    "id": "148",
+    "poids": "400",
+    "monnaie": "PO",
+    "effet": "Permet de faire 1 cape"
+  },
+  {
+    "effet": "Permet de faire 1 cape",
+    "id": "149",
+    "monnaie": "PO",
+    "poids": "600",
+    "nom": "Tissu épais de qualité",
+    "prix": "10",
+    "recolte": "Produit d'exportation des villes et villages. Récolte : non"
+  },
+  {
+    "recolte": "Produit d'exportation des montagnes. Récolte : non",
+    "id": "150",
+    "monnaie": "PO",
+    "effet": "Permet de faire 1 cape",
+    "poids": "400",
+    "prix": "30",
+    "nom": "Tissu épais précieux"
+  },
+  {
+    "id": "151",
+    "monnaie": "PO",
+    "effet": "Permet de faire 1 petit engin de siège",
+    "poids": "10000",
+    "prix": "15",
+    "nom": "Bois de charpente (construction)",
+    "recolte": "Produit d'exportation des forêts et jungles. Récolte : forêt, jungle, marais et campagne"
+  },
+  {
+    "poids": "10000",
+    "prix": "10",
+    "nom": "Pierre de taille (construction)",
+    "effet": "Permet de faire 5m2 de mur",
+    "recolte": "Produit d'exportation des montagnes. Récolte : minage",
+    "monnaie": "PO",
+    "id": "152"
+  },
+  {
+    "effet": "Permet de se pendre",
+    "monnaie": "PO",
+    "nom": "Chaîne fabrication naine (1m)",
+    "prix": "10",
+    "recolte": "Produit d'exportation des Nains. Récolte : non",
+    "id": "153",
+    "poids": "2000"
+  },
+  {
+    "monnaie": "PO",
+    "nom": "Chaîne standard (1m)",
+    "effet": "Permet de se pendre",
+    "prix": "5",
+    "recolte": "Produit d'exportation des villes. Récolte : non",
+    "poids": "1000",
+    "id": "154"
+  },
+  {
+    "nom": "Chevilles bois (par 10)",
+    "monnaie": "PA",
+    "poids": "50",
+    "prix": "2",
+    "effet": "Permet de se pendre",
+    "id": "155",
+    "recolte": "Produit d'exportation des villes. Récolte : non"
+  },
+  {
+    "prix": "1",
+    "monnaie": "PA",
+    "recolte": "Produit d'exportation des villes et villages. Récolte : non",
+    "effet": "Permet de se pendre",
+    "id": "156",
+    "nom": "Corde standard (1m)",
+    "poids": "100"
+  },
+  {
+    "effet": "Permet d'essayer se pendre",
+    "id": "157",
+    "recolte": "Produit d'exportation des villes et villages. Récolte : non",
+    "nom": "Cordelette (10m)",
+    "monnaie": "PA",
+    "poids": "100",
+    "prix": "1"
+  },
+  {
+    "effet": "Permet de s'amuser avec beaucoup d'imagination",
+    "monnaie": "PA",
+    "nom": "Ficelle (10m)",
+    "recolte": "Produit d'exportation des villes et villages. Récolte : non",
+    "id": "158",
+    "poids": "100",
+    "prix": "2"
+  },
+  {
+    "nom": "Fil de cuivre (10m)",
+    "poids": "400",
+    "monnaie": "PA",
+    "effet": "Permet de s'amuser avec beaucoup d'imagination",
+    "prix": "4",
+    "recolte": "Produit d'exportation des villes. Récolte : non",
+    "id": "159"
+  },
+  {
+    "prix": "5",
+    "recolte": "Produit d'exportation des villes. Récolte : non",
+    "monnaie": "PA",
+    "id": "160",
+    "nom": "Fil de fer (10m)",
+    "effet": "Permet de s'amuser avec beaucoup d'imagination",
+    "poids": "500"
+  },
+  {
+    "monnaie": "PO",
+    "prix": "1",
+    "id": "161",
+    "nom": "Gros clous (par 10)",
+    "recolte": "Produit d'exportation des villes. Récolte : non",
+    "poids": "10",
+    "effet": "Permet de clouer des gens au mur"
+  },
+  {
+    "effet": "Permet de clouer des objets au mur",
+    "id": "162",
+    "monnaie": "PO",
+    "nom": "Petits clous (par 50)",
+    "recolte": "Produit d'exportation des villes. Récolte : non",
+    "prix": "1",
+    "poids": "25"
+  },
+  {
+    "monnaie": "PA",
+    "nom": "Rivets de cuivre (par 10)",
+    "effet": "Permet de construire des trucs, enfin je suppose",
+    "poids": "10",
+    "prix": "5",
+    "recolte": "Produit d'exportation des villes. Récolte : non",
+    "id": "163"
+  },
+  {
+    "id": "164",
+    "poids": "10",
+    "prix": "5",
+    "recolte": "Produit d'exportation des villes. Récolte : non",
+    "monnaie": "PO",
+    "nom": "Vis (par 10, peu commun)",
+    "effet": "Et maintenant bonne chance pour trouver le tournevis"
+  },
+  {
+    "prix": "5",
+    "poids": "100",
+    "id": "165",
+    "recolte": "Produit d'exportation des villages. Récolte : non",
+    "effet": "Permet de faire 1 gros coussin",
+    "monnaie": "PA",
+    "nom": "Bourre de laine"
+  },
+  {
+    "effet": "Permet de faire 1 couvre-pied",
+    "monnaie": "PA",
+    "nom": "Laine brute",
+    "poids": "500",
+    "recolte": "Produit d'exportation des villages. Récolte : non",
+    "prix": "2",
+    "id": "166"
+  },
+  {
+    "poids": "400",
+    "effet": "Permet de faire 1 couvre-pied",
+    "monnaie": "PO",
+    "id": "167",
+    "nom": "Laine peignée",
+    "prix": "1",
+    "recolte": "Produit d'exportation des villages. Récolte : non"
+  },
+  {
+    "monnaie": "PO",
+    "poids": "300",
+    "recolte": "Produit d'exportation d'Efaizh et Nugh. Récolte : non",
+    "effet": "Permet de faire 1 couvre-pied",
+    "nom": "Laine précieuse",
+    "prix": "10",
+    "id": "168"
+  },
+  {
+    "nom": "Fil standard (50m)",
+    "recolte": "Produit d'exportation des villes. Récolte : non",
+    "id": "169",
+    "prix": "2",
+    "monnaie": "PA",
+    "poids": "100",
+    "effet": "Permet de s'amuser avec beaucoup d'imagination"
+  },
+  {
+    "effet": "Permet de s'amuser avec beaucoup d'imagination",
+    "id": "170",
+    "nom": "Fil de lin robuste (50m)",
+    "prix": "1",
+    "poids": "100",
+    "recolte": "Produit d'exportation des villes. Récolte : non",
+    "monnaie": "PO"
+  },
+  {
+    "nom": "Fil précieux (50m)",
+    "id": "171",
+    "prix": "10",
+    "poids": "100",
+    "effet": "Permet de s'amuser avec beaucoup d'imagination",
+    "recolte": "Produit d'exportation de Nugh. Récolte : non",
+    "monnaie": "PO"
+  },
+  {
+    "id": "172",
+    "poids": "50",
+    "prix": "2",
+    "recolte": "Produit d'exportation des villes. Récolte : brassage et distillation",
+    "effet": "Produit liquide blanchâtre qui sent relativement mauvais. Il est généralement produit par des spécialistes.",
+    "nom": "Ammoniaque de Ganz",
+    "monnaie": "PO"
+  },
+  {
+    "id": "173",
+    "prix": "50",
+    "monnaie": "PO",
+    "poids": "50",
+    "effet": "Liquide extrait de la vésicule de cet animal rare et dangereux, mais après l’avoir tué.",
+    "nom": "Bile de salamandre du volcan",
+    "recolte": "Produit d'exportation de Fangh et Birmilistan. Récolte : chasse (gros gibier et+) ou combat (4 doses) zone volcanique"
+  },
+  {
+    "monnaie": "PO",
+    "poids": "50",
+    "effet": "Un champignon noir, de la taille d’un poing de gobelin, qui pousse uniquement dans les grottes de cette région. Sa chair est très ferme et possède diverses propriétés étranges. Une fois cueilli, se conserve 4 semaines",
+    "id": "174",
+    "nom": "Champignon noir d'Ahokd",
+    "prix": "10",
+    "recolte": "Produit d'exportation de l'ouest de Fangh. Récolte : forêt"
+  },
+  {
+    "recolte": "Produit d'exportation des montagnes et forêts. Récolte : minage",
+    "poids": "1000",
+    "effet": "Du charbon classique, récolté dans certaines mines ou parfois directement fabriqué dans des fours.",
+    "prix": "1",
+    "monnaie": "PA",
+    "id": "175",
+    "nom": "Charbon"
+  },
+  {
+    "recolte": "Produit d'exportation des grandes forêts. Récolte : non",
+    "prix": "1",
+    "id": "176",
+    "nom": "Charbon de boulorne",
+    "effet": "Très dur et d’excellente qualité, il tient très longtemps au feu.",
+    "monnaie": "PO",
+    "poids": "1000"
+  },
+  {
+    "recolte": "Produit d'exportation des montagnes. Récolte : minage",
+    "effet": "Petit cristaux issus de certains gisements.",
+    "poids": "50",
+    "nom": "Cristaux bleus de quartz",
+    "id": "177",
+    "monnaie": "PO",
+    "prix": "10"
+  },
+  {
+    "prix": "100",
+    "recolte": "Produit d'exportation des montagnes. Récolte : minage",
+    "nom": "Cristaux de Malank",
+    "monnaie": "PO",
+    "effet": "Cristaux issus de certains gisements rares, aux propriétés étranges .",
+    "id": "178",
+    "poids": "50"
+  },
+  {
+    "poids": "50",
+    "monnaie": "PO",
+    "prix": "50",
+    "id": "179",
+    "effet": "Petit cristaux issus de certains gisements spécifiques, principalement dans les montagnes du Nord.",
+    "nom": "Cristaux verts de Xarlin",
+    "recolte": "Produit d'exportation des Nains. Récolte : minage"
+  },
+  {
+    "id": "180",
+    "recolte": "Produit d'exportation de l'est de Fangh. Récolte : forêt",
+    "monnaie": "PO",
+    "effet": "Eau issue d’une source des montagnes de l’Est et purifiée par un procédé spécial.",
+    "nom": "Eau d'Armitas",
+    "prix": "1",
+    "poids": "250"
+  },
+  {
+    "nom": "Eau gazeuse du Nord",
+    "effet": "Eau issue d’une source bien connue des montagnes du Nord, laquelle n’est pas facile d’accès et appartient à une communauté naine. Elle n’est pas buvable mais possède diverses propriétés.",
+    "recolte": "Produit d'exportation du nord de Fangh. Récolte : montagne",
+    "id": "181",
+    "poids": "250",
+    "monnaie": "PO",
+    "prix": "2"
+  },
+  {
+    "recolte": "Produit d'exportation de Fernol. Récolte : combat  (8 doses)",
+    "effet": "Un produit aux propriétés semi-explosives, uniquement sécrété par les glandes internes des vouivres. Il existe des élevages spécialisés de jeunes vouivres pouvant produire ce fiel à moindre coût – en effet ces monstres draconiformes sont très dangereux à l’âge adulte.",
+    "id": "182",
+    "nom": "Fiel de vouivre",
+    "poids": "500",
+    "monnaie": "PO",
+    "prix": "300"
+  },
+  {
+    "monnaie": "PO",
+    "effet": "On trouve cet étrange minerai mou, gris et antidérapant sur un unique gisement jalousement gardé par la communauté minière de Mir-Nodd, dans les montagnes du Nord. Cette gomme a des usages variés.",
+    "id": "183",
+    "nom": "Gomme de Mir-Nodd",
+    "poids": "50",
+    "recolte": "Produit d'exportation des Nains. Récolte : minage",
+    "prix": "5"
+  },
+  {
+    "recolte": "Produit d'exportation de l'ouest de Fangh. Récolte : forêt",
+    "monnaie": "PO",
+    "id": "184",
+    "effet": "Issus d’une baie aux propriétés étrange, qui ne pousse que dans certaines forêt et qu’on récolte en hiver. On en extrait un jus jaunâtre qui se conserve plusieurs années.",
+    "nom": "Jus de barnase",
+    "poids": "250",
+    "prix": "5"
+  },
+  {
+    "prix": "10",
+    "recolte": "Produit d'exportation des Drows. Récolte : brassage et distillation",
+    "monnaie": "PO",
+    "id": "185",
+    "effet": "Un produit tout à fait bizarre, dont les propriétés sont multiples et légendaires, fabriqué uniquement par les Elfes Noirs des grottes – d’où son nom. Le secret de sa fabrication est bien gardé.",
+    "nom": "Liqueur des Ombres",
+    "poids": "250"
+  },
+  {
+    "monnaie": "PO",
+    "poids": "50",
+    "effet": "Petits morceaux de minerai argenté friable, aux propriétés magnétiques étranges.",
+    "prix": "20",
+    "id": "186",
+    "nom": "Magnésite de Trudil",
+    "recolte": "Produit d'exportation des montagnes. Récolte : minage"
+  },
+  {
+    "nom": "Phosphorite du marais",
+    "effet": "Un liquide visqueux récolté d’étrange façon. Il provient de l’estomac de gros vers fouisseurs qui ne vivent que dans les marécages. Ce produit émet une lueur verte au contact de l’air, mais il a d’autres propriétés.",
+    "id": "187",
+    "prix": "2",
+    "recolte": "Produit d'exportation des marais. Récolte : marais",
+    "monnaie": "PO",
+    "poids": "50"
+  },
+  {
+    "poids": "1000",
+    "effet": "Une pierre friable de la ville de Birtek, désormais distribuée sous forme de gravillons. Ce flanc de montagne a gagné d’étranges propriétés depuis qu’il a été inondée, dans le passé, par une coulée de bière à sextantuple fermentation, au cours d’un sordide accident de magie.",
+    "monnaie": "PO",
+    "id": "188",
+    "nom": "Pierre de Birtek",
+    "prix": "3",
+    "recolte": "Produit d'exportation du sud de Fangh. Récolte : minage"
+  },
+  {
+    "effet": "Une recette de famille permet de produire cette poudre d’un bleu sombre aux étranges propriétés, recette dont les droits sont actuellement détenus et jalousement gardés par Arlounik le Jeune (société basée à Tulamor).",
+    "poids": "50",
+    "prix": "20",
+    "id": "189",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation d'Efaizh, Nugh et sud de Fangh. Récolte : non",
+    "nom": "Poudre bleue d'Arlounik"
+  },
+  {
+    "prix": "1",
+    "id": "190",
+    "effet": "C’est une poudre obtenue en limant un minerai jaune-vert, qu’on peut trouver dans certaines grottes.",
+    "poids": "50",
+    "nom": "Poudre de zaconium",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des montagnes. Récolte : minage"
+  },
+  {
+    "nom": "Poudre mauve de Tang",
+    "recolte": "Produit d'exportation de Nugh. Récolte : minage",
+    "poids": "50",
+    "effet": "C’est une poudre obtenue en limant un minerai rare, dont on dit qu’il n’existe que quelques gisements en Terre de Fangh et qui serait tombé du ciel il y a bien longtemps.",
+    "id": "191",
+    "prix": "30",
+    "monnaie": "PO"
+  },
+  {
+    "id": "192",
+    "recolte": "Produit d'exportation des Drows. Récolte : non",
+    "poids": "50",
+    "effet": "Une poudre de synthèse aux propriétés étranges, produite uniquement par une famille d’Elfes Noirs de Zuruk.",
+    "monnaie": "PO",
+    "nom": "Poudre rouge de Zuruk",
+    "prix": "5"
+  },
+  {
+    "id": "193",
+    "effet": "Un sable très pâle et très fin, qui possède certaines propriétés chimiques à la suite d’un événement qui aurait changé sa nature il y a bien longtemps.",
+    "nom": "Sable de Rancurac",
+    "prix": "5",
+    "poids": "1000",
+    "recolte": "Produit d'exportation du nord de Fangh. Récolte : désert et minage",
+    "monnaie": "PO"
+  },
+  {
+    "recolte": "Produit d'exportation des jungles. Récolte : jungle",
+    "monnaie": "PO",
+    "nom": "Sable rouge d'Ammouka",
+    "poids": "1000",
+    "effet": "Il vient de loin, ce sable rouge ! Il a été mâché par une variété spéciale de termites et il contient des éléments chimiques bien étranges...",
+    "prix": "15",
+    "id": "194"
+  },
+  {
+    "monnaie": "PA",
+    "nom": "Salpêtre",
+    "id": "195",
+    "prix": "1",
+    "effet": "Un produit blanc qui se forme naturellement dans certains souterrains. On lui trouve des usages variés.",
+    "recolte": "Produit d'exportation des montagnes. Récolte : minage",
+    "poids": "1000"
+  },
+  {
+    "nom": "Soufre",
+    "poids": "1000",
+    "prix": "1",
+    "effet": "Produit jaune et bien connu, récolté en milieu naturel sur des zones bien spécifiques.",
+    "recolte": "Produit d'exportation des montagnes, déserts et régions côtières. Récolte : minage",
+    "id": "196",
+    "monnaie": "PO"
+  },
+  {
+    "monnaie": "PO",
+    "prix": "3",
+    "nom": "Soufre volcanique",
+    "poids": "50",
+    "recolte": "Produit d'exportation du Birmilistan. Récolte : minage",
+    "effet": "Produit jaune foncé, récolté près des volcans et qui est un peu plus évolué que la version normale.",
+    "id": "197"
+  },
+  {
+    "effet": "Une terre malléable de qualité, qui durcit au four et qui permet de faire de la sculpture ou de la poterie.",
+    "nom": "Terre glaise de qualité",
+    "poids": "1000",
+    "prix": "1",
+    "monnaie": "PA",
+    "id": "198",
+    "recolte": "Produit d'exportation des villes. Récolte : minage"
+  },
+  {
+    "poids": "100",
+    "prix": "20",
+    "recolte": "Produit d'exportation de Fangh, Nugh et Galzanie. Récolte : alchimie",
+    "effet": "Bien plus stable que la poudre gobeline n'explose pas aussi puissament cependant",
+    "nom": "Poudre noire alchimique",
+    "monnaie": "PO",
+    "id": "199"
+  },
+  {
+    "poids": "500",
+    "nom": "Sauce cameline",
+    "monnaie": "PO",
+    "effet": "La sauce la plus commune pour agrémenter les plats",
+    "prix": "1",
+    "recolte": "Pas d'export. Récolte : Cuisine",
+    "id": "200"
+  },
+  {
+    "prix": "1",
+    "recolte": "Pas d'export. Récolte : Cuisine",
+    "monnaie": "PO",
+    "effet": "Sauce parfaite pour accompagner les volailles et les poissons",
+    "id": "201",
+    "nom": "Sauce verte",
+    "poids": "500"
+  },
+  {
+    "nom": "Sel des Monts Vrogz",
+    "effet": "Un sel au goût métallique qui donne RM+1 au plat",
+    "poids": "100",
+    "prix": "2",
+    "recolte": "Produit d'exportation du nord de la Galzanie. Récolte : minage",
+    "id": "202",
+    "monnaie": "PC"
+  },
+  {
+    "effet": "Pour adoucir les plats et les esprits",
+    "poids": "100",
+    "monnaie": "PO",
+    "nom": "Sucre",
+    "id": "203",
+    "prix": "1",
+    "recolte": "Produit d'exportation d'Efaizh, Birmilistan, Esturlie et Nugh. Récolte : culture"
+  },
+  {
+    "effet": "Peut s'ajouter à un plat en plus de tous les ingrédients",
+    "id": "204",
+    "prix": "5",
+    "recolte": "Produit d'exportation d'Efaizh, Birmilistan, Esturlie et Nugh. Récolte : culture",
+    "monnaie": "PA",
+    "poids": "100",
+    "nom": "Herbes aromatiques"
+  },
+  {
+    "recolte": "Pas d'export. Récolte : culture",
+    "effet": "Donne FO+1 au plat",
+    "poids": "100",
+    "prix": "5",
+    "monnaie": "PA",
+    "id": "205",
+    "nom": "Epices traditionnelles"
+  },
+  {
+    "recolte": "Produit d'exportation d'Efaizh, Birmilistan, Esturlie et Nugh. Récolte : culture",
+    "id": "206",
+    "effet": "Donne PER+1 au plat",
+    "monnaie": "PO",
+    "poids": "100",
+    "prix": "3",
+    "nom": "Epices précieuses"
+  },
+  {
+    "id": "207",
+    "effet": "Sorte de céréale commune chez les Semi-hommes",
+    "monnaie": "PA",
+    "poids": "100",
+    "nom": "Friduf",
+    "prix": "3",
+    "recolte": "Produit d'exportation des Hobbits. Récolte : culture"
+  },
+  {
+    "poids": "100",
+    "effet": "Sert à faire les pains traditionnels des Semi-hommes",
+    "nom": "Grains de Friduf",
+    "prix": "3",
+    "monnaie": "PO",
+    "id": "208",
+    "recolte": "Produit d'exportation des Hobbits. Récolte : culture"
+  },
+  {
+    "nom": "Farine de boulanger",
+    "poids": "100",
+    "prix": "2",
+    "recolte": "Produit d'exportation des villages. Récolte : culture",
+    "id": "209",
+    "effet": "Bien meilleure que la farine de Forgeron",
+    "monnaie": "PC"
+  },
+  {
+    "prix": "5",
+    "poids": "100",
+    "id": "210",
+    "effet": "Utilisée par les Semi-homme pour certains gateaux",
+    "monnaie": "PC",
+    "recolte": "Produit d'exportation des Hobbits. Récolte : culture",
+    "nom": "Farine de klipish"
+  },
+  {
+    "effet": "La meilleure farine du monde Donne un bonus+1 aux épreuves de cuisine",
+    "poids": "50",
+    "monnaie": "PC",
+    "nom": "Farine Prestigieuse de Gros panier",
+    "prix": "5",
+    "recolte": "Produit d'exportation des Hobbits. Récolte : culture",
+    "id": "211"
+  },
+  {
+    "recolte": "Produit d'exportation du nord de Fangh. Récolte : forêt et montagne",
+    "nom": "Champignon des cavernes de Trozaarb",
+    "monnaie": "PO",
+    "effet": "Champignon de choix, Donne un bonus de +1 aux épreuves de Cuisine",
+    "id": "212",
+    "poids": "50",
+    "prix": "18"
+  },
+  {
+    "poids": "50",
+    "prix": "18",
+    "recolte": "Produit d'exportation des Drows. Récolte : forêt et montagne",
+    "id": "213",
+    "monnaie": "PO",
+    "effet": "Donne nyctalopie totale au plat",
+    "nom": "Champignon de Zuruk"
+  },
+  {
+    "poids": "1000",
+    "prix": "5",
+    "nom": "Houblon",
+    "recolte": "Produit d'exportation des villages. Récolte : culture",
+    "effet": "Pour le brassage de bière",
+    "monnaie": "PA",
+    "id": "214"
+  },
+  {
+    "id": "215",
+    "recolte": "Produit d'exportation des Hobbits. Récolte : non",
+    "effet": "Donne Bonus+1 aux épreuves de cuisine",
+    "nom": "Huile de klipish",
+    "poids": "1000",
+    "prix": "3",
+    "monnaie": "PO"
+  },
+  {
+    "nom": "Huile de boulorne",
+    "monnaie": "PO",
+    "effet": "Donne Bonus+1 aux épreuves de cuisine et alchimie",
+    "poids": "1000",
+    "prix": "70",
+    "recolte": "Produit d'exportation des grande forêts. Récolte : forêts",
+    "id": "216"
+  },
+  {
+    "prix": "1",
+    "recolte": "Produit d'exportation des villages. Récolte : brassage et distillation",
+    "monnaie": "PO",
+    "effet": "Peut servir de nettoyant naturel",
+    "id": "217",
+    "nom": "Vinaigre",
+    "poids": "1000"
+  },
+  {
+    "recolte": "Produit d'exportation des skaven. Récolte : minage",
+    "id": "218",
+    "monnaie": "PO",
+    "nom": "Malepierre brut",
+    "effet": "A peine sortie de la roche, elle irradie d'une lueur verte maléfique +30% de corruption au contact",
+    "prix": "20",
+    "poids": "1000"
+  },
+  {
+    "nom": "Poudre de Malepierre",
+    "recolte": "Produit d'exportation des skaven. Récolte : minage",
+    "monnaie": "PO",
+    "effet": "Remplace tout ingrédient et double sa durée, Donne +15% de corruption au contact et +5% dans les recettes",
+    "poids": "50",
+    "prix": "15",
+    "id": "219"
+  },
+  {
+    "id": "220",
+    "nom": "Malepierre raffinée",
+    "monnaie": "PO",
+    "poids": "1000",
+    "effet": "Utilisée par les vampires, Elle double la puissance ou la durée de toutes les potions, +40% de corruption au contact",
+    "prix": "60",
+    "recolte": "Produit d'exportation des vampires. Récolte : non"
+  },
+  {
+    "monnaie": "PO",
+    "poids": "1000",
+    "id": "221",
+    "effet": "Elle perce la réalité elle-même. Elle double la quantité produite dans les recettes, et mélangée à de l'eau elle remplace tous les ingrédients et la mana nécessaires à la création de potions +80% de corruption au contact",
+    "prix": "2000",
+    "recolte": "Produit d'exportation du chaos. Récolte : non",
+    "nom": "Malepierre pure"
+  },
+  {
+    "recolte": "Produit d'exportation d'Efaizh, Nugh et Sk'ka. Récolte : non",
+    "effet": "Rendue moins nocive par divers traitements magiques lourd elle reste utile. Elle remplace Tout ingrédient d'une recette et la quantité de mana lors de la création de potion +2% de corruption au contact",
+    "id": "222",
+    "nom": "Malepierre traitée",
+    "monnaie": "PO",
+    "poids": "1000",
+    "prix": "200"
+  },
+  {
+    "recolte": "Produit d'exportation des Elfes. Récolte : non",
+    "effet": "Permet de se pendre",
+    "nom": "Corde elfique (1m)",
+    "id": "223",
+    "poids": "20",
+    "prix": "10",
+    "monnaie": "PO"
+  },
+  {
+    "nom": "Décoction médicale",
+    "prix": "15",
+    "effet": "Si ajouté à une recette : rend 2pv",
+    "recolte": "Produit d'exportation de Nugh et Birmilistan. Récolte : non",
+    "id": "224",
+    "poids": "50",
+    "monnaie": "PO"
+  },
+  {
+    "id": "225",
+    "nom": "Poudre noire des sorciers-alchimistes Tatanoki",
+    "recolte": "Produit d'exportation de Nugh. Récolte : non",
+    "effet": "La plus puissante et la plus stable sur le marché. Bonus+1 au épreuves de fabrication",
+    "poids": "50",
+    "prix": "400",
+    "monnaie": "PO"
+  },
+  {
+    "monnaie": "PO",
+    "effet": "Donne Bonus+2 aux épreuves de bricolages et à tous les travaux",
+    "prix": "20",
+    "poids": "1000",
+    "recolte": "Produits d'exportation des villes. Récolte : non",
+    "nom": "Outils divers",
+    "id": "226"
+  },
+  {
+    "id": "227",
+    "recolte": "Produit d'exportation des Elfes. Récolte : non",
+    "monnaie": "PO",
+    "nom": "Soie elfique",
+    "effet": "Soie pure produite par des vers à soie et des enchantements elfiques",
+    "poids": "100",
+    "prix": "50"
+  },
+  {
+    "poids": "100",
+    "monnaie": "PO",
+    "nom": "Soie infernale",
+    "id": "228",
+    "effet": "Soie produite aux enfers par une combinaison de fil de soie et de fils de destin tranchés par les moires",
+    "recolte": "Produit d'exportation des Enfers. Récolte : non",
+    "prix": "100"
+  },
+  {
+    "id": "229",
+    "nom": "Tissus changeur de forme",
+    "prix": "200",
+    "poids": "100",
+    "recolte": "Produit d'exportation des Drows, Changelins et Tengu. Récolte : non",
+    "monnaie": "PO",
+    "effet": "Tissus enchanté produit à l'aide de puissants enchantements et pouvant adopter diverses formes et couleurs"
+  },
+  {
+    "effet": "Alliage formé par des sorciers forgerons pour faciliter la pose d'enchantements",
+    "id": "230",
+    "monnaie": "PO",
+    "nom": "Acier enchanté",
+    "prix": "200",
+    "poids": "1000",
+    "recolte": "Produit d'exportation des Elfes et Tengu. Récolte : non"
+  },
+  {
+    "poids": "1500",
+    "recolte": "Produit d'exportation du chaos. Récolte : non",
+    "id": "231",
+    "prix": "300",
+    "monnaie": "PO",
+    "effet": "Alliage formé dans les enfers à l'aide sortilèges et de reste d'armures de héros tombés au combat",
+    "nom": "Acier infernal"
+  },
+  {
+    "recolte": "Produit d'exportation du chaos. Récolte : non",
+    "monnaie": "PO",
+    "id": "232",
+    "nom": "Acier de la cité infernale de Dité",
+    "poids": "1000",
+    "prix": "500",
+    "effet": "Alliage réputé formé dans les enfers par de puissants démons"
+  },
+  {
+    "id": "233",
+    "poids": "200",
+    "monnaie": "PO",
+    "prix": "1000",
+    "recolte": "Produit d'exportation d'Efaizh. Récolte : non",
+    "effet": "Si ajouté à la recette d'une potion : réduit de 30PA le coût en mana des potions en préparation",
+    "nom": "Parchemin de puissance magique"
+  },
+  {
+    "recolte": "Produit d'exportation des forêts. Récolte : chasse (plusieurs petits gibier et+)",
+    "effet": "Vaut 50% de plus si tannée",
+    "poids": "500",
+    "prix": "15",
+    "nom": "Peau de coyote commun",
+    "id": "234",
+    "monnaie": "PO"
+  },
+  {
+    "prix": "15",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des forêts. Récolte : chasse (Petit gibier et+)",
+    "effet": "Vaut 50% de plus si tannée",
+    "id": "235",
+    "nom": "Peau d'écureuil empoisonneur",
+    "poids": "500"
+  },
+  {
+    "prix": "20",
+    "effet": "Vaut 50% de plus si tannée",
+    "id": "236",
+    "monnaie": "PO",
+    "poids": "500",
+    "recolte": "Produit d'exportation des forêts. Récolte : chasse",
+    "nom": "Peau de loup gris"
+  },
+  {
+    "nom": "Peau de taïpan sauteur",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation de Nugh et des jungles. Récolte : chasse (gibier commun et+)",
+    "id": "237",
+    "poids": "500",
+    "prix": "30",
+    "effet": "Vaut 50% de plus si tannée"
+  },
+  {
+    "id": "238",
+    "monnaie": "PO",
+    "nom": "Carapace de mille-pattes monstrueux",
+    "effet": "Vaut 50% de plus si tannée",
+    "prix": "45",
+    "recolte": "Produit d'exportation des jungles. Récolte : chasse (Gros gibier et +)",
+    "poids": "500"
+  },
+  {
+    "effet": "Donne 8 x (143) Cuir épais de qualité si tannée",
+    "nom": "Peau d'aurochs",
+    "id": "239",
+    "poids": "2000",
+    "prix": "60",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des villages. Récolte : élevage ou combat"
+  },
+  {
+    "effet": "Vaut 50% de plus si tannée",
+    "id": "240",
+    "prix": "80",
+    "monnaie": "PO",
+    "nom": "Peau de python mordeur",
+    "poids": "500",
+    "recolte": "Produit d'exportation des jungles. Récolte : chasse (Gros gibier et +)"
+  },
+  {
+    "poids": "500",
+    "prix": "90",
+    "recolte": "Produit d'exportation des jungles. Récolte : chasse (Loups et +)",
+    "id": "241",
+    "monnaie": "PO",
+    "nom": "Peau de serpent constricteur",
+    "effet": "Vaut 50% de plus si tannée"
+  },
+  {
+    "poids": "500",
+    "id": "242",
+    "effet": "Vaut 50% de plus si tannée",
+    "prix": "100",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des jungles. Récolte : chasse",
+    "nom": "Peau de panthère de la jungle"
+  },
+  {
+    "prix": "120",
+    "recolte": "Produit d'exportation des jungles. Récolte : chasse (Ours et+)",
+    "monnaie": "PO",
+    "id": "243",
+    "nom": "Peau de globzoule argenté",
+    "effet": "Vaut 50% de plus si tannée",
+    "poids": "500"
+  },
+  {
+    "monnaie": "PO",
+    "prix": "200",
+    "effet": "Vaut 50% de plus si tannée",
+    "recolte": "Produit d'exportation des jungles. Récolte : chasse",
+    "poids": "500",
+    "id": "244",
+    "nom": "Peau de crocodile"
+  },
+  {
+    "prix": "180",
+    "id": "245",
+    "recolte": "Produit d'exportation des jungles. Récolte : chasse",
+    "effet": "Vaut 50% de plus si tannée",
+    "poids": "500",
+    "nom": "Peau d'ours d'Ammouka",
+    "monnaie": "PO"
+  },
+  {
+    "recolte": "Produit d'exportation des jungles. Récolte : chasse (Animal géant) ou combat",
+    "poids": "3000",
+    "id": "246",
+    "effet": "Donne 15 x (146) Cuir exotique si tanné",
+    "prix": "400",
+    "monnaie": "PO",
+    "nom": "Morceau de cuir d'ouklaf géant"
+  },
+  {
+    "nom": "Morceau de cuir de broutozuk",
+    "prix": "800",
+    "recolte": "Produit d'exportation des jungles. Récolte : chasse",
+    "poids": "5000",
+    "id": "247",
+    "effet": "Donne 25 x (146) Cuir exotique si tanné",
+    "monnaie": "PO"
+  },
+  {
+    "id": "248",
+    "effet": "Vaut 50% de plus si tannée",
+    "monnaie": "PO",
+    "nom": "Peau de tigre d'Ammouka",
+    "prix": "200",
+    "recolte": "Produit d'exportation des jungles. Récolte : chasse",
+    "poids": "500"
+  },
+  {
+    "nom": "Morceau de cuir de gnugnukol",
+    "effet": "Donne 20 x (146) Cuir exotique si tanné",
+    "id": "249",
+    "recolte": "Produit d'exportation des jungles. Récolte : chasse (Animal géant) ou combat",
+    "monnaie": "PO",
+    "poids": "3000",
+    "prix": "1200"
+  },
+  {
+    "effet": "Vaut 50% de plus si tannée",
+    "nom": "Carapace de crabe géant",
+    "id": "250",
+    "poids": "500",
+    "prix": "80",
+    "recolte": "Produit d'exportation des régions côtières. Récolte : pêche",
+    "monnaie": "PO"
+  },
+  {
+    "id": "251",
+    "poids": "500",
+    "nom": "Peau de cerf mâle",
+    "prix": "40",
+    "recolte": "Produit d'exportation des forêts. Récolte : chasse",
+    "monnaie": "PO",
+    "effet": "Donne 6 x (145) Cuir souple de qualité si tannée"
+  },
+  {
+    "recolte": "Produit d'exportation des forêts. Récolte : chasse",
+    "monnaie": "PO",
+    "id": "252",
+    "effet": "Donne 5 x (145) Cuir souple de qualité si tannée",
+    "prix": "20",
+    "poids": "500",
+    "nom": "Peau de biche"
+  },
+  {
+    "nom": "Peau de sanglier",
+    "prix": "30",
+    "monnaie": "PO",
+    "effet": "Donne 5 x (143) Cuir épais de qualité si tannée",
+    "recolte": "Produit d'exportation des forêts. Récolte : chasse",
+    "poids": "500",
+    "id": "253"
+  },
+  {
+    "poids": "500",
+    "prix": "150",
+    "recolte": "Pas d'export. Récolte : combat",
+    "id": "254",
+    "monnaie": "PO",
+    "nom": "Peau d'homme-lézard",
+    "effet": "Donne 5 x (146) Cuir exotique si tannée"
+  },
+  {
+    "id": "255",
+    "prix": "200",
+    "recolte": "Pas d'export. Récolte : combat",
+    "effet": "Donne 6 x (146) Cuir exotique si tannée",
+    "monnaie": "PO",
+    "nom": "Peau d'homme-amphibien",
+    "poids": "500"
+  },
+  {
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "id": "256",
+    "nom": "Aile de chauve-souris géante",
+    "monnaie": "PO",
+    "poids": "10",
+    "prix": "25",
+    "recolte": "Produit d'exportation des jungles et régions vampires. Récolte : chasse (gros gibier et+)"
+  },
+  {
+    "nom": "Coccinelle berserk séchée",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "poids": "50",
+    "recolte": "Produit d'exportation des jungles. Récolte : jungle",
+    "id": "257",
+    "prix": "5",
+    "monnaie": "PO"
+  },
+  {
+    "poids": "1000",
+    "recolte": "Produit d'exportation des villages. Récolte : élevage ou combat",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "id": "258",
+    "prix": "10",
+    "monnaie": "PO",
+    "nom": "Corne d'aurochs"
+  },
+  {
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "id": "259",
+    "monnaie": "PO",
+    "nom": "Crâne d'ouklaf géant",
+    "poids": "10000",
+    "prix": "1000",
+    "recolte": "Produit d'exportation des jungles, Récolte : combat"
+  },
+  {
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des jungles, Récolte : chasse ou combat",
+    "id": "260",
+    "poids": "4000",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "nom": "Crâne d'ours d'Ammouka",
+    "prix": "150"
+  },
+  {
+    "id": "261",
+    "poids": "2000",
+    "prix": "6",
+    "recolte": "Produit d'exportation des jungles, Récolte : combat",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "nom": "Crâne de bablouni des fruitiers",
+    "monnaie": "PO"
+  },
+  {
+    "prix": "12",
+    "nom": "Crâne de botoka",
+    "poids": "2000",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des jungles, Récolte : combat",
+    "id": "262",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration"
+  },
+  {
+    "id": "263",
+    "monnaie": "PO",
+    "nom": "Crâne de broutozuk",
+    "recolte": "Produit d'exportation des jungles. Récolte : chasse (Animal géant) ou combat",
+    "prix": "1000",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "poids": "25000"
+  },
+  {
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des jungles, Récolte : combat",
+    "id": "264",
+    "poids": "15000",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "nom": "Crâne de gnugnukol",
+    "prix": "5000"
+  },
+  {
+    "nom": "Crâne de tigre d'Ammouka",
+    "poids": "3000",
+    "recolte": "Produit d'exportation des jungles, Récolte : chasse ou combat",
+    "monnaie": "PO",
+    "prix": "300",
+    "id": "265",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration"
+  },
+  {
+    "poids": "2000",
+    "id": "266",
+    "monnaie": "PO",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "nom": "Crâne et bec de goélosaure",
+    "prix": "110",
+    "recolte": "Produit d'exportation des jungles, Récolte : combat"
+  },
+  {
+    "id": "267",
+    "prix": "30",
+    "nom": "Croc de tarentule des cavernes",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "recolte": "Produit d'exportation des jungles, Récolte : combat",
+    "monnaie": "PO",
+    "poids": "1000"
+  },
+  {
+    "poids": "1000",
+    "id": "268",
+    "nom": "Dent d'ouklaf géant",
+    "monnaie": "PO",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "prix": "100",
+    "recolte": "Produit d'exportation des jungles. Récolte : chasse (Animal géant) ou combat"
+  },
+  {
+    "nom": "Dent d'ours d'Ammouka",
+    "poids": "500",
+    "monnaie": "PO",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "id": "269",
+    "prix": "50",
+    "recolte": "Produit d'exportation des jungles, Récolte : chasse ou combat (1D10 dents)"
+  },
+  {
+    "poids": "1000",
+    "prix": "500",
+    "recolte": "Produit d'exportation des jungles, Récolte : combat (1D10 dents)",
+    "id": "270",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "monnaie": "PO",
+    "nom": "Dent de gnugnukol"
+  },
+  {
+    "prix": "30",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des jungles, Récolte : chasse ou combat (1D10 dents)",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "id": "271",
+    "nom": "Dent de tigre d'Ammouka",
+    "poids": "300"
+  },
+  {
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "recolte": "Produit d'exportation des jungles, Récolte : combat (1D10 griffes)",
+    "nom": "Griffe d'araignée tranchante",
+    "monnaie": "PO",
+    "id": "272",
+    "poids": "200",
+    "prix": "10"
+  },
+  {
+    "poids": "100",
+    "monnaie": "PO",
+    "prix": "80",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "nom": "Griffe d'ouklaf géant",
+    "recolte": "Produit d'exportation des jungles, Récolte : chasse (animal géant) ou combat (1D4 griffes)",
+    "id": "273"
+  },
+  {
+    "id": "274",
+    "monnaie": "PO",
+    "nom": "Griffe d'ours d'Ammouka",
+    "poids": "1000",
+    "prix": "40",
+    "recolte": "Produit d'exportation des jungles, Récolte : chasse ou combat (1D10 griffes)",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration"
+  },
+  {
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "id": "275",
+    "monnaie": "PO",
+    "nom": "Griffe de gnugnukol",
+    "poids": "2000",
+    "prix": "600",
+    "recolte": "Produit d'exportation des jungles, Récolte : combat (1D8 griffes)"
+  },
+  {
+    "id": "276",
+    "prix": "50",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des jungles, Récolte : chasse ou combat (1D10 griffes)",
+    "nom": "Griffe de tigre d'Ammouka",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "poids": "500"
+  },
+  {
+    "id": "277",
+    "prix": "30",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "monnaie": "PO",
+    "nom": "Mandibule de mille-pattes monstrueux",
+    "poids": "500",
+    "recolte": "Produit d'exportation des jungles, Récolte : combat"
+  },
+  {
+    "id": "278",
+    "nom": "Mandibule de scolopendre varzol",
+    "monnaie": "PO",
+    "prix": "30",
+    "poids": "500",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "recolte": "Produit d'exportation des jungles, Récolte : combat"
+  },
+  {
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration",
+    "id": "279",
+    "nom": "Plume de croupion de goélosaure",
+    "monnaie": "PO",
+    "poids": "500",
+    "prix": "25",
+    "recolte": "Produit d'exportation des jungles, Récolte : combat"
+  },
+  {
+    "nom": "Scorpion séché",
+    "prix": "8",
+    "id": "280",
+    "poids": "50",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des jungles. Récolte : jungle",
+    "effet": "Produit d'exportation des jungles, se vend principalement sur les marchés noirs pour ses vertus pseudo-aphrodisiaques ou comme décoration"
+  },
+  {
+    "prix": "1",
+    "poids": "50",
+    "monnaie": "PO",
+    "effet": "Ingredient Chamanique",
+    "nom": "Feuille de maka",
+    "id": "281",
+    "recolte": "Produit d'exportation des jungles. Récolte : jungle"
+  },
+  {
+    "effet": "Ingredient Chamanique",
+    "prix": "1",
+    "recolte": "Produit d'exportation des jungles. Récolte : jungle",
+    "id": "282",
+    "monnaie": "PO",
+    "nom": "Fleur d'ukala",
+    "poids": "50"
+  },
+  {
+    "poids": "250",
+    "prix": "1",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation des jungles. Récolte : jungle",
+    "effet": "Ingredient Chamanique",
+    "id": "283",
+    "nom": "Sève de golozier"
+  },
+  {
+    "prix": "4",
+    "recolte": "Produit d'exportation des jungles. Récolte : jungle",
+    "id": "284",
+    "monnaie": "PO",
+    "effet": "Ingredient Chamanique",
+    "nom": "Racine de viwolo",
+    "poids": "200"
+  },
+  {
+    "recolte": "Produit d'exportation des jungles. Récolte : jungle",
+    "monnaie": "PO",
+    "nom": "Brin de jukko (algue des marais)",
+    "prix": "4",
+    "id": "285",
+    "effet": "Ingredient Chamanique",
+    "poids": "200"
+  },
+  {
+    "prix": "4",
+    "nom": "Baies vankago",
+    "recolte": "Produit d'exportation des jungles. Récolte : jungle",
+    "effet": "Ingredient Chamanique",
+    "id": "286",
+    "monnaie": "PO",
+    "poids": "250"
+  },
+  {
+    "poids": "250",
+    "recolte": "Produit d'exportation des jungles. Récolte : jungle",
+    "nom": "Fève de malu",
+    "id": "287",
+    "prix": "4",
+    "effet": "Ingredient Chamanique",
+    "monnaie": "PO"
+  },
+  {
+    "prix": "1",
+    "recolte": "Produit d'exportation des jungles. Récolte : jungle",
+    "poids": "250",
+    "effet": "Ingredient Chamanique",
+    "id": "288",
+    "monnaie": "PO",
+    "nom": "Liane samboko (le mètre)"
+  },
+  {
+    "nom": "Fleur de n'galo",
+    "recolte": "Produit d'exportation des jungles. Récolte : jungle",
+    "monnaie": "PO",
+    "poids": "50",
+    "prix": "4",
+    "id": "289",
+    "effet": "Ingredient Chamanique"
+  },
+  {
+    "monnaie": "PO",
+    "poids": "500",
+    "id": "290",
+    "recolte": "Produit d'exportation des jungles. Récolte : jungle",
+    "prix": "1",
+    "nom": "Branche de golozier",
+    "effet": "Ingredient Chamanique"
+  },
+  {
+    "effet": "Ingredient Chamanique",
+    "nom": "Chenille kuraka",
+    "monnaie": "PO",
+    "prix": "1",
+    "poids": "50",
+    "id": "291",
+    "recolte": "Produit d'exportation des jungles. Récolte : jungle"
+  },
+  {
+    "poids": "50",
+    "prix": "10",
+    "recolte": "Produit d'exportation des jungles. Récolte : jungle",
+    "monnaie": "PO",
+    "nom": "Frelon rouge zig-zig (par 15)",
+    "effet": "Ingredient Chamanique",
+    "id": "292"
+  },
+  {
+    "nom": "Huile de fève de malu",
+    "poids": "250",
+    "prix": "2",
+    "effet": "Ingredient Chamanique",
+    "recolte": "Produit d'exportation des jungles. Récolte : jungle",
+    "monnaie": "PO",
+    "id": "293"
+  },
+  {
+    "effet": "Ingredient Chamanique",
+    "prix": "2",
+    "poids": "50",
+    "recolte": "Produit d'exportation des jungles. Récolte : jungle",
+    "id": "294",
+    "monnaie": "PO",
+    "nom": "Piment zouluk"
+  },
+  {
+    "prix": "30",
+    "monnaie": "PO",
+    "poids": "1000",
+    "effet": "Produit de contrebande des jungles s'échange principalement auprès des comptoirs pirates sur les côtes et des marchés noirs",
+    "nom": "Cuir d'homme-lézard",
+    "recolte": "Pas d'export, Récolte : combat",
+    "id": "295"
+  },
+  {
+    "id": "296",
+    "poids": "500",
+    "monnaie": "PO",
+    "prix": "40",
+    "effet": "Produit de contrebande des jungles s'échange principalement auprès des comptoirs pirates sur les côtes et des marchés noirs",
+    "nom": "Cuir d'homme-amphibien",
+    "recolte": "Pas d'export, Récolte : combat"
+  },
+  {
+    "monnaie": "PO",
+    "id": "297",
+    "effet": "Produit de contrebande des jungles s'échange principalement auprès des comptoirs pirates sur les côtes et des marchés noirs",
+    "nom": "Crâne d'homme-lézard",
+    "prix": "100",
+    "recolte": "Pas d'export, Récolte : combat",
+    "poids": "1000"
+  },
+  {
+    "poids": "1000",
+    "prix": "500",
+    "nom": "Crâne de chef homme-lézard",
+    "recolte": "Pas d'export, Récolte : combat",
+    "monnaie": "PO",
+    "effet": "Produit de contrebande des jungles s'échange principalement auprès des comptoirs pirates sur les côtes et des marchés noirs",
+    "id": "298"
+  },
+  {
+    "monnaie": "PO",
+    "nom": "Crâne d'homme-amphibien",
+    "recolte": "Pas d'export, Récolte : combat",
+    "effet": "Produit de contrebande des jungles s'échange principalement auprès des comptoirs pirates sur les côtes et des marchés noirs",
+    "prix": "120",
+    "id": "299",
+    "poids": "500"
+  },
+  {
+    "monnaie": "PO",
+    "id": "300",
+    "recolte": "Pas d'export, Récolte : combat",
+    "effet": "Produit de contrebande des jungles s'échange principalement auprès des comptoirs pirates sur les côtes et des marchés noirs",
+    "nom": "Crâne de femelle homme-lézard",
+    "poids": "1000",
+    "prix": "300"
+  },
+  {
+    "recolte": "Pas d'export, Récolte : non",
+    "monnaie": "PO",
+    "effet": "Produit de contrebande des jungles s'échange principalement auprès des comptoirs pirates sur les côtes et des marchés noirs",
+    "id": "301",
+    "nom": "Relique en or et jade des Atlakans",
+    "prix": "1000",
+    "poids": "5000"
+  },
+  {
+    "id": "302",
+    "effet": "Produit de contrebande des jungles s'échange principalement auprès des comptoirs pirates sur les côtes et des marchés noirs",
+    "monnaie": "PO",
+    "nom": "Épice aphrodisiaque Ssta'tagh",
+    "poids": "50",
+    "prix": "90",
+    "recolte": "Produit d'exportation des jungles. Récolte : non"
+  },
+  {
+    "poids": "100",
+    "prix": "4",
+    "monnaie": "PO",
+    "nom": "Feuilles de Thé",
+    "recolte": "Produit d'exportation du Birmilistan. Récolte : culture",
+    "effet": "Permet de faire 5 rations de thé",
+    "id": "303"
+  },
+  {
+    "nom": "Feuilles de Thé de gueule",
+    "effet": "Permet de faire 5 rations de thé rouge de l'est",
+    "prix": "12",
+    "id": "304",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation d'Esturlie. Récolte : culture",
+    "poids": "100"
+  },
+  {
+    "effet": "Permet de faire 5 rations de thé vert de Nugh",
+    "poids": "100",
+    "recolte": "Produit d'exportation de Nugh. Récolte : culture",
+    "id": "305",
+    "nom": "Feuilles de Thé sinople",
+    "prix": "10",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "Permet de faire 5 rations de thé bleu impérial",
+    "poids": "100",
+    "id": "306",
+    "monnaie": "PO",
+    "prix": "14",
+    "nom": "Feuilles de Thé azur",
+    "recolte": "Produit d'exportation de Nugh. Récolte : culture"
+  },
+  {
+    "nom": "Feuilles de Thé de sable",
+    "prix": "8",
+    "poids": "100",
+    "effet": "Permet de faire 5 rations de thé noir des dunes",
+    "id": "307",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation du Birmilistan. Récolte : culture"
+  },
+  {
+    "poids": "100",
+    "effet": "Permet de faire 5 rations de thé blanc du Xijiang",
+    "prix": "12",
+    "nom": "Feuilles de Thé d'argent",
+    "monnaie": "PO",
+    "id": "308",
+    "recolte": "Produit d'exportation de Nugh. Récolte : culture"
+  },
+  {
+    "nom": "Feuilles de Thé pourpre",
+    "effet": "Permet de faire 5 rations de thé violet des songes",
+    "id": "309",
+    "monnaie": "PO",
+    "prix": "16",
+    "recolte": "Produit d'exportation de Nugh. Récolte : culture",
+    "poids": "100"
+  },
+  {
+    "prix": "14",
+    "recolte": "Produit d'exportation de Nugh. Récolte : culture",
+    "id": "310",
+    "monnaie": "PO",
+    "effet": "Permet de faire 5 rations de thé jaune de Nugh",
+    "poids": "100",
+    "nom": "Feuilles de Thé d'or"
+  },
+  {
+    "nom": "Grains de café",
+    "id": "311",
+    "monnaie": "PO",
+    "prix": "5",
+    "effet": "Permet de faire 5 rations de café",
+    "poids": "100",
+    "recolte": "Produit d'exportationdu Birmilistan. Récolte : culture"
+  },
+  {
+    "poids": "100",
+    "effet": "Permet de faire 5 rations de café noir Kratos",
+    "nom": "Grains de café Kratos",
+    "recolte": "Produit d'exportation de Syldérie. Récolte : culture",
+    "prix": "12",
+    "monnaie": "PO",
+    "id": "312"
+  },
+  {
+    "id": "313",
+    "monnaie": "PO",
+    "nom": "Grains de café Minerva",
+    "poids": "100",
+    "recolte": "Produit d'exportation du Birmilistan. Récolte : culture",
+    "effet": "Permet de faire 5 rations de café de l'étudiant",
+    "prix": "16"
+  },
+  {
+    "prix": "24",
+    "recolte": "Produit d'exportation d'Efaizh. Récolte : culture",
+    "id": "314",
+    "effet": "Permet de faire 5 rations de café ésotérique d'Efaizh",
+    "monnaie": "PO",
+    "poids": "100",
+    "nom": "Grains de café Métis"
+  },
+  {
+    "effet": "Element essentiel dans la création de pain, de bière et de bière au pain",
+    "poids": "50",
+    "id": "315",
+    "monnaie": "PO",
+    "prix": "1",
+    "nom": "Levures",
+    "recolte": "Produit d'exportation des villages et forêts. Récolte : forêts et campagne"
+  },
+  {
+    "nom": "Agave Efaizhienne",
+    "effet": "Plante étrange venue d'Efaizh servant à la fabrication de Tequila",
+    "prix": "5",
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation d'Efaizh. Récolte : culture",
+    "id": "316",
+    "poids": "200"
+  },
+  {
+    "monnaie": "PO",
+    "recolte": "Produit d'exportation d'Efaizh. Récolte : culture",
+    "nom": "Cacao",
+    "effet": "Permet de faire 5 rations de Chocolat chaud",
+    "prix": "10",
+    "id": "317",
+    "poids": "100"
+  }
+]

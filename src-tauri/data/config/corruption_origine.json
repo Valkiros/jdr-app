@@ -1,0 +1,222 @@
+[
+    {
+        "Masculin": "Humain",
+        "Féminin": "Humaine",
+        "Effets": "Aucun effet"
+    },
+    {
+        "Masculin": "Demi-Elfe (H)",
+        "Féminin": "Demie-Elfe (H)",
+        "Effets": "Aucun effet"
+    },
+    {
+        "Masculin": "Demi-Elfe (E)",
+        "Féminin": "Demie-Elfe (E)",
+        "Effets": "Aucun effet"
+    },
+    {
+        "Masculin": "Gobelin",
+        "Féminin": "Gobeline",
+        "Effets": "Aucun effet"
+    },
+    {
+        "Masculin": "Gnôme",
+        "Féminin": "Gnôme",
+        "Effets": "Aucun effet"
+    },
+    {
+        "Masculin": "Murloc",
+        "Féminin": "Murloc",
+        "Effets": "Aucun effet"
+    },
+    {
+        "Masculin": "Nain",
+        "Féminin": "Naine",
+        "Effets": "Si l'augmentation de PC > 1%, sur 1 au D4, la divise par 2 | Corruption passive: que toutes les 2h"
+    },
+    {
+        "Masculin": "Nain de la Mafia",
+        "Féminin": "Naine de la Mafia",
+        "Effets": "Si l'augmentation de PC > 1%, sur 1 au D4, la divise par 2 | Corruption passive: que toutes les 2h"
+    },
+    {
+        "Masculin": "Elfe Sylvain",
+        "Féminin": "Elfe Sylvain",
+        "Effets": "Dormir en forêt fait perdre 1 PC par heure"
+    },
+    {
+        "Masculin": "Haut Elfe",
+        "Féminin": "Haute Elfe",
+        "Effets": "Ne tient pas compte de la baisse de RM du à la corruption | Si PC > 50%, EC sur 19-20"
+    },
+    {
+        "Masculin": "Elfe Noir",
+        "Féminin": "Elfe Noir",
+        "Effets": "Tous les 20% de PC, PI +1 | Si PC > 50%, pas affecté par la perte de CHA | Prise de corruption +1% (cumulable)"
+    },
+    {
+        "Masculin": "Hobbit",
+        "Féminin": "Hobbit",
+        "Effets": "A chaque perte de PC, pert 1% en plus."
+    },
+    {
+        "Masculin": "Amazone Syldérienne",
+        "Féminin": "Amazone Syldérienne",
+        "Effets": "Pert 2% de PC par ennemi tué | FO+1 tous les 25% de PC"
+    },
+    {
+        "Masculin": "Barbare",
+        "Féminin": "Barbare",
+        "Effets": "Pert 2% de PC par ennemi tué | FO+1 tous les 25% de PC"
+    },
+    {
+        "Masculin": "Ogre",
+        "Féminin": "Ogresse",
+        "Effets": "Pert 1D4% de PC par repas"
+    },
+    {
+        "Masculin": "Orque",
+        "Féminin": "Orque",
+        "Effets": "Pert 1D4% de PC par ennemi tué | PI+2 par 25% PC | COU+1 par 10% de PC au dessus de 50% | Si PC  > 25%, ne peut baisser la PC qu'en tuant"
+    },
+    {
+        "Masculin": "Demi-Orque (H)",
+        "Féminin": "Demie-Orque (H)",
+        "Effets": "Si PC > 50%, prise de PC +1% (cumulable)"
+    },
+    {
+        "Masculin": "Demi-Orque (O)",
+        "Féminin": "Demie-Orque (O)",
+        "Effets": "Si PC > 50%, prise de PC +1% (cumulable)"
+    },
+    {
+        "Masculin": "Troll",
+        "Féminin": "Troll",
+        "Effets": "Perte de PC uniquement avec influance ou pacte | Tous les 20% de corruption, sur 1 au D4, enlève TOUTE la PC"
+    },
+    {
+        "Masculin": "Vampire",
+        "Féminin": "Vampire",
+        "Effets": "Pert 1D10% de PC par sommeil profond | Pert 1D6% de PC par victime exsangue | Boire du sang corruption donne 1D6% de PC"
+    },
+    {
+        "Masculin": "Skaven",
+        "Féminin": "Skaven",
+        "Effets": "Immunisé à la corruption | Si touche à main nue une source de corruption (sauf malpierre), sur 1/6/7/8/9/13/99/100 au D100, EXPLOSE"
+    },
+    {
+        "Masculin": "Fée",
+        "Féminin": "Fée",
+        "Effets": "A chaque perte de PC, pert 1% en plus. | Tous les 20% de corruption, sur 1 au D4, enlève TOUTE la PC"
+    },
+    {
+        "Masculin": "Demi-Démon",
+        "Féminin": "Demie-Démone",
+        "Effets": "Si PC > 25%, prise de PC +1% (cumulable) | FO+1 tous les 25% de PC"
+    },
+    {
+        "Masculin": "Drac",
+        "Féminin": "Draque",
+        "Effets": "Pert 1D4% de PC par ennemi tué | Si l'augmentation de PC > 1%, sur 1 au D4, la divise par 2"
+    },
+    {
+        "Masculin": "Homme-bête (Caprin)",
+        "Féminin": "Femme-bête (Caprin)",
+        "Effets": "Si PC > 25%, prise de corruption +1% (cumulable) | Pert 1% de PC par ennemi tué"
+    },
+    {
+        "Masculin": "Homme-bête (Bovin/Porcin)",
+        "Féminin": "Femme-bête (Bovin/Porcin)",
+        "Effets": "Si PC > 25%, prise de corruption +1% (cumulable) | Pert 1% de PC par ennemi tué"
+    },
+    {
+        "Masculin": "Homme-bête (Canin)",
+        "Féminin": "Femme-bête (Canin)",
+        "Effets": "Si PC > 25%, prise de corruption +1% (cumulable) | Pert 1% de PC par ennemi tué"
+    },
+    {
+        "Masculin": "Kitsune",
+        "Féminin": "Kitsune",
+        "Effets": "INT+1 et PI+1 tous les 25% de PC"
+    },
+    {
+        "Masculin": "Harpie",
+        "Féminin": "Harpie",
+        "Effets": "AD+1 par 10% de PC au dessus de 50%"
+    },
+    {
+        "Masculin": "Profond",
+        "Féminin": "Profonde",
+        "Effets": "Tous les 20% de PC, PI +2 | Si PC > 50%, diminution qu'en tuant | Pert 1D4% de PC  par ennemi tué"
+    },
+    {
+        "Masculin": "Tengu",
+        "Féminin": "Tengu",
+        "Effets": "INT+1 par 10% de PC au dessus de 50% | Corruption passive: que toutes les 2h"
+    },
+    {
+        "Masculin": "Galeanthrope",
+        "Féminin": "Galeanthrope",
+        "Effets": "Pas d'effet"
+    },
+    {
+        "Masculin": "Wukong",
+        "Féminin": "Wukong",
+        "Effets": "Si PC > 50%, prise de corruption +1% (cumulable)"
+    },
+    {
+        "Masculin": "Naga",
+        "Féminin": "Naga",
+        "Effets": "A chaque prise de PC, PC +1% (cumulable)"
+    },
+    {
+        "Masculin": "Nelfe",
+        "Féminin": "Nelfe",
+        "Effets": "Si l'augmentation de PC > 1%, sur 1 au D4, la divise par 2  | Corruption passive: que toutes les 2h | Ne tient pas compte de la baisse de RM et de CHA du à la corruption | Tous les 20% de PC, PI +1"
+    },
+    {
+        "Masculin": "Changelin",
+        "Féminin": "Changeline",
+        "Effets": "Pert 1D4% de PC par repas | Ne tient pas compte de la baisse de RM et de CHA du à la corruption"
+    },
+    {
+        "Masculin": "Nain Duregar",
+        "Féminin": "Naine Duregar",
+        "Effets": "Si PC > 50%, prise de corruption +1% (cumulable) | Tous les 25% de PC, PI +1 |  Corruption passive: que toutes les 2h"
+    },
+    {
+        "Masculin": "Kobold",
+        "Féminin": "Kobold",
+        "Effets": "Pert 1D4% de PC par ennemi tué | Si l'augmentation de PC > 1%, sur 1 au D4, la divise par 2"
+    },
+    {
+        "Masculin": "Minotaure",
+        "Féminin": "Minotaure",
+        "Effets": "Tous les 15% de PC, PI +1 | Pert 1D4% de PC par ennemi tué | Si PC > 10%, ne peut baisser la PC qu'en tuant"
+    },
+    {
+        "Masculin": "Homme-Lézard",
+        "Féminin": "Femme-Lézard",
+        "Effets": "A chaque prise de PC, PC +1% (cumulable) | Pert 1D4% de PC par ennemi tué | Si l'augmentation de PC > 1%, sur 1 au D4, la divise par 2"
+    },
+    {
+        "Masculin": "Loup-garou",
+        "Féminin": "Loup-garou",
+        "Effets": "Tous les 20% de PC, PI +1 et FO+1"
+    },
+    {
+        "Masculin": "Incube",
+        "Féminin": "Succube",
+        "Effets": "Ne tient pas compte de la baisse de CHA du à la corruption | Tous les 20% de PC, CHA+1"
+    },
+    {
+        "Masculin": "Squelette sentient",
+        "Féminin": "Squelette sentient",
+        "Effets": "Immunisé à la corruption"
+    },
+    {
+        "Masculin": "Homme-légume",
+        "Féminin": "Femme-Légume",
+        "Effets": "SPECIAL A VOIR AVEC DRUNK"
+    }
+]

@@ -1,0 +1,52 @@
+    Checking tauri-app v0.1.0 (D:\Application JDR\src-tauri)
+warning: unused import: `params`
+ --> src\db.rs:1:16
+  |
+1 | use rusqlite::{params, Connection, Result};
+  |                ^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Mutex`
+ --> src\sync.rs:3:5
+  |
+3 | use std::sync::Mutex;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: unused import: `Transaction`
+ --> src\seeds.rs:1:36
+  |
+1 | use rusqlite::{params, Connection, Transaction};
+  |                                    ^^^^^^^^^^^
+
+warning: unused import: `std::sync::Mutex`
+ --> src\commands.rs:5:5
+  |
+5 | use std::sync::Mutex;
+  |     ^^^^^^^^^^^^^^^^
+
+error[E0308]: `?` operator has incompatible types
+  --> src\commands.rs:49:16
+   |
+33 |               .query_map(params![cat], |row| {
+   |                                        ----- the expected closure
+...
+49 |           rows = stmt
+   |  ________________^
+50 | |             .query_map([], |row| {
+51 | |                 Ok(RefEquipement {
+52 | |                     id: row.get(0)?,
+...  |
+60 | |             })
+61 | |             .map_err(|e| e.to_string())?;
+   | |________________________________________^ expected closure, found a different closure
+   |
+   = note: `?` operator cannot convert from `MappedRows<'_, {closure@src\commands.rs:50:28: 50:33}>` to `MappedRows<'_, {closure@src\commands.rs:33:38: 33:43}>`
+   = note: expected struct `MappedRows<'_, {closure@src\commands.rs:33:38: 33:43}>`
+              found struct `MappedRows<'_, {closure@src\commands.rs:50:28: 50:33}>`
+   = note: no two closures, even if identical, have the same type
+   = help: consider boxing your closure and/or using it as a trait object
+
+For more information about this error, try `rustc --explain E0308`.
+warning: `tauri-app` (lib) generated 4 warnings
+error: could not compile `tauri-app` (lib) due to 1 previous error; 4 warnings emitted

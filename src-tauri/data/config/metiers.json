@@ -1,0 +1,282 @@
+[
+	{
+		"ID": 1,
+		"Name_M": "Guerrier",
+		"Name_F": "Guerrière",
+		"Min": {"COU": 12, "INT": 8, "CHA": 8, "AD": 8, "FO": 11},
+		"Max": {}
+	},
+	{
+		"ID": 2,
+		"Name_M": "Gladiateur",
+		"Name_F": "Gladiateur",
+		"Min": {"COU": 12, "INT": 8, "CHA": 8, "AD": 8, "FO": 12},
+		"Max": {}
+	},
+	{
+		"ID": 3,
+		"Name_M": "Ninja",
+		"Name_F": "Ninja",
+		"Min": {"COU": 8, "INT": 8, "CHA": 8, "AD": 13, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 4,
+		"Name_M": "Assassin",
+		"Name_F": "Assassin",
+		"Min": {"COU": 8, "INT": 8, "CHA": 8, "AD": 12, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 5,
+		"Name_M": "Voleur",
+		"Name_F": "Voleuse",
+		"Min": {"COU": 8, "INT": 8, "CHA": 8, "AD": 11, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 6,
+		"Name_M": "Ranger",
+		"Name_F": "Ranger",
+		"Min": {"COU": 8, "INT": 8, "CHA": 10, "AD": 10, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 7,
+		"Name_M": "Ménestrel",
+		"Name_F": "Ménestrel",
+		"Min": {"COU": 8, "INT": 8, "CHA": 12, "AD": 11, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 8,
+		"Name_M": "Marchand",
+		"Name_F": "Marchande",
+		"Min": {"COU": 8, "INT": 12, "CHA": 11, "AD": 8, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 9,
+		"Name_M": "Négociant",
+		"Name_F": "Négociante",
+		"Min": {"COU": 8, "INT": 11, "CHA": 11, "AD": 8, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 10,
+		"Name_M": "Ingénieur",
+		"Name_F": "Ingénieur",
+		"Min": {"COU": 8, "INT": 8, "CHA": 8, "AD": 11, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 11,
+		"Name_M": "Pirate",
+		"Name_F": "Pirate",
+		"Min": {"COU": 11, "INT": 8, "CHA": 8, "AD": 11, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 12,
+		"Name_M": "Bourgeois",
+		"Name_F": "Bourgeoise",
+		"Min": {"COU": 8, "INT": 10, "CHA": 10, "AD": 8, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 13,
+		"Name_M": "Noble",
+		"Name_F": "Noble",
+		"Min": {"COU": 8, "INT": 10, "CHA": 11, "AD": 8, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 14,
+		"Name_M": "Chamane",
+		"Name_F": "Chamane",
+		"Min": {"COU": 8, "INT": 11, "CHA": 11, "AD": 11, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 15,
+		"Name_M": "Druide",
+		"Name_F": "Druide",
+		"Min": {"COU": 8, "INT": 8, "CHA": 8, "AD": 8, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 16,
+		"Name_M": "Cavalier",
+		"Name_F": "Cavalière",
+		"Min": {"COU": 11, "INT": 10, "CHA": 10, "AD": 8, "FO": 9},
+		"Max": {}
+	},
+	{
+		"ID": 17,
+		"Name_M": "Chevalier",
+		"Name_F": "Chevaleresse",
+		"Min": {"COU": 12, "INT": 10, "CHA": 11, "AD": 8, "FO": 9},
+		"Max": {}
+	},
+	{
+		"ID": 18,
+		"Name_M": "Bourreau",
+		"Name_F": "Bourreau",
+		"Min": {"COU": 8, "INT": 8, "CHA": 8, "AD": 8, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 19,
+		"Name_M": "Sbire",
+		"Name_F": "Sbire",
+		"Min": {"AD": 8, "FO": 8},
+		"Max": {"COU": 10, "INT": 11, "CHA": 11}
+	},
+	{
+		"ID": 20,
+		"Name_M": "Prêtre de Slanoush",
+		"Name_F": "Prêtresse de Slanoush",
+		"Min": {"COU": 8, "INT": 8, "CHA": 12, "AD": 8, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 21,
+		"Name_M": "Prêtre de Dlul",
+		"Name_F": "Prêtresse de Dlul",
+		"Min": {"COU": 8, "INT": 8, "CHA": 12, "AD": 8, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 22,
+		"Name_M": "Prêtre de Youclidh",
+		"Name_F": "Prêtresse de Youclidh",
+		"Min": {"COU": 8, "INT": 8, "CHA": 12, "AD": 8, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 23,
+		"Name_M": "Prêtre d'Adathie",
+		"Name_F": "Prêtresse d'Adathie",
+		"Min": {"COU": 8, "INT": 8, "CHA": 12, "AD": 8, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 24,
+		"Name_M": "Paladin de Dlul",
+		"Name_F": "Paladin de Dlul",
+		"Min": {"COU": 12, "INT": 10, "CHA": 11, "AD": 8, "FO": 9},
+		"Max": {}
+	},
+	{
+		"ID": 25,
+		"Name_M": "Paladin de Brave",
+		"Name_F": "Paladin de Brave",
+		"Min": {"COU": 12, "INT": 10, "CHA": 11, "AD": 8, "FO": 9},
+		"Max": {}
+	},
+	{
+		"ID": 26,
+		"Name_M": "Paladin de Slanoush",
+		"Name_F": "Paladin de Slanoush",
+		"Min": {"COU": 12, "INT": 10, "CHA": 11, "AD": 8, "FO": 9},
+		"Max": {}
+	},
+	{
+		"ID": 27,
+		"Name_M": "Paladin de Khornettoh",
+		"Name_F": "Paladin de Khornettoh",
+		"Min": {"COU": 12, "INT": 10, "CHA": 11, "AD": 8, "FO": 9},
+		"Max": {}
+	},
+	{
+		"ID": 28,
+		"Name_M": "Sorcier",
+		"Name_F": "Sorcière",
+		"Min": {"COU": 8, "INT": 12, "CHA": 8, "AD": 8, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 29,
+		"Name_M": "Mage",
+		"Name_F": "Mage",
+		"Min": {"COU": 8, "INT": 11, "CHA": 8, "AD": 8, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 30,
+		"Name_M": "Dompteur",
+		"Name_F": "Dompteuse",
+		"Min": {"COU": 8, "INT": 8, "CHA": 10, "AD": 10, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 31,
+		"Name_M": "Mage Pirate",
+		"Name_F": "Mage Pirate",
+		"Min": {"COU": 10, "INT": 11, "CHA": 8, "AD": 10, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 32,
+		"Name_M": "Soldat",
+		"Name_F": "Soldat",
+		"Min": {"COU": 10, "INT": 9, "CHA": 8, "AD": 10, "FO": 10},
+		"Max": {}
+	},
+	{
+		"ID": 33,
+		"Name_M": "Officier",
+		"Name_F": "Officier",
+		"Min": {"COU": 8, "INT": 11, "CHA": 12, "AD": 8, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 34,
+		"Name_M": "Eclaireur",
+		"Name_F": "Eclaireuse",
+		"Min": {"COU": 8, "INT": 8, "CHA": 8, "AD": 12, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 35,
+		"Name_M": "Soldat lourd",
+		"Name_F": "Soldat lourd",
+		"Min": {"COU": 11, "INT": 8, "CHA": 8, "AD": 8, "FO": 12},
+		"Max": {}
+	},
+	{
+		"ID": 36,
+		"Name_M": "Médecin",
+		"Name_F": "Médecin",
+		"Min": {"COU": 8, "INT": 12, "CHA": 8, "AD": 12, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 37,
+		"Name_M": "Armurier-artificier",
+		"Name_F": "Armurière-artificière",
+		"Min": {"COU": 8, "INT": 12, "CHA": 8, "AD": 12, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 38,
+		"Name_M": "Auxilliaire militaire",
+		"Name_F": "Auxilliaire militaire",
+		"Min": {"COU": 8, "INT": 8, "CHA": 8, "AD": 8, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 39,
+		"Name_M": "Moine de la Peste",
+		"Name_F": "Nonne de la Peste",
+		"Min": {"COU": 8, "INT": 10, "CHA": 8, "AD": 8, "FO": 8},
+		"Max": {}
+	},
+	{
+		"ID": 40,
+		"Name_M": "Disciple",
+		"Name_F": "Disciple",
+		"Min": {"COU": 8, "INT": 10, "CHA": 9, "AD": 8, "FO": 8},
+		"Max": {}
+	}
+]

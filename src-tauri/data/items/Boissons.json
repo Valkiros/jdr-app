@@ -1,0 +1,1577 @@
+[
+  {
+    "prix": "2",
+    "monnaie": "PA",
+    "nom": "Gourde 1L",
+    "id": "1",
+    "effet": "-"
+  },
+  {
+    "effet": "FO+1 et Pi+2 pour les nains, origine Nains",
+    "id": "2",
+    "prix": "1",
+    "monnaie": "PO",
+    "nom": "Bière des Nains"
+  },
+  {
+    "nom": "Bière d'eau de pluie",
+    "prix": "1",
+    "id": "3",
+    "effet": "20% Tourista du Sud, origine Ilaral",
+    "monnaie": "PA"
+  },
+  {
+    "effet": "-",
+    "monnaie": "PA",
+    "id": "4",
+    "prix": "5",
+    "nom": "Bière de qualité"
+  },
+  {
+    "nom": "Bière Kronenbir",
+    "effet": "COU+1, origine Fangh",
+    "id": "5",
+    "prix": "4",
+    "monnaie": "PA"
+  },
+  {
+    "effet": "COU+1, origine Glargh",
+    "monnaie": "PA",
+    "nom": "Bière Blonde Flatengel",
+    "prix": "2",
+    "id": "6"
+  },
+  {
+    "nom": "Bière Brune Dilarik",
+    "effet": "FO+1, Au malt noir, origine Glargh",
+    "prix": "5",
+    "id": "7",
+    "monnaie": "PA"
+  },
+  {
+    "id": "8",
+    "nom": "Bière Mlieuj",
+    "monnaie": "PA",
+    "prix": "5",
+    "effet": "Donne l'avantage 1 fois à 1 jet de COU, Brasserie Artisanale Naine, origine Mlieuj"
+  },
+  {
+    "effet": "Origine Elfes",
+    "prix": "1",
+    "id": "9",
+    "nom": "Jus de fruit",
+    "monnaie": "PO"
+  },
+  {
+    "nom": "Jus d'orange",
+    "id": "10",
+    "effet": "si consommé le matin : Remonte temporairement 1 niveau de fatique, origine Birmilistan",
+    "monnaie": "PO",
+    "prix": "4"
+  },
+  {
+    "id": "11",
+    "monnaie": "PO",
+    "prix": "6",
+    "nom": "Jus de framboise elfique",
+    "effet": "Donne l'avantage 1 fois à 1 jet d'AD, origine Elfes Sylvains"
+  },
+  {
+    "monnaie": "PO",
+    "prix": "6",
+    "effet": "Donne l'avantage 1 fois à 1 jet de PER, origine Elfes Noirs",
+    "id": "12",
+    "nom": "Jus de mûres nocturnes"
+  },
+  {
+    "monnaie": "PA",
+    "nom": "Jus de Pomme enchanté",
+    "effet": "Donne l'avantage 1 fois à 1 jet d'ES, origine Hauts Elfes",
+    "id": "13",
+    "prix": "6"
+  },
+  {
+    "nom": "Bière Barbare forte",
+    "monnaie": "PA",
+    "effet": "Pour les vrais Bonhommes qu'ont jamais peur",
+    "prix": "5",
+    "id": "14"
+  },
+  {
+    "nom": "Bière Ale de Rillettebourg",
+    "prix": "1",
+    "effet": "AD tir+1, origine Hobbit",
+    "id": "15",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "AD tir+1 et Pi+2 à distance, origine Hobbit",
+    "monnaie": "PO",
+    "id": "16",
+    "nom": "Bière de Grospanier",
+    "prix": "2"
+  },
+  {
+    "effet": "COU+1 24h origine Régions sauvage",
+    "nom": "Bière Cœur de Barbare TM",
+    "monnaie": "PA",
+    "id": "17",
+    "prix": "5"
+  },
+  {
+    "id": "18",
+    "nom": "Bière Framboise en fut de Tronville",
+    "effet": "FO+2 pour les travaux manuels, origine Tronville",
+    "monnaie": "PO",
+    "prix": "1"
+  },
+  {
+    "monnaie": "PO",
+    "id": "19",
+    "prix": "2",
+    "effet": "Corruption -1%, origine Fangh",
+    "nom": "Bière Blanche d'Abbaye de Braav"
+  },
+  {
+    "prix": "3",
+    "id": "20",
+    "monnaie": "PA",
+    "nom": "Bière Dandiskane",
+    "effet": "FO+1, origine Dandiskar"
+  },
+  {
+    "prix": "4",
+    "monnaie": "PA",
+    "id": "21",
+    "effet": "Donne APPEL DU TONNEAU, origine Dandiskar",
+    "nom": "Bière à la Vodka"
+  },
+  {
+    "nom": "Bière des Guerriers Moriacs",
+    "prix": "5",
+    "monnaie": "PO",
+    "id": "22",
+    "effet": "COU+5 24h, origine Syldérie"
+  },
+  {
+    "nom": "Bière des Aurochs",
+    "prix": "4",
+    "effet": "Donne APPEL DU SAUVAGE 24h, origine Fangh",
+    "id": "23",
+    "monnaie": "PA"
+  },
+  {
+    "prix": "1",
+    "effet": "FO+1 et ES+1 sur un navire, origine Alaykjdu",
+    "id": "24",
+    "monnaie": "PA",
+    "nom": "Bière au Rhum d'Alaykjdu"
+  },
+  {
+    "monnaie": "PO",
+    "effet": "AD+1 pour les épreuves de natation, origine Alaykjdu",
+    "id": "25",
+    "nom": "Bière La mouette flibustière",
+    "prix": "2"
+  },
+  {
+    "effet": "FO+2 pour miner et COU+1, origine Uzudil",
+    "nom": "Bière de mineur d'Uzudil",
+    "monnaie": "PO",
+    "prix": "4",
+    "id": "26"
+  },
+  {
+    "monnaie": "PO",
+    "nom": "Bière des nains du Srolnagud",
+    "prix": "5",
+    "id": "27",
+    "effet": "PR+1 en cas de neige 24h, origine Srölnagud"
+  },
+  {
+    "monnaie": "PO",
+    "nom": "Bière des Monts Vrogz",
+    "effet": "En souterrain : AT+1, COU+1 et Pv max+4, origine Monts Vrogz",
+    "id": "28",
+    "prix": "10"
+  },
+  {
+    "effet": "Vendue traditionnellement dans les temples pour aider au financement",
+    "id": "29",
+    "nom": "Bière du Temple",
+    "prix": "3",
+    "monnaie": "PO"
+  },
+  {
+    "monnaie": "PO",
+    "nom": "Bière Pêche-fraise",
+    "prix": "5",
+    "id": "30",
+    "effet": "Excellente, origine Hobbit"
+  },
+  {
+    "effet": "Crit.+1  24h, origine Kobold",
+    "id": "31",
+    "nom": "Bière seamra",
+    "prix": "10",
+    "monnaie": "PO"
+  },
+  {
+    "monnaie": "PO",
+    "effet": "Chaque heure gagne 1D20 Po sur 1 au D4, origine Kobold",
+    "id": "32",
+    "nom": "Bière coire óir",
+    "prix": "10"
+  },
+  {
+    "monnaie": "PO",
+    "prix": "10",
+    "effet": "Xp+10%, origine Kobold",
+    "id": "33",
+    "nom": "Bière púdar draíochta"
+  },
+  {
+    "id": "34",
+    "monnaie": "PO",
+    "effet": "AT+1 sur un navire, origine pirate",
+    "prix": "1",
+    "nom": "Bière « Dérives d'Ulysse »"
+  },
+  {
+    "prix": "2",
+    "nom": "Cerveza de los Magos",
+    "effet": "PA max+3, origine Efaizh",
+    "id": "35",
+    "monnaie": "PO"
+  },
+  {
+    "id": "36",
+    "effet": "PA max+12, origine Efaizh",
+    "nom": "Cerveza Venganza de los dioses",
+    "monnaie": "PO",
+    "prix": "6"
+  },
+  {
+    "nom": "Bière gelée du Nord",
+    "effet": "Lorsqu'il y a de la neige : COU+1, Pv max+10, protège du Froid I, origine Srölnagud",
+    "id": "37",
+    "prix": "1",
+    "monnaie": "PO"
+  },
+  {
+    "id": "38",
+    "effet": "Lorsqu'il y a de la neige : FO+1, Pi+3, origine, protège du Froid I, Srölnagud",
+    "nom": "Bière Hvit øl",
+    "prix": "1",
+    "monnaie": "PO"
+  },
+  {
+    "prix": "1",
+    "monnaie": "CU",
+    "id": "39",
+    "nom": "Bière infecte",
+    "effet": ""
+  },
+  {
+    "effet": "Avec résidus de rouille, FO+2 pour miner et PR nat.+1",
+    "nom": "Guiliness rouge",
+    "id": "40",
+    "prix": "2",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "AD+1 et Nyctalopie moyenne 8h, origine Hommes-lézards",
+    "id": "41",
+    "nom": "Bière des Hommes Lézards   ",
+    "prix": "5",
+    "monnaie": "PO"
+  },
+  {
+    "id": "42",
+    "prix": "5",
+    "nom": "Bière de crocodile marin  ",
+    "effet": "Donne NAGER 8H, origine Efaizh",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "Eloigne les prédateur terrestres du marais « Peut éventuellement attirer un Gnognokul mâle en rut » 8h, origine Efaizh",
+    "id": "43",
+    "prix": "35",
+    "nom": "Bière de Gnognokul",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "A cheval : AD+2, FO+2 et COU+2, origine Dandiskar",
+    "prix": "20",
+    "id": "44",
+    "nom": "Vodka Dandiskariote",
+    "monnaie": "PO"
+  },
+  {
+    "nom": "Vodka du Frugklost",
+    "monnaie": "PO",
+    "effet": "AD tir+1, FO+1, Recharge-1T, origine Frugklost",
+    "id": "45",
+    "prix": "30"
+  },
+  {
+    "prix": "40",
+    "nom": "Rhum des Iles Ecailleuses",
+    "id": "46",
+    "effet": "Sur un navire : AD tir+1 et FO+1, origine pirate",
+    "monnaie": "PO"
+  },
+  {
+    "prix": "20",
+    "id": "47",
+    "effet": "Sur un navire : AT+1, PRD+1 et Pi+3, origine pirate",
+    "nom": "Rhum Captain Mords Gants",
+    "monnaie": "PO"
+  },
+  {
+    "monnaie": "PO",
+    "effet": "Sur un navire : AD tir+1 et ES+1, origine Crique des pirates mauves",
+    "nom": "Rhum des Pirates Mauves",
+    "id": "48",
+    "prix": "30"
+  },
+  {
+    "nom": "Rhum sauvage Papoutouh ",
+    "prix": "10",
+    "id": "49",
+    "monnaie": "PO",
+    "effet": "RM+3 et Pi sorts+3"
+  },
+  {
+    "effet": "Pv+10 et Pa+10 pour un vampire, origine vampire",
+    "monnaie": "PO",
+    "nom": "Sang de noble pétillant du Dr. Bleeder",
+    "prix": "30",
+    "id": "50"
+  },
+  {
+    "id": "51",
+    "monnaie": "PO",
+    "nom": "Vin de sang \"Grand Crocs Vermillon\"",
+    "prix": "180",
+    "effet": "Pv max+10 et Pa max+5 pour un vampire, FO+1 et Pi+3, origine vampire "
+  },
+  {
+    "id": "52",
+    "effet": "FO+2, AT+1 et PRD-1, origine Waldorg",
+    "prix": "20",
+    "nom": "Whisky de Waldorg",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "FO+1, Recharge-2T et AD tir-1, origine Frugklost",
+    "prix": "50",
+    "nom": "Whisky du Frugklost",
+    "monnaie": "PO",
+    "id": "53"
+  },
+  {
+    "id": "54",
+    "prix": "20",
+    "effet": "FO+1 et RM+1, origine Galzanie",
+    "monnaie": "PO",
+    "nom": "Whiskey Galzan"
+  },
+  {
+    "nom": "Saké froid de Nugh",
+    "id": "55",
+    "effet": "COU+1 24h, origine Nugh",
+    "monnaie": "PO",
+    "prix": "40"
+  },
+  {
+    "monnaie": "PO",
+    "prix": "40",
+    "effet": "INT+1 24h, origine Nugh",
+    "id": "56",
+    "nom": "Saké chaud de Nugh "
+  },
+  {
+    "effet": "AD+1 pour les épreuves de discrétion, Crachat empoisonné (Pi+3 sur peau nue), origine Nugh",
+    "id": "57",
+    "monnaie": "PO",
+    "prix": "50",
+    "nom": "Alcool de Serpent géant de Nugh"
+  },
+  {
+    "effet": "PR nat.+1, AD+1 pour les épreuves de natation, origine Birmilistan",
+    "id": "58",
+    "monnaie": "PO",
+    "nom": "Alcool de Crabe de la Baie Sanglante",
+    "prix": "30"
+  },
+  {
+    "effet": "En jungle et forêt : PR nat.+2, immunité aux morsures de petits insectes, origine jungles",
+    "id": "59",
+    "prix": "40",
+    "monnaie": "PO",
+    "nom": "Alcool de Ruisklin maudit"
+  },
+  {
+    "monnaie": "PO",
+    "prix": "70",
+    "nom": "Alcool de Placodo ",
+    "effet": "PR+1 24h, origine Caladie et Efaizh",
+    "id": "60"
+  },
+  {
+    "nom": "Alcool d'eau salée",
+    "id": "61",
+    "prix": "150",
+    "monnaie": "PO",
+    "effet": " PA+15, Protège de la Chaleur I, origine Sk'ka"
+  },
+  {
+    "effet": "ES+1",
+    "id": "62",
+    "nom": "Cidre d'excellente qualité",
+    "prix": "1",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "INT-3, origine Loubet",
+    "prix": "20",
+    "nom": "Vin Blanc \"Sekos IV dit Le Sec\"",
+    "monnaie": "PO",
+    "id": "63"
+  },
+  {
+    "nom": "Vin Blanc Vontorz (Excellent)",
+    "effet": "FO+2, INT-1, origine Alaykjdu",
+    "id": "64",
+    "prix": "30",
+    "monnaie": "PO"
+  },
+  {
+    "monnaie": "PO",
+    "id": "65",
+    "effet": "Pv-2 INT+2 8H, origine Fangh",
+    "nom": "Vin vert de Niourgl ",
+    "prix": "50"
+  },
+  {
+    "monnaie": "PO",
+    "prix": "400",
+    "nom": "Outre d'abondance (enchantée)",
+    "effet": "Se remplit toute seule, fournit jusqu'à 20 litres d'eau / jour",
+    "id": "66"
+  },
+  {
+    "nom": "Thé glacé au mana noir",
+    "monnaie": "PO",
+    "prix": "60",
+    "effet": "Pa+10 et Récupération passive Pv+1/H et Pa+3/H, origine Efaizh",
+    "id": "67"
+  },
+  {
+    "nom": "Café con hielo tonico",
+    "monnaie": "PO",
+    "prix": "50",
+    "effet": "Remonte temporairement 1 niveau de fatigue et donne FO+4, origine Efaizh",
+    "id": "68"
+  },
+  {
+    "nom": "Alcool de Dragon d'eau",
+    "monnaie": "PO",
+    "prix": "120",
+    "effet": "AD+3 24h PV-5, origine Nugh",
+    "id": "69"
+  },
+  {
+    "monnaie": "PO",
+    "nom": "Alcool de sang de licorne",
+    "id": "70",
+    "effet": " Vit x3 24h PV-5, origine Esturlie",
+    "prix": "120"
+  },
+  {
+    "nom": "Gin de Djin",
+    "prix": "60",
+    "monnaie": "PO",
+    "effet": " Pa+10 et RM+5 24h Pv-6, origine Birmilistan",
+    "id": "71"
+  },
+  {
+    "id": "72",
+    "nom": "Alcool perfide de Tzinntch ",
+    "monnaie": "PO",
+    "effet": " Lancer 1 seul azhul 24h FO-1 Pv-5, origine Fangh et Nugh",
+    "prix": "20"
+  },
+  {
+    "nom": "Alcool de Neige Jaune",
+    "prix": "20",
+    "id": "73",
+    "effet": "Avantage aux jets de COU, désavantage aux jets d'INT, origine Syldérie",
+    "monnaie": "PO"
+  },
+  {
+    "id": "74",
+    "nom": "Alcool Bubonique de Niourgl ",
+    "prix": "15",
+    "monnaie": "PO",
+    "effet": "INT+3 24h, 50% Maladorantose, origine Fangh"
+  },
+  {
+    "nom": "Alcool de Chevalier Vontorz",
+    "id": "75",
+    "prix": "35",
+    "effet": "Pv-10, Vision Demonique 24h = Voit les âmes des individus (bons mauvais etc.) Donne le double avantage aux jets de Méfiance, origine Alaykjdu",
+    "monnaie": "PO"
+  },
+  {
+    "effet": " Pv-10 sauf vampire, Ailes vampirique (Vol à 12m/assaut) 2h, Les vampires ont Pv max+10, Pi crocs+6, origine vampire et Galzanie",
+    "monnaie": "PO",
+    "id": "76",
+    "nom": "Alcool des Seigneurs Vampires",
+    "prix": "150"
+  },
+  {
+    "id": "77",
+    "prix": "60",
+    "effet": " Pv-5, Morsure venimeuse(Pv-1/T) 8H, origine jungles",
+    "monnaie": "PO",
+    "nom": "Alcool d'harceleur nocturne"
+  },
+  {
+    "effet": " Pv-6, SRS : Coût Pa-2 4h, origine Efaizh",
+    "id": "78",
+    "prix": "50",
+    "monnaie": "PO",
+    "nom": "Alcool augural"
+  },
+  {
+    "prix": "40",
+    "monnaie": "PO",
+    "nom": "Liqueur stérile de Minotaure",
+    "effet": "Pv-5, donne CORNES IMPRESSIONANTES 24h, origine Syldérie",
+    "id": "79"
+  },
+  {
+    "monnaie": "PO",
+    "effet": "Pv-10, Transf. Sable 24h (Peut se déplacer sous forme de sable sur INT-3), origine Sk'ka",
+    "nom": "Alcool de sable des Limites Sud",
+    "prix": "150",
+    "id": "80"
+  },
+  {
+    "id": "81",
+    "nom": "Alcool de larme de Lune",
+    "monnaie": "PO",
+    "effet": "Pv-12, La nuit : CHA-10 et donne CHANCE DU REMPAILLEUR, origine Fangh",
+    "prix": "250"
+  },
+  {
+    "monnaie": "PO",
+    "nom": "Alcool Stimulant de la Sombre Morgane",
+    "prix": "50",
+    "id": "82",
+    "effet": " Pv-6, COU+3, AT+2, PRD+2, AD+2 et FO+2 1h, origine Fangh"
+  },
+  {
+    "effet": "Pv-4,  INT-1 et donne CRACHEUR ELEMENTAIRE (acide) 24h, origine Fernol",
+    "monnaie": "PO",
+    "nom": "Alcool de Wyvern majeure",
+    "prix": "80",
+    "id": "83"
+  },
+  {
+    "effet": "FO-1, Protège du Froid II, origine Srölnagud",
+    "monnaie": "PO",
+    "prix": "65",
+    "id": "84",
+    "nom": "Vodka Srolnagud d'ours de glace"
+  },
+  {
+    "effet": "Insensible aux hémorragies 24h, origine Esturlie",
+    "id": "85",
+    "monnaie": "PO",
+    "nom": "Alcool hémophile",
+    "prix": "70"
+  },
+  {
+    "id": "86",
+    "prix": "30",
+    "nom": "Alcool de Corruption",
+    "monnaie": "PO",
+    "effet": " corruption+20%, Pv-3, CHA-4, COU+2, PR mag.+3 et Pi+3 8H, origine Fangh et Galzanie"
+  },
+  {
+    "nom": "Alcool d'eau sèche",
+    "prix": "170",
+    "id": "87",
+    "effet": " Pv-10, vision du future (1 fois par combat peut relancer ou faire relancer un jet d'AT, AD tir, PRD ou ES) 8H, origine Sk'ka",
+    "monnaie": "PO"
+  },
+  {
+    "prix": "30",
+    "id": "88",
+    "monnaie": "PO",
+    "nom": "Gin de goule noyée ",
+    "effet": "Pv-7, les membres tranchés reste en vie 72h, origine vampire"
+  },
+  {
+    "prix": "50",
+    "id": "89",
+    "effet": "Pv-6 crache acide à 5m sur AD tir-2 (Pv-1/assaut 5 assaut et Détruit 1PR phy.) 24h, origine Fangh",
+    "monnaie": "PO",
+    "nom": "Alcool dévorant de la Sombre Morgane"
+  },
+  {
+    "effet": "Pv-6 Chaque assaut, peut figer un adversaire (10m) pendant 1 assaut  sauf RM cible 24h, origine Fangh",
+    "prix": "50",
+    "nom": "Alcool de stase de la Sombre Morgane",
+    "monnaie": "PO",
+    "id": "90"
+  },
+  {
+    "id": "91",
+    "effet": " Pv-3, Ignore les effets d'une malédiction pendant 24h, origine Efaizh",
+    "prix": "30",
+    "monnaie": "PO",
+    "nom": "Limoncello bleu pur"
+  },
+  {
+    "id": "92",
+    "monnaie": "PO",
+    "nom": "Liqueur de Dlul ",
+    "effet": "Endort pendant 24h sauf RM-2, sans interruption et impossible à réveiller, origine Fangh",
+    "prix": "20"
+  },
+  {
+    "effet": "Endort la douleur (Ignore les malus d'une blessure grave en guérison) 24h, origine Fangh",
+    "id": "93",
+    "prix": "55",
+    "monnaie": "PO",
+    "nom": "Liqueur allégée de Dlul "
+  },
+  {
+    "effet": "Pv-2 Les cadavres et les os peuvent être mangé sans risque de maladie 24h, origine Efaizh",
+    "nom": "Alcool de Morfal",
+    "id": "94",
+    "monnaie": "PO",
+    "prix": "50"
+  },
+  {
+    "effet": "Pv-10, Permet de remplacer mains nues par griffes 8H, origine Esturlie",
+    "id": "95",
+    "prix": "40",
+    "nom": "Alcool de Griffon majeur",
+    "monnaie": "PO"
+  },
+  {
+    "nom": "Alcool de fleur de la mort suintante",
+    "prix": "260",
+    "id": "96",
+    "effet": "Pv-15 Vision morte (peut voir les individs invisibles et éthérés, 1 téléportation (jusqu'à 50km) 12h, origine Efaizh",
+    "monnaie": "PO"
+  },
+  {
+    "id": "97",
+    "effet": "Pv-6 Peut soumettre à sa volonté 1 PNJ par le toucher sauf RM 8h, origine Fangh",
+    "monnaie": "PO",
+    "nom": "Alcool Thrall de la Sombre Morgane ",
+    "prix": "50"
+  },
+  {
+    "prix": "50",
+    "monnaie": "PO",
+    "id": "98",
+    "effet": "Pv-6 pointe donne le désavantage à tous les jets d'un PNJ sauf RM 8h, origine Fangh",
+    "nom": "Alcool gris de la Sombre Morgane "
+  },
+  {
+    "monnaie": "PO",
+    "nom": "Alcool volcanique de la Sombre Morgane",
+    "effet": "Pv-6 Transforme la peau en lave magique (PR feu+6 Inflige 2D+6 Pi feu au CàC en prononçant « Quae vocaris Morgana » 2h, origine Fangh",
+    "id": "99",
+    "prix": "50"
+  },
+  {
+    "nom": "Alcool de songe de la Sombre Morgane",
+    "prix": "50",
+    "effet": "Pv-6 Permet d'entrevoir les pensées d'1 PNJ sauf RM 8h, origine Fangh",
+    "id": "100",
+    "monnaie": "PO"
+  },
+  {
+    "nom": "Alcool souverain de la Sombre Morgane ",
+    "id": "101",
+    "prix": "50",
+    "effet": "Pv-6 Les SRS et malédictions sont renvoyées à leur émetteur 2h, origine Fangh",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "INT-1 et FO+1",
+    "nom": "Vin Blanc local",
+    "id": "102",
+    "monnaie": "PO",
+    "prix": "1"
+  },
+  {
+    "prix": "1",
+    "id": "103",
+    "effet": "Donne PENIBLE",
+    "monnaie": "PO",
+    "nom": "Vin Rouge local"
+  },
+  {
+    "effet": "CHA+1, Pv max+4, origine Fangh",
+    "id": "104",
+    "nom": "Vin Vontorz",
+    "prix": "35",
+    "monnaie": "PO"
+  },
+  {
+    "monnaie": "PO",
+    "prix": "30",
+    "effet": "Pv max+2, origine Fangh",
+    "id": "105",
+    "nom": "Vin « Côtes du Troll »"
+  },
+  {
+    "monnaie": "PO",
+    "id": "106",
+    "effet": "Pv max+4, origine Fangh",
+    "nom": "Vin « Cabernet-Sauvageon »",
+    "prix": "50"
+  },
+  {
+    "id": "107",
+    "monnaie": "PO",
+    "effet": "CHA+1 et Pv max+5, origine Fangh",
+    "prix": "60",
+    "nom": "Hypocrass de Waldorg"
+  },
+  {
+    "id": "108",
+    "monnaie": "PO",
+    "effet": "ES+1 et Pv max+4, origine Efaizh",
+    "nom": "Sangre de Auroco de Fanalzar",
+    "prix": "50"
+  },
+  {
+    "nom": "Vinum Maiore de Boulfidul",
+    "id": "109",
+    "prix": "55",
+    "effet": "COU+1 et Pv max+4, origine Efaizh",
+    "monnaie": "PO"
+  },
+  {
+    "nom": "Vin spécial des Hauts Elfes ",
+    "prix": "60",
+    "id": "110",
+    "effet": "PA+5, origine Hauts Elfes",
+    "monnaie": "PO"
+  },
+  {
+    "prix": "70",
+    "id": "111",
+    "effet": "AD+1 et Pv max+3, origine Fangh",
+    "nom": "Vin pétillant « Chant en pagne »",
+    "monnaie": "PO"
+  },
+  {
+    "id": "112",
+    "effet": "Origine Dandiskar",
+    "monnaie": "PA",
+    "nom": "Bière de Dandiskar",
+    "prix": "2"
+  },
+  {
+    "monnaie": "PA",
+    "id": "113",
+    "nom": "Bière à la vodka",
+    "prix": "4",
+    "effet": "COU+1, origine Dandiskar"
+  },
+  {
+    "prix": "10",
+    "effet": "PV-2, FO+2, Vue diminue d'un rang 8h, origine Dandiskar",
+    "id": "114",
+    "monnaie": "PO",
+    "nom": "Vodka Dandiskariote frelatée"
+  },
+  {
+    "monnaie": "PO",
+    "prix": "15",
+    "nom": "Vodka Dandiskariote de feu ",
+    "id": "115",
+    "effet": "PV+2 et PR feu+2, origine Dandiskar"
+  },
+  {
+    "id": "116",
+    "effet": "COU+1  8h, origine Dandiskar",
+    "monnaie": "PA",
+    "prix": "5",
+    "nom": "Sbiten (hydromel slav)"
+  },
+  {
+    "id": "117",
+    "effet": "Compte aussi comme nourriture, origine Dandiskar",
+    "monnaie": "PA",
+    "nom": "Kvas (bière de pain)",
+    "prix": "3"
+  },
+  {
+    "effet": "Compte aussi comme nourriture, Pv+2, origine Dandiskar",
+    "monnaie": "PO",
+    "id": "118",
+    "nom": "Kvas maison",
+    "prix": "1"
+  },
+  {
+    "monnaie": "PO",
+    "id": "119",
+    "effet": "COU+1 24h",
+    "nom": "Hydromel de qualité",
+    "prix": "1"
+  },
+  {
+    "nom": "Hydromel Moriac ",
+    "id": "120",
+    "prix": "5",
+    "monnaie": "PO",
+    "effet": "COU+2, RM+2 24h, origine Fangh et Syldérie"
+  },
+  {
+    "monnaie": "PO",
+    "effet": "COU+2 24h, origine Syldérie et jungles",
+    "prix": "10",
+    "id": "121",
+    "nom": "Alcool de sang d'ours baboudouk berserk "
+  },
+  {
+    "nom": "Rhum",
+    "monnaie": "PO",
+    "prix": "4",
+    "id": "122",
+    "effet": "-"
+  },
+  {
+    "monnaie": "PO",
+    "effet": "-",
+    "id": "123",
+    "nom": "Bière rhum",
+    "prix": "2"
+  },
+  {
+    "monnaie": "PO",
+    "id": "124",
+    "effet": "AD+2 et Malus de 4 à APPEL DU TONNEAU 4h, origine Fangh",
+    "nom": "Rhum des pirates mauve",
+    "prix": "10"
+  },
+  {
+    "monnaie": "PO",
+    "prix": "20",
+    "id": "125",
+    "effet": "Si plus de 4 rations prises : Perte de mémoire + Donne TETE VIDE pendant 24h Sinon AT+2, PRD+2 et AD+2, origine Efaizh",
+    "nom": "Rhum des Pirates Papoutouh"
+  },
+  {
+    "effet": "AD+1 au combat 24h, origine Pirate",
+    "id": "126",
+    "monnaie": "PO",
+    "nom": "Rhum des Frères de la côte",
+    "prix": "30"
+  },
+  {
+    "prix": "50",
+    "effet": "Vitesse course +6m 24h, origine Efaizh",
+    "monnaie": "PO",
+    "nom": "Rhum de la ouest coste",
+    "id": "127"
+  },
+  {
+    "id": "128",
+    "effet": "Donne soif... de sang ! APPEL DU SAUVAGE 24h AT+2 Pi+2 24h, origine Syldérie",
+    "monnaie": "PO",
+    "nom": "Rhum à l'eau salée",
+    "prix": "20"
+  },
+  {
+    "prix": "65",
+    "id": "129",
+    "effet": "CHA+1 et Pv max+6, origine Alaykjdu",
+    "nom": "Vin cuvée royale Vontorz",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "CHA+2 et Nyctalopie totale, Origine Elfes Noirs",
+    "id": "130",
+    "monnaie": "PO",
+    "prix": "130",
+    "nom": "Hyppocrass de la nuit"
+  },
+  {
+    "effet": "CHA+2, AD+1, Pv+3, Pv max+5 et Pa max+5, origine Hauts Elfes, Elfes Noirs et Dracs",
+    "nom": "Vin Meuldor originel",
+    "monnaie": "PO",
+    "id": "131",
+    "prix": "700"
+  },
+  {
+    "id": "132",
+    "effet": "Pv+2 et Récupération passive Pv+1/H, origine Hauts Elfes",
+    "monnaie": "PO",
+    "nom": "Eau pétillante (ench.)",
+    "prix": "50"
+  },
+  {
+    "id": "133",
+    "nom": "Lait",
+    "monnaie": "PO",
+    "effet": "Pv max+3 (peut se combiner au Thé, Café et Chocolat chaud)",
+    "prix": "1"
+  },
+  {
+    "prix": "15",
+    "effet": "Pv+5 pour un vampire, origine vampire",
+    "monnaie": "PO",
+    "nom": "Sang frais neutre de qualité",
+    "id": "134"
+  },
+  {
+    "id": "135",
+    "effet": "6 PA, origine Fangh et Nugh",
+    "monnaie": "PO",
+    "nom": "Alcool des ténèbres de Tzinntch",
+    "prix": "4"
+  },
+  {
+    "nom": "Gin de la marine militaire",
+    "prix": "10",
+    "id": "136",
+    "monnaie": "PO",
+    "effet": "COU+2 sur un navire, origine Fangh"
+  },
+  {
+    "id": "137",
+    "effet": "Goût orangé, COU+1 et FO+1 sur un navire, origine pirate",
+    "nom": "Gin « Ouragan »",
+    "monnaie": "PO",
+    "prix": "15"
+  },
+  {
+    "effet": "COU+1 Bonus+1 pour nager 8h, origine pirate",
+    "monnaie": "PO",
+    "nom": "Gin « Naufrage de minuit »",
+    "prix": "20",
+    "id": "138"
+  },
+  {
+    "effet": "Pa+3, Pa max+3, origine Efaizh",
+    "nom": "Raki des Iles Boulfiduf",
+    "monnaie": "PO",
+    "prix": "30",
+    "id": "139"
+  },
+  {
+    "prix": "10",
+    "nom": "Limoncello bleu de Fanalzar allégé",
+    "id": "140",
+    "effet": "Pa+4, origine Efaizh",
+    "monnaie": "PO"
+  },
+  {
+    "id": "141",
+    "prix": "30",
+    "effet": "Pa max+6, origine Efaizh",
+    "nom": "Grappa de Nanlduzar",
+    "monnaie": "PO"
+  },
+  {
+    "monnaie": "PO",
+    "id": "142",
+    "effet": "FO+2, COU+2, AT+2 et Pv-3, origine Efaizh",
+    "nom": "Tequila légère de Fanalzar ",
+    "prix": "30"
+  },
+  {
+    "prix": "40",
+    "effet": "FO+2, COU+3, AT+3 et Pv-5, origine Efaizh",
+    "id": "143",
+    "monnaie": "PO",
+    "nom": "Tequila Forte de Fanalzar "
+  },
+  {
+    "prix": "60",
+    "effet": "FO+3, COU+3, AT+3, Pi+3 et Pv-7, origine Efaizh",
+    "monnaie": "PO",
+    "nom": "Tequila Tenace de Napâtur",
+    "id": "144"
+  },
+  {
+    "prix": "30",
+    "monnaie": "PO",
+    "id": "145",
+    "nom": "Vin du Boulfidul",
+    "effet": "CHA+1 et COU+1, origine Efaizh"
+  },
+  {
+    "effet": "COU+1, origine Dandiskar",
+    "prix": "5",
+    "id": "146",
+    "monnaie": "PO",
+    "nom": "Vodka"
+  },
+  {
+    "monnaie": "PO",
+    "effet": "COU+1 et Pv+2, origine Dandiskar",
+    "id": "147",
+    "nom": "Vodka de qualité",
+    "prix": "10"
+  },
+  {
+    "nom": "Alcool fait maison",
+    "id": "148",
+    "effet": "Pv+1, FO+1 et INT-1 8h",
+    "monnaie": "PO",
+    "prix": "2"
+  },
+  {
+    "monnaie": "PO",
+    "prix": "1",
+    "id": "149",
+    "nom": "Alcool de sang de moutons",
+    "effet": "COU-1 pour le boire, FO+1, Pv+2 et Protège du Froid I"
+  },
+  {
+    "id": "150",
+    "prix": "1",
+    "nom": "Bière Goulize",
+    "effet": "Nyctalopie moyenne en souterrains, origine Mlieuj",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "CHA+2 et INT+2 pour mentir, origine Mlieuj",
+    "monnaie": "PO",
+    "nom": "Bière Chapeaumou",
+    "prix": "1",
+    "id": "151"
+  },
+  {
+    "monnaie": "PO",
+    "prix": "1",
+    "nom": "Bière Kanterbouref",
+    "id": "152",
+    "effet": "PER+2 et INT+2 pour détecter une arnaque, origine Mlieuj"
+  },
+  {
+    "prix": "5",
+    "nom": "Bière Balarik Blonde",
+    "effet": "PRD+1, origine Fquiepou",
+    "id": "153",
+    "monnaie": "PA"
+  },
+  {
+    "id": "154",
+    "prix": "1",
+    "effet": "AT+2, PRD-1, origine Fquiepou",
+    "nom": "Bière Balarik Spéciale",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "Pi+3 à mains nues,origine Kjaniouf",
+    "id": "155",
+    "monnaie": "PA",
+    "nom": "Bière Turlada Ambrée",
+    "prix": "5"
+  },
+  {
+    "nom": "Bière Turlada Fraise",
+    "prix": "1",
+    "monnaie": "PO",
+    "id": "156",
+    "effet": " AT+1 et PRD+1 à mains nues,origine Kjaniouf"
+  },
+  {
+    "id": "157",
+    "monnaie": "PO",
+    "nom": "Ale de Rillettebourg",
+    "prix": "1",
+    "effet": "Artisanale Hobbit"
+  },
+  {
+    "monnaie": "PO",
+    "nom": "Alcool de boyaux humains",
+    "id": "158",
+    "prix": "2",
+    "effet": "FO+2, Pi+3 et INT-2, origine Hommes-Bêtes"
+  },
+  {
+    "id": "159",
+    "nom": "Vin Opale",
+    "effet": "CHA+1 et AD+1 pour les épreuves de danse, origine Kjaniouf",
+    "prix": "35",
+    "monnaie": "PO"
+  },
+  {
+    "nom": "Vin Ambrée de Fquiepou",
+    "prix": "2",
+    "monnaie": "PO",
+    "id": "160",
+    "effet": "CHA+1 et Bonus+2 pour impressioner les nobles, origine Fquiepou"
+  },
+  {
+    "nom": "Grand cru Château-Rivage",
+    "prix": "80",
+    "effet": "CHA+2 et AD+2 pour les épreuves de danse, origine Kjaniouf",
+    "id": "161",
+    "monnaie": "PO"
+  },
+  {
+    "id": "162",
+    "monnaie": "PO",
+    "prix": "90",
+    "effet": "CHA+2 et Bonus+4 pour impressioner les nobles, origine Fquiepou",
+    "nom": "Grand cru Château-Martigan"
+  },
+  {
+    "id": "163",
+    "nom": "Vin rosé de Bardol",
+    "prix": "150",
+    "effet": "Lors de bal : Donne l'avantage aux jets de CHA",
+    "monnaie": "PO"
+  },
+  {
+    "nom": "Vin blanc de Labik",
+    "prix": "150",
+    "effet": "Lors de bal : Donne l'avantage aux jets d'AD",
+    "monnaie": "PO",
+    "id": "164"
+  },
+  {
+    "prix": "5",
+    "monnaie": "PA",
+    "nom": "Eau de vie de base",
+    "effet": "Pv+3 et INT-1",
+    "id": "165"
+  },
+  {
+    "prix": "15",
+    "effet": "Pv+5 et INT-1",
+    "id": "166",
+    "monnaie": "PA",
+    "nom": "Eau de vie de qualité"
+  },
+  {
+    "effet": "Excellent alcool déguelasse au bon goût de vomi, FO+2 et désavantage aux jets de CHA 8h, origine Peaux-vertes",
+    "prix": "3",
+    "monnaie": "PA",
+    "id": "167",
+    "nom": "Alcool Orque"
+  },
+  {
+    "effet": "Fort en Pomme ",
+    "nom": "Cidre",
+    "id": "168",
+    "prix": "5",
+    "monnaie": "PA"
+  },
+  {
+    "effet": "COU+1 et RM+1",
+    "monnaie": "PO",
+    "nom": "Hydromel",
+    "id": "169",
+    "prix": "2"
+  },
+  {
+    "effet": "A base de vin, miel et épices précieux, CHA+1 et donne 1 fois l'avantage pour un jet de CHA",
+    "id": "170",
+    "nom": "Hypocrass",
+    "prix": "30",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "A base de noix de Kliplish, AD tir+1 et Pi à distance+3, origine Hobbit",
+    "nom": "Liqueur de Klipish",
+    "monnaie": "PO",
+    "id": "171",
+    "prix": "3"
+  },
+  {
+    "id": "172",
+    "monnaie": "PO",
+    "nom": "Absindard",
+    "effet": "Alcool jaune avec des frelons dedans, COU-3 pour en boire, Donne 1 fois l'avantage pour un jet d'intimidation, origine Fangh",
+    "prix": "3"
+  },
+  {
+    "effet": "Sur un navire : CHA+2 pour intimider, origine pirate",
+    "prix": "2",
+    "nom": "Rhum vanille",
+    "monnaie": "PO",
+    "id": "173"
+  },
+  {
+    "id": "174",
+    "effet": "Sur un navire : AD tir+3 avec des armes de siège, origine pirate",
+    "monnaie": "PO",
+    "prix": "25",
+    "nom": "Rhum extra vieux"
+  },
+  {
+    "prix": "6",
+    "effet": "Sur un navire : AD+2 et FO+2 pour manœuvrer un navire, origine pirate",
+    "id": "175",
+    "nom": "Rhum du Boucanier",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "Sur un navire : donne 1 fois CHANCE DU REMPAILLEUR, origine pirate",
+    "nom": "Alcool-cercueil",
+    "prix": "6",
+    "monnaie": "PO",
+    "id": "176"
+  },
+  {
+    "monnaie": "PO",
+    "effet": "PER+1, origine Tulamor",
+    "id": "177",
+    "nom": "Liqueur aux fruits \"Kelkannie\"",
+    "prix": "25"
+  },
+  {
+    "effet": "PER+1 8h, origine Tulamor",
+    "nom": "Liqueur Kelkannie forte",
+    "id": "178",
+    "monnaie": "PO",
+    "prix": "30"
+  },
+  {
+    "id": "179",
+    "nom": "Liqueur Kelkannie extra-forte",
+    "prix": "35",
+    "monnaie": "PO",
+    "effet": "PER+1 et donne 1 fois l'avantage à un jet de détection, origine Tulamor"
+  },
+  {
+    "effet": "1 fois, en combat : Si doit mourir d'une perte de Pv sur 1 au D4 ne perd pas les Pv, origine Tulamor",
+    "nom": "Liqueur Kelkannie Tulamorienne",
+    "prix": "65",
+    "id": "180",
+    "monnaie": "PO"
+  },
+  {
+    "id": "181",
+    "nom": "Liqueur Kelkannie du Trépas",
+    "prix": "35",
+    "effet": "Si Pv<50% des Pv max : Pi+1D, origine Tulamor",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "Les tâches qui rapportent 1 seul honneur en rapporte 1 de plus, origine Fquiepou",
+    "monnaie": "PO",
+    "prix": "35",
+    "nom": "Liqueur Kelkannie de Fquiepou",
+    "id": "182"
+  },
+  {
+    "monnaie": "PO",
+    "effet": "Ne peut pas faire 18, 19 ou 20 à un jet de CHA, origine Kjaniouf",
+    "prix": "35",
+    "id": "183",
+    "nom": "Liqueur Martigan"
+  },
+  {
+    "nom": "Hypocrass des Empereurs",
+    "id": "184",
+    "prix": "1000",
+    "monnaie": "PO",
+    "effet": "Meilleure boisson du monde connu, Pv max+15, CHA+1, COU+1, FO+1 et Pi+3"
+  },
+  {
+    "effet": "De l'abbé Isidorus contre les maux de ventres, soigne Tourista du nord, Tourista du sud et poison Courette, origine Fangh, Caladie, Fernol et Galzanie",
+    "id": "185",
+    "nom": "Infusion aux herbes",
+    "prix": "1",
+    "monnaie": "PA"
+  },
+  {
+    "id": "186",
+    "prix": "400",
+    "effet": "CHA+2, Crit.+2, Corruption+10%, origine Démons",
+    "nom": "Vin de tentation des enfers",
+    "monnaie": "PO"
+  },
+  {
+    "monnaie": "PO",
+    "id": "187",
+    "nom": "Jus de Framboises Lunelbar",
+    "effet": "CHA+1, Donne 1 fois l'avantage à un jet de CHA ou de tir, origine Forêt de Schlipak",
+    "prix": "10"
+  },
+  {
+    "nom": "Vin",
+    "effet": "C'est d'la piquette Jacques",
+    "id": "188",
+    "prix": "1",
+    "monnaie": "PO"
+  },
+  {
+    "nom": "Bon vin",
+    "monnaie": "PO",
+    "id": "189",
+    "effet": "",
+    "prix": "10"
+  },
+  {
+    "id": "190",
+    "nom": "Très bon vin",
+    "prix": "25",
+    "effet": "CHA+1",
+    "monnaie": "PO"
+  },
+  {
+    "nom": "Vin du Sud Caladien",
+    "id": "191",
+    "prix": "8",
+    "monnaie": "PO",
+    "effet": "CHA+1 et Pv+2, origine Caladie"
+  },
+  {
+    "nom": "Pisse d'ange de Caladorg",
+    "id": "192",
+    "monnaie": "PO",
+    "effet": "COU+1 et Pv+2, origine Caladie",
+    "prix": "3"
+  },
+  {
+    "prix": "2",
+    "monnaie": "PO",
+    "nom": "Bière blonde Nial",
+    "effet": "COU+1 et Pi+2, origine Caladie",
+    "id": "193"
+  },
+  {
+    "prix": "3",
+    "monnaie": "PO",
+    "id": "194",
+    "effet": "COU+1 et Pv max+2, origine Caladie",
+    "nom": "Bière La spéciale de Nial"
+  },
+  {
+    "monnaie": "PO",
+    "id": "195",
+    "nom": "Liqueur verte Franca",
+    "effet": " INT-1, Pv max+5, origine Caladie",
+    "prix": "6"
+  },
+  {
+    "id": "196",
+    "prix": "3",
+    "monnaie": "PO",
+    "nom": "Vin Cuvée de Baunebourg",
+    "effet": "CHA+1 supprime PENIBLE, origine Fernol"
+  },
+  {
+    "id": "197",
+    "nom": "Vin Côteaux de Chuminol",
+    "prix": "12",
+    "effet": "CHA+3 supprime PENIBLE, origine Fernol",
+    "monnaie": "PO"
+  },
+  {
+    "effet": "CHA+2 supprime PENIBLE, origine Fernol",
+    "id": "198",
+    "nom": "Vin Cœur de Blavine",
+    "monnaie": "PO",
+    "prix": "8"
+  },
+  {
+    "effet": "Pv-2 et Corruption-2%, origine Fernol",
+    "id": "199",
+    "monnaie": "PO",
+    "nom": "Alcool La Brutale de Molk",
+    "prix": "4"
+  },
+  {
+    "monnaie": "PO",
+    "effet": "COU+1, Corruption-1%, origine Galzanie",
+    "nom": "Bière Kaiserliche Schnurrbart",
+    "id": "200",
+    "prix": "1"
+  },
+  {
+    "effet": "Pv-1, INT-1 et FO+2, origine Galzanie",
+    "nom": "Bière Necken",
+    "id": "201",
+    "prix": "5",
+    "monnaie": "PA"
+  },
+  {
+    "id": "202",
+    "prix": "1",
+    "monnaie": "PO",
+    "effet": "FO+2 pour les travaux manuels, origine Galzanie",
+    "nom": "Bière Blanche Oboulaner"
+  },
+  {
+    "effet": "INT+1 et Pv-3, origine Galzanie",
+    "nom": "Bière Ambrée Drei Hexen",
+    "prix": "1",
+    "monnaie": "PO",
+    "id": "203"
+  },
+  {
+    "effet": "PER+1, Pi à distance+3 et Pv-3, origine Galzanie",
+    "nom": "Schnapps Jageranfänger",
+    "prix": "5",
+    "monnaie": "PO",
+    "id": "204"
+  },
+  {
+    "prix": "2",
+    "id": "205",
+    "effet": "AT-3, Pi+6 au CàC, origine Galzanie",
+    "nom": "Cidre Apfeltroll",
+    "monnaie": "PA"
+  },
+  {
+    "nom": "Vin Blanc Siberner Ritter",
+    "effet": "Donne APPEL DU BRAAV' et FO+2, origine Galzanie",
+    "monnaie": "PO",
+    "id": "206",
+    "prix": "20"
+  },
+  {
+    "monnaie": "PO",
+    "prix": "25",
+    "effet": "Donne DUELLISTE, RM+1, Pi+2 au CàC et CHERCHER  DES NOISES",
+    "nom": "Vin Rouge Karmesinroter Ritter",
+    "id": "207"
+  },
+  {
+    "monnaie": "PO",
+    "id": "208",
+    "effet": "3 Pv pour un vampire, origine vampire",
+    "nom": "Sang frais neutre",
+    "prix": "15"
+  },
+  {
+    "effet": "6 Pv pour un vampire et PA+3, origine vampire",
+    "prix": "25",
+    "id": "209",
+    "monnaie": "PO",
+    "nom": "Cocktail sanguin "
+  },
+  {
+    "prix": "2",
+    "effet": "-",
+    "monnaie": "PO",
+    "nom": "Gourde militaire 2L",
+    "id": "210"
+  },
+  {
+    "id": "211",
+    "prix": "40",
+    "nom": "Liqueur de douce vérité",
+    "monnaie": "PO",
+    "effet": "Supprime tout inhibition, fait parler (utilisé comme sérum de vérité)"
+  },
+  {
+    "prix": "5",
+    "nom": "Chocolat chaud",
+    "effet": "Boisson sucrée qui réchauffe le cœur et le corps, Peut relancer 1 fois un jet de COU raté sauf critique",
+    "id": "212",
+    "monnaie": "PO"
+  },
+  {
+    "nom": "Outre d'eau bénite (1L)",
+    "effet": "Mieux vaut s'abstenir d'en boire s'il on est un démon",
+    "id": "213",
+    "monnaie": "PO",
+    "prix": "5"
+  },
+  {
+    "prix": "2",
+    "monnaie": "PO",
+    "nom": "Thé",
+    "effet": "Récupération passive Pv+2/H",
+    "id": "214"
+  },
+  {
+    "nom": "Thé rouge de l'est",
+    "monnaie": "PO",
+    "prix": "4",
+    "id": "215",
+    "effet": "Récupération passive Pv+1/H et Pi+3"
+  },
+  {
+    "id": "216",
+    "nom": "Thé vert de Nugh",
+    "effet": "Récupération passive Pv+1/H et Pa+1/H",
+    "monnaie": "PO",
+    "prix": "6"
+  },
+  {
+    "effet": "Récupération passive Pv+3/H et Pa+3/H",
+    "nom": "Thé bleu impérial",
+    "monnaie": "PO",
+    "id": "217",
+    "prix": "8"
+  },
+  {
+    "id": "218",
+    "monnaie": "PO",
+    "nom": "Thé noir des dunes",
+    "effet": "Récupération passive Pv+2/H, Protège de la Chaleur II",
+    "prix": "5"
+  },
+  {
+    "nom": "Thé blanc du Xijiang",
+    "prix": "7",
+    "monnaie": "PO",
+    "id": "219",
+    "effet": "Récupération passive Pv+2/H, Protège du Froid II"
+  },
+  {
+    "effet": "Récupération passive Pv+2/H et Pa+2/H, Pv max+10 et Pa max+10",
+    "prix": "10",
+    "id": "220",
+    "monnaie": "PO",
+    "nom": "Thé violet des songes"
+  },
+  {
+    "prix": "8",
+    "id": "221",
+    "monnaie": "PO",
+    "nom": "Thé jaune de Nugh",
+    "effet": "INT+1 et Récupération passive Pv+1/H et Pa+2/H"
+  },
+  {
+    "effet": "Remonte temporairement 1 niveau de fatigue",
+    "prix": "3",
+    "nom": "Café",
+    "monnaie": "PO",
+    "id": "222"
+  },
+  {
+    "nom": "Café noir \"Kratos\"",
+    "monnaie": "PO",
+    "prix": "5",
+    "id": "223",
+    "effet": "Remonte temporairement 1 niveau de fatigue et donne FO+1 et Pi+3"
+  },
+  {
+    "effet": "Remonte temporairement 1 niveau de fatigue et donne l'avantage au jet de COU pour ne pas s'endormir",
+    "prix": "6",
+    "nom": "Café \"de l'étudiant\"",
+    "monnaie": "PO",
+    "id": "224"
+  },
+  {
+    "monnaie": "PO",
+    "effet": "Remonte temporairement 3 niveaux de fatigue",
+    "prix": "10",
+    "nom": "Café \"ésotérique\" d'Efaizh",
+    "id": "225"
+  }
+]

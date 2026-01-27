@@ -1,0 +1,354 @@
+[
+  {
+    "ID": 1,
+	"Name_M": "Humain",
+    "Name_F": "Humaine",
+	"Min" : {"COU": 8, "INT": 8, "CHA": 8, "AD": 8, "FO": 8},
+	"Max" : {},
+	"Vitesse": 100
+  },
+  {
+    "ID": 2,
+    "Name_M": "Barbare",
+    "Name_F": "Barbare",
+	"Min" : {"COU": 12, "INT": 8, "CHA": 8, "AD": 8, "FO": 13},
+	"Max" : {},
+	"Vitesse": 200
+  },
+  {
+    "ID": 3,
+    "Name_M": "Nain",
+    "Name_F": "Naine",
+	"Min" : {"COU": 11, "INT": 8, "CHA": 8, "AD": 8, "FO": 12},
+	"Max" : {},
+	"Vitesse": 80
+  },
+  {
+    "ID": 4,
+    "Name_M": "Haut Elfe",
+    "Name_F": "Haute Elfe",
+	"Min" : {"COU": 11, "INT": 8, "CHA": 8, "AD": 8},
+	"Max" : {"FO": 12},
+	"Vitesse": 100
+  },
+  {
+    "ID": 5,
+    "Name_M": "Demi-Elfe (H)",
+    "Name_F": "Demie-Elfe (H)",
+	"Min" : {"COU": 8, "INT": 8, "CHA": 10, "AD": 11, "FO": 8},
+	"Max" : {},
+	"Vitesse": 100
+  },
+  {
+    "ID": 6,
+    "Name_M": "Demi-Elfe (E)",
+    "Name_F": "Demie-Elfe (E)",
+	"Min" : {"COU": 8, "INT": 8, "CHA": 10, "AD": 11, "FO": 8},
+	"Max" : {},
+	"Vitesse": 100
+  },
+  {
+    "ID": 7,
+    "Name_M": "Elfe Sylvain",
+    "Name_F": "Elfe Sylvain",
+	"Min" : {"COU": 8, "INT": 8, "CHA": 12, "AD": 10},
+	"Max" : {"FO": 12},
+	"Vitesse": 120
+  },
+  {
+    "ID": 8,
+    "Name_M": "Elfe Noir",
+    "Name_F": "Elfe Noir",
+	"Min" : {"COU": 8, "INT": 12, "CHA": 8, "AD": 13, "FO": 8},
+	"Max" : {},
+	"Vitesse": 120
+  },
+  {
+    "ID": 9,
+    "Name_M": "Orque",
+    "Name_F": "Orque",
+	"Min" : {"COU": 8, "AD": 8, "FO": 12},
+	"Max" : {"INT": 8, "CHA": 10},
+	"Vitesse": 100
+  },
+  {
+    "ID": 10,
+    "Name_M": "Demi-Orque (H)",
+    "Name_F": "Demie-Orque (H)",
+	"Min" : {"COU": 8, "CHA": 8, "FO": 12},
+	"Max" : {"INT": 10, "AD": 11},
+	"Vitesse": 100
+  },
+  {
+    "ID": 11,
+    "Name_M": "Demi-Orque (O)",
+    "Name_F": "Demie-Orque (O)",
+	"Min" : {"COU": 8, "CHA": 8, "FO": 12},
+	"Max" : {"INT": 10, "AD": 11},
+	"Vitesse": 100
+  },
+  {
+    "ID": 12,
+    "Name_M": "Gobelin",
+    "Name_F": "Gobeline",
+	"Min" : {"AD": 8},
+	"Max" : {"COU": 10, "INT": 10, "CHA": 8, "FO": 9},
+	"Vitesse": 80
+  },
+  {
+    "ID": 13,
+    "Name_M": "Ogre",
+    "Name_F": "Ogresse",
+	"Min" : {"COU": 8, "FO": 13},
+	"Max" : {"INT": 9, "CHA": 10, "AD": 11},
+	"Vitesse": 100
+  },
+  {
+    "ID": 14,
+    "Name_M": "Hobbit",
+    "Name_F": "Hobbit",
+	"Min" : {"COU": 12, "INT": 10, "CHA": 8, "AD": 8},
+	"Max" : {"FO": 10},
+	"Vitesse": 50
+  },
+  {
+    "ID": 15,
+    "Name_M": "Gnôme",
+    "Name_F": "Gnôme",
+	"Min" : {"COU": 8, "INT": 10, "CHA": 8, "AD": 13},
+	"Max" : {"FO": 8},
+	"Vitesse": 50
+  },
+  {
+    "ID": 16,
+    "Name_M": "Murloc",
+    "Name_F": "Murloc",
+	"Min" : {"COU": 13, "INT": 8, "CHA": 11, "AD": 10, "FO": 10},
+	"Max" : {},
+	"Vitesse": 80
+  },
+  {
+    "ID": 17,
+    "Name_M": "Troll",
+    "Name_F": "Troll",
+	"Min" : {"COU": 13, "FO": 13},
+	"Max" : {"INT": 10, "CHA": 11, "AD": 9},
+	"Vitesse": 150
+  },
+  {
+    "ID": 18,
+    "Name_M": "Vampire",
+    "Name_F": "Vampire",
+	"Min" : {"COU": 13, "INT": 13, "CHA": 13, "AD": 13, "FO": 13},
+	"Max" : {},
+	"Vitesse": 100
+  },
+  {
+    "ID": 19,
+    "Name_M": "Nain de la Mafia",
+    "Name_F": "Naine de la Mafia",
+	"Min" : {"COU": 10, "INT": 11, "CHA": 8, "AD": 12, "FO": 11},
+	"Max" : {},
+	"Vitesse": 80
+  },
+  {
+    "ID": 20,
+    "Name_M": "",
+    "Name_F": "Amazone Syldérienne",
+	"Min" : {"COU": 12, "INT": 8, "CHA": 12, "AD": 11, "FO": 12},
+	"Max" : {},
+	"Vitesse": 200
+  },
+  {
+    "ID": 21,
+    "Name_M": "Skaven",
+    "Name_F": "Skaven",
+	"Min" : {"COU": 8, "INT": 8, "CHA": 8, "AD": 11},
+	"Max" : {"FO": 12},
+	"Vitesse": 111
+  },
+  {
+    "ID": 22,
+    "Name_M": "Loup-Garou",
+    "Name_F": "Loup-Garou",
+	"Min" : {"COU": 13, "INT": 13, "CHA": 13, "AD": 13, "FO": 13},
+	"Max" : {},
+	"Vitesse": 111
+  },
+  {
+    "ID": 23,
+    "Name_M": "Changelin",
+    "Name_F": "Changeline",
+	"Min" : {"COU": 8, "INT": 11, "CHA": 8, "AD": 12, "FO": 8},
+	"Max" : {},
+	"Vitesse": 100
+  },
+  {
+    "ID": 24,
+    "Name_M": "Nain Duregar",
+    "Name_F": "Naine Duregar",
+	"Min" : {"COU": 11, "INT": 8, "CHA": 8, "AD": 8, "FO": 12},
+	"Max" : {},
+	"Vitesse": 80
+  },
+  {
+    "ID": 25,
+    "Name_M": "Kobold",
+    "Name_F": "Kobold",
+	"Min" : {"COU": 8, "INT": 12, "CHA": 8, "AD": 12},
+	"Max" : {"FO": 10},
+	"Vitesse": 80
+  },
+  {
+    "ID": 26,
+    "Name_M": "Minotaure",
+    "Name_F": "Minotaure",
+	"Min" : {"COU": 12, "FO": 13},
+	"Max" : {"INT": 11, "CHA": 11, "AD": 11},
+	"Vitesse": 120
+  },
+  {
+    "ID": 27,
+    "Name_M": "Homme-Lézard",
+    "Name_F": "Femme-Lézard",
+	"Min" : {"COU": 8, "INT": 8, "CHA": 8, "AD": 11, "FO": 8},
+	"Max" : {},
+	"Vitesse": 150
+  },
+  {
+    "ID": 28,
+    "Name_M": "Incube",
+    "Name_F": "Succube",
+	"Min" : {"COU": 8, "INT": 8, "CHA": 12, "AD": 11},
+	"Max" : {"FO": 10},
+	"Vitesse": 100
+  },
+  {
+    "ID": 29,
+    "Name_M": "Squelette sentient",
+    "Name_F": "Squelette sentient",
+	"Min" : {"COU": 13, "INT": 10, "AD": 11, "FO": 8},
+	"Max" : {"CHA": 8},
+	"Vitesse": 100
+  },
+  {
+    "ID": 30,
+    "Name_M": "Homme-Légume",
+    "Name_F": "Femme-Légume",
+	"Min" : {"COU": 9, "INT": 8, "AD": 8},
+	"Max" : {"CHA": 10, "FO": 10},
+	"Vitesse": 100
+  },
+  {
+    "ID": 31,
+    "Name_M": "Fée",
+    "Name_F": "Fée",
+	"Min" : {"COU": 8, "INT": 11, "CHA": 12, "AD": 11},
+	"Max" : {"FO": 8},
+	"Vitesse": 200
+  },
+  {
+    "ID": 32,
+    "Name_M": "Demi-Démon",
+    "Name_F": "Demie-Démone",
+	"Min" : {"COU": 11, "INT": 13, "CHA": 13, "AD": 12, "FO": 8},
+	"Max" : {},
+	"Vitesse": 100
+  },
+  {
+    "ID": 33,
+    "Name_M": "Drac",
+    "Name_F": "Draque",
+	"Min" : {"COU": 11, "INT": 11, "CHA": 11, "AD": 11, "FO": 11},
+	"Max" : {},
+	"Vitesse": 100
+  },
+  {
+    "ID": 34,
+    "Name_M": "Homme-bête (Caprin)",
+    "Name_F": "Femme-bête (Caprin)",
+	"Min" : {"COU": 10, "INT": 8, "AD": 11, "FO": 11},
+	"Max" : {"CHA": 10},
+	"Vitesse": 150
+  },
+  {
+    "ID": 35,
+    "Name_M": "Homme-bête (Bovin/Porcin)",
+    "Name_F": "Femme-bête (Bovin/Porcin)",
+	"Min" : {"COU": 10, "FO": 13},
+	"Max" : {"INT": 11, "CHA": 10, "AD": 12},
+	"Vitesse": 150
+  },
+  {
+    "ID": 36,
+    "Name_M": "Homme-bête (Canin)",
+    "Name_F": "Femme-bête (Canin)",
+	"Min" : {"COU": 10, "INT": 13, "AD": 10, "FO": 10},
+	"Max" : {"CHA": 10},
+	"Vitesse": 150
+  },
+  {
+    "ID": 37,
+    "Name_M": "Kitsune",
+    "Name_F": "Kitsune",
+	"Min" : {"COU": 10, "INT": 13, "CHA": 9, "AD": 11},
+	"Max" : {"FO": 10},
+	"Vitesse": 200
+  },
+  {
+    "ID": 38,
+    "Name_M": "Harpie",
+    "Name_F": "Harpie",
+	"Min" : {"COU": 10, "INT": 10, "CHA": 8, "AD": 11},
+	"Max" : {"FO": 12},
+	"Vitesse": 120
+  },
+  {
+    "ID": 39,
+    "Name_M": "Profond",
+    "Name_F": "Profonde",
+	"Min" : {"COU": 8, "FO": 12},
+	"Max" : {"INT": 10, "CHA": 8, "AD": 9},
+	"Vitesse": 80
+  },
+  {
+    "ID": 40,
+    "Name_M": "Tengu",
+    "Name_F": "Tengu",
+	"Min" : {"INT": 13, "CHA": 10, "AD": 12},
+	"Max" : {"COU": 12, "FO": 12},
+	"Vitesse": 100
+  },
+  {
+    "ID": 41,
+    "Name_M": "Galéanthrope",
+    "Name_F": "Galéanthrope",
+	"Min" : {"COU": 13, "INT": 11, "CHA": 11, "AD": 13, "FO": 10},
+	"Max" : {},
+	"Vitesse": 200
+  },
+  {
+    "ID": 42,
+    "Name_M": "Wukong",
+    "Name_F": "Wukong",
+	"Min" : {"AD": 11, "FO": 8},
+	"Max" : {"COU": 12, "INT": 11, "CHA": 11},
+	"Vitesse": 120
+  },
+  {
+    "ID": 43,
+    "Name_M": "Naga",
+    "Name_F": "Naga",
+	"Min" : {"INT": 10, "AD": 12, "FO": 8},
+	"Max" : {"COU": 10, "CHA": 12},
+	"Vitesse": 100
+  },
+  {
+    "ID": 44,
+    "Name_M": "Nelfe",
+    "Name_F": "Nelfe",
+	"Min" : {"COU": 11, "INT": 12, "CHA": 12, "AD": 13, "FO": 12},
+	"Max" : {},
+	"Vitesse": 120
+  }
+]

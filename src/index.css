@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import "@fontsource/inter";
+
+@theme {
+    --color-parchment: #f4e4bc;
+    --color-leather: #8b5a2b;
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Georgia', 'Cambria', 'Times New Roman', serif;
+}
+
+:root {
+    font-family: 'Inter', sans-serif;
+}
