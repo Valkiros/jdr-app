@@ -9,6 +9,7 @@ export interface RefEquipementRaw {
     prix_info?: any;
     craft?: any;
     details?: any; // Contains poids, description, etc.
+    type?: string;
 }
 
 // Flat interface for UI components
@@ -18,10 +19,15 @@ export interface RefEquipement {
     category: string;
     nom: string;
     poids: number;
+    pi: number;
+    rupture: string;
     esquive_bonus: number;
     degats_pr: string;
+    pr_mag: number;
+    pr_spe: number;
+    item_type: string; // The specific type (Veste, Epée, etc.)
     description: string;
-    raw: RefEquipementRaw; // Access to full structure
+    raw: RefEquipementRaw;
 }
 
 export interface Equipement {
@@ -32,9 +38,18 @@ export interface Equipement {
     poids: number;
     esquive_bonus: number;
     degats_pr: string;
-    equipement_type: 'Armure' | 'Arme' | 'Sac' | 'Autre';
+    equipement_type: 'Armure' | 'Arme' | 'Sac' | 'Autre' | 'MainsNues';
     equipe: boolean;
     details?: any; // Carried over from RefEquipement
+    modif_pi?: string;
+    bonus_fo?: number;
+    rupture?: string;
+    modif_rupture?: string;
+    // Protection specific mods
+    modif_pr_sol?: string;
+    modif_pr_mag?: string;
+    modif_pr_spe?: string;
+    description?: string; // Storing description locally/cache
 }
 
 export interface BaseStats {
@@ -54,4 +69,108 @@ export interface Etats {
     alcool: number;
     drogue: number;
     blessure_tete: number;
+}
+
+
+export interface Identity {
+    avatar_url: string;
+    nom: string;
+    sexe: string;
+    origine: string;
+    metier: string;
+    specialisation: string;
+    sous_specialisation: string;
+}
+
+export interface ValueMax {
+    current: number;
+    max: number;
+    temp: number; // Additionnel/Temporaire
+}
+
+export interface Corruption {
+    current: number;
+    max: number; // 100
+    daily: number;
+}
+
+export interface Vitals {
+    pv: ValueMax;
+    pm: ValueMax;
+    corruption: Corruption;
+}
+
+export interface GeneralStats {
+    niveau: number;
+    experience: number;
+    points_destin: number;
+    malus_tete: number;
+}
+
+export interface ProtectionValue {
+    base: number;
+    temp: number;
+}
+
+export interface Defenses {
+    naturelle: ProtectionValue;
+    solide: ProtectionValue;
+    speciale: ProtectionValue;
+    magique: ProtectionValue;
+    bouclier_actif: boolean;
+}
+
+export interface Movement {
+    marche: ProtectionValue; // re-use ProtectionValue for Base/Temp structure
+    course: ProtectionValue;
+}
+
+export interface MagicStealth {
+    magie_physique: ProtectionValue;
+    magie_psychique: ProtectionValue;
+    resistance_magique: ProtectionValue;
+    discretion: ProtectionValue;
+}
+
+export interface CharacteristicColumn {
+    t1: number;
+    t2: number;
+    t3: number;
+}
+
+export interface Characteristics {
+    courage: CharacteristicColumn;
+    intelligence: CharacteristicColumn;
+    charisme: CharacteristicColumn;
+    adresse: CharacteristicColumn;
+    force: CharacteristicColumn;
+    perception: CharacteristicColumn;
+    esquive: CharacteristicColumn;
+    attaque: CharacteristicColumn;
+    parade: CharacteristicColumn;
+    degats: CharacteristicColumn;
+}
+
+export interface TempModifiers {
+    mod1: string;
+    mod2: string;
+    mod3: string;
+}
+
+export interface CharacterData {
+    identity: Identity;
+    vitals: Vitals;
+    general: GeneralStats;
+    defenses: Defenses;
+    movement: Movement;
+    magic: MagicStealth;
+    characteristics: Characteristics;
+    temp_modifiers: TempModifiers;
+    inventory: any[]; // Placeholder for now, will link to existing inventory structure
+}
+
+export interface CharacterSummary {
+    id: string;
+    name: string;
+    updated_at: string;
 }

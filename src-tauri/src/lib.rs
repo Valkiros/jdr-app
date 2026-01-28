@@ -1,8 +1,8 @@
+mod commands;
 mod db;
-mod sync;
 mod logic;
 mod seeds;
-mod commands;
+mod sync;
 
 use db::AppState;
 use std::sync::Mutex;
@@ -18,7 +18,7 @@ pub fn run() {
     tauri::Builder::default()
         .setup(|app| {
             let mut conn = db::init_db().expect("failed to initialize sqlite");
-            
+
             // Run seeds
             if let Err(e) = seeds::seed_reference_data(&mut conn, app.handle().clone()) {
                 eprintln!("Failed to seed data: {}", e);
@@ -31,10 +31,14 @@ pub fn run() {
         })
         .plugin(tauri_plugin_opener::init())
         .invoke_handler(tauri::generate_handler![
-            greet, 
+            greet,
             sync::sync_personnages,
             commands::get_ref_equipements,
-            commands::compute_stats
+            commands::compute_stats,
+            commands::get_all_personnages,
+            commands::get_personnage,
+            commands::create_personnage,
+            commands::delete_personnage
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

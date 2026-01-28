@@ -7,7 +7,7 @@ use std::sync::Mutex;
 pub struct Personnage {
     pub id: String,
     pub name: String,
-    pub data: Value, // Complete sheet data
+    pub data: Value,        // Complete sheet data
     pub updated_at: String, // ISO timestamp for sync
 }
 
@@ -16,7 +16,7 @@ pub struct AppState {
 }
 
 pub fn init_db() -> Result<Connection> {
-    let conn = Connection::open("local.db")?;
+    let conn = Connection::open("../game_data_v5.db")?;
 
     conn.execute(
         "CREATE TABLE IF NOT EXISTS personnages (
@@ -29,12 +29,19 @@ pub fn init_db() -> Result<Connection> {
     )?;
 
     conn.execute(
-        "CREATE TABLE IF NOT EXISTS ref_items (
+        "CREATE TABLE IF NOT EXISTS ref_equipements (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             category TEXT NOT NULL,
-            ref_id INTEGER NOT NULL,
             nom TEXT NOT NULL,
-            data TEXT NOT NULL -- Store JSONB equivalent as TEXT in SQLite
+            poids REAL NOT NULL,
+            pi INTEGER DEFAULT 0,
+            rupture TEXT DEFAULT '',
+            esquive_bonus INTEGER NOT NULL,
+            degats_pr TEXT NOT NULL,
+            pr_mag INTEGER DEFAULT 0,
+            pr_spe INTEGER DEFAULT 0,
+            item_type TEXT DEFAULT '',
+            description TEXT NOT NULL
         )",
         [],
     )?;

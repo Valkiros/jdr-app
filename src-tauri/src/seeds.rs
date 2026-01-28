@@ -10,32 +10,33 @@ struct SourceItem {
     poids: String, // Parsing needed
     esquive: Option<String>,
     degats: Option<String>,
+    pi: Option<String>,
+    rupture: Option<String>,
     #[serde(alias = "pr_sol")]
     pr: Option<String>,
-    description: Option<String>, // Maybe map 'effet' here
+    pr_mag: Option<String>, // ADD THIS
+    pr_spe: Option<String>, // ADD THIS
+    #[serde(alias = "type")]
+    item_type: Option<String>, // Captures "type" from JSON
+    description: Option<String>,
     effet: Option<String>,
 }
 
 pub fn seed_reference_data(conn: &mut Connection, _app_handle: AppHandle) -> Result<(), String> {
-    let count: i64 = conn.query_row("SELECT COUNT(*) FROM ref_equipements", [], |row| row.get(0)).map_err(|e| e.to_string())?;
+    let count: i64 = conn
+        .query_row("SELECT COUNT(*) FROM ref_equipements", [], |row| row.get(0))
+        .map_err(|e| e.to_string())?;
     if count > 0 {
         return Ok(()); // Already seeded
     }
 
-    // Path resolution: We need to find the 'data/items' folder.
-    // In dev: src-tauri/data/items. In prod: resource folder.
-    // For now, let's assume relative path works in dev or hardcode for this explicit task request.
-    // The user said: "d:\Application JDR\src-tauri\data\items"
-    
-    // Better: use the specific path we found earlier.
-    let base_path = Path::new("data/items"); 
-    
+    let base_path = Path::new("data/items");
+
     let categories = vec![
         ("Mains_nues.json", "Main nue"),
         ("Armes.json", "Armes"),
         ("Protections.json", "Protections"),
         ("Accessoires.json", "Accessoires"),
-        // Add others if needed
         ("Sacs.json", "Sacs"),
     ];
 
@@ -54,8 +55,35 @@ pub fn seed_reference_data(conn: &mut Connection, _app_handle: AppHandle) -> Res
         for item in items {
             let poids_grammes: f32 = item.poids.parse().unwrap_or(0.0);
             let poids_kg = poids_grammes / 1000.0;
-            
-            let esquive_bonus: i32 = item.esquive
+
+            let esquive_bonus: i32 = item
+                .esquive
+                .as_deref()
+                .unwrap_or("0")
+                .trim()
+                .parse()
+                .unwrap_or(0);
+
+            let pi_value: i32 = item
+                .pi
+                .as_deref()
+                .unwrap_or("0")
+                .trim()
+                .parse()
+                .unwrap_or(0);
+
+            let rupture = item.rupture.unwrap_or_default();
+
+            let pr_mag: i32 = item
+                .pr_mag
+                .as_deref()
+                .unwrap_or("0")
+                .trim()
+                .parse()
+                .unwrap_or(0);
+
+            let pr_spe: i32 = item
+                .pr_spe
                 .as_deref()
                 .unwrap_or("0")
                 .trim()
@@ -64,11 +92,12 @@ pub fn seed_reference_data(conn: &mut Connection, _app_handle: AppHandle) -> Res
 
             let degats_pr = item.degats.or(item.pr).unwrap_or_default();
             let description = item.effet.unwrap_or_default();
+            let item_type = item.item_type.unwrap_or_default();
 
             tx.execute(
-                "INSERT INTO ref_equipements (category, nom, poids, esquive_bonus, degats_pr, description)
-                 VALUES (?1, ?2, ?3, ?4, ?5, ?6)",
-                params![category, item.nom, poids_kg, esquive_bonus, degats_pr, description],
+                "INSERT INTO ref_equipements (category, nom, poids, pi, rupture, esquive_bonus, degats_pr, pr_mag, pr_spe, item_type, description)
+                 VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11)",
+                params![category, item.nom, poids_kg, pi_value, rupture, esquive_bonus, degats_pr, pr_mag, pr_spe, item_type, description],
             ).map_err(|e| e.to_string())?;
         }
     }

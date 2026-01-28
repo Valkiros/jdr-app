@@ -8,26 +8,35 @@ interface EquipementTableProps {
     onItemsChange: (items: Equipement[]) => void;
     referenceOptions: RefEquipement[];
     type: 'Armure' | 'Arme' | 'Sac' | 'Autre';
+    defaultItem?: Partial<Equipement>; // Optional default values
 }
 
-export const EquipementTable: React.FC<EquipementTableProps> = ({ title, items, onItemsChange, referenceOptions, type }) => {
+export const EquipementTable: React.FC<EquipementTableProps> = ({ title, items, onItemsChange, referenceOptions, type, defaultItem }) => {
 
     const handleAddRow = () => {
         const newItem: Equipement = {
             id: uuidv4(),
             refId: 0,
+            originalRefId: 0,
             nom: '',
             poids: 0,
             esquive_bonus: 0,
             degats_pr: '',
             equipement_type: type,
-            equipe: true
+            equipe: true,
+            ...defaultItem // Merge default values
         };
         onItemsChange([...items, newItem]);
     };
 
     const handleRemoveRow = (id: string) => {
         onItemsChange(items.filter(item => item.id !== id));
+    };
+
+    const handleRemoveLastRow = () => {
+        if (items.length > 0) {
+            onItemsChange(items.slice(0, -1));
+        }
     };
 
     const handleSelectChange = (id: string, refIdStr: string) => {
@@ -64,12 +73,23 @@ export const EquipementTable: React.FC<EquipementTableProps> = ({ title, items, 
         <div className="mb-6 p-4 bg-parchment/50 rounded-lg border-2 border-leather shadow-sm hover:shadow-md transition-shadow">
             <div className="flex justify-between items-center mb-4 border-b border-leather/30 pb-2">
                 <h3 className="text-xl font-bold text-leather-dark font-serif tracking-wide">{title}</h3>
-                <button
-                    onClick={handleAddRow}
-                    className="px-3 py-1 bg-leather text-parchment font-serif font-bold rounded hover:bg-leather-dark active:scale-95 transition-all shadow-sm"
-                >
-                    +
-                </button>
+                <div className="flex gap-2">
+                    <button
+                        onClick={handleRemoveLastRow}
+                        className="px-3 py-1 bg-parchment border border-leather text-leather font-serif font-bold rounded hover:bg-leather hover:text-parchment active:scale-95 transition-all shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                        disabled={items.length === 0}
+                        title="Supprimer la dernière ligne"
+                    >
+                        -
+                    </button>
+                    <button
+                        onClick={handleAddRow}
+                        className="px-3 py-1 bg-leather text-parchment font-serif font-bold rounded hover:bg-leather-dark active:scale-95 transition-all shadow-sm"
+                        title="Ajouter une ligne"
+                    >
+                        +
+                    </button>
+                </div>
             </div>
             <table className="w-full text-left border-collapse">
                 <thead>
