@@ -97,14 +97,6 @@ export const ArmesTable: React.FC<ArmesTableProps> = ({ items, onItemsChange, re
         }));
     };
 
-    const handleToggleEquip = (id: string) => {
-        onItemsChange(items.map(item => {
-            if (item.id === id) {
-                return { ...item, equipe: !item.equipe };
-            }
-            return item;
-        }));
-    };
 
     const calculateTotal = (degats: string, refPi: number, modif: string, bonusFo: number): string => {
         if (!degats) return '';

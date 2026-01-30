@@ -8,7 +8,6 @@ interface CharacteristicsPanelProps {
     inventory: Equipement[];
     referenceOptions: any[]; // Using any[] to match refs passing
     onChange: (characteristics: Characteristics) => void;
-    onInventoryChange: (inventory: Equipement[]) => void;
 }
 
 export const CharacteristicsPanel: React.FC<CharacteristicsPanelProps> = ({
@@ -16,8 +15,7 @@ export const CharacteristicsPanel: React.FC<CharacteristicsPanelProps> = ({
     equippedValues,
     inventory = [], // Default to empty array if undefined
     referenceOptions = [],
-    onChange,
-    onInventoryChange
+    onChange
 }) => {
     const [hoveredInfo, setHoveredInfo] = React.useState<{ id: string, x: number, y: number } | null>(null);
 

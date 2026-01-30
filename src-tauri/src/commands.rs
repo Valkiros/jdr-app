@@ -1,8 +1,7 @@
 use crate::db::AppState;
 use crate::logic::{calculer_stats_finales, BaseStats, Equipement, Etats, FinalStats};
-use rusqlite::params;
+use rusqlite::{params, OptionalExtension};
 use serde::{Deserialize, Serialize};
-use std::sync::Mutex;
 use tauri::State;
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -223,5 +222,183 @@ pub fn import_personnage(
     )
     .map_err(|e| e.to_string())?;
 
+    Ok(())
+}
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Requirements {
+    #[serde(rename = "COU")]
+    pub cour: Option<i32>,
+    #[serde(rename = "INT")]
+    pub int: Option<i32>,
+    #[serde(rename = "CHA")]
+    pub cha: Option<i32>,
+    #[serde(rename = "AD")]
+    pub ad: Option<i32>,
+    #[serde(rename = "FO")]
+    pub fo: Option<i32>,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Origine {
+    #[serde(alias = "ID")]
+    pub id: i32,
+    #[serde(alias = "Name_M")]
+    pub name_m: String,
+    #[serde(alias = "Name_F")]
+    pub name_f: String,
+    #[serde(alias = "Min")]
+    pub min: Requirements,
+    #[serde(alias = "Max")]
+    pub max: Requirements,
+    #[serde(alias = "Vitesse")]
+    pub vitesse: i32,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Metier {
+    #[serde(alias = "ID")]
+    pub id: i32,
+    #[serde(alias = "Name_M")]
+    pub name_m: String,
+    #[serde(alias = "Name_F")]
+    pub name_f: String,
+    #[serde(alias = "Min")]
+    pub min: Requirements,
+    #[serde(alias = "Max")]
+    pub max: Requirements,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct GameRules {
+    pub origines: Vec<Origine>,
+    pub metiers: Vec<Metier>,
+}
+
+#[tauri::command]
+pub fn get_game_rules() -> Result<GameRules, String> {
+    let origines_json = include_str!("../data/config/origines.json");
+    let metiers_json = include_str!("../data/config/metiers.json");
+
+    let origines: Vec<Origine> = serde_json::from_str(origines_json)
+        .map_err(|e| format!("Failed to parse origines.json: {}", e))?;
+    let metiers: Vec<Metier> = serde_json::from_str(metiers_json)
+        .map_err(|e| format!("Failed to parse metiers.json: {}", e))?;
+
+    Ok(GameRules { origines, metiers })
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct VersionSummary {
+    version_id: i64,
+    saved_at: String,
+}
+
+#[tauri::command]
+pub fn get_personnage_versions(
+    id: String,
+    state: State<AppState>,
+) -> Result<Vec<VersionSummary>, String> {
+    let db = state.db.lock().map_err(|e| e.to_string())?;
+    let mut stmt = db
+        .prepare("SELECT version_id, saved_at FROM personnages_versions WHERE personnage_id = ?1 ORDER BY saved_at DESC")
+        .map_err(|e| e.to_string())?;
+
+    let rows = stmt
+        .query_map(params![id], |row| {
+            Ok(VersionSummary {
+                version_id: row.get(0)?,
+                saved_at: row.get(1)?,
+            })
+        })
+        .map_err(|e| e.to_string())?;
+
+    let mut versions = Vec::new();
+    for row in rows {
+        versions.push(row.map_err(|e| e.to_string())?);
+    }
+    Ok(versions)
+}
+
+#[tauri::command]
+pub fn restore_personnage_version(
+    id: String,
+    version_id: i64,
+    state: State<AppState>,
+) -> Result<(), String> {
+    let mut db = state.db.lock().map_err(|e| e.to_string())?;
+    let tx = db.transaction().map_err(|e| e.to_string())?;
+
+    {
+        // 1. Get version data
+        let (data, saved_at): (String, String) = tx.query_row(
+            "SELECT data, saved_at FROM personnages_versions WHERE version_id = ?1 AND personnage_id = ?2",
+            params![version_id, id],
+            |row| Ok((row.get(0)?, row.get(1)?)),
+        )
+        .map_err(|e| format!("Version introuvable: {}", e.to_string()))?;
+
+        // 2. Restore to main table
+        tx.execute(
+            "UPDATE personnages SET data = ?1, updated_at = ?2 WHERE id = ?3",
+            params![data, saved_at, id],
+        )
+        .map_err(|e| e.to_string())?;
+    }
+
+    tx.commit().map_err(|e| e.to_string())?;
+    Ok(())
+}
+
+#[tauri::command]
+pub fn save_personnage_local(
+    id: String,
+    name: String,
+    data: String,
+    updated_at: String,
+    state: State<AppState>,
+) -> Result<(), String> {
+    let mut db = state.db.lock().map_err(|e| e.to_string())?;
+    let tx = db.transaction().map_err(|e| e.to_string())?;
+
+    // 1. Get current data to backup
+    let result: Result<Option<(String, String)>, rusqlite::Error> = tx
+        .query_row(
+            "SELECT data, updated_at FROM personnages WHERE id = ?1",
+            params![id],
+            |row| Ok((row.get(0)?, row.get(1)?)),
+        )
+        .optional();
+    // Note: If new char, result is None, nothing to backup.
+
+    if let Ok(Some((old_data, old_updated_at))) = result {
+        tx.execute(
+            "INSERT INTO personnages_versions (personnage_id, data, saved_at) VALUES (?1, ?2, ?3)",
+            params![id, old_data, old_updated_at],
+        )
+        .map_err(|e| e.to_string())?;
+    }
+
+    // 2. Prune old versions (Keep 3)
+    tx.execute(
+        "DELETE FROM personnages_versions 
+         WHERE personnage_id = ?1 
+         AND version_id NOT IN (
+            SELECT version_id FROM personnages_versions 
+            WHERE personnage_id = ?1 
+            ORDER BY saved_at DESC 
+            LIMIT 3
+         )",
+        params![id],
+    )
+    .map_err(|e| e.to_string())?;
+
+    // 3. Update Current
+    tx.execute(
+        "UPDATE personnages SET name = ?1, data = ?2, updated_at = ?3 WHERE id = ?4",
+        params![name, data, updated_at, id],
+    )
+    .map_err(|e| e.to_string())?;
+
+    tx.commit().map_err(|e| e.to_string())?;
     Ok(())
 }

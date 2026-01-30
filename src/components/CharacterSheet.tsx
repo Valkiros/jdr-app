@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, forwardRef, useImperativeHandle } from 'react';
+import { createPortal } from 'react-dom';
 import { invoke } from '@tauri-apps/api/core';
 import { CharacterHeader } from './CharacterHeader';
+import { LocalSaveButton } from './LocalSaveButton';
 import { GeneralStatsPanel } from './GeneralStatsPanel';
 import { DefensePanel } from './DefensePanel';
 import { MagicStealthPanel } from './MagicStealthPanel';
@@ -71,10 +73,48 @@ const INITIAL_DATA: CharacterData = {
     inventory: []
 };
 
-export const CharacterSheet: React.FC<CharacterSheetProps> = ({ characterId }) => {
-    const [data, setData] = useState<CharacterData>(INITIAL_DATA);
+export interface CharacterSheetHandle {
+    save: () => Promise<void>;
+}
+
+interface CharacterSheetProps {
+    characterId: string;
+    onDirtyChange?: (isDirty: boolean) => void;
+}
+
+export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetProps>(({ characterId, onDirtyChange }, ref) => {
+    const [data, setDataState] = useState<CharacterData>(INITIAL_DATA);
     const [loading, setLoading] = useState(true);
-    const [refs, setRefs] = useState<any[]>([]); // Using any[] temporarily for RefEquipement as it's not imported yet, will import
+    const [refs, setRefs] = useState<any[]>([]);
+    const isInitialLoad = React.useRef(true);
+
+    const saveCharacter = async () => {
+        try {
+            await invoke('save_personnage_local', {
+                id: characterId,
+                name: data.identity.nom || 'Sans nom',
+                data: JSON.stringify(data),
+                updatedAt: new Date().toISOString()
+            });
+            onDirtyChange?.(false);
+            return Promise.resolve();
+        } catch (err) {
+            console.error("Save failed", err);
+            return Promise.reject(err);
+        }
+    };
+
+    useImperativeHandle(ref, () => ({
+        save: saveCharacter
+    }));
+
+    const setData = (newData: CharacterData) => {
+        setDataState(newData);
+        if (!isInitialLoad.current) {
+            onDirtyChange?.(true);
+        }
+    };
+
 
     useEffect(() => {
         // Fetch Refs
@@ -108,13 +148,16 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({ characterId }) =
                         temp_modifiers: { ...INITIAL_DATA.temp_modifiers, ...(char.data.temp_modifiers || {}) },
                         inventory: char.data.inventory || []
                     };
-                    setData(mergedData);
+                    setDataState(mergedData);
                 }
                 setLoading(false);
+                // Allow subsequent updates to trigger dirty state
+                setTimeout(() => { isInitialLoad.current = false; }, 500);
             })
             .catch(err => {
                 console.error("Failed to load character:", err);
                 setLoading(false);
+                isInitialLoad.current = false;
             });
     }, [characterId]);
 
@@ -308,7 +351,6 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({ characterId }) =
     return (
         <div className="max-w-7xl mx-auto p-4 md:p-8 space-y-6 pb-20">
             <CharacterHeader
-                characterId={characterId}
                 characterData={data}
                 identity={data.identity}
                 vitals={data.vitals}
@@ -393,7 +435,6 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({ characterId }) =
                             inventory={data.inventory}
                             referenceOptions={refs}
                             onChange={(characteristics) => setData({ ...data, characteristics })}
-                            onInventoryChange={(inventory) => setData({ ...data, inventory })}
                         />
                     </div>
 
@@ -414,6 +455,15 @@ export const CharacterSheet: React.FC<CharacterSheetProps> = ({ characterId }) =
                     />
                 </div>
             )}
+
+            {/* Portal for Save Button in Header */}
+            {document.getElementById('header-actions') && createPortal(
+                <LocalSaveButton
+                    onSave={saveCharacter}
+                />,
+                document.getElementById('header-actions')!
+            )}
         </div>
     );
-};
+});
+CharacterSheet.displayName = 'CharacterSheet';

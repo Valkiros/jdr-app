@@ -158,7 +158,7 @@ export const ProtectionsTable: React.FC<ProtectionsTableProps> = ({ items, onIte
                         </tr>
                     </thead>
                     <tbody className="text-ink">
-                        {items.map((item, index) => {
+                        {items.map((item) => {
                             const refPrSol = getRefValue(item.refId, 'degats_pr');
                             const refPrSpe = getRefValue(item.refId, 'pr_spe');
                             const refPrMag = getRefValue(item.refId, 'pr_mag');

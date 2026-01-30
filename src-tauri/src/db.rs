@@ -1,4 +1,4 @@
-use rusqlite::{params, Connection, Result};
+use rusqlite::{Connection, Result};
 use serde::{Deserialize, Serialize};
 use serde_json::Value; // Keep generic JSON for flexibility
 use std::sync::Mutex;
@@ -43,6 +43,16 @@ pub fn init_db() -> Result<Connection> {
             item_type TEXT DEFAULT '',
             description TEXT NOT NULL,
             caracteristiques TEXT DEFAULT '{}'
+        )",
+        [],
+    )?;
+
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS personnages_versions (
+            version_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            personnage_id TEXT NOT NULL,
+            data TEXT NOT NULL,
+            saved_at TEXT NOT NULL
         )",
         [],
     )?;

@@ -1,4 +1,4 @@
-use rusqlite::{params, Connection, Transaction};
+use rusqlite::{params, Connection};
 use serde::Deserialize;
 use std::fs;
 use std::path::Path;

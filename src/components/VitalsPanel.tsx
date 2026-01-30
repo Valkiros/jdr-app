@@ -24,55 +24,70 @@ export const VitalsPanel: React.FC<VitalsPanelProps> = ({ vitals, onChange }) =>
         });
     };
 
-    const renderBar = (label: string, data: ValueMax, category: 'pv' | 'pm', colorClass: string) => (
-        <div className="flex flex-col gap-1 p-3 bg-parchment/40 rounded border border-leather/20">
-            <h3 className="font-serif font-bold text-leather uppercase text-sm">{label}</h3>
+    const renderBar = (label: string, data: ValueMax, category: 'pv' | 'pm', colorClass: string, tempColorClass: string) => {
+        // Total capacity for the visual bar is Max + Additional points
+        const totalCapacity = (data.max || 1) + (data.temp || 0);
 
-            {/* Bar Visual */}
-            <div className="w-full h-4 bg-gray-300 rounded overflow-hidden mb-2 border border-gray-400">
-                <div
-                    className={`h-full ${colorClass}`}
-                    style={{ width: `${Math.min(100, (data.current / data.max) * 100)}%` }}
-                />
-            </div>
+        // Calculate percentages based on the total capacity
+        const currentPct = Math.min(100, (data.current / totalCapacity) * 100);
+        const tempPct = Math.min(100, (data.temp / totalCapacity) * 100);
 
-            {/* Inputs */}
-            <div className="flex gap-2 text-center text-sm">
-                <div className="flex flex-col w-1/3">
-                    <label className="text-[10px] uppercase opacity-70">Actuel</label>
-                    <input
-                        type="number"
-                        value={data.current || ''}
-                        onChange={(e) => handleValueMaxChange(category, 'current', e.target.value)}
-                        className="bg-white/50 border border-leather/30 rounded px-1 w-full text-center"
+        return (
+            <div className="flex flex-col gap-1 p-3 bg-parchment/40 rounded border border-leather/20">
+                <h3 className="font-serif font-bold text-leather uppercase text-sm">{label}</h3>
+
+                {/* Bar Visual */}
+                <div className="w-full h-4 bg-gray-300 rounded overflow-hidden mb-2 border border-gray-400 flex">
+                    <div
+                        className={`h-full ${colorClass}`}
+                        style={{ width: `${currentPct}%` }}
                     />
+                    {data.temp > 0 && (
+                        <div
+                            className={`h-full ${tempColorClass}`}
+                            style={{ width: `${tempPct}%` }}
+                        />
+                    )}
                 </div>
-                <div className="flex flex-col w-1/3">
-                    <label className="text-[10px] uppercase opacity-70">Max</label>
-                    <input
-                        type="number"
-                        value={data.max || ''}
-                        onChange={(e) => handleValueMaxChange(category, 'max', e.target.value)}
-                        className="bg-white/50 border border-leather/30 rounded px-1 w-full text-center"
-                    />
-                </div>
-                <div className="flex flex-col w-1/3">
-                    <label className="text-[10px] uppercase opacity-70">Add.</label>
-                    <input
-                        type="number"
-                        value={data.temp || ''}
-                        onChange={(e) => handleValueMaxChange(category, 'temp', e.target.value)}
-                        className="bg-white/50 border border-leather/30 rounded px-1 w-full text-center"
-                    />
+
+                {/* Inputs */}
+                <div className="flex gap-2 text-center text-sm">
+                    <div className="flex flex-col w-1/3">
+                        <label className="text-[10px] uppercase opacity-70">Actuel</label>
+                        <input
+                            type="number"
+                            value={data.current || ''}
+                            onChange={(e) => handleValueMaxChange(category, 'current', e.target.value)}
+                            className="bg-white/50 border border-leather/30 rounded px-1 w-full text-center"
+                        />
+                    </div>
+                    <div className="flex flex-col w-1/3">
+                        <label className="text-[10px] uppercase opacity-70">Max</label>
+                        <input
+                            type="number"
+                            value={data.max || ''}
+                            onChange={(e) => handleValueMaxChange(category, 'max', e.target.value)}
+                            className="bg-white/50 border border-leather/30 rounded px-1 w-full text-center"
+                        />
+                    </div>
+                    <div className="flex flex-col w-1/3">
+                        <label className="text-[10px] uppercase opacity-70">Add.</label>
+                        <input
+                            type="number"
+                            value={data.temp || ''}
+                            onChange={(e) => handleValueMaxChange(category, 'temp', e.target.value)}
+                            className={`bg-white/50 border border-leather/30 rounded px-1 w-full text-center font-bold ${data.temp > 0 ? 'text-leather-dark bg-yellow-50' : ''}`}
+                        />
+                    </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+    };
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-4">
-            {renderBar('Points de Vie', vitals.pv, 'pv', 'bg-red-600')}
-            {renderBar('Points de Mana', vitals.pm, 'pm', 'bg-blue-600')}
+            {renderBar('Points de Vie', vitals.pv, 'pv', 'bg-red-600', 'bg-red-400')}
+            {renderBar('Points de Mana', vitals.pm, 'pm', 'bg-blue-600', 'bg-blue-400')}
 
             {/* Corruption Section */}
             <div className="flex flex-col gap-1 p-3 bg-parchment/40 rounded border border-leather/20">

@@ -177,6 +177,11 @@ export interface CharacterSummary {
     updated_at: string;
 }
 
+export interface VersionSummary {
+    version_id: number;
+    saved_at: string;
+}
+
 export interface StatComponent {
     label: string;
     value: number;
@@ -186,4 +191,34 @@ export interface StatDetail {
     formula: string;
     components: StatComponent[];
     total: number;
+}
+
+export interface Requirements {
+    COUR?: number;
+    INT?: number;
+    CHA?: number;
+    AD?: number;
+    FO?: number;
+}
+
+export interface Origine {
+    id: number;
+    name_m: string;
+    name_f: string;
+    min: Requirements;
+    max: Requirements;
+    vitesse: number;
+}
+
+export interface Metier {
+    id: number;
+    name_m: string;
+    name_f: string;
+    min: Requirements;
+    max: Requirements;
+}
+
+export interface GameRules {
+    origines: Origine[];
+    metiers: Metier[];
 }
