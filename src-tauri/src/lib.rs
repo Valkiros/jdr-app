@@ -45,7 +45,8 @@ pub fn run() {
             commands::save_personnage_local,
             commands::get_personnage_versions,
             commands::restore_personnage_version,
-            commands::get_game_rules
+            commands::get_game_rules,
+            commands::get_competences
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

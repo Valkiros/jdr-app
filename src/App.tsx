@@ -7,9 +7,11 @@ import { Session, AuthChangeEvent } from "@supabase/supabase-js";
 import { CharacterSheet, CharacterSheetHandle } from "./components/CharacterSheet";
 import { CharacterSelection } from "./components/CharacterSelection";
 import { ConfirmModal } from "./components/ConfirmModal";
+import { UserProfile } from "./types";
 
 function App() {
   const [session, setSession] = useState<Session | null>(null);
+  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [selectedCharacterId, setSelectedCharacterId] = useState<string | null>(null);
   const [isDirty, setIsDirty] = useState(false);
 
@@ -18,18 +20,36 @@ function App() {
   const sheetRef = useRef<CharacterSheetHandle>(null);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }: { data: { session: Session | null } }) => {
-      setSession(session);
-    });
+    const fetchProfile = async (userId: string) => {
+      // Fetch user profile from Supabase
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', userId)
+        .maybeSingle();
 
+      if (data) {
+        setUserProfile(data as UserProfile);
+      } else if (error) {
+        console.error("Error fetching profile:", error);
+      }
+    };
+
+    // Listens to auth changes (fires immediately with current session too)
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event: AuthChangeEvent, session: Session | null) => {
       setSession(session);
-      if (!session) {
+      if (session) {
+        // Only fetch if profile is missing or ID changed to avoid loops
+        // Simple check for now: always fetch on auth change is safer than stale data
+        fetchProfile(session.user.id);
+      } else {
         setSelectedCharacterId(null);
+        setUserProfile(null);
       }
     });
+
 
     // Window close warning
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
@@ -86,7 +106,14 @@ function App() {
   return (
     <div className="flex flex-col h-screen bg-parchment text-leather font-sans">
       <header className="p-4 bg-leather text-parchment shadow-md flex justify-between items-center sticky top-0 z-50">
-        <h1 className="text-xl font-bold">JDR Manager</h1>
+        <div className="flex items-center gap-4">
+          <h1 className="text-xl font-bold">JDR Manager</h1>
+          {userProfile && (
+            <span className="px-2 py-1 bg-parchment text-leather text-xs font-bold rounded uppercase border border-leather/50">
+              {userProfile.role}
+            </span>
+          )}
+        </div>
         <div className="flex gap-4 items-center">
           <div id="header-actions"></div>
           <button

@@ -274,22 +274,70 @@ pub struct Metier {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
+pub struct CorruptionOrigineRef {
+    #[serde(rename = "Masculin")]
+    pub masculin: String,
+    #[serde(rename = "Féminin")]
+    pub feminin: String,
+    #[serde(rename = "Effets")]
+    pub effets: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct CorruptionPalierRef {
+    #[serde(rename = "Paliers")]
+    pub paliers: i32,
+    #[serde(rename = "Aura chaotique (arme)")]
+    pub aura_chaotique_arme: i32,
+    #[serde(rename = "Aura divine (arme)")]
+    pub aura_divine_arme: i32,
+    #[serde(rename = "Aura chaotique (protection)")]
+    pub aura_chaotique_protection: i32,
+    #[serde(rename = "Aura divine (protection)")]
+    pub aura_divine_protection: i32,
+    #[serde(rename = "Résistance magique (RM)")]
+    pub rm: i32,
+    #[serde(rename = "Force (FO)")]
+    pub fo: i32,
+    #[serde(rename = "Intelligence (INT)")]
+    pub int: i32,
+    #[serde(rename = "Charisme (CHA)")]
+    pub cha: i32,
+    #[serde(rename = "Effets")]
+    pub effets: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
 pub struct GameRules {
     pub origines: Vec<Origine>,
     pub metiers: Vec<Metier>,
+    pub corruption_origine: Vec<CorruptionOrigineRef>,
+    pub corruption_palier: Vec<CorruptionPalierRef>,
 }
 
 #[tauri::command]
 pub fn get_game_rules() -> Result<GameRules, String> {
     let origines_json = include_str!("../data/config/origines.json");
     let metiers_json = include_str!("../data/config/metiers.json");
+    let corruption_origine_json = include_str!("../data/config/corruption_origine.json");
+    let corruption_palier_json = include_str!("../data/config/corruption_palier.json");
 
     let origines: Vec<Origine> = serde_json::from_str(origines_json)
         .map_err(|e| format!("Failed to parse origines.json: {}", e))?;
     let metiers: Vec<Metier> = serde_json::from_str(metiers_json)
         .map_err(|e| format!("Failed to parse metiers.json: {}", e))?;
+    let corruption_origine: Vec<CorruptionOrigineRef> =
+        serde_json::from_str(corruption_origine_json)
+            .map_err(|e| format!("Failed to parse corruption_origine.json: {}", e))?;
+    let corruption_palier: Vec<CorruptionPalierRef> = serde_json::from_str(corruption_palier_json)
+        .map_err(|e| format!("Failed to parse corruption_palier.json: {}", e))?;
 
-    Ok(GameRules { origines, metiers })
+    Ok(GameRules {
+        origines,
+        metiers,
+        corruption_origine,
+        corruption_palier,
+    })
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -406,4 +454,22 @@ pub fn save_personnage_local(
 
     tx.commit().map_err(|e| e.to_string())?;
     Ok(())
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Competence {
+    #[serde(alias = "Competence")]
+    pub nom: String,
+    #[serde(alias = "Description")]
+    pub description: String,
+    #[serde(alias = "Tableau")]
+    pub tableau: Option<String>,
+}
+
+#[tauri::command]
+pub fn get_competences() -> Result<Vec<Competence>, String> {
+    let json_content = include_str!("../data/config/competences.json");
+    let competences: Vec<Competence> = serde_json::from_str(json_content)
+        .map_err(|e| format!("Failed to parse competences.json: {}", e))?;
+    Ok(competences)
 }

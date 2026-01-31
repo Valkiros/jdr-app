@@ -1,0 +1,2422 @@
+[
+  {
+    "Competence": "Ambidextrie",
+    "Description": "Le héros peut utiliser de 2 armes en simultanée. Il a 2 attaques et 1 parade par T. Le 2ème attaque a AT-5."
+  },
+  {
+    "Competence": "Agoraphobie",
+    "Description": "En milieu peuplé, le héros fuit sauf épreuve INT+4. Rattrapage sur CHA des alliés."
+  },
+  {
+    "Competence": "Appel des renforts",
+    "Description": "En combat, le héros évite les attaques d'opportunité."
+  },
+  {
+    "Competence": "Appel du Braav'",
+    "Description": "Le héros se porte toujours volontaire et ne fuit pas un combat sauf épreuve INT+4. Rattrapage sur CHA des alliés."
+  },
+  {
+    "Competence": "Appel du sauvage",
+    "Description": "En présence de horde, le héros devient un ennemi sauf épreuve INT+4. Rattrapage sur CHA des alliés."
+  },
+  {
+    "Competence": "Appel du tonneau",
+    "Description": "En présence d'alcool, le héros doit consommer jusqu'à 10 doses d'alcool sauf épreuve INT+4. Rattrapage sur CHA des alliés."
+  },
+  {
+    "Competence": "Appel du ventre",
+    "Description": "En manque de nourriture, le héros veut manger ses amis sauf épreuve INT+4. Rattrapage sur CHA des alliés."
+  },
+  {
+    "Competence": "Armes de bourrin",
+    "Description": "Le héros peut utiliser les armes à 2 mains sans un malus supplémentaire d'AT-2 et PRD-2."
+  },
+  {
+    "Competence": "Armes longues",
+    "Description": "Le héros ignore les malus AT et AD des armes à 2 mains mais a un malus supplémentaire d'AT-2 et PRD-2 en utilisant des armes à une main."
+  },
+  {
+    "Competence": "Arnaque et carambouille",
+    "Description": "Le héros a une remise de 20% à l'achat et 10% à la revente."
+  },
+  {
+    "Competence": "Attire les monstres",
+    "Description": "En cas de rencontre avec des ennemis, le héros est attaqué en premier."
+  },
+  {
+    "Competence": "Beauté féroce",
+    "Description": "Les ennemis humanoïdes mâles ont -1 à toutes les caractéristiques contre le héros sauf épreuve INT."
+  },
+  {
+    "Competence": "Bond d'attaque",
+    "Description": "1 fois par combat, le héros saute de 8 mètres vers un ennemi en plus du déplacement et fait une action d'attaque. Le héros a l'initiative durant cet assaut."
+  },
+  {
+    "Competence": "Bourre pif",
+    "Description": "Le héros a accès à l'arme \"Main nue (Bourre-pif)\" au lieu de \"Main nue\", aux armes à main nue sans malus supplémentaire d'AT-4, aux coups spéciaux à main nue et aux critiques à main nue."
+  },
+  {
+    "Competence": "Bricolo du dimanche",
+    "Description": "Le héros peut fabriquer ou réparer des armes rudimentaires, du matériel varié ou/et faire de la consolidation sur moyenne (INT et AD). Voir règles de la compétence FORGERON."
+  },
+  {
+    "Competence": "Chance du rempailleur",
+    "Description": "Le héros ne peut pas mourir dans un combat."
+  },
+  {
+    "Competence": "Chef de groupe",
+    "Description": "Le héros possède plus de poids dans le choix de l'équipe. Il peut échanger sa place avec un allié dans le tour d'initiative d'un combat."
+  },
+  {
+    "Competence": "Chercher des noises",
+    "Description": "Le héros a l'initiative sur tous les combats au corps-à-corps sauf embuscades."
+  },
+  {
+    "Competence": "Chevaucher",
+    "Description": "Le héros peut utiliser une monture classique sans épreuve et tenter de monter des créatures non conventionnelles sur Test AD ou CHA."
+  },
+  {
+    "Competence": "Chouraver",
+    "Description": "Le héros a AD+4 pour les épreuves de vol à la tire/larcin."
+  },
+  {
+    "Competence": "Comprendre les animaux",
+    "Description": "Le héros peut essayer de communiquer avec les animaux sur épreuve INT."
+  },
+  {
+    "Competence": "Cuistot",
+    "Description": "Le héros donne Pv+1 et évite les maladies liées à la nourriture pour les repas qu'il prépare. De plus, il peut cuisiner les plats CUISTOT."
+  },
+  {
+    "Competence": "Déplacement silencieux",
+    "Description": "Le héros a AD+4 pour les épreuves de discrétion."
+  },
+  {
+    "Competence": "Désamorcer",
+    "Description": "Le héros a AD+4 pour les épreuves de désamorçage."
+  },
+  {
+    "Competence": "Détecter / Détection",
+    "Description": "Le héros a PER+2 pour détecter des objets, mécanismes, individus ou autres choses dissimulées ou pour repérer un danger."
+  },
+  {
+    "Competence": "Duelliste",
+    "Description": "Le héros a INT+4 pour résister à une provocation. Il n'attaque pas dans le dos ni par surprise. Rattrapage sur CHA des alliés."
+  },
+  {
+    "Competence": "Erudition",
+    "Description": "Le héros sait lire, écrire et compter sans épreuve."
+  },
+  {
+    "Competence": "Escalader",
+    "Description": "Le héros a AD+3 pour les épreuves d'escalade et d'acrobatie."
+  },
+  {
+    "Competence": "Forgeron",
+    "Description": "Le héros peut reconnaître les armes et les armures, il peut les rafistoler et les aiguiser sur épreuve AD. Voir document FORGERON."
+  },
+  {
+    "Competence": "Frapper lâchement",
+    "Description": "1 fois par combat, le héros, s'il n'est pas détecté, peut infliger Pix2 avec ses attaques à la dague ou affiliée sur le dos d'un humanoïde."
+  },
+  {
+    "Competence": "Fariboles",
+    "Description": "Le héros a CHA+3 ou INT+3 pour mentir, persuader, agiter, énerver, déstabiliser ou captiver un individu ou une foule."
+  },
+  {
+    "Competence": "Fouiller dans les poubelles",
+    "Description": "En cas de fouille d'un lieu ou d'un cadavre, le héros est le premier à trouver le meilleur butin."
+  },
+  {
+    "Competence": "Ignorante",
+    "Description": "Le héros ne peut pas apprendre à lire, ni à compter. Il ne connait rien au commerce, à la politique ou aux combines et risque de se faire arnaquer."
+  },
+  {
+    "Competence": "Infâme",
+    "Description": "Le héros a un malus de CHA-3 pour les épreuves de séduction et marchandage mais il a un bonus de CHA+2 pour les épreuves de déstabilisation ou d'intimidation."
+  },
+  {
+    "Competence": "Instinct de survie",
+    "Description": "Le héros peut être guidé par le MJ vers la source de nourriture ou boisson la plus proche."
+  },
+  {
+    "Competence": "Instinct du trésor",
+    "Description": "Le héros a PER+3 pour les épreuves de fouille ou de détection de trésor/cachette ayant de la valeur."
+  },
+  {
+    "Competence": "Intimider",
+    "Description": "Le héros peut intimider ou faire fuir une cible sur confrontation de CHA vs COU cible."
+  },
+  {
+    "Competence": "Jonglage et danse",
+    "Description": "Le héros ignore les malus d'AD pour les épreuves de prestations artistiques."
+  },
+  {
+    "Competence": "Langues des monstres",
+    "Description": "Le héros peut comprendre les langues de monstres sans épreuve : Orc, Gobeline, Ogroïque, Animalique, Draconique, R’lyehian et Corvine"
+  },
+  {
+    "Competence": "Méfiance",
+    "Description": "Le héros peut tenter de savoir si un PNJ ment sur épreuve INT ou PER."
+  },
+  {
+    "Competence": "Mendier et pleurnicher",
+    "Description": "Le héros peut gagner 1D20 PO entre deux aventures. Le héros a, ou donne à un allié, un bonus de CHA+2 dans une négociation pour obtenir une faveur"
+  },
+  {
+    "Competence": "Misérable",
+    "Description": "Le héros a AD+2 et CHA+2 pour les épreuves de discrétion, vol et marchandage. Mais il a CHA-4 pour les épreuves sociales. En combat, le héros n'est pas ciblé en priorité par les ennemis."
+  },
+  {
+    "Competence": "Nager",
+    "Description": "Le héros peut nager sans épreuve dans des eaux calmes et a AD+5 pour les épreuves aquatiques."
+  },
+  {
+    "Competence": "Naïveté touchante",
+    "Description": "Le héros a CHA+5 pour éviter un conflit suite à un problème ou une bévue l'impliquant."
+  },
+  {
+    "Competence": "Parler aux animaux",
+    "Description": "Le héros peut dialoguer avec les animaux sur épreuve INT."
+  },
+  {
+    "Competence": "Pénible",
+    "Description": "Le héros se fait frapper par ses alliés périodiquement, sauf épreuve INT pour fermer sa gueule."
+  },
+  {
+    "Competence": "Pister",
+    "Description": "Le héros a PER+3 pour les épreuves de pistage."
+  },
+  {
+    "Competence": "Pleutre",
+    "Description": "Lors que le héros réussit une parade ou une esquive, l'ennemi tire 1D6: sur 4 il perd un assaut, 5 il change de cible, 6 il subit un échec critique d'attaque ou parade."
+  },
+  {
+    "Competence": "Poigne de fer",
+    "Description": "Le héros peut saisir un humanoïde sur moyenne (FO et AD) au lieu d'attaquer. Il obtient AT+2 et Pi+3 mais ne peut ni parer, ni esquiver. La cible peut se libérer sur moyenne (FO et AD)."
+  },
+  {
+    "Competence": "Premiers soins",
+    "Description": "Le héros peut soigner un allié sur moyenne (INT et AD) et lui rendre 1D6 Pv avec du matériel. En cas d'échec critique : il inflige la perte de 1D6 Pv à la cible. En cas de réussite critique : il rend 1D6 Pv supplémentaire."
+  },
+  {
+    "Competence": "Radin",
+    "Description": "Le héros ne partage par le butin et refuse de dépenser de l'argent sauf épreuve INT+4. Il a CHA+4 pour marchander."
+  },
+  {
+    "Competence": "Récupération",
+    "Description": "Le héros doit faire une pause d'une heure chaque jour pour continuer à pratiquer la magie ou les prodiges. Il récupère 4Pa grâce à la pause."
+  },
+  {
+    "Competence": "Ressemble à rien",
+    "Description": "Le héros n'est pas reconnu par les PNJs."
+  },
+  {
+    "Competence": "Roublard",
+    "Description": "Le héros a ES+1, Pi+1 au CàC et Pi+3 aux attaques dans le dos et de côté."
+  },
+  {
+    "Competence": "Runes bizarres",
+    "Description": "Le héros peut déchiffrer les runes et écritures étranges sur épreuve INT+4."
+  },
+  {
+    "Competence": "Sentir des pieds",
+    "Description": "Quand il enlève ses bottes, le héros éloigne les prédateurs en bivouac. Il diminue d'un niveau la récupération des alliés dans les chambres partagées."
+  },
+  {
+    "Competence": "Serrurier",
+    "Description": "Le héros peut tenter de crocheter une serrure avec du matériel sans malus sur épreuve AD."
+  },
+  {
+    "Competence": "Survivaliste",
+    "Description": "Le héros ne mange que 2 repas par jour et a une récupération de 1Pv/H."
+  },
+  {
+    "Competence": "Survivante",
+    "Description": "Le héros a ES+1. Après une esquive réussie, il peut attaquer sur 4à6 au D6. Il obtient Pv+2 lorsqu'il achève un ennemi."
+  },
+  {
+    "Competence": "Tête vide",
+    "Description": "Le héros résiste automatiquement aux sorts de prise de contrôle, terreur, illusion et télépathie."
+  },
+  {
+    "Competence": "Tirer correctement",
+    "Description": "Le héros peut utiliser des armes de tirs ou de jets sur épreuve AD au lieu de AT sans malus supplémentaire (en général AT-2 à bout portant)"
+  },
+  {
+    "Competence": "Tomber dans les pièges",
+    "Description": "Le héros se prend toujours le piège en premier s'il n'a pas été détecté."
+  },
+  {
+    "Competence": "Tortionnaire",
+    "Description": "Le héros a accès à l'arme \"Main nue de Tortionnaire\" au lieu de \"Main nue\" et aux coups spéciaux  et critiques à main nue. Il a Pi+1 au CàC et Pi+2 avec des armes de récupération."
+  },
+  {
+    "Competence": "Truc de mauviette",
+    "Description": "Le héros a PR nat.+1 et ne perd pas connaissance des suites de la perte de Pv."
+  },
+  {
+    "Competence": "Récupération vampirique",
+    "Description": "Le héros regagne passivement 5Pa/H durant la nuit (doublé si pleine lune)."
+  },
+  {
+    "Competence": "Vitalité vampire",
+    "Description": "En combat, si le héros ne subit pas de dégâts, il regagne 1Pv/T (doublé la nuit)."
+  },
+  {
+    "Competence": "Vol de vie",
+    "Description": "En combat, si le héros mords la cible (Crocs), il peut transférer 5Pv/T vers lui ou un allié (épreuve FO pour se maintenir)."
+  },
+  {
+    "Competence": "Vol d'Energie astrale",
+    "Description": "En combat, si le héros mords la cible (Crocs), il peut transférer 2Pa/T vers lui ou un allié (épreuve FO pour se maintenir)."
+  },
+  {
+    "Competence": "Sensibilité solaire ",
+    "Description": "De jour, en extérieur, le héros subit des Pi doublés."
+  },
+  {
+    "Competence": "Sensibilité au feu",
+    "Description": "Le héros subit des Pi de feu doublés."
+  },
+  {
+    "Competence": "Sensibilité à l'argent",
+    "Description": "Le héros subit des Pi d'armes en argent doublés."
+  },
+  {
+    "Competence": "Nature vampirique visible",
+    "Description": "Durant le jour ou sous forte lumière, les PNJs peuvent remarquer que le héros est un vampire."
+  },
+  {
+    "Competence": "Truc de mauviette Vampire",
+    "Description": "Le héros a PR nat.+2 et ne perd pas connaissance des suites de la perte de Pv."
+  },
+  {
+    "Competence": "Addiction",
+    "Description": "Le héros doit prendre la drogue désignée tous les jours ou après un combat sinon il a -1 à toutes les caractéristiques (cumulatif). Il peut se faire soigner en faisant une cure dans un hôpital."
+  },
+  {
+    "Competence": "Déshydratation",
+    "Description": "Le héros doit s'immerger tous les 3 jours sinon il a CHA-1 et FO-1 par jour. Si une des deux caractéristiques tombe à 0, le héros meurt. Si le héros s'hydrate quotidienne, il récupère passivement 2Pv/H."
+  },
+  {
+    "Competence": "Tonyglandil",
+    "Description": "Le héros ne peut pas subir d'attaque ciblée ou de blessure aux parties génitales."
+  },
+  {
+    "Competence": "Diurne",
+    "Description": "Le héros dort dès la tombée de la nuit jusqu'à la levée du jour sauf épreuve CHA alliés ou danger immédiat. Dans ce cas, il reste éveillé 1D4 heures supplémentaires."
+  },
+  {
+    "Competence": "Indifférence",
+    "Description": "Le héros ne participe ni aux concertations ni aux combats tant qu'il n'est pas directement menacé sauf épreuve INT+4. Rattrapage sur CHA des alliés."
+  },
+  {
+    "Competence": "La loi c'est moi",
+    "Description": "Le héros peut donner des ordres à la milice, garde, soldats et contribuables sur confrontation INT+4 vs COU cible."
+  },
+  {
+    "Competence": "Trucs et astuces de la famille",
+    "Description": "Le héros a INT+4 pour trouver des informations sur des parchemins, livres et cartes. La recherche prend 4 heures."
+  },
+  {
+    "Competence": "Paranoïa du rongeur",
+    "Description": "Le héros a INT+4 ou CHA+4 pour convaincre ou manipuler ses alliés. Il ne montre pas son désaccord s'il est en infériorité dans un débat."
+  },
+  {
+    "Competence": "Fourberie Skaven",
+    "Description": "Le héros a CHA+3 pour convaincre dans une dispute ou forcer un ennemi au CàC à changer de cible."
+  },
+  {
+    "Competence": "Porteur de peste",
+    "Description": "Le héros ne tombe pas malade. Il transmet les maladies qu'il possède par contact (50% de chance) sauf s'il utilise un remède."
+  },
+  {
+    "Competence": "Forgeron Skaven",
+    "Description": "Le héros peut augmenter de 1 point une caractéristique d'une arme ou armure en baissant une autre de 1 point et en augmentant la Rupt.+1."
+  },
+  {
+    "Competence": "Bricoleur Skaven",
+    "Description": "Le héros a accès aux recettes des ingénieurs Skaven."
+  },
+  {
+    "Competence": "Plus plus de dégâts",
+    "Description": "Le héros peut doubler les dégâts de son arme durant 1 combat. A la fin du combat sur 1à2 au D6, il subit un coup critique de son arme."
+  },
+  {
+    "Competence": "Queue de rat agile",
+    "Description": "Le héros peut équipper une arme courte avec sa queue. Il obtient une attaque supplémentaire sans parade. Cette attaque a AT-5."
+  },
+  {
+    "Competence": "Terrifiant I",
+    "Description": "Le héros ne peut pas être approché par des ennemis ayant moins de 12 de COU sauf épreuve de COU cible. Le héros est immunisés aux effets de peur, d'intimidation et du niveau I du trait TERRIFIANT"
+  },
+  {
+    "Competence": "Immunité des lycans",
+    "Description": "Le héros ne subit que 50% des Pi normaux sauf pour les Pi feu, argent, enchanté ou béni."
+  },
+  {
+    "Competence": "Régénération des lycans",
+    "Description": "Le héros récupère passivement 1D4 Pv/T. Après 2T sans perte de Pv, il récupère 10Pv/T."
+  },
+  {
+    "Competence": "Folie des loups",
+    "Description": "Le héros attaque ses alliés lors de sa transformation sauf épreuve INT+2."
+  },
+  {
+    "Competence": "Fléau des garde robes",
+    "Description": "Le héros doit lancer la rupture de toutes ses armures et sacs lors de sa transformation. Ce qui tient reste porté sauf ses gants et bottes."
+  },
+  {
+    "Competence": "Malédiction de Lycaon",
+    "Description": "Le héros ne peut pas utiliser d'objet moyennement complexe. Il ne peut pas utiliser d'arme ou objet sauf épreuve INT+2."
+  },
+  {
+    "Competence": "Transformation volontaire",
+    "Description": "1 fois par heure, le héro peut se transformer en loup-garou sur épreuve INT-2 de jour et INT+1 de nuit. Il peut se détransformer sur épreuve INT-2."
+  },
+  {
+    "Competence": "Sélénophobe",
+    "Description": "Lors de pleine lune, le héros se transforme en loup-garou et attaque les vivants à vue sauf épreuve INT-5. Il ne peut pas tenter de se détransformer."
+  },
+  {
+    "Competence": "Gourmet carnassier",
+    "Description": "Le héros doit manger de la viande à tous les repas. En loup-garou, il doit manger toutes les heures."
+  },
+  {
+    "Competence": "Peau dure",
+    "Description": "Si le héro est tué, il revient à la vie lors de la pleine lune suivante sauf arme bénie, magique ou en argent dans le cœur."
+  },
+  {
+    "Competence": "Chant à la lune",
+    "Description": "La nuit, avant un combat ou hors combat, le héros peut hurler. Il inflige COU-2 sur 1km et réduit le niveau de récupération de 1 niveau. Pendant la pleine lune, il hurle chaque heure."
+  },
+  {
+    "Competence": "Rage canine",
+    "Description": "Le héros a 2 attaques et 1 parade par assaut ou 4 attaques par assaut mais ni de parade ni d'esquive,"
+  },
+  {
+    "Competence": "Rebouteur",
+    "Description": "En forêt, le héros peut trouver des plantes médicinales sur épreuve INT+2 (Remplace les kits de soin)."
+  },
+  {
+    "Competence": "PR magique naturelle Kobold",
+    "Description": "Le héros est immunisé à toutes les malédiction. Au début de chaque combat, il a PR mag.+1D4."
+  },
+  {
+    "Competence": "Chante faux",
+    "Description": "1 fois par combat, le héros chante magiquement très fort et faux. Il fait fuir toutes les cibles dans une zone de 20m durant 1D10 assauts sauf épreuve COU cible."
+  },
+  {
+    "Competence": "Charge bovine",
+    "Description": "1 fois par combat, le héros charge un ennemi sur AT. Il inflige Pi de \"Cornes\" directement aux Pv de la cible. Distance min. : 5m. En cas de critique, il inflige la perte de 9 Pv supplémentaire."
+  },
+  {
+    "Competence": "Métamorphose",
+    "Description": "2 fois par jour, le héros peut prendre l'apparence d'une cible connue de taille \"Petit\", \"Standard\" ou \"Grand\" pendant 1h. La métamorphe prend 1 minute."
+  },
+  {
+    "Competence": "Pied lourd",
+    "Description": "Le héros a AD-2 pour les épreuves de discrétion."
+  },
+  {
+    "Competence": "Expertise de la hache à 2 mains",
+    "Description": "Le héris a AT+1 et PRD+1 avec les haches à 2 mains."
+  },
+  {
+    "Competence": "Rouge",
+    "Description": "Le héros doit viser en priorité les ennemis portant de la couleur rouge (sang excepté)."
+  },
+  {
+    "Competence": "Cuir Solide ",
+    "Description": "Le héros a PR nat.+1."
+  },
+  {
+    "Competence": "Peau écailleuse variable",
+    "Description": "Le héros a PR nat.+1. Il a également AD+1 pour les épreuves de discrétion."
+  },
+  {
+    "Competence": "Sensibilité thermique",
+    "Description": "Le héros subit Pi+3 contre les Pi glace. S'il fait froid, il obtient un malus de -2 à toutes épreuves mais s'il faut chaud, il obtient un bonus de +2."
+  },
+  {
+    "Competence": "Vicieux",
+    "Description": "1 fois par assaut, le héros détruit 1PR phy (rupt.) ou mag (8h) lors de son attaque."
+  },
+  {
+    "Competence": "Peuple maudit",
+    "Description": "Au début du combat au D6, sur 1à3 : Le héro a critique de 1à2, sur 4à6 : Le héros a échec critique de 19à20."
+  },
+  {
+    "Competence": "Peau ardente I",
+    "Description": "Le héros a PR nat.+1 et PR feu+5. Il subit Pix2 contre les Pi glace."
+  },
+  {
+    "Competence": "Régénération occulte I",
+    "Description": "Le héros récupère passivement 4Pv/H."
+  },
+  {
+    "Competence": "Régénération lubrique",
+    "Description": "1 fois par jour, le héros peut voler 2D6 Pv en s'accouplant avec des cibles ayant plus de 20Pv."
+  },
+  {
+    "Competence": "Séduction maléfique innée I",
+    "Description": "Le héros a un bonus de CHA+1 pour les épreuves de séduction et marchandage mais il a un malus de CHA-2 pour les épreuves de déstabilisation ou d'intimidation."
+  },
+  {
+    "Competence": "Hygiène irréprochable",
+    "Description": "Le héros doit se nettoyer ou se laver tous les jours sinon il obtient un malus de CHA-2 pour la journée."
+  },
+  {
+    "Competence": "Séduisant",
+    "Description": "Le héros a CHA+3 pour les épreuves de séduction sur les humanoïdes de sexe opposé."
+  },
+  {
+    "Competence": "Protection d'outre tombe",
+    "Description": "Le héros a PR nat.+1. Les Pi feu et Pi glace ont Pi divisé par 2 contre lui."
+  },
+  {
+    "Competence": "Tas d'os",
+    "Description": "Le héros subit Pi+2 contre les armes tranchantes. Il ignore les Pi des flèches et carreaux non magiques."
+  },
+  {
+    "Competence": "Os de verre",
+    "Description": "Le héros subit Pi+2 contre les armes contondantes. Les canidés ennemis ont AT+2, Pi+2 et Crit. de 1à3 contre le héros."
+  },
+  {
+    "Competence": "Apamal",
+    "Description": "Le héros est immunisé aux effets de coups critiques qui impactent les caractéristiques COU, INT ou CHA. Il est immunisé à la plupart des malédictions et/ou sorts impliquant d'être vivant, avoir de la peau, du sang, pouvoir respirer, etc..."
+  },
+  {
+    "Competence": "Prise de notes assidue",
+    "Description": "Le héros doit prendre 1 heure par jour pour écrire ce qu'il a appris durant la journée pour utiliser REVISIONS DE DERNIERE MINUTE."
+  },
+  {
+    "Competence": "Révisions de dernière minute",
+    "Description": "Hors combat, le héros peut relire son journal pour obtenir un bonus de +1 aux épreuves concernant un sujet déjà rencontré."
+  },
+  {
+    "Competence": "Appel du trésor",
+    "Description": "En présence d’or et d’objets précieux, le héros cesse de combattre et d'aider ces camarades pour se ruer sur le butin sauf épreuve INT+4."
+  },
+  {
+    "Competence": "Bouclier magique Kobold",
+    "Description": "Le héros a PR nat.+2."
+  },
+  {
+    "Competence": "Résistance Magique du Taureau",
+    "Description": "Le héros a RM+2 et il a PR mag.+5 contre SRS sans épreuve de résistance magique et contre les armes magiques."
+  },
+  {
+    "Competence": "Maîtrise de la pomme",
+    "Description": "Au début du combat, le héros attaque d’abord les Elfes. Il commence sa carrière avec 1D6 rations de pommes."
+  },
+  {
+    "Competence": "Régénération",
+    "Description": "En combat, le héros récupère 1Pv/T. Hors combat, il récupère 1Pv/min. sauf en cas de dégâts magiques subis. Dans ce cas, il récupère 5Pv/H."
+  },
+  {
+    "Competence": "Inflammable",
+    "Description": "Le héros subit 1D Pi supplémentaire pour tout dégât de feu et annule sa régénération."
+  },
+  {
+    "Competence": "Lancement de projectiles",
+    "Description": "Lorsque le héros lance un objet, il a AD tir-2 et Pi+1D."
+  },
+  {
+    "Competence": "Puissant I",
+    "Description": "Le héros ne peut pas être mis à terre naturellement. Au CàC, les ennemis ont PRD-5 face à lui. Il ignore les effets de niveau I du trait PUISSANT"
+  },
+  {
+    "Competence": "Bulldozer I",
+    "Description": "Le héros ne peut pas être intercepter en déplacement sauf par un ogre ou ennemi de grande taille. Tout autre est balayé et doit faire une épreuve de FO ou AD pour éviter d'être mis à terre pendant 3T. Il ignore les effets des niveaux I des traits PUISSANT, MISE A TERRE et BULLDOZER"
+  },
+  {
+    "Competence": "Rebute les monstres",
+    "Description": "En cas d'une rencontre avec des ennemis, le héros a moins de chances d’être pris pour cible."
+  },
+  {
+    "Competence": "Armes naines",
+    "Description": "Le héros doit utiliser les armes standards à 1 main, à 2 mains, mais il obtient un bonus de Pi+3."
+  },
+  {
+    "Competence": "Problème de taille",
+    "Description": "Le héros a toujours des malus dans les épreuves d’escalade et de discrétion."
+  },
+  {
+    "Competence": "Expertise du fouet",
+    "Description": "Le héros a AT+2 avec les fouets."
+  },
+  {
+    "Competence": "Résistance des enfers ",
+    "Description": "Le héros a une résistance magique naturelle minimale de 12."
+  },
+  {
+    "Competence": "Régénération occulte II",
+    "Description": "Le héros récupère passivement 4Pv/2H."
+  },
+  {
+    "Competence": "Régénération occulte III",
+    "Description": "Le héros récupère passivement 4Pv/H."
+  },
+  {
+    "Competence": "Vision occulte",
+    "Description": "Le héros peut voir les être invisibles ou éthérés."
+  },
+  {
+    "Competence": "Séduction maléfique innée II",
+    "Description": "Le héros a un bonus de CHA+2 pour les épreuves de séduction et marchandage mais il a un malus de CHA-2 pour les épreuves de déstabilisation ou d'intimidation."
+  },
+  {
+    "Competence": "Séduction maléfique innée III",
+    "Description": "Le héros a un bonus de CHA+3 pour les épreuves de séduction et marchandage mais il a un malus de CHA-1 pour les épreuves de déstabilisation ou d'intimidation."
+  },
+  {
+    "Competence": "Récupération morbide",
+    "Description": "Le héros récupère passivement 3Pa/H"
+  },
+  {
+    "Competence": "Malfamé",
+    "Description": "Les gens sont hostiles et/ou sont réticents à traiter avec le héros sauf épreuve CHA. En cas d'échec, les bonus de CHA ne peuvent pas être utilisés et la difficulté des épreuces sociales augmente de 2."
+  },
+  {
+    "Competence": "Odeur pestilentielle",
+    "Description": "Le héros pue énormément. Il a AD-5 pour les épreuves de discrétion. Les alliés et ennemis ayant COU<12 doivent faire une épreuve de COU pour approcher le héros."
+  },
+  {
+    "Competence": "Héritage des Taupliers",
+    "Description": "Le héros peut monter les taupes géantes sans épreuves (voir P.226 du bestiaire)."
+  },
+  {
+    "Competence": "Pique les yeux",
+    "Description": "Quand le héros subit des dégâts tranchant, il dégage une odeur qui inflige un malus cumulable de -1 à toutes les caractéristiques à toutes les cibles au contact."
+  },
+  {
+    "Competence": "Gaz lacrymo",
+    "Description": "1 fois par combat, le héros souffle un gaz lacrymogène à 180° devant lui jusqu'à 3m qui inflige une cécité temporaire (malus: AT-6, PRD-6, AD-6 et ES-6 pendant 5 minutes à toutes les cibles)."
+  },
+  {
+    "Competence": "Cannibal",
+    "Description": "Le héros peut manger ses congénères sans épreuve de COU. 1 fois par combat, il peut souffler 1 dose d'épice naturelle sur un ennemi au contact ce qui inflige un malus de -1 à toutes les épreuves jusqu'à nettoyage."
+  },
+  {
+    "Competence": "Psalmodies entêtantes",
+    "Description": "En combat, le héros peut réciter des psaumes en continu sur épreuve INT ce qui lui donne COU+2 et inflige le désavantage à l'attaque, au tir et/ou au lancement de sort à tous les ennemis à 20m."
+  },
+  {
+    "Competence": "Protection féerique",
+    "Description": "Le héros a PR mag.+5 contre la magie et les éléments. Il est immunisé aux malédictions."
+  },
+  {
+    "Competence": "Loupiote volante",
+    "Description": "La nuit, le héros peut éclairer naturellement à 5m. Sur épreuve INT, il peut éclairer à 10m."
+  },
+  {
+    "Competence": "Cornes impressionantes",
+    "Description": "Le héros peut utiliser l'arme \"Cornes\" au lieu de \"Main nue\"."
+  },
+  {
+    "Competence": "Confiance et honneur",
+    "Description": "Le héros a INT-3 pour détecter un mensonge. Lorsqu'il s'engage ou donne sa parole, il doit s'y tenir jusqu'au bout sauf épreuve INT-6. Il ne peut jamais mentir (mais peut omettre de dire qqch)."
+  },
+  {
+    "Competence": "Cracheur élémentaire",
+    "Description": "1 fois par combat, le héros peut cracher un projectile élémentaire sur épreuve AD. Portée 15m, 2D Pi (feu, glace, acide ou foudre selon choix de début de carrière)."
+  },
+  {
+    "Competence": "Equilibre",
+    "Description": "Le héros a AD+2 pour les épreuves d'escalade et FO+2 pour résister aux renversements."
+  },
+  {
+    "Competence": "Expertise de la lance",
+    "Description": "Le héros a AT+1 et PRD+1 avec les armes du type \"lance\""
+  },
+  {
+    "Competence": "Va chercher",
+    "Description": "Si un objet est lancé, le héros abandonne ce qu'il fait et court l'attraper sauf épreuve INT."
+  },
+  {
+    "Competence": "Hic sunt cynocephali",
+    "Description": "1 fois par jour, à l'aube et au crépuscule, le héros peut se téléporter à une distance de 5km (symbolisant l'horizon)."
+  },
+  {
+    "Competence": "Rusé",
+    "Description": "1 fois par combat, le héros peut choisir d'avoir l'avantage pour 1 jet."
+  },
+  {
+    "Competence": "Thérianthropie en goupil",
+    "Description": "1 fois par heure, le héros peut se transformer en renard (Voir Corsac Cendré dans supplément animaux et familiers P. 5)"
+  },
+  {
+    "Competence": "Vol",
+    "Description": "Le héros peut voler à une vitesse de MvT x2. Le décollage et atterrissage prend 1T."
+  },
+  {
+    "Competence": "Fondre",
+    "Description": "1 fois par combat, en vol, le héros peut fondre sur 1 cible en lançant une attaque ce qui inflige MISE A TERRE II en plus des effets de l'attaque."
+  },
+  {
+    "Competence": "Horreur indicible",
+    "Description": "Le héros a le trait TERRIFIANT II et a CHA+2 pour les épreuves d'intimidation."
+  },
+  {
+    "Competence": "Mâchoire de requin",
+    "Description": "Le héros peut utiliser l'arme \"Dents de profond\" à la place de \"Main nue\"."
+  },
+  {
+    "Competence": "Volonté de fer",
+    "Description": "Le héros a PR nat+1 et a l'avantage sur les jets de COU."
+  },
+  {
+    "Competence": "Guerrier de Neptune",
+    "Description": "Le héros a PR nat+1. Dans l'eau, il a PR nat.+1 et ES+1."
+  },
+  {
+    "Competence": "Appel des profondeurs",
+    "Description": "Le héros a AT+1 et Pi+3 lorsqu'il est à moins de 500m d'une étendue d'eau."
+  },
+  {
+    "Competence": "Crédule",
+    "Description": "Le héros croit les gens sur parole saut épreuve INT-4 ou lorsqu'il s'agit de chose qu'il connaît."
+  },
+  {
+    "Competence": "Disparition",
+    "Description": "2 fois par jour, le héros peut devenir invisible. Le héros redevient visible s'il subit ou inflige des Pi ou s'il est remarqué par une détection."
+  },
+  {
+    "Competence": "Fourberie de Kami",
+    "Description": "Le héros a l'avantage à ses jets si son action a pour but d'embêter ou de nuire à un individu sans infliger de dégâts."
+  },
+  {
+    "Competence": "Aquaphobe",
+    "Description": "Le héros refuse de sortir lorsqu'il pleut et il fuit près des étendues d'eau sauf épreuve INT+3."
+  },
+  {
+    "Competence": "Chute de cascadeur",
+    "Description": "Le héros ne subit que la moitié des dégâts de chute et prend 1T de moins pour se relever lorsqu'il est mis à terre."
+  },
+  {
+    "Competence": "Inoculation",
+    "Description": "Lorsqu'il mord, le héros inflige les effets de Venin Squamate : Pv-1/T en combat. Pv-1/min. hors combat jusqu'à antidote ou ablation du membre."
+  },
+  {
+    "Competence": "Strangulation",
+    "Description": "Lorsqu'il saisit une cible, le héros peut l'étrangler via une confrontation de FO vs FO cible par assaut. Chaque assaut la cible a FO-2 cumulatifs. Lorsque la cible n'a plus de FO elle perd connaissance. Le héros ne peut pas parer ni esquiver."
+  },
+  {
+    "Competence": "Perfection génétique",
+    "Description": "Le héros peut utiliser tous les objets, équipements et artéfacts des Nains et des Elfes et bénéficie de leurs bonus liés à l'origine de l'utilisateur."
+  },
+  {
+    "Competence": "Abomination contre nature",
+    "Description": "Le héros est traité comme un monstre auprès des Elfes et des Nains. Il a CHA-10 pour toutes les épreuves sociales auprès de ces communautés. Il est traité comme un humain ou un demi-elfe auprès de toutes les autres communautés."
+  },
+  {
+    "Competence": "Jeux de tavernes et donjons",
+    "Description": "Le héros a AD+4, INT+4 et CHA+4 pour les épreuves liées à des jeux d'argent."
+  },
+  {
+    "Competence": "Miasmes nécrosiques I",
+    "Description": "1 fois par combat, des miasmes nécrosiques touche toutes les cibles au contact du héros. Les miasmes ignorent la PR phy. et nat. et infligent 1D+2Pi."
+  },
+  {
+    "Competence": "Miasmes nécrosiques II",
+    "Description": "2 fois par combat, des miasmes nécrosiques touche toutes les cibles au contact du héros. Les miasmes ignorent la PR phy. et nat. et infligent 1D+4Pi."
+  },
+  {
+    "Competence": "Miasmes nécrosiques III",
+    "Description": "3 fois par combat, des miasmes nécrosiques touche toutes les cibles au contact du héros. Les miasmes ignorent la PR phy. et nat. et infligent 1D+6Pi."
+  },
+  {
+    "Competence": "Onde réfrigérante I",
+    "Description": "1 fois par combat, le héros génère une zone de froid autour le lui de 2m. Tous les ennemis dans la zone prennent 2D Pi glace et ont leur mouvement réduit de moitié pendant 2T."
+  },
+  {
+    "Competence": "Onde réfrigérante II",
+    "Description": "1 fois par combat, le héros génère une zone de froid autour le lui de 5m. Tous les ennemis dans la zone prennent 2D+3 Pi glace et ont leur mouvement réduit de moitié pendant 3T."
+  },
+  {
+    "Competence": "Cicatrisation légumière",
+    "Description": "Hors combat, le héros regagne 3Pv/H. Il ne peut pas mourir d'un coup à un organe vital."
+  },
+  {
+    "Competence": "Expertise de l'épéplucheur",
+    "Description": "Le héros a AT+1 et PRD+1 avec des épéplucheurs."
+  },
+  {
+    "Competence": "Peau Ardente II",
+    "Description": "Le héros a PR nat.+1 et PR feu+10. Les Pi de glace ont Pix2 contre le héros."
+  },
+  {
+    "Competence": "Peau Ardente III",
+    "Description": "Le héros a PR nat.+1 et l'immunité au feu sauf la lave (Pv-10/T). Les Pi de glace ont Pix2 contre le héros."
+  },
+  {
+    "Competence": "Bizarre I",
+    "Description": "Les ennemis doivent faire une épreuve INT ou PER au début du combat pour pouvoir attaquer le héros."
+  },
+  {
+    "Competence": "Bizarre II",
+    "Description": "Les ennemis doivent faire une épreuve INT ou PER à chaque assaut pour pouvoir attaquer le héros."
+  },
+  {
+    "Competence": "Bizarre III",
+    "Description": "Les ennemis doivent faire une épreuve INT-3 ou PER-4 à chaque assaut pour pouvoir attaquer le héros."
+  },
+  {
+    "Competence": "Bulldozer II",
+    "Description": "Le héros en déplacement ne peut être intercepté que par une grande invocation ou un ennemi sur monture (>Cheval). Tout autre est balayé et doit faire une épreuve de FO ou AD pour éviter d'être mis à terre pendant 3T. Il ignore les effets des niveaux I et II des traits PUISSANT, MISE A TERRE et BULLDOZER"
+  },
+  {
+    "Competence": "Bulldozer III",
+    "Description": "Le héros en déplacement ne peut pas être intercepter. Toute cible qui tente de l'intercepter est balayée et est mise à terre pendant 3T. Il ignore les effets de tous les niveaux des traits PUISSANT, MISE A TERRE, BULLDOZER et BULLDOZER VOLANT"
+  },
+  {
+    "Competence": "Critique I",
+    "Description": "Le héros a critique de 1à3."
+  },
+  {
+    "Competence": "Critique II",
+    "Description": "Le héros a critique de 1à4 et Effets Crit+3 ou critique de 1à5 et Pi+2D10."
+  },
+  {
+    "Competence": "Critique III",
+    "Description": "Le héros a critique de 1à6 et Pi+3D10 ou Décès ou Blessure grave."
+  },
+  {
+    "Competence": "Mâchoire I",
+    "Description": "En mordant, le héros capture un ennemi sur une attaque critique. La cible subit les dégâts normaux à chaque assaut sans épreuve. Libération sur épreuve FO de la cible."
+  },
+  {
+    "Competence": "Mâchoire II",
+    "Description": "En mordant, le héros capture un ennemi sur une attaque. La cible subit les dégâts normaux à chaque assaut sans épreuve. Libération sur épreuve FO de la cible."
+  },
+  {
+    "Competence": "Mâchoire III",
+    "Description": "En mordant, le héros capture un ennemi sur une attaque. La cible subit les dégâts critiques à chaque assaut sans épreuve. Libération sur épreuve FO de la cible."
+  },
+  {
+    "Competence": "Mise à terre I",
+    "Description": "Le héros met à terre les cibles touchées pendant 3T sauf épreuve FO cible. Il a Pi+1 contre eux tant qu'ils sont à terre.  Il ignore les effets des niveau I du trait MISE A TERRE"
+  },
+  {
+    "Competence": "Mise à terre II",
+    "Description": "Le héros balaye les cibles touchées à 1D4m (Pi chute sauf épreuve AD) et sont mis à terre pendant 3T sauf épreuve FO-4. Il a Pi+2 contre eux tant qu'ils sont à terre. Il ignore les effets des niveaux I et II du trait MISE A TERRE"
+  },
+  {
+    "Competence": "Mise à terre III",
+    "Description": "Le héros balaye les cibles touchées à 1D6m (Pi chute sauf épreuve AD) et sont mis à terre pendant 3T. Il a Pi+3 contre eux tant qu'ils sont à terre. Il ignore les effets de tous les niveaux du trait MISE A TERRE"
+  },
+  {
+    "Competence": "Puissant II",
+    "Description": "Le héros ne peut pas être mis à terre naturellement. Au CàC les cibles doivent réussir une épreuve de PRD, FO et Rupt. de l'arme pour parer. Il ignore les effets des niveaux I et II du trait PUISSANT, BULLDOZER et BULLDOZER VOLANT"
+  },
+  {
+    "Competence": "Puissant III",
+    "Description": "Le héros ne peut pas être mis à terre naturellement. Au CàC les cibles ne peuvent pas parer. Il ignore les effets de tous les niveaux des traits PUISSANT, BULLDOZER et BULLDOZER VOLANT"
+  },
+  {
+    "Competence": "Rapide I",
+    "Description": "Le héros peut naturellement aller jusqu'à une vitesse de déplacement de 24m/T."
+  },
+  {
+    "Competence": "Rapide II",
+    "Description": "Le héros peut naturellement aller jusqu'à une vitesse de déplacement de 36m/T."
+  },
+  {
+    "Competence": "Rapide III",
+    "Description": "Le héros peut naturellement aller jusqu'à une vitesse de déplacement de 60m/T."
+  },
+  {
+    "Competence": "Terrifiant II",
+    "Description": "Le héros ne peut pas être approché par des ennemis sauf épreuve de COU cible. En cas d'échec, les ennemis doivent attendre 1D4-1T avant nouvel essai. Le héros est immunisés aux effets de peur, d'intimidation et des niveaux I et II du trait TERRIFIANT"
+  },
+  {
+    "Competence": "Terrifiant III",
+    "Description": "Le héros ne peut pas être approché ou ciblé par des ennemis sauf épreuve de COU cible par assaut. Les ennemis attaquant au CàC doivent faire une épreuve de COU-1D4. En cas d'échec, les cibles abandonnent le combat. Le héros est immunisés aux effets de peur, d'intimidation et de tous les niveaux du trait TERRIFIANT"
+  },
+  {
+    "Competence": "Violent I",
+    "Description": "Le héros isolé représente un danger mortel pour les aventuriers de niveau <3"
+  },
+  {
+    "Competence": "Violent II",
+    "Description": "Le héros isolé représente un danger mortel pour les aventuriers de niveau <6"
+  },
+  {
+    "Competence": "Violent III",
+    "Description": "Le héros isolé représente un danger mortel pour les aventuriers de niveau <10"
+  },
+  {
+    "Competence": "Agile I",
+    "Description": "Le héros est si agile qu'il peut se déplacer très rapidement sans subir attaque d'opportunité et sans interception en sacrifiant 1 action. Très difficile à capturer/bloquer (AT et/ou FO cible-8)."
+  },
+  {
+    "Competence": "Bulldozer volant I",
+    "Description": "Le héros est aérien et si massif qu'il est impossible à intercepter ou arrêter. Lorsqu'il décolle, il met 2T pour décoller et provoque la mise à terre durant 3T de toutes les cibles dans une zone de 10m sur 1à2 au D6. Il ignore les effets de tous les niveaux des traits PUISSANT, MISE A TERRE, BULLDOZER et BULLDOZER VOLANT"
+  },
+  {
+    "Competence": "Truc de mauviette de la peste",
+    "Description": "Le héros a PR nat.+3. La perte de Pv n'entraîne pas la perte de conscience."
+  },
+  {
+    "Competence": "Fanatisme purulent",
+    "Description": "En combat, le héros ne peut pas parer mais bénéficie de 2 attaques par assauts cumulable avec AMBIDEXTRIE et QUEUE DE RAT AGILE."
+  },
+  {
+    "Competence": "Nul n'échappe à la peste",
+    "Description": "En combat, le héros est limité à 1 esquive par combat. Les attaques du héros ne peuvent être esquivées, seulement parées."
+  },
+  {
+    "Competence": "Fait moi peur",
+    "Description": "Le héros est immunisé aux effets de la peur, d'intimidation, de séduction et de tous les niveaux de terrifiant."
+  },
+  {
+    "Competence": "Douleur proselyte",
+    "Description": "En combat, à chaque fois que le héros perd des Pv, il obtient un bonus de Pi+3 cumulable 5 fois jusqu'à fin du combat."
+  },
+  {
+    "Competence": "Santé de rouille",
+    "Description": "Les maladies transmises par le héros nécessitent le double de traitement et les soins effectués à 10m ou moins du héros échouent sur 1 au D6."
+  },
+  {
+    "Competence": "Hydrophobie hérétique",
+    "Description": "Le héros subit 1D6 Pv lorsqu'il boit de l'eau potable. Le savon au contact du héros lui inflige Pv-2/T. Tout ce que le héros touche est considéré comme sale et donne CHA-1 jusqu'au lavage."
+  },
+  {
+    "Competence": "Conversion fulgurante",
+    "Description": "En combat, durant le premier assaut, le héros est considéré comme lancé et a MvTx2."
+  },
+  {
+    "Competence": "Bénédiction bubonique",
+    "Description": "Lorsque le héros transmet une maladie, il gagne 10xp et un bonus de +1 à toutes ses caractéristiques durant 24h."
+  },
+  {
+    "Competence": "Tétanoceur",
+    "Description": "Si le héros est porteur d'une maladie, il a CHA+3 et ne souffre pas de discriminations durant la nuit."
+  },
+  {
+    "Competence": "Moine brasseur",
+    "Description": "1 fois par jour, le héros peut changer 2 rations d'alcool en 1 potion d'eau de peste."
+  },
+  {
+    "Competence": "Vermine increvable",
+    "Description": "Si le héros meurt, sur 13 au D20, il revient à la vie avec 50% de ses Pv."
+  },
+  {
+    "Competence": "Patient zéro",
+    "Description": "Chaque maladie que le héros porte lui donne Crit.+1 pour tous ses jets."
+  },
+  {
+    "Competence": "Epiphanie dégénérative",
+    "Description": "Tous les alliés du héros atteints d'une maladie ont COU+1, INT+1, AT+1, Crit.+2,  Pi+2 et Pv+2/H."
+  },
+  {
+    "Competence": "Charlatanerie médicinale",
+    "Description": "Le héros peut soigner une blessure avec sa salive sur épreuve INT. Il rend 1D10 Pv, a 60% de chance de donner une infection des plaies et 30% de chance de donner une autre maladie au hasard. Le soin supprime les hémorragies et fractures, recolle les membres et compte comme un traitement chez un guérisseur."
+  },
+  {
+    "Competence": "Transmission par voie astrale",
+    "Description": "Si le héros ne porte pas de maladie, il peut en obtenir une au hasard via une prière sur épreuve INT."
+  },
+  {
+    "Competence": "Protection virale",
+    "Description": "Le héros gagne PR mag.+1 pour chaque maladie qu'il porte."
+  },
+  {
+    "Competence": "Lavoisier aimerait te dire 2 mots",
+    "Description": "1 fois par assaut, le héros peut utiliser 2 éléments pour les transformer en un nouveau pour un coût de 5 Pa.",
+    "Tableau": "- Feu+Terre = Verre : Pi physique, inflige hémorragie sur 1à4.\r\n- Air+Eau = Glace : Pi+1 \r\n- Eau+Terre = amplifie la puissance de la terre Pi+1 \r\n- Air+Feu = amplifie la puissance du feu Pi+1\r\n- Foudre+Eau = amplifie la puissance de la foudre Pi+1"
+  },
+  {
+    "Competence": "Langues étrangères basiques",
+    "Description": "Le héros peut comprendre une conversation dans une langue d'un pays voisin sur épreuve INT-3."
+  },
+  {
+    "Competence": "Langues étrangères avancées",
+    "Description": "Le héros peut comprendre une conversation dans une langue d'un pays étranger sur épreuve INT-3."
+  },
+  {
+    "Competence": "Langues étrangères complexes",
+    "Description": "Le héros peut comprendre une conversation dans une langue d'un pays étranger sur épreuve INT."
+  },
+  {
+    "Competence": "Bilingue",
+    "Description": "Le héros peut comprendre et parler 1 langue étrangère."
+  },
+  {
+    "Competence": "Trilingue",
+    "Description": "Le héros peut comprendre et parler 2 langues étrangères."
+  },
+  {
+    "Competence": "Multilingue",
+    "Description": "Le héros peut comprendre et parler 3 langues étrangères."
+  },
+  {
+    "Competence": "Polyglote né",
+    "Description": "Le héros peut comprendre et parler toutes les langues connues."
+  },
+  {
+    "Competence": "Fidèle compagnon",
+    "Description": "Le héros peut donner des ordres complexes à ses familiers sur épreuve CHA. Les familiers ont Pv+100% (au moins 15pv)."
+  },
+  {
+    "Competence": "Dresseur",
+    "Description": "Le héros peut tenter de transformer des animaux sauvages ayant moins de 50% de leur Pv en familier sur épreuve CHA-4."
+  },
+  {
+    "Competence": "Expertise du bouclier",
+    "Description": "Le héros a AT+1 et PRD+1 quand il utilise un bouclier."
+  },
+  {
+    "Competence": "Chef oui chef",
+    "Description": "Le héros a COU+1 et l’avantage pour un de ses dés de dégâts si un autre membre de la compagnie est officier ou a chef de groupe."
+  },
+  {
+    "Competence": "Expertise des armes de siège",
+    "Description": "Le héros a AD tir+1 et recharge-1T avec les armes encombrantes ou de siège."
+  },
+  {
+    "Competence": "Expertise à l'arme à distance",
+    "Description": "Le héros a AD tir+1 et recharge-1T avec les armes à distance (arcs, arbalètes, armes à feu, fronde etc.)."
+  },
+  {
+    "Competence": "Médecin combattant",
+    "Description": "Le héros peut utiliser PREMIERS SOINS en combat (prend 2T, seule l’esquive est possible mais esquiver rallonge le temps des soins d’1T)."
+  },
+  {
+    "Competence": "Enfer vert",
+    "Description": "Le héros a un bonus de +1 à toutes les épreuves lorsqu’il se trouve en forêt, plaine, montagne, jungle, marais et +2 si l’épreuve est liée à ses compétences. Il a un malus de -1 à toutes les épreuves en ville, village, souterrains et -2 si l’épreuve est liée à ses compétences."
+  },
+  {
+    "Competence": "Commandant tactique",
+    "Description": "Au lieu d’attaquer, le héros peut donner des ordres afin de booster ses alliés à 20m temporairement. Il peut donner un ordre tous les 3T parmi la liste suivante sur épreuve CHA (Les effets sont doublés en cas de critique). Un seul ordre peut être actif à la fois.",
+    "Tableau": "- A TERRE : donne ES+1 pendant 3T\r\n- MONTEZ VOTRE GARDE : donne PRD+1 pendant 3T\r\n- ATTENTION AU CHOC : donne PR nat+1 pendant 3T\r\n- A MORT : donne AT+1 pendant 3T\r\n- POUR « nom du pays/commandant » : donne PI+2 pendant 3T\r\n- A L’ATTAAAQUE : les alliés commencent leur course lancé cet assaut\r\n- REPLIEZ-VOUS : les alliés bénéficient d’APPEL DES RENFORTS cet assaut"
+  },
+  {
+    "Competence": "Clipitaine des grandes compagnies",
+    "Description": "Durant un combat, au lieu d’agir, le héros peut donner des ordres à ses alliés afin de leur fournir un bonus situationnel en échange d’un malus. L’ordre donné concerne tous les alliés à 50m et dure jusqu’à la fin du combat ou jusqu’à ce qu’il soit changé par un autre.",
+    "Tableau": "- FORMEZ LE CARRE : AT+2, PI+5 et PR nat+4 contre les ennemis sur des montures mais Pi à distance subis+5\r\n- TIREZ A VOLONTE : AD tir+2, Pi+5 à distance mais AT-3 et PRD-3 au CàC\r\n- HOMMES D’ARMES A L’AVANT : AT+2, PRD+2, Crit au CàC+2 et ES-3\r\n- FORMATION DESSEREE : Pi à distance subis -5 mais Pi au CàC subis +5"
+  },
+  {
+    "Competence": "Maîtrise du tir",
+    "Description": "Au début du combat, le héros peut choisir d’avoir soit AD tir+2 et Crit.+3 soit recharge-3T avec les armes à distance (arcs, arbalètes, armes à feu, fronde etc.) jusqu’à la fin du combat."
+  },
+  {
+    "Competence": "Tranche-tête",
+    "Description": "Tous les 3T, s’il utilise une arme à 2 mains, le héros peut effectuer une attaque circulaire à 360° ou 180° (au choix) sur AT touchant tous les ennemis au contact."
+  },
+  {
+    "Competence": "Entraînement militaire",
+    "Description": "Le héros a AT+1 et Pi+3 avec les armes à 1 main. Récupération en bivouac +1 Pv/H. De plus, chaque ration de nourriture consommé donne Pv+1."
+  },
+  {
+    "Competence": "Campement de mercenaires",
+    "Description": "2 fois par jour, le héros peut fournir un bonus à tous ses alliés hors combat.",
+    "Tableau": "- Récupération au niveau supérieur et +1 Pv/H\r\n- Le dîner ou souper donne Pv+5\r\n- Un échec critique à PREMIER SOINS n’inflige pas de dégâts\r\n- Les alliés peuvent relancer un jet raté sauf critique lorsqu’ils pêchent, allument un feu, montent une tente, cuisinent ou aiguisent une arme.\r\n- Les alliés ont un bonus de +2 pour les épreuves d’orientation, d’escalade, de discrétion, de nage ou chevaucher."
+  },
+  {
+    "Competence": "Réparations de fortune",
+    "Description": "Le héros peut réparer un objet en remplaçant jusqu’à 2 types d’ingrédients par d’autres types d’ingrédients relativement compatible. L’objet ainsi réparé regagne ses caractéristiques normales pendant 1 décade. De plus, il peut réparer un objet enchanté ou béni."
+  },
+  {
+    "Competence": "Tape pas dessus ça va casser",
+    "Description": "Le héros peut utiliser FORGERON pour donner un bonus de 1D4 PR mag. pendant 5 combats à une armure. De plus, il peut relancer 1 fois la rupture de son équipement."
+  },
+  {
+    "Competence": "Conseil du Général Kenobi",
+    "Description": "Lorsque le héros se trouve sur une position plus élevée que celle de sa cible, il gagne AD tir+1 et Pi+3."
+  },
+  {
+    "Competence": "Conseil du Général Grievous",
+    "Description": "Lorsque le héros se trouve dans le dos de sa cible, il gagne AT+1 et Pi+3 au CàC."
+  },
+  {
+    "Competence": "1 tir 1 mort",
+    "Description": "En combat, le premier tir à distance du tireur d’élite est toujours une réussite sauf critique. En cas de réussite critique à ce tir le dé du critique a +5."
+  },
+  {
+    "Competence": "Arc surtendu",
+    "Description": "Le temps de recharge des armes à distance augmente de 1 assaut mais les projectiles du héros ont Pi+6 et Ignore 5PR phy"
+  },
+  {
+    "Competence": "Je l'ai en travers de la gorge",
+    "Description": "Hors combat, le héros a une réduction du malus de Tir ciblé à la tête de 5. En combat, la réduction du malus est de 3."
+  },
+  {
+    "Competence": "Tir solaire",
+    "Description": "En combat, tous les 4 assauts, le héros peut effectuer 2 tirs consécutifs durant le même assaut sur 2 cibles différentes."
+  },
+  {
+    "Competence": "Tir lunaire",
+    "Description": "En combat, tous les 4 assauts, le héros peut effectuer 1 tir surpuissant traversant toutes les cibles sur la ligne de tir."
+  },
+  {
+    "Competence": "Et tu Brute",
+    "Description": "Le héros peut utiliser FRAPPER LACHEMENT avec toutes les armes de CàC. "
+  },
+  {
+    "Competence": "Frappe fantôme",
+    "Description": "Tuer un ennemi permet de réutiliser 1 fois FRAPPER LACHEMENT, répétable en combat mais non cumulable."
+  },
+  {
+    "Competence": "Lame spectrale",
+    "Description": "FRAPPER LACHEMENT ignore la PR phy."
+  },
+  {
+    "Competence": "Tu quoque mi filii",
+    "Description": "Les attaques dans le dos ont AT+2 et Pi+5 sauf FRAPPER LACHEMENT."
+  },
+  {
+    "Competence": "Pas vu venir",
+    "Description": "Les attaques dans le dos au CàC ont Crit+1. De plus lors de la résolution de ce critique, vous pouvez relancer 1 fois le dé."
+  },
+  {
+    "Competence": "Diversion",
+    "Description": "Hors combat, le héros peut attirer l’attention d’une cible (regard ou déplacement au choix) dans une direction particulière à l’aide d’un lancer de pierre sur CHA+2 pendant 2D4 assauts."
+  },
+  {
+    "Competence": "Tourner en bourrique",
+    "Description": "Hors combat, le héros peut désorienter un adversaire émettant des sons sur CHA+1 afin de lui faire perdre sa piste et annuler sa détection."
+  },
+  {
+    "Competence": "Il va faire tout noir",
+    "Description": "La nuit dispose d’une nyctalopie totale. Si le héros est déjà nyctalope alors il obtient DETECTER. De plus indépendamment de la nyctalopie, il obtient sentir le danger à 20m et AD+4 pour la discrétion. "
+  },
+  {
+    "Competence": "TA GUEULE",
+    "Description": "Hors combat, attaquer au CàC un humanoïde de taille similaire ou inférieure à la tête par derrière et sans être repéré le tue immédiatement."
+  },
+  {
+    "Competence": "Vue de l'esprit",
+    "Description": "En combat, tous les 4 assauts, le héros peut se dissimuler dans un obstacle (Baril, caisse, buisson, arbre etc.) et apparaitre dans un autre obstacle se trouvant dans sa portée de déplacement tactique maximale sur AD-1."
+  },
+  {
+    "Competence": "Chance inouïe",
+    "Description": "Hors combat, lorsque le héros doit s’infiltrer dans un bâtiment, lancez 1 dé 6. Sur 1à2 une fenêtre est ouverte à un étage accessible en escaladant (si cela est possible) et sur 6, la porte d’entrée du bâtiment n’est pas verrouillée."
+  },
+  {
+    "Competence": "Sans un bruit",
+    "Description": "En combat, si le héros n’est pas repéré, il a l’avantage sur ses jets d’AT et ses dés de dégâts."
+  },
+  {
+    "Competence": "Porter un toast",
+    "Description": "Le héros est immunisé à ses poisons et peut détecter la présence de poison dans un plat ou une boisson sur INT+4."
+  },
+  {
+    "Competence": "Membre du personnel",
+    "Description": "Hors combat, 1 fois par jour, dans un lieu disposant de personnel hôtelier, de serviteurs ou de cuisiniers, le héros peut se changer en uniforme de ce personnel en se cachant dans un endroit discret. De plus, il a CHA+4 pour se faire passer pour un membre du personnel."
+  },
+  {
+    "Competence": "My name is Bomb, JAGER Bomb",
+    "Description": "Hors combat, sur la moyenne (CHA et AD) le héros peut discrètement piquer une cible avec une seringue ou verser quelque chose dans son verre pendant qu’il discute avec elle."
+  },
+  {
+    "Competence": "Emo Globine",
+    "Description": "Le sang du héros est un poison qu’il peut utiliser en sacrifiant 3Pv : AT, PRD, AD, ES-2 pendant 1 jour. Perte à la fin de 1D6 Pv (Tyruk du marais)."
+  },
+  {
+    "Competence": "Cocktail funeste",
+    "Description": "Le héros peut combiner plusieurs poisons de son choix en 1 seul afin de combiner les effets. De plus le poison donne un malus d’INT-3 pour la détermination de l’antidote à utiliser et l’utilisation du mauvais antidote double les effets du poison."
+  },
+  {
+    "Competence": "Arme dissimulée",
+    "Description": "Si porte des vêtements, peut dissimuler jusqu’à 2 couteaux ou deux objets de petite taille sur soi indétectables lors de fouilles."
+  },
+  {
+    "Competence": "Hémophilie contagieuse",
+    "Description": "Toutes les hémorragies infligées à la tête par le héros sont des hémorragies grave (-3Pv/T)."
+  },
+  {
+    "Competence": "Ouvert au dialogue",
+    "Description": "Hors combat, durant un dialogue, le héros peut équiper une arme de CàC discrètement sur AD vs PER cible. Puis frapper son interlocuteur sur AT-2 qui ne peut ni parer ni esquiver ce coup."
+  },
+  {
+    "Competence": "Je l'ai fait exprès de dire que j'étais mort",
+    "Description": "1 fois par combat, le héros peut simuler sa mort après une AT subie pour piéger l’ennemi. L’assaut suivant le héros a AT+4 et Crit+3 sur cet adversaire."
+  },
+  {
+    "Competence": "Suite présidentielle de Benny",
+    "Description": "Si le héros se retrouve au lit avec un individu, il peut l’assassiner pendant l’acte ou dans son sommeil sans épreuve."
+  },
+  {
+    "Competence": "Haut les mains",
+    "Description": "1 fois par combat, au lieu d’attaquer, le héros peut faire semblant de se rendre sur CHA afin de tromper 1 adversaire au CàC. Il bénéficie, le tour suivant, d’un coup imparable et impossible à esquiver contre cet adversaire."
+  },
+  {
+    "Competence": "Baiser de la mort",
+    "Description": "Hors combat, le héros peut faire mine d’embrasser un adversaire sur CHA tout en l’étranglant sur FO+2 vs FO cible. Chaque assaut, la cible a FO-3 cumulatifs. Lorsque la cible tombe à FO=0, elle perd connaissance."
+  },
+  {
+    "Competence": "Sauve-moi mon Roméo",
+    "Description": "1 fois par combat, au lieu d’attaquer, le héros peut séduire une cible humanoïde pour la faire changer de camp sur CHA-2 vs INT. "
+  },
+  {
+    "Competence": "Et à la fin de l'envoi, je touche",
+    "Description": "En combat, au lieu d’attaquer, le héros peut se moquer de son adversaire sur CHA. Chaque insulte réussie inflige un malus d’AT-2, PRD-2 et ES-2 cumulable 3 fois. De plus, si le héros réussi 3 fois de suite ces insultes, il gagne un bonus d’AT+1, PRD+1 et ES+2 jusqu’à la fin du combat non cumulable."
+  },
+  {
+    "Competence": "Laisser la main pour mieux la trancher",
+    "Description": "Le héros peut laisser l’initiative à son adversaire au début d’un duel. En échange, il obtient PRD+2, ES+2 et Pi+2. De plus, les attaques ciblées sur la main armée ont AT+3 et Crit+3."
+  },
+  {
+    "Competence": "Tornade de lames",
+    "Description": "En combat, tous les 4 assauts, le héros peut effectuer 2 attaques circulaires touchant tous les ennemis au CàC sur AT-2. S’il a 2 armes, il effectue 3 attaques circulaires."
+  },
+  {
+    "Competence": "Effusion de sang",
+    "Description": "En combat, chaque réussite ou échec critique augmente de 1 les chances de critique du héros cumulable 3 fois."
+  },
+  {
+    "Competence": "Viser les jointures",
+    "Description": "En combat, lors d’une attaque à l’arme tranchante le héros peut choisir de supprimer jusqu’à la fin du combat 2 PR phy à sa cible au lieu d’infliger des dégâts."
+  },
+  {
+    "Competence": "Stalactite humaine",
+    "Description": "Le héros peut sauter sur un adversaire depuis une position surélevée sur AD. Il obtient AT+2 et Pi+5 et l’adversaire obtient PRD-3 durant cette attaque."
+  },
+  {
+    "Competence": "Saute-mouton",
+    "Description": "En combat, lors d’une esquive réussie, le héros peut sauter par-dessus un adversaire pour se retrouver dans son dos sur AD. Hors combat, l’esquive n’est pas nécessaire et l’action peut être exécutée discrètement."
+  },
+  {
+    "Competence": "Chamois urbain",
+    "Description": "Le héros peut courir sur les murs sur AD."
+  },
+  {
+    "Competence": "Chute maîtrisée",
+    "Description": "Lors d’une chute, le héros peut effectuer une roulade pour adoucir l’atterrissage diminuant les dégâts de chute subis de 50%."
+  },
+  {
+    "Competence": "Ecran de fumée",
+    "Description": "1 fois par combat, le héros peut sortir du combat en évitant les attaques d’opportunité en faisant apparaitre une épaisse fumée. Le héros sera dissimulé derrière, sur ou sous un obstacle se trouvant dans les 10m autour de sa position initiale. Il n’a pas besoin de posséder un fumigène. La fumée ininflammable se dissipe en 1 assaut."
+  },
+  {
+    "Competence": "Pyrotechnicien",
+    "Description": "Les flèches, carreaux, cartouches, fioles, grenades et bombes incendiaires ont Pi+5 et lorsque lancées sur un bâtiment, le feu qu’elles propagent se répand 2 fois plus vite."
+  },
+  {
+    "Competence": "Serment de l'homme chauve-souris",
+    "Description": "Hors combat, le héros peut assommer discrètement au CàC un humanoïde sur la moyenne (AT et FO) s’il n’est pas repéré. Si c’est la nuit, il bénéficie d’un bonus de 2."
+  },
+  {
+    "Competence": "Parkour",
+    "Description": "La vitesse de déplacement du héros n’est pas entravée par les obstacles. Les ennemis à distance ont AD tir-3 pour le toucher lorsqu’il se déplace."
+  },
+  {
+    "Competence": "Ichi, ni, san",
+    "Description": "Le héros peut lancer jusqu’à 3 shurikens en même temps sur une ou plusieurs cibles."
+  },
+  {
+    "Competence": "404 douleur NOT FOUND",
+    "Description": "En combat, tous les 4 assauts, le héros peut choisir de ne pas parer ni esquiver durant 1T pour bénéficier de 3 attaques automatiquement réussie (sauf critique) à la fin du tour. Même s’il dispose de l’initiative, ses attaques se feront après les attaques adverses."
+  },
+  {
+    "Competence": "Fanatisme ésotérique",
+    "Description": "Lors du premier tour d’un combat, le héros peut choisir de méditer durant 1 à 3T. Chaque assaut passé à méditer lui donne un bonus d’AT+1, PRD+1, AD+1, Pi+2 et MvT+2m. "
+  },
+  {
+    "Competence": "Zélote hypocrite",
+    "Description": "Le héros peut choisir de vénérer un dieu du panthéon de la terre de Fangh. Il n’a pas besoin de suivre les préceptes du culte lié à ce dieu mais bénéficie d’un bonus de Pi+3 contre tous ceux qui ne vénère pas ce dieu et obtient PR mag.+3 et RM+3 contre tous les prodiges y compris ceux de ce dieu."
+  },
+  {
+    "Competence": "Dentier de grand-mère",
+    "Description": "En combat, le héros peut gratuitement casser une fausse dent pour comsommer une dose de tabac, drogue, potion, élixir ou alcool qu’il a préparé à l’avance. Il dispose de 2 dents par combat."
+  },
+  {
+    "Competence": "Propagande tintée de vérité",
+    "Description": "Si le héros a consommé du tabac, une drogue, potion, élixir ou alcool (autre que du soin) au cours de la journée, il bénéficie d’un bonus de Pi+2, Crit+2 et effet de Crit+2 jusqu’à la fin de la journée."
+  },
+  {
+    "Competence": "Amour courtois",
+    "Description": "Le héros peut proposer à une personne du sexe opposé de lui prouver sa valeur. Si la personne accepte, le héros a COU+1, Pi+3, AD+1 à cheval et CHA+2 pour intimider pendant 1 saison (9 décades). Il ne peut pas choisir la même personne 2 fois et la personne choisie doit être extérieure à la compagnie et en vie au moment de la demande. Chaque duel provoqué au nom de la personne choisie rapporte 1 Honneur supplémentaire mais le héros ne peut pas looter son adversaire."
+  },
+  {
+    "Competence": "Fidèle destrier",
+    "Description": "Le héros peut choisir une monture qu’il possède et lui donner un nom. Cette monture a Pv+20, COU+2, AT+1, MvT+5m et permet au héros de relancer un jet de CHEVAUCHER raté même critique 1 fois par assaut en combat. Le héros ne peut pas nommer une autre monture tant que sa précédente monture est en vie. "
+  },
+  {
+    "Competence": "Protection de la Dame",
+    "Description": "Si le héros commence le combat avec moins de 50% de ses Pv, il a PR nat+2, PRD+2 et ES+2 jusqu’à la fin du combat. De plus, s’il tombe à moins de 25% de ses Pv, le premier coup adverse mortel qu’il subit ne peut pas le tuer (même critique) et il a Crit+1."
+  },
+  {
+    "Competence": "Bouclier de la Loegrie",
+    "Description": "Le héros, équipé d’un bouclier, a un bonus de +1 pour le test d’arrêt ou dévier un projectile au bouclier (Au D6 selon les stats indiquées du bouclier) et peut aussi l’utiliser sur un projectile magique ou rayon magique et sur le feu d’un dragon ou d’un lance-flamme."
+  },
+  {
+    "Competence": "Il s'en va tour à tour de tour en tour",
+    "Description": "Le héros peut lancer une action d’attaque même s’il a atteint l’ensemble de sa distance de déplacement. De plus, les dégâts de chutes sont réduits de 50% et il a AD+3 pour rattraper au vol quelqu’un qui tombe ou saute. Enfin, les effets faisant perdre son tour au héros durent 1T de moins."
+  },
+  {
+    "Competence": "Défenseur du Toboso",
+    "Description": "Le héros a Pi+10 et Crit+1 contre les ennemis de grande taille et contre les moulins (y compris lors de charges à cheval) et il est insensible aux effets du trait Puissant I et II. De plus, il a CHA+2 dans les auberges et auprès des paysans. "
+  },
+  {
+    "Competence": "Vade retro satanas",
+    "Description": "Les attaques du héros peuvent toucher les démons, les créatures maudites et les esprits."
+  },
+  {
+    "Competence": "Jouteur d'exception",
+    "Description": "Lorsque le héros participe à un tournoi, les Honneurs remportés sont doublés. De plus, il ne peut pas subir de blessure grave durant le tournoi."
+  },
+  {
+    "Competence": "Nobles faits d'armes",
+    "Description": "Chaque rencontre avec un ménestrel, artiste, clerc ou érudit extérieur à la compagnie rapporte 1 Honneur. "
+  },
+  {
+    "Competence": "Bon parti",
+    "Description": "Le héros a l’avantage à ses jets pour impressionner les nobles et gagne 1 Honneur supplémentaire par participation à un Vœu ou bal."
+  },
+  {
+    "Competence": "Ce n'était que l'échauffement",
+    "Description": "1 fois par tournoi, le héros peut relancer un jet raté même critique."
+  },
+  {
+    "Competence": "Entre-soi nobiliaire",
+    "Description": "Le héros connaît toutes les familles nobles et les chevaliers de son pays de résidence ainsi que leurs querelles. Il connaît aussi les vainqueurs de chaque tournoi de son pays et a l’avantage à toutes ses épreuves durant son premier assaut lorsqu’il les affronte."
+  },
+  {
+    "Competence": "Domaine - L'Ordre",
+    "Description": "Le héros inflige Pi magiques+4, il a AT+1D4 contre le Chaos, Démons, Morts vivants et Brigands. Son arme peut éclairer à 5m pendant 1h sur épreuve COU. Il inflige Pi+2 par tranche de 5% de corruption de sa cible. Il a l’avantage à ses attaques ciblées à la tête."
+  },
+  {
+    "Competence": "Domaine - Le Chaos",
+    "Description": "Le héros inflige Pi magiques+4, il a AT+1D4 contre l’Ordre, Prêtres, Paladins, Druides et Gardes. Son arme inflige 1D4+1% de Corruption.\r\nIl inflige Pi+2 par tranche de 5% de corruption qu’il possède. Il a l’avantage à ses attaques ciblées à la tête."
+  },
+  {
+    "Competence": "Domaine - La Colère",
+    "Description": "Le héros inflige Pi contondants+4 ou ignore 4PR phy à chaque attaque sur épreuve COU. A chaque assaut, lorsqu’il subit une attaque, il inflige 1D6 Pi supplémentaires lors de sa prochaine attaque par tranche de 3Pi reçus (cumulable 3 fois). A chaque assaut, il a Bulldozer+1  sur épreuve FO. Il a PR nat+1."
+  },
+  {
+    "Competence": "Domaine - Le Savoir",
+    "Description": "Le héros inflige 4Pi qui ignorent la PR mag et phy à chaque attaque sur INT. A chaque assaut, lorsqu’il inflige des Pi, il gagne PR nat+1 jusqu’à son prochain tour par tranche de 5Pi infligés (cumulable 5 fois). A chaque assaut, il a Bizarre+11 sur épreuve CHA. Il a PR nat+1."
+  },
+  {
+    "Competence": "Domaine - La Perfection",
+    "Description": "Le héros inflige Hémorragie grave à chaque attaque sur épreuve AD. A chaque assaut, lorsqu’il subit une attaque, il a AT+1 lors de sa prochaine attaque par tranche de 3Pi reçus (cumulable 5 fois). A chaque assaut il a Rapide+11 sur épreuve PER. Il a PR nat+1."
+  },
+  {
+    "Competence": "Domaine - La Mort",
+    "Description": "Le héros inflige Pv-4 à chaque attaque sur épreuve INT. A chaque assaut, lorsqu’il inflige des Pi, il regagne 2Pv par tranche de 3Pi infligés (cumulable 5 fois). A chaque assaut il a Terrifiant+11 sur CHA. Il a PR nat+1."
+  },
+  {
+    "Competence": "Domaine - L'Oubli",
+    "Description": "Le héros inflige le désavantage à l’épreuve ES ou PRD de sa cible sur épreuve INT. A chaque assaut, lorsqu’il subit une attaque, il inflige Pv-1 par tranche de 3Pi reçus. A chaque assaut, il a Puissant+11 sur épreuve FO. Il a PR nat+1."
+  },
+  {
+    "Competence": "Domaine - La Vie",
+    "Description": "Le héros inflige Pi acide+4 (détruit 1PR phy) à chaque attaque sur épreuve INT. A chaque assaut, lorsqu’il inflige des Pi, il rend à ses alliés à 10m 1Pv par tranche de 3Pi infligés (cumulable 6 fois). A chaque assaut, il regagne 1D4 Pv sur épreuve INT. Il rend 1D4 Pv supplémentaires avec PREMIERS SOINS ou avec des potions de soin, élixirs de soin ou remèdes."
+  },
+  {
+    "Competence": "Domaine - Les Ténèbres",
+    "Description": "Le héros inflige Pi glace+4 à chaque attaque sur épreuve AD. A chaque assaut, lorsqu’il inflige des Pi, il a PRD+1 ou ES+1 jusqu’à son prochain tour par tranche de 3Pi infligés (cumulable 3 fois). A chaque assaut, la nuit ou en milieu sombre, il a l’avantage à un jet au choix sur épreuve COU. Il a nyctalopie totale."
+  },
+  {
+    "Competence": "Domaine - Le Sang",
+    "Description": "Le héros inflige Hémorragie grave à chaque attaque sur épreuve INT. A chaque assaut, lorsqu’il inflige des Pi, il vole à la cible, pour lui-même ou un allié à 10m, 1Pv par tranche de 3Pi infligés (cumulable 5 fois). A chaque assaut, il inflige Hémorragie simple à tous les ennemis au CàC sur épreuve AD. Il n’a pas besoin de soins après combat pour stopper les hémorragies."
+  },
+  {
+    "Competence": "Domaine - Les Cendres",
+    "Description": "Le héros inflige Pi feu+4 à chaque attaque sur épreuve CHA. A chaque assaut, lorsqu’il subit une attaque, il détruit 1PR phy ou 1PR mag de sa cible lors de sa prochaine attaque par tranche de 3Pi reçus (cumulable 5 fois). A chaque assaut, il inflige COU-1D4 à tous les ennemis au CàC jusqu’à la fin de son prochain tour sur épreuve FO. Il ignore 1D8 dégâts de chute."
+  },
+  {
+    "Competence": "Domaine - Les Cieux",
+    "Description": "Le héros inflige Pi foudre+4 à chaque attaque sur épreuve de PER. A chaque assaut, lorsqu’il inflige des Pi, il a MvT+2m par tranche de 3Pi infligés (cumulable 5 fois). A chaque assaut. il inflige le désavantage aux attaques ciblés de tous les ennemis au CàC sur épreuve CHA. Il a l’avantage à ses épreuves d’acrobatie et d’escalade."
+  },
+  {
+    "Competence": "Brochette de pécores",
+    "Description": "Lors d’une charge à cheval, si le résultat de l’AT du héros est réussi et est entre 1 à 5, l’attaque ignore les PR phy adverses en plus des bonus de la charge. De plus toute charge à cheval réussie avec une lance permet de faire une seconde AT de charge sur un adversaire situé derrière la cible initiale s’ils ont moins de 4PR phy, jusqu’à un angle de 45 degrés, pour autant que la vitesse de course du cheval permette de l’atteindre."
+  },
+  {
+    "Competence": "Montjoie Sainte-Lucienne",
+    "Description": "En combat, si l’adversaire est plus nombreux que la compagnie, le héros peut, au lieu d’agir, crier « Montjoie ! Sainte-Lucienne ! » au début du combat ce qui lui donne COU+1, PR nat+1 et Crit+1 jusqu’à la fin du combat. Si des alliés le crient aussi durant le même tour et après le héros, ils obtiennent aussi ces bonus. Les bonus ne sont pas cumulables si un autre Chevalier banneret le hurle aussi. "
+  },
+  {
+    "Competence": "Admis à la vénerie",
+    "Description": "1 fois par décade, le héros peut se faire inviter à une chasse par un seigneur local, lui donnant 1 Honneur. De plus, il peut remporter la chasse sur COU-2 pour la chasse à courre, AD tir-2 pour la chasse à l’arc et INT-2 pour la volerie. En cas de victoire, il gagne 1 Honneur en plus, un bonus de +1 à l’attribut impliqué et de CHA+1 auprès de la noblesse locale, durant 1 décade. Il obtient aussi 50 rations d’excellente viande en fonction de l’animal chassé. Si cuisiné, donne +3Pv supplémentaires pour le repas."
+  },
+  {
+    "Competence": "Courtisan de la salle de bal",
+    "Description": "Le héros gagne 1 Honneur par participation à un bal. De plus, il peut obtenir une invitation au bal pour chacun des membres de la compagnie ayant au moins 10 de CHA. Il peut tenter d’impressionner la noblesse en dansant sur AD, ce qui peut lui rapporter 1 Honneur supplémentaire. Il a aussi CHA+1 pour négocier une faveur avec les autorités locales."
+  },
+  {
+    "Competence": "Pris pour rançon",
+    "Description": "En combat face à des adversaires intelligents, si le héros doit subir un coup non critique provoquant sa mort, il tombe, au lieu de ça, à 1 Pv et perd connaissance. Si le combat est remporté par les adversaires, ils le capturent pour l’échanger contre une rançon à la ville la plus proche. La compagnie ou son seigneur peut payer la rançon ou tenter une autre approche. La rançon sera de Niveau du héros x 5D100 Po."
+  },
+  {
+    "Competence": "Fils d'unijambiste",
+    "Description": "Lorsque le héros effectue un stage chez un maître d’arme, le temps d’apprentissage est réduit de 50% et il peut utiliser chaque coup spécial 2 fois durant le même combat sauf en cas d’échec."
+  },
+  {
+    "Competence": "Prix pour rançon",
+    "Description": "Lorsque le héros affronte des nobles, chevaliers ou bourgeois, s’il doit infliger un coup mortel à ce type d’ennemis, il peut les assommer à la place. Il peut ensuite les échanger contre une rançon auprès de leur compagnie, seigneur ou ville à auteur de Niveau du héros x 4D100 Po et 1 Honneur ou Niveau du héros x 8D100 Po mais -1 Honneur. Cela ne fonctionne que dans le cadre de la loi."
+  },
+  {
+    "Competence": "Vétéran de nombreuses guerres",
+    "Description": "A chaque passage de niveau, le héros peut échanger 5 Honneurs contre 1 point de Destin."
+  },
+  {
+    "Competence": "Ici c'est Castillon pas Azincourt",
+    "Description": "PR nat+3 contre les projectiles non magiques et Pi+5 contre les ennemis ayant utilisé des armes à distance au cours du combat. De plus, il joue avant les armes à distances sauf règles spéciales."
+  },
+  {
+    "Competence": "Ma femme, mon fils et mon domaine",
+    "Description": "Si le héros vend son fief pour en obtenir un autre, le coût en Honneurs est réduit de 10. De plus, la première amélioration de chaque bâtiment d’un fief est toujours gratuite."
+  },
+  {
+    "Competence": "A l'aube, regardez à l'est",
+    "Description": "Au 5ème assaut d’un combat, si le héros effectue une charge à cheval, une réussite normale compte comme une réussite critique."
+  },
+  {
+    "Competence": "Oriflamme de Castel Mauro",
+    "Description": "Tous les 4T, la bannière unique donne l’avantage à un jet au choix de 2 héros désignés par le Seigneur banneret (le bonus doit être utilisés dès le tour des alliés)."
+  },
+  {
+    "Competence": "Renard et tornade",
+    "Description": "En extérieur, le héros peut siffler pour appeler son cheval et celui-ci surgira systématiquement au galop pour autant qu’il ne soit pas blessé grièvement, entravé ou mort."
+  },
+  {
+    "Competence": "Rochet d'alexandra",
+    "Description": "Le héros peut relancer un jet d’AD raté lors d’un saut d’obstacle à cheval. La monture du héros a AD+2 et INT+2."
+  },
+  {
+    "Competence": "J'ai passé l'âge des contes de fées",
+    "Description": "Supprime les compétences APPEL DU BRAAV’ et DUELLISTE et donne APPEL DES RENFORTS à cheval."
+  },
+  {
+    "Competence": "A la hussarde",
+    "Description": "Si la compagnie entame un combat sans préparation ou sans plan tous les alliés ont COU+1 et Pi+5 durant le combat. De plus, lorsque le héros attaque, si son AT est à 1 ou 2 points d’un échec, son attaque a Pi+3 (ex : le héros a AT=10 et qu’il fait un 10 ou un 9)."
+  },
+  {
+    "Competence": "Le cran des corbeaux",
+    "Description": "Le héros a l’avantage sur ses jets de COU. De plus, si les ennemis sont 2 fois plus nombreux que la compagnie ou que son adversaire a 1,5 fois ses Pv max, celui-ci gagne Pi+1 par point de COU au-dessus de 10. Si l’adversaire du héros a les traits Terrifiant I, II ou III, le héros gagne 1 attaque supplémentaire lors de son premier tour."
+  },
+  {
+    "Competence": "Pillages et paiements",
+    "Description": "CHA+2 pour intimider les donneurs de quête afin d’obtenir un supplément lors de la collecte de la récompense. De plus, le héros a AT+2, Pi+3 et Crit+2 contre les ennemis en fuite. Enfin, si un allié à 5m du héros utilise APPEL DES RENFORTS, le héros a AT+2, Pi+3 et Crit+2 à son tour."
+  },
+  {
+    "Competence": "Les ailes de Sobieski",
+    "Description": "Tous les 4T, lors d’une charge a cheval, le héros a Pi x2 avec des armes à 1 main."
+  },
+  {
+    "Competence": "Quand il est bon",
+    "Description": "Si le héros a mangé un oignon frit durant la journée, il bénéficie d’un bonus de Crit+1 lors des combats, et un bonus+1 pour toutes les épreuves hors combat."
+  },
+  {
+    "Competence": "Nous laisseras-tu dévoré par ces gens-là",
+    "Description": "En combat, si un allié se bat en infériorité numérique, le héros a Vitesse tactique+4m et Vitesse de course +6m (y compris à cheval) pour aller l’aider. De plus, durant cet assaut et le suivant, le héros et l’allié qu’il vient assister ont AT+1, PRD+1, ES+1 et Pi+3."
+  },
+  {
+    "Competence": "L'infernale",
+    "Description": "En extérieur, de nuit, le héros a DEPLACEMENT SILENCIEUX à cheval. De plus, s’il lance une charge à cheval sans avoir été repéré au préalable, il bénéficie de Crit+5 pour cette charge et force les adversaires de taille humaine à 10m à faire un test de COU-3."
+  },
+  {
+    "Competence": "Le Pew Pew des Scythes",
+    "Description": "A cheval, tous les 4T, le héros peut effectuer un tir supplémentaire avec des armes à distance."
+  },
+  {
+    "Competence": "Esquive la balle",
+    "Description": "3 fois par combat, le héros sur sa monture ou sa monture peut effectuer une esquive. "
+  },
+  {
+    "Competence": "On est en train de le perdre",
+    "Description": "Lorsqu’un allié meurt des suites d’une pertes de Pv (sauf coup critique ou destruction du corps), le héros a 3T pour lui faire PREMIERS SOINS, s’il réussit l’allié revient à la vie, inconscient, avec 2 Pv."
+  },
+  {
+    "Competence": "Transufion d'essence vitale",
+    "Description": "Immédiatement après avoir utilisé PREMIERS SOINS, le héros peut transvaser des Pv d’un allié à moins de 5m à l’individu sur lequel il a utilisé PREMIERS SOINS. "
+  },
+  {
+    "Competence": "Don d'organes mystiques",
+    "Description": "Si un allié meurt et n’a plus de point de destin, le héros peut extraire un point de destin de son corps et le donner ou non à un allié."
+  },
+  {
+    "Competence": "Précision chirurgicale",
+    "Description": "En combat, le héros peut perdre 1T pour étudier une cible vivante. Sa prochaine attaque ciblée à la tête a Crit+4, si ciblée au torse ou aux jambes, elle provoque une hémorragie grave, si au bras, elle désarme la cible sur 1à3 au D6, si aux parties génitales, elle provoque la blessure grave « organes génitaux blessés » en plus des effets de l’AT ciblée."
+  },
+  {
+    "Competence": "Méthode paré",
+    "Description": "Le héros peut rallonger une potion, un remède ou un élixir avec 1 dose d’eau d’Armitas permettant à 2 individus de consommer le breuvage. Une potion rallongée ne peut pas l’être 2 fois. De plus, il peut extraire 1 dose de poison et/ou les flèches et munitions ayant infligé des dégâts à un allié lorsqu’il utilise PREMIERS SOINS sur eux. Enfin, 1 fois par jour à la fin de la journée, s’il a utilisé plus de 2 trousses de soin, il en produit 1 au moment du sommeil."
+  },
+  {
+    "Competence": "Raccomodeur de membres",
+    "Description": "Le héros peut prélever un membre ou un organe valide à un individu venant de mourir pour le greffer à un allié sur INT-5. L’opération prend 1D6+1H. En cas d’échec critique le membre ou l’organe est rejeté et inflige une hémorragie grave et une infection des plaies au patient. Cela fonctionne aussi pour les membres et organes issus de mutations. "
+  },
+  {
+    "Competence": "Arrête Chochotte",
+    "Description": "En combat, sur CHA, le héros peut perdre 1T pour convaincre un allié ayant subi une blessure grave qu’il n’a rien de grave. L’allié ciblé ignore les effets de la blessure grave jusqu’à la fin du combat."
+  },
+  {
+    "Competence": "Tout ça, c'est dans la tête",
+    "Description": "1 fois par malédiction, le héros peut supprimer une malédiction sur un individu ou un être vivant sur la moyenne (INT et CHA)+1. De plus, 1 fois par jour, il peut exorciser un individu sur INT vs COU cible."
+  },
+  {
+    "Competence": "Ça doit juste être un gros rhume",
+    "Description": "1 fois par jour, le héros peut supprimer une mutation majeure de son choix sur PREMIERS SOINS."
+  },
+  {
+    "Competence": "Grog de guerrisseur",
+    "Description": "1 fois par jour le héros peut produire un grog de guérisseur avec 1 dose de rhum, 1 dose d’eau d’Armitas et 1 dose de feuille de Boulorne ou 1 dose d’Herbe de Nilla ou 1 dose de gomme de Mir-Nodd ou 1 dose d’épices communs ou 1 dose d’épices traditionnels. Le Grog donne : Pv+5, Pv+2/H, FO+1, AT+1 et Pv+1/T en combat pendant 8H (il ne s’agit ni d’une potion ni d’un élixir, 2 grogs par jour et par individu)."
+  },
+  {
+    "Competence": "Remède maison",
+    "Description": "Le héros peut mélanger 1 dose d’Eau d’Armitas ou de poudre de guérison avec une potion ou un élixir de soin pour obtenir une potion de soin effet majeur ou un élixir de soin avancé. De plus, il peut aussi mélanger 1 dose d’Eau d’Armitas avec un antidote naturel pour obtenir un antidote alchimique et inversement."
+  },
+  {
+    "Competence": "De l'eau-de-vie à l'au-delà",
+    "Description": "1 fois par niveau, il peut mélanger 1 potion de soin majeur ou 1 élixir de soin avancé avec 1 dose d’alcool blanc pour fabriquer une potion de point de destin. Celui qui boit la potion obtient 1 point de destin."
+  },
+  {
+    "Competence": "Etude de faisabilité",
+    "Description": "En combat, le héros peut perdre 1T pour obtenir AT+1, AD tir+1 et Pi+2, cumulable 2 fois jusqu’à la fin du combat. Hors combat il peut obtenir un bonus d’1D4 pour réussir une épreuve sur INT-3."
+  },
+  {
+    "Competence": "Moine copiste",
+    "Description": "1 fois par décade avec 1 dose de Plume d’aigle des montagnes ou 1 dose de Plume de Chapon Fanghien, et 1 dose de sang de démon de vampire, de loup-garou, d’érudit, de mage ou de licorne, le héros peut faire une copie d’un parchemin sur INT-3. En cas d’échec critique le parchemin original est détruit."
+  },
+  {
+    "Competence": "Examen post-mortem",
+    "Description": "Après un combat, le héros peut noter l’origine des ennemis vaincus, lui et ses alliés ont Pi+5 et Crit+2 contre ces ennemis jusqu’au sommeil."
+  },
+  {
+    "Competence": "Armure littéraire",
+    "Description": "Chaque livre porté par le héros lui donne PR nat+1 cumulable 5 fois."
+  },
+  {
+    "Competence": "Mode d'emploi",
+    "Description": "Les objets magiques à charge et les parchemins ont 1 charge supplémentaire. Un objet déchargé ne peut pas obtenir une nouvelle charge de cette manière."
+  },
+  {
+    "Competence": "Savoir occulte",
+    "Description": "Le héros sait tout ce qu’il faut savoir sur les créatures maudites, les morts-vivants, les démons et les créatures légendaires sur INT et donne l’avantage à 1 allié de son choix à chaque assaut contre ces créatures."
+  },
+  {
+    "Competence": "Edit des Dieux",
+    "Description": "1 fois par niveau, lorsqu’il utilise MOINE COPISTE, le héros peut obtenir un parchemin donnant 1 point de destin à celui qui le lit. Le héros obtient aussi le parchemin copié."
+  },
+  {
+    "Competence": "Science infuse",
+    "Description": "Sur INT-2, le héros peut comprendre comment fonctionne un objet mécanique ou magique et peut l’améliorer temporairement (1D4H) pour qu’il donne 2 bonus parmi les suivants : ",
+    "Tableau": "- Epreuve+1 à l’utilisateur\r\n- Recharge-1 assaut\r\n- Pi+5\r\n- Echec critique-1 (sauf 20)\r\n- Portée+10m\r\n- Vitesse tactique+50%\r\n- Distance max parcourue par jour +10km\r\n- Réduire un malus d’1 point (ne peut pas améliorer plus de 4 objets en même temps)."
+  },
+  {
+    "Competence": "Etude ballistique",
+    "Description": "Le héros peut supprimer les malus dus à la distance pour les armes de jet et de tir pour 1 allié pendant 1 combat. De plus, les objets lancés par lui et ses alliés ont Portée+10m. Enfin, les attaques à distance ciblées effectuées par le héros et ses alliés à 5m ont AD+3."
+  },
+  {
+    "Competence": "Chimie élémentaire",
+    "Description": "Lors de réalisation de recettes alchimiques, de potions ou de cuisine le héros ne prend que sa valeur la plus élevée entre l’INT et l’AD au lieu de faire la moyenne des deux. De plus, un critique à la réalisation donne 1 produit supplémentaire."
+  },
+  {
+    "Competence": "Savant fou",
+    "Description": "2 fois par niveau, s’il a plus de 50% de corruption, le héros peut confectionner sur INT-3 une potion de point de destin à l’aide d’1 dose de sang (tout ingrédient), 1 potion de mana et 1 dose de poudre de malpierre. Celui qui boit la potion obtient 1 point de destin. Le bonus de CHIMIE ELEMENTAIRE est applicable."
+  },
+  {
+    "Competence": "Crocogolf",
+    "Description": "Le héros a PR nat+2 et peut renvoyer un projectile, y compris magique, à son lanceur sur 1 au D4."
+  },
+  {
+    "Competence": "Entraînement intensif",
+    "Description": "1 fois par jour le héros peut s’entraîner sur une caractéristique de son choix sur un test de cet caractéristique-2. En cas de réussite, il obtient Crit+1 et un bonus de +2 pour toute épreuve sur cet caractéristique. Peut se combiner avec REVISIONS DE DERNIERE MINUTE."
+  },
+  {
+    "Competence": "Méditation",
+    "Description": "1 fois par jour, à la place d’ENTRAINEMENT INTENSIF, le héros peut méditer pendant 1h pour obtenir un bonus d’AD+3 et INT+3 pour toutes les épreuves impliquant la confection, fabrication, cuisine, production, création, amélioration ou identification d’objet pendant 8h."
+  },
+  {
+    "Competence": "Exercice de groupe",
+    "Description": "1 fois par jour pendant un repos durant un voyage, le héros peut s’entraîner avec 1 ou 2 alliés en faisant un combat sur 25Pv annexes sans armure. Les Pv annexes ne sont pas retirés du capital de chacun et ne sont pas conservés après l’entraînement. Tous les participants obtiennent AT+1, ES+1 ou PRD+1 pendant 8h, le vainqueur obtient en plus Crit+1 pour AT, ES ou PRD pendant 8h."
+  },
+  {
+    "Competence": "Le retour du fils d'unijambiste",
+    "Description": "1 fois toutes les 3 décades, le héros peut proposer ses services à des nobles locaux lorsqu’il dispose de plusieurs jours de libres dans une ville ou dans un domaine seigneurial. Il obtient (1D6+4) x 100Po pour ses services et obtient CHA+2 auprès des nobles et de la garde de la ville. De plus, il peut enseigner n’importe quelle maîtrise ou garde à un allié même s’il ne l’a pas lui-même, 1 fois toutes les 3 décades."
+  },
+  {
+    "Competence": "Botte secrète",
+    "Description": "1 fois par jour en combat, le héros peut dépenser 1D100XP, s’il le fait sa prochaine attaque non ciblée sera automatiquement un critique et infligera 10Pi supplémentaires en plus des autres modificateurs."
+  },
+  {
+    "Competence": "Souvenez-vous de ce que je vous ai appris",
+    "Description": "En combat, le héros peut encourager un allié à 20m au lieu d’attaquer ce qui donne AT+2 ou PRD+2 à cet allié durant 1 tour. De plus s’il fait une réussite critique lors d’une attaque ou d’une parade, il peut choisir de transformer ce critique en réussite simple et de transférer le critique à un allié à 20m. L’allié transformera alors automatiquement sa prochaine attaque ou parade réussie en réussite critique. Si la réussite critique n’est pas utilisée durant ce combat elle est perdue."
+  },
+  {
+    "Competence": "Ô rage, ô désespoir",
+    "Description": "Chaque membre de la compagnie tombant à moins de 50% de ses Pv durant un combat, donne un bonus de Crit+1 et Pi+4 pour les attaques du héros jusqu’à la fin du combat. Les alliés remontant au-dessus de 50% des Pv retirent le bonus."
+  },
+  {
+    "Competence": "Mon nom est Inigo Montoya",
+    "Description": "1 fois par combat, le héros peut défier en duel 1 ennemi de son choix sur CHA vs INT cible. En cas de réussite, personne ne peut intervenir dans le duel. Le héros a PR nat+3, PRD+3, ES+3 et conserve le droit d’attaquer après une ES réussie sur 1à3 au D6. Seule la mort, la reddition de la cible ou le héros peut mettre fin au duel."
+  },
+  {
+    "Competence": "Travail d'orfèvre",
+    "Description": "Les objets produits par le héros se vendent au prix de négoce+50%. Il obtient aussi CHA+2 pour négocier avec les fabricants d’armes et d’armure."
+  },
+  {
+    "Competence": "Doctrine d'Héphaïstos",
+    "Description": "Les armes créées ou améliorées par le héros ont Crit+1 et Pi+3."
+  },
+  {
+    "Competence": "Forge stellaire",
+    "Description": "Lorsqu’il fabrique un objet sur un critique le héros peut annoncer un chiffre entre 3 et 10 puis lancer le D10. Si le dé indique un chiffre plus petit que le chiffre annoncé, on applique les bonus dus au critique et la fabrication se termine normalement. Cependant si le dé dépasse le chiffre annoncé alors l’objet ainsi fabriqué est une relique qui évolue avec son porteur jusqu’à atteindre le niveau de version annoncé (le nombre choisi entre 3 et 10). Si le dé tombe sur le chiffre annoncé l’objet est une relique qui a déjà atteint le niveau de version maximum. \r\nPour passer d’une version à une autre il faut :",
+    "Tableau": "- Pour une arme : vaincre un nombre d’ennemi égal à la version de l’arme X10 ou passer un niveau\r\n- Pour une armure : Encaisser un nombre de dégâts > ou égal à la totalité des PR du porteur autant de fois que le chiffre de la version de l’armure ou passer un niveau\r\n- Pour un objet : Passer un niveau"
+  },
+  {
+    "Competence": "VULTROX 3000",
+    "Description": "En combat, le héros a AT+2, PRD+2, AD tir+2, Crit+1 et Pi+5 avec les armes qu’il a créées ou améliorées. Il a PR spé+1 pour les pièces d’armure qu’il a créées ou améliorées."
+  },
+  {
+    "Competence": "Ils ne font pas le poids",
+    "Description": "Le héros a Pi+5 s’il y a au moins 3 adversaires à son contact."
+  },
+  {
+    "Competence": "Frappe lourde",
+    "Description": "Le héros peut perdre 1T pour charger sa prochaine action d’attaque (ensemble des attaques de son tour) afin de doubler le nombre de dés de dégâts lancés au CàC."
+  },
+  {
+    "Competence": "Fallait prendre une armure",
+    "Description": "Les dégâts de zone sur les ennemis ayant moins de 4 PR phy sont doublés."
+  },
+  {
+    "Competence": "Les yeux révolver",
+    "Description": "Le héros obtient Terrifiant I, si a Terrifiant I alors il obtient Terrifiant II. De plus, 1 fois par tour, il peut tuer de peur un ennemi ayant raté son jet de COU face au trait Terrifiant sur un jet d’intimidation."
+  },
+  {
+    "Competence": "Vous partez déjà?",
+    "Description": "Le héros a MvT+100% pour charger un groupe d’ennemis. Les ennemis au contact ne peuvent pas utiliser APPEL DES RENFORTS."
+  },
+  {
+    "Competence": "L'union fait la force",
+    "Description": "Le héros a 1 attaque supplémentaire par assaut, par allié à moins de 10m, cumulable 3 fois, ne prend pas en compte les familiers et invocations."
+  },
+  {
+    "Competence": "Il y en aura pour tout le monde",
+    "Description": "Les attaques horizontales infligeant des dégâts à une cible se prolongent sur la cible adjacente."
+  },
+  {
+    "Competence": "Le feu par le feu",
+    "Description": "1 fois par combat, le héros peut choisir de sacrifier 25% de ses Pv max afin d’obtenir Crit+5 et Pi+5 pendant 4 assauts."
+  },
+  {
+    "Competence": "Je suis le déluge",
+    "Description": "Si le héros est attaqué par 3 ennemis au CàC ou plus, alors chaque attaque ennemie ratée lui permet de contre-attaquer cet ennemi gratuitement."
+  },
+  {
+    "Competence": "Si ça saigne",
+    "Description": "A chaque coup à l’arme tranchante du héros infligeant des dégâts, lancez un D6. Sur 1à4 cela provoque une hémorragie (perte d’1 Pv/T), sur 5à6 cela provoque une hémorragie grave (perte de 3Pv/T), cumulables (l’hémorragie se rajoute aux effets de l’arme). De plus, chaque coup à l’arme contondante du héros infligeant plus de 4Pi réduit d’1 PR phy l’armure de la cible jusqu’à la fin du combat."
+  },
+  {
+    "Competence": "Pour Frodon",
+    "Description": "En combat, chaque membre de la compagnie ayant moins de 50% de ses Pv max donne au héros COU+2, AT+1, ES+1, Pi+4, Pv+10 et Echec critique des ennemis+1. Chaque allié autre que le héros remontant au-dessus de 50% de ses Pv max annule le bonus."
+  },
+  {
+    "Competence": "Inondation de sang",
+    "Description": "A chaque fois que le héros subit une attaque d’un adversaire lui faisant perdre des Pv, il bénéficie d’un bonus de Crit+3 lors de l’attaque de son choix durant ce combat (cumulable 3 fois)."
+  },
+  {
+    "Competence": "Même pas mal",
+    "Description": "Le héros ne perd pas son initiative s’il se prend un coup."
+  },
+  {
+    "Competence": "C'est moi le monstre ici",
+    "Description": "Lorsque le héros affronte un ennemi au trait VIOLENT, il bénéficie d’un bonus AT+1, PRD+1, COU+1 et Pi+2 par niveau de puissance du trait."
+  },
+  {
+    "Competence": "Ecarte-toi",
+    "Description": "Tous les 4T, au lieu d’attaquer, le héros peut repousser tous les ennemis au contact leur faisant perdre leur prochain assaut et lui permettant de se déplacer sans attaque d’opportunité des ennemis affectés."
+  },
+  {
+    "Competence": "Ma grand-mère se bat mieux que toi",
+    "Description": "Tous les 4T, au lieu d’attaquer, le héros peut insulter tous les ennemis à 10m afin qu’ils l’attaquent. Un test de CHA est nécessaire pour chaque adversaire déjà au contact. De plus, il gagne un bonus temporaire de PR nat+4 pendant 4T. "
+  },
+  {
+    "Competence": "Revêtement en âmes fraiches",
+    "Description": "En combat, chaque adversaire tué par le héros ou ses alliés lui donne PR nat+1 temporaire jusqu’à la fin du combat (cumulable 6 fois)."
+  },
+  {
+    "Competence": "Rondache tamponneuse",
+    "Description": "Tous les 4T, au lieu d’attaquer et s’il utilise un bouclier, le héros peut repousser 1 adversaire au contact afin de le mettre à terre et lui faire perdre 3T sur AT puis confrontation FO+2 vs FO cible."
+  },
+  {
+    "Competence": "NOOOOON AAAAATTEEEENTIOOON",
+    "Description": "1 fois par combat, si un allié se trouvant à moins de 10m subit un coup (sauf dégâts de zone) qui pourrait le tuer, le héros peut plonger devant son allié pour se prendre le coup à sa place. Ne provoque pas d’attaque d’opportunité mais fait perdre 1 assaut au héros. Ce faisant il obtient temporairement PR nat+5. "
+  },
+  {
+    "Competence": "Maîtrise martiale",
+    "Description": "1 fois par assaut, si le héros a une INT plus grande que sa cible, il a l’avantage pour 1 attaque."
+  },
+  {
+    "Competence": "Forth Eorlingas",
+    "Description": "Tous les 4T, au lieu d’attaquer, le héros peut hurler un encouragement à ses alliés à 20m. Ils ont l’avantage pour leur jet d’attaque ce tour-ci."
+  },
+  {
+    "Competence": "Message à caractère informatif",
+    "Description": "En combat, au lieu d’attaquer, sur INT, le héros peut obtenir toutes les informations sur 1D4 ennemis au choix à 50m (Pv, PR, Pi armes, capacités, points faibles, compétences etc.)."
+  },
+  {
+    "Competence": "Exploiter les failles",
+    "Description": "1 fois par combat, le héros peut déterminer le point faible d’une cible sur INT. Si l’adversaire n’a pas de point faible défini alors ce point faible est attribué au D6. Les attaques ciblées sur ce point faible ont AT+2, AD tir+2, Crit+3 et Pi+6 en plus des effets de l’attaque ciblée."
+  },
+  {
+    "Competence": "Voici vos ordres",
+    "Description": "Avant un combat le héros peut donner un ordre particulier à chacun de ses alliés sur INT afin de leur donner un bonus. En combat, il peut perdre 1 assaut pour remplacer un ordre d’un allié par un autre sur INT. Les bonus sont actifs dès le début du combat et jusqu’à leur remplacement ou la fin du combat. Il peut choisir les ordres parmi la liste suivante : ",
+    "Tableau": "- Tir de suppression : Les armes à distance nécessite 1T de moins pour tirer et ont AD+1\r\n- Abattez-moi ça : Les armes à distance ont Pi+3 et n’ont plus de malus dus à la distance\r\n- Ne les laissez-pas passer : Il n’y a pas d’épreuve d’AT pour les attaques d’opportunité (sauf critique)\r\n- Tenez la ligne : PR nat+2 et PRD+1\r\n- Chargez leur position : MvT+50%\r\n- Percez leur flanc : AT+1 et ignore 3 PR phy \r\n- Repliez-vous : Donne APPEL DES RENFORTS"
+  },
+  {
+    "Competence": "Je suis là pour boire des bières et trancher des têtes",
+    "Description": "Si le héros a bu plus de 4 bières (ou autres alcools) il peut échanger jusqu’à 4 points d’INT pour réduire le malus d’AT ciblée à la tête d’autant de points pendant 12h."
+  },
+  {
+    "Competence": "Et je suis à court de bière",
+    "Description": "Si le héros souffre de gueule de bois, il bénéficie d’un bonus de Pi+5 pendant 12h."
+  },
+  {
+    "Competence": "Combo",
+    "Description": "En duel, si le héros réussit 2 épreuves d’AT de suite (2 assauts consécutifs sans compter une éventuelle parade) il obtient AT+2 et Pi+5 pour son attaque suivante et inflige PRD-3 et ES-3 à la cible."
+  },
+  {
+    "Competence": "Canon anti-aérien",
+    "Description": "Si le héros affronte un ennemi ayant le trait BULLDOZER VOLANT, il résiste sur 1à4 au D6 et a AD+3 pour sauter sur la créature volante. De plus il a AT+2, AD tir+2 et Pi+5 contre les créatures volantes de manière générale."
+  },
+  {
+    "Competence": "Mangeur de flèches",
+    "Description": "Le héros peut esquiver les projectiles (y compris magiques) sur 1à2 au D6. De plus, s’il se prend un projectile, il a PR nat+5."
+  },
+  {
+    "Competence": "Ça ne mange pas de pain",
+    "Description": "Si le héros subit un coup qui lui fait perdre plus de 6pv, il a Crit+3 et Pi+5 pour son prochain coup."
+  },
+  {
+    "Competence": "C'est celui-là?",
+    "Description": "Les dés de dégâts sont des dés d’un rang supérieur (1D8 au lieu d’1D6 etc.)."
+  },
+  {
+    "Competence": "Double peine",
+    "Description": "Les réussites critiques doublent les Pi."
+  },
+  {
+    "Competence": "Sel sur les plaies",
+    "Description": "Lors du lancer de dés des dégâts infligés par le héros, sur 3 : inflige hémorragie simple, sur 4 : ignore la PR phy, sur 5 : la cible perd 1T et sur 6 : ajoutez 6Pi additionnels. "
+  },
+  {
+    "Competence": "Pains, beignes et patates",
+    "Description": "Les AT réussies consécutives sur la même cible ont Pi+2 cumulables jusqu’au changement de cible ou l’échec à l’épreuve d’AT indépendamment de la PRD ou ES adverse. "
+  },
+  {
+    "Competence": "Feinte",
+    "Description": "En combat, tous les 4T, le héros peut feinter 1 adversaire au lieu d’attaquer sur un test de CHA+2. S’il réussit, sa prochaine attaque sera imparable, ne pourra pas être esquivée et il aura l’initiative."
+  },
+  {
+    "Competence": "Riposte",
+    "Description": "En combat, au lieu d’esquiver ou de parer, le héros peut faire à la place une confrontation d’AT vs AT cible. Celui ayant la meilleure réussite inflige le coup à son adversaire."
+  },
+  {
+    "Competence": "Descente de l'oiseau",
+    "Description": "En combat, au lieu d’attaquer, le héros peut sauter sur un adversaire de taille similaire ou inférieure et le mettre à terre durant 3T sur AT puis confrontation de FO+1 vs FO cible. Le héros perd 1T pour se relever après ce coup. De plus, il a AT+1 et Pi+3 contre les cibles à terre."
+  },
+  {
+    "Competence": "Pile je gagne, face tu perds",
+    "Description": "Le héros a INT+2 et AD+2 pour tricher à un jeu ayant de l’argent en mise."
+  },
+  {
+    "Competence": "Marin supersticieux",
+    "Description": "Le chiffre 7 compte toujours comme réussite critique."
+  },
+  {
+    "Competence": "Feinte de canaille",
+    "Description": "En duel, sur une PRD réussie, le héros peut faire semblant de s’être pris le coup et d’agoniser pour obtenir un bonus d’AT+3 et Crit+3 contre cet adversaire au prochain tour. Utilisable 1 seule fois sur le même adversaire. Ne permet pas de simuler la mort."
+  },
+  {
+    "Competence": "Un cageot de pommes par jour ça maintient la santé",
+    "Description": "En combat, les dégâts subis par le héros dus à des armes à poudre ou armes de CàC à 1 main sont réduits de 6Pi."
+  },
+  {
+    "Competence": "Rasade de château cambusard",
+    "Description": "1 fois par combat et jusqu’à 3 fois par jour, le héros peut, au lieu d’une attaque, se soigner de 20 Pv en buvant 4 rations d’alcool (1 bouteille). Ne réduit pas les fractures, ne désinfecte pas les plaies. Utilisable en combat."
+  },
+  {
+    "Competence": "Ballablan dans ta gueule",
+    "Description": "Lorsque le héros change de pistolet ou d’arbalète à 1 main, l’arme se recharge gratuitement sur 1, 2 ou 3 au D6."
+  },
+  {
+    "Competence": "Capitaine bigleux",
+    "Description": "Les ennemis ont AD tir-4 et Echec crit à distance+2 pour viser le héros."
+  },
+  {
+    "Competence": "Gibier de potence",
+    "Description": "Le héros a PRD+1, il peut parer 2 attaques par tour et a AT+2 et Pi+3 avec des sabres, coutelas et cimeterres."
+  },
+  {
+    "Competence": "Combattu souvent, battu parfois, abattu jamais",
+    "Description": "1 fois par décade, au moment de sa mort, le héros survit. Il doit ensuite investir 1D100+10 XP et doit alors parier sur le résultat du dé avec une marge d’erreur de 5. S’il gagne, il récupère le double d’XP investis."
+  },
+  {
+    "Competence": "Moi, ma bite et mon couteau",
+    "Description": "Le héros a AT+2, PRD+2, AD+2, COU+2, ES+2 et Pi+5 s’il a moins de 12 de PR (toutes PR confondues sauf PR nat) et s’il ne se bat qu’avec des couteaux, dague ou affiliés. De plus il ignore la PR nat des animaux marins ou amphibiens."
+  },
+  {
+    "Competence": "Un marin peut tout faire, mal",
+    "Description": "Chaque jour, au réveil, le héros peut choisir une de ses caractéristiques parmi COU, INT, CHA ou PER. Cette caractéristique gagne un bonus temporaire de 1D4+2 mais il a un malus de -1 aux autres jusqu’au lendemain."
+  },
+  {
+    "Competence": "C'est pas la mer qui prend l'ohm",
+    "Description": "Le héros a l’avantage aux jets de météo. De plus il ignore la PR mag des ennemis s’il pleut."
+  },
+  {
+    "Competence": "Je n'ai rien sur moi",
+    "Description": "Le héros peut dissimuler 1D6 objets de la taille d’une dague ou d’un pistolet sur lui lors d’une fouille tant qu’il garde ses habits, de plus il ne peut pas se faire voler ses pièces d’or."
+  },
+  {
+    "Competence": "Négociations coreliennes",
+    "Description": "Le héros peut, s’il est en plein milieu d’une discussion, dégainer son arme et attaquer en premier une cible. De plus, s’il est assis et attaque à distance, il a Crit+3."
+  },
+  {
+    "Competence": "Service rendu, serveur pendu",
+    "Description": "1 fois par décade, le héros peut proposer à un marchand local de lui fournir une marchandise prohibée. Il dispose de 30 jours pour effectuer la livraison. La récompense pour la livraison est définie par pallier en fonction du temps restant : ",
+    "Tableau": "- Livraison durant la 1ère décade : Valeur marchande x3\r\n- Livraison durant la 2ème décade : Valeur marchande x2\r\n- Livraison durant la 3ème décade : Valeur marchande+10%\r\n- Livraison après la fin du temps imparti : Valeur marchande/2\r\n-Pas de livraison : il est dénoncé par le marchand à la garde et/ou une prime est mise sur sa tête auprès des guildes criminelles locales"
+  },
+  {
+    "Competence": "Mes papiers sont en règles",
+    "Description": "Le héros peut fabriquer, à l’aide de papier, plume, encrier et bougie, des laisser-passer basiques (nécessite un jet de CHA+2 pour convaincre) pour entrer dans les lieux restreints. De plus s’il dispose d’un exemplaire de document officiel local, il peut produire des répliques quasi conformes de laisser-passer (fonctionne sauf détection critique).",
+    "Tableau": " "
+  },
+  {
+    "Competence": "Grosse pièce en chocolat",
+    "Description": "1 fois par jour, le héros peut fabriquer un faux lingot de Berylium (500 Po) à l’aide d’1 dose de cuivre (5 PA) et de 1 dose de poudre d’or (2 PO) et d’argent (2 PA). La fabrication nécessite un four, un chaudron ou une forge et prend 2H. Un banquier, un nain, un pirate ou un voleur remarquera la différence avec un véritable lingot. Le lingot a une durée de vie de 10 jours après quoi il ne ressemble plus à un vrai."
+  },
+  {
+    "Competence": "L'ami de tous",
+    "Description": "Lorsque le héros utilise la compétence SERVICE RENDU, SERVEUR PENDU, s’il réussi à livrer la marchandise pendant le temps imparti, il bénéficie d’avantages dans la ville ou le village par paliers : ",
+    "Tableau": "- Après une livraison réussie : 25% de réduction auprès du marchand\r\n- Après 2 livraisons réussies : Le marchand se porte comme témoin de moralité et paie la caution du héros si celui-ci est arrêté par la garde\r\n- Après 3 livraisons réussies : 25% de réduction chez tous les marchands de la ville ou du village\r\n- Après 4 livraisons réussies : La garde locale ferme les yeux sur les infractions mineures du héros et de ses camarades\r\n- Après 5 livraisons réussies : La garde et les autorités ferment les yeux sur le prochain crime de la compagnie (s’ils sont attrapés)"
+  },
+  {
+    "Competence": "Technique de combat Coorrrrreellllllli",
+    "Description": "Lorsque le héros utilise des armes exotiques (origine ou lieu) il a AT+2, AD tir+2, PRD+2, Pi+6 et il dispose de l’avantage à la parade."
+  },
+  {
+    "Competence": "C'est tombé de votre poche",
+    "Description": "1 fois par combat, le héros peut acheter un ennemi intelligent de niveau équivalent ou inférieur en lui lançant 20x son niveau en argent afin qu’il change de camp sauf épreuve INT cible-3."
+  },
+  {
+    "Competence": "Je connais une autre route",
+    "Description": "Le héros peut esquiver toutes les attaques inesquivables sur ES-7 (y compris les projectiles et les sorts)."
+  },
+  {
+    "Competence": "Elle s'appelle retour",
+    "Description": "En combat, le héros a AD+2 pour voler une arme à la ceinture d’un ennemi ou sur moyenne (AT et FO) vs FO cible pour voler une arme tenue par un ennemi. De plus, avec cette arme il a AT+2 et Pi+8 contre l’ancien propriétaire de l’arme. "
+  },
+  {
+    "Competence": "Maître des clés",
+    "Description": "1 fois par jour, le héros peut créer une clé pour 1 serrure (même magique) avec 1 dose de bois. De plus, en combat, il a AT+2 pour attraper une cible et celle-ci a FO-2 pour se libérer."
+  },
+  {
+    "Competence": "Saut du foie",
+    "Description": "1 fois par jour, si le héros a bu au moins 1 ration d’alcool, il ignore les dégâts de chute. De plus, il ignore 1PR phy et 1PR mag par niveau d’alcool (max 10)."
+  },
+  {
+    "Competence": "A toi de parer",
+    "Description": "En combat, après une parade réussie, la prochaine attaque du héros est inesquivable."
+  },
+  {
+    "Competence": "Marchand de mort subite",
+    "Description": "Lorsque le héros utilise une arme de siège (canons, caronade, catapulte, scorpion, trébuchet etc.), il a AD tir+3, Pi+5, Crit+2 et Recharge-3T."
+  },
+  {
+    "Competence": "Equipage de marins d'eau douce",
+    "Description": "Sur un navire, le héros peut donner un bonus de INT+2, FO+2, AD+2 et PER+2 aux membres de la compagnie non pirate afin de manœuvrer le navire sur CHA+2."
+  },
+  {
+    "Competence": "Avantage naval",
+    "Description": "En combat, si le héros se bat avec un allié contre un même ennemi, il donne l’avantage à la parade à son allié."
+  },
+  {
+    "Competence": "Naviguation fluviale",
+    "Description": "Le héros a INT+2 et AD+2 pour naviguer sur des fleuves et des rivières."
+  },
+  {
+    "Competence": "Héritage de Lindisfarne",
+    "Description": "Le héros a AT+1 et Pi+3 contre les prêtres et paladins."
+  },
+  {
+    "Competence": "Revente de prisonniers",
+    "Description": "Le héros peut demander une rançon pour ses prisonniers auprès des autorités, guildes criminelles ou maîtres de donjons. (Rançon entre 100 PO et 1000 PO par individus, les peaux-vertes et les criminels ont tendance à valoir moins que les nobles)"
+  },
+  {
+    "Competence": "Pilleur des tombes de Sk'ka",
+    "Description": "Le héros connaît la valeur marchande des objets et ingrédients magiques et peut reconnaître les ingrédients magiques lors de la récolte. Il a aussi INT+1 pour tenter de reconnaître l’effet d’une potion ou d’un objet magique. (Note : ne permet pas de détecter l’aura magique d’un objet et ne fonctionne que s’il sait que l’objet est magique)"
+  },
+  {
+    "Competence": "Lecteur du Necronomicon",
+    "Description": "Le héros a Pi+6 contre les spectres, démons et monstres marins (profonds, murlocs, ondines, crocodiles etc.)."
+  },
+  {
+    "Competence": "Barrage de Nagashino",
+    "Description": "Les armes à poudre et incendiaire ont Pi+3 et Crit+1."
+  },
+  {
+    "Competence": "Chasse au Kaiju",
+    "Description": "Le héros a AT+1 et Pi+3 contre les animaux et monstres marins ou ayant le trait Bulldozer ou Bulldozer Volant."
+  },
+  {
+    "Competence": "Bubble Gum Gum",
+    "Description": "1 fois par jour, si le héros mange un fruit, il lance 1D6 et obtient un bonus : (1) AT+2, (2) MvT+4m, (3) Pi+6, (4) immunité aux hémorragies, (5) il émet de la fumée par ses oreilles, (6) les Pi sont magiques."
+  },
+  {
+    "Competence": "Lettre de marque",
+    "Description": "Le héros peut acheter une lettre de marque aux autorités locales sur CHA. La lettre lui donne un bonus de CHA+3 pour convaincre la garde qu’il a le droit d’attaquer et piller les navires marchands et de revendre leur marchandises. Si le garde est illettré le héros a CHA+6 pour cette épreuve."
+  },
+  {
+    "Competence": "Réquisition légale",
+    "Description": "Le héros peut prendre le pavillon de chaque navire marchand étranger qu’il coule et obtenir une prime dans un port de sa nation d’origine (celle du corsaire). Les primes sont de 1D100 x 10PO par pavillon."
+  },
+  {
+    "Competence": "La malédiction du Pearl",
+    "Description": "1 fois par décade, si le héros possède exactement 88PO et 2PA au moment de subir un coup fatal, il ne le subit pas. Les pièces sont consommées. (Quantité de pièces plutôt que valeur, ex : pour ceci on considère que 1 Bil = 1 PO)"
+  },
+  {
+    "Competence": "Hissez le pavillon noir",
+    "Description": "En mer, le héros peut provoquer la reddition d’un groupe d’adversaire de taille équivalente à la compagnie avec une marge de 3 sur CHA vs COU cible (soit du chef, soit général). Chaque membre de la compagnie présent donne un bonus de CHA+1 au héros pour cette épreuve. Si le héros attaque un navire marchand, il a CHA+2 pour cette épreuve, cumulable avec les autres bonus."
+  },
+  {
+    "Competence": "Tout le monde sur le pont",
+    "Description": "En combat, le héros peut perdre son action d’attaque pour donner des ordres à l’ensemble de ses alliés. Chaque ordre donne des bonus durant 3T. Un ordre peut être changé à chaque tour par un autre. Les ordres possibles sont :",
+    "Tableau": "- Brassez en fuite : MvT+4m pour quitter un combat/ Sur un navire : Vitesse du navire +25%\r\n- Virez lof pour lof : ES+2 / Sur un navire : réduit la pénalité de vitesse de vent de face de 50%\r\n- Rangez-le à l’honneur : Pi+3, Crit+3 et Pi reçus+10 / Sur un navire : AD tir+1 et Pi+4 pour les armements de bord, Pi subis par le navire +50% et COU cible-2\r\n- Veillez au grain : PR nat+2 / Sur un navire : Réduit de 50% les risques de dégâts environnementaux\r\n- Visez les huniers : AT ciblée à la tête+2 / Sur un navire : AD tir+2 pour les armes à distance pour abattre les tireurs dans les huniers\r\n- Démâtez-le : AT+1 et Pi+6 pour les attaques ciblées dans les jambes / Sur un navire AD tir+3 pour les armements de bords pour viser les mâts adverses"
+  },
+  {
+    "Competence": "Nous avons le vent, c'est tout ce qu'il nous faut",
+    "Description": "Lors des lancés de dés pour la météo, les résultats allant de « Petite Brise » à « Coups de Vent » (de 44 à 85) n’infligent pas de malus à la compagnie et donne les bonus suivants : AD tir+1, MvT+3m et COU+1. De plus, en cas de tempête, le héros peut relancer un échec critique provoquant le naufrage de son navire."
+  },
+  {
+    "Competence": "Pavillon rouge et pas de quatiers",
+    "Description": "Si le héros a déjà proposé une reddition à un ennemi avant le début du combat (soit par la compétence HISSEZ LE PAVILLON NOIR soit par dialogue) et que celle-ci a été refusée, le héros gagne AT+1, Pi+3 et Crit+1 jusqu’à la fin du combat et gagne de l’expérience pour tous les ennemis tués même s’ils décident de se rendre."
+  },
+  {
+    "Competence": "Vieux gourganier",
+    "Description": "Quand le héros et ses alliés sont en surnombre ou à nombre équivalent avec leurs ennemis, tous les alliés ont : MvT+4m, AT+2, PRD+2, Pi+4 et supprime les malus dus aux attaques ciblées déjà subis. "
+  },
+  {
+    "Competence": "Border l'artimon",
+    "Description": "Au début d’un combat, si le héros a bu 4 rations d’alcool (une bouteille), il a COU+2, Pi+3, Terrifiant+1 et les Epreuves de courage sont obligatoirement réussie. De plus, il donne les même bonus aux alliés qui ont bu au moins 4 rations d’alcool."
+  },
+  {
+    "Competence": "Embuscade",
+    "Description": "Le héros a une réduction de 25% lors d'achats à des marchands ambulants."
+  },
+  {
+    "Competence": "Expert en camouflage",
+    "Description": "Hors combat, en extérieur, le héros peut créer jusqu’à 4 cachettes individuelles en 15min. Chaque cachette donne un bonus de +3 en discrétion."
+  },
+  {
+    "Competence": "Prise du dormeur",
+    "Description": "Hors combat, l'espion peut endormir un adversaire de taille similaire sur une AT ciblé à la tête au CàC avec le désavantage s'il n'est pas repéré."
+  },
+  {
+    "Competence": "Robin des boom",
+    "Description": "En combat, au lieu d'attaquer, le héros peut glisser une grenade dégoupillée ou un petit objet dans la poche d'un ennemi sur AD vs PER cible. L'explosion a lieu à la fin du prochain tour du héros."
+  },
+  {
+    "Competence": "Armement contrefait",
+    "Description": "Lorsque le héros est attaqué, ces adversaires ont Echec crit+2."
+  },
+  {
+    "Competence": "Sangle mal attachée",
+    "Description": "En combat, tous les 4 assauts, au lieu d'attaquer, le héros peut faire perdre une pièce d'armure à un ennemi sur AT ciblé. La pièce d'armure tombe au sol sans être cassée."
+  },
+  {
+    "Competence": "Trucage de dés",
+    "Description": "Lors d'un jet de dé du héros, un dé « cassé » compte comme une réussite, le score maximal ou le score minimal selon ce qui avantage le héros."
+  },
+  {
+    "Competence": "Agent du chaos",
+    "Description": "En combat, au lieu d'attaquer, le héros peut déstabiliser un ennemi de son choix. Lors du prochain jet de cet ennemi, le héros lance un dé identique et choisit le résultat entre les deux dés."
+  },
+  {
+    "Competence": "Habillé chez Tati",
+    "Description": "1 fois par session, le héros dispose d’un déguisement d’un membre d’une organisation comme s’il l’avait prévu à l’avance. Sur 1à2 au D4 c’est un déguisement d’un cadre hiérarchique."
+  },
+  {
+    "Competence": "Gogo Gadgeto",
+    "Description": "Au début d’une session le héros dispose d’une utilisation de chacun des objets suivants :",
+    "Tableau": "- Collier traducteur : Donne POLYGLOTTE NE ou RUNE BIZARRE\r\n- Cravate grappin : Donne l’avantage pour escalader\r\n- Bague poison : Fiole de poison indétectable aux fouilles\r\n- Bracelet fumigène : Génère une fumée dense dans une zone de 10m de rayon durant 5min. \r\n- Dentier imitateur de voix : Donne l’avantage pour imiter la voix d’un individu\r\n- Broche respirateur sous l’eau : Permet de respirer sous l’eau durant 5min.\r\n- Ceinture explosive : Inflige 2D10 Pi sur une zone de 5m de rayon\r\n- Montre pince coupante : Permet de se libérer en 1T de liens, menottes ou chaînes\r\n- Lunettes détectrices de pièges : Donne l’avantage aux épreuves de détection de pièges"
+  },
+  {
+    "Competence": "Jumeau buisson",
+    "Description": "1 fois par niveau, lorsque le héros meurt en combat, il s’agissait en fait de sa doublure et le héros sort d’un buisson"
+  },
+  {
+    "Competence": "Je n'aurais pas du dire ça",
+    "Description": "Le héros peut faire révéler des informations sensibles à un adversaire en discutant avec lui sur CHA. Après un échec, il peut retenter cette action via un test de FO sur un adversaire maitrisé ou sur INT sur un adversaire libre de ses mouvements."
+  },
+  {
+    "Competence": "Agent double zero cheh't",
+    "Description": "Au début d’un combat contre des humanoïdes, le héros peut se faire passer pour leur allié sur CHA+2 vs INT cible. L’effet dure jusqu’à la 1ère action hostile de sa part."
+  },
+  {
+    "Competence": "Commerce",
+    "Description": "Lors d'embuscades organisées par la compagnie, le héros a AT+1, PRD+1, CHA+1 et Pi+4."
+  },
+  {
+    "Competence": "Tomber du chariot",
+    "Description": "Le héros peut revendre les objets volés pour 100% de leurs prix."
+  },
+  {
+    "Competence": "Survie à tout prix",
+    "Description": "En combat, le héros peut tenter une ES-2 après une PRD ratée ou une PRD-2 après une ES ratée, sauf critique."
+  },
+  {
+    "Competence": "Papiers en règle",
+    "Description": "Le héros peut éviter les contrôles par les forces de l'ordre et les péages sur AD ou CHA."
+  },
+  {
+    "Competence": "C'est quoi là-bas",
+    "Description": "Hors combat, le héros peut distraire un individu sur CHA afin de lui dérober jusqu’à 5 objets sur un test de CHOURAVER."
+  },
+  {
+    "Competence": "Tomber dans ma poche",
+    "Description": "Lors d’achats de plusieurs articles, 1 article au hasard ne coûte rien sur AD-2."
+  },
+  {
+    "Competence": "Connu dans le métier",
+    "Description": "Le héros et ses alliés ne se font jamais attaquer par les guildes des voleurs sauf raisons spécifiques (contrats, actes de la compagnie envers des voleurs etc.). De plus, sur 1à2 au D4, le héros a des contacts avec la guilde des voleurs locale."
+  },
+  {
+    "Competence": "Je suis si maladroit",
+    "Description": "En combat, au lieu d’attaquer, le héros peut bousculer un ennemi et lui voler 1 arme non utilisée sur AD vs PER cible."
+  },
+  {
+    "Competence": "A MOUUUAA",
+    "Description": "1 fois par combat le héros peut voler 1 réussite critique à un ennemi. Ce dernier doit relancer son jet et le héros bénéficie d’une réussite critique à son prochain jet."
+  },
+  {
+    "Competence": "Toujours à sa place",
+    "Description": "Le héros peut créer une imitation en terre glaise peinte de tout objet volé. Il est possible de repérer qu’il s’agit d’une copie sur PER-6, nécessite 1 dose de terre glaise."
+  },
+  {
+    "Competence": "Perturbation magique",
+    "Description": "Le héros peut crocheter une porte verrouillée magiquement sur 1à3 au D6."
+  },
+  {
+    "Competence": "Intérimaire au cirque",
+    "Description": "En combat, après une esquive réussie, le héros peut lancer une arme de jet."
+  },
+  {
+    "Competence": "Oiseau de nuit",
+    "Description": "Le héros ne peut pas faire d’échec critique la nuit."
+  },
+  {
+    "Competence": "Sur le fil",
+    "Description": "La parade du héros part toutes les attaques d’un même adversaire. De plus le héros a PRD+1."
+  },
+  {
+    "Competence": "Maître des runes",
+    "Description": "Peut poser, enlever, changer et recharger des glyphes"
+  },
+  {
+    "Competence": "Violent IV",
+    "Description": "Le héros représente un danger mortel pour les aventuriers de niveau <12"
+  },
+  {
+    "Competence": "Violent V",
+    "Description": "Le héros représente un danger mortel pour les aventuriers de niveau <15"
+  },
+  {
+    "Competence": "Costaud I",
+    "Description": "Le héros possède 50% de Pv en plus que son équivalent standard du bestiaire"
+  },
+  {
+    "Competence": "Costaud II",
+    "Description": "Le héros possède entre 2 et 3 fois plus de Pv que son équivalent standard du bestiaire"
+  },
+  {
+    "Competence": "Costaud III",
+    "Description": "Le héros possède 10 fois plus de Pv que son équivalent standard du bestiaire"
+  },
+  {
+    "Competence": "Sanguinaire I",
+    "Description": "Les dés de dégâts du héros sont des D10"
+  },
+  {
+    "Competence": "Sanguinaire II",
+    "Description": "Les dés de dégâts du héros sont des D10 et il a 1D10 supplémentaire"
+  },
+  {
+    "Competence": "Sanguinaire III",
+    "Description": "Les dés de dégâts du héros sont des D10 et il a Pi+10"
+  },
+  {
+    "Competence": "Sanguinaire IV",
+    "Description": "Les dés de dégâts du héros sont des D20"
+  },
+  {
+    "Competence": "Sanguinaire V",
+    "Description": "Les dés de dégâts du héros sont des D20 et il a Pi+10"
+  },
+  {
+    "Competence": "Immunité I",
+    "Description": "Le héros est immunisé à un type de dégâts (tranchants, contondants, magiques, de feu, acide etc.)"
+  },
+  {
+    "Competence": "Immunité II",
+    "Description": "Le héros est immunisé à 2 types de dégâts (tranchants, contondants, magiques, de feu, acide etc.)"
+  },
+  {
+    "Competence": "Immunité III",
+    "Description": "Le héros est immunisé à 3 types de dégâts (tranchants, contondants, magiques, de feu, acide etc.)"
+  },
+  {
+    "Competence": "Immunité IV",
+    "Description": "Le héros est immunisé à 4 types de dégâts (tranchants, contondants, magiques, de feu, acide etc.)"
+  },
+  {
+    "Competence": "Immunité V",
+    "Description": "Le héros est immunisé à 5 types de dégâts (tranchants, contondants, magiques, de feu, acide etc.)"
+  },
+  {
+    "Competence": "Tricheur I",
+    "Description": "Le héros joue une seconde fois au milieu du tour indépendamment de son initiative. Ceci compte aussi pour les effets sur plusieurs tours (hémorragie, mise au sol, étourdissement etc.)"
+  },
+  {
+    "Competence": "Tricheur II",
+    "Description": "Le héros joue 2 fois de plus au milieu du tour indépendamment de son initiative. Ceci compte aussi pour les effets sur plusieurs tours (hémorragie, mise au sol, étourdissement etc.)"
+  },
+  {
+    "Competence": "Tricheur III",
+    "Description": "Le héros joue après chaque tour d'un ennemi en plus de son tour standard"
+  },
+  {
+    "Competence": "Vif I",
+    "Description": "Le héros dispose d'1 attaque supplémentaire au CàC"
+  },
+  {
+    "Competence": "Vif II",
+    "Description": "Le héros dispose de 2 attaques supplémentaires au CàC"
+  },
+  {
+    "Competence": "Vif III",
+    "Description": "Le héros dispose de 3 attaques supplémentaires au CàC"
+  },
+  {
+    "Competence": "Défenseur I",
+    "Description": "Le héros dispose d'1 parade supplémentaire"
+  },
+  {
+    "Competence": "Défenseur II",
+    "Description": "Le héros dispose de 2 parades supplémentaire"
+  },
+  {
+    "Competence": "Défenseur III",
+    "Description": "Le héros dispose de 3 parades supplémentaire"
+  },
+  {
+    "Competence": "Rampart I",
+    "Description": "Le héros est insensible aux dégâts et effets des projectiles (y compris magiques et explosifs). Il reste sensible aux munitions des armes de sièges, rayons, lance-flammes et sorts de zone"
+  },
+  {
+    "Competence": "Inarrêtable I",
+    "Description": "Le héros est insensible à tous les effets pouvant restreindre ses mouvements (traits, compétences, effets, sorts de zone, malédictions etc.)"
+  },
+  {
+    "Competence": "Inesquivable I",
+    "Description": "Le héros a ES cible-4 à toutes ses attaques"
+  },
+  {
+    "Competence": "Inesquivable II",
+    "Description": "Le héros a ES cible-8 à toutes ses attaques"
+  },
+  {
+    "Competence": "Inesquivable III",
+    "Description": "Les attaques du héros ne peuvent pas être esquivée"
+  },
+  {
+    "Competence": "Balayeur I",
+    "Description": "Les attaques du héros touchent toutes les cibles au CàC"
+  },
+  {
+    "Competence": "Balayeur II",
+    "Description": "Les attaques du héros touchent toutes les cibles au CàC et dans une zone de 5m de rayon devant lui"
+  },
+  {
+    "Competence": "Balayeur III",
+    "Description": "Les attaques du héros touchent toutes les cibles au CàC et dans une zone de 10m de rayon devant lui"
+  },
+  {
+    "Competence": "Anticritique I",
+    "Description": "Le héros ignore les effets des réussites critiques des ennemis mais pas les dégâts"
+  },
+  {
+    "Competence": "Surprotégé I",
+    "Description": "Le héros a 2PR nat, phy et mag de plus que son équivalent standard du bestaire"
+  },
+  {
+    "Competence": "Surprotégé II",
+    "Description": "Le héros a 4PR nat, phy et mag de plus que son équivalent standard du bestaire"
+  },
+  {
+    "Competence": "Surprotégé III",
+    "Description": "Le héros a 6PR nat, phy et mag de plus que son équivalent standard du bestaire"
+  },
+  {
+    "Competence": "Régénération I",
+    "Description": "Le héros récupère passivement 1Pv/T, doublé s'il ne subit pas de dégâts durant 1T"
+  },
+  {
+    "Competence": "Régénération II",
+    "Description": "Le héros récupère passivement 3Pv/T, doublé s'il ne subit pas de dégâts durant 1T"
+  },
+  {
+    "Competence": "Régénération III",
+    "Description": "Le héros récupère passivement 4Pv/T, doublé s'il ne subit pas de dégâts durant 1T"
+  },
+  {
+    "Competence": "Régénération IV",
+    "Description": "Le héros récupère passivement 5Pv/T, doublé s'il ne subit pas de dégâts durant 1T"
+  },
+  {
+    "Competence": "Revitalisation I",
+    "Description": "A chaque fois que le héros perd 25% de ses Pv max il entre dans une phase de revitalisation durant 3T. Il cesse de bouger et de se battre et il regagne immédiatement l'ensemble des Pv perdus depuis sa dernière phase de revitalisation. La phase de revitalisation s'arrête prématurément s'il retombe au nombre de Pv qu'il avait au moment du déclenchement de celle-ci"
+  },
+  {
+    "Competence": "Invincible I",
+    "Description": "1 fois par combat, après avoir subit des dégâts pour la première fois durant le tour, le héros devient invulnérable jusqu'à son prochain tour"
+  },
+  {
+    "Competence": "Invincible III",
+    "Description": "3 fois par combat, après avoir subit des dégâts pour la première fois durant le tour, le héros devient invulnérable jusqu'à son prochain tour"
+  },
+  {
+    "Competence": "Tonton chepaki est mort",
+    "Description": "A chaque passage de niveau lancer 1D6, sur 1, 3 et 5 : un membre éloigné de la famille est décédé et le héros est le descendant le plus proche. Il hérite de 1D20 x 100 Po versés sur le compte en banque. Sur 6 : il hérite de 2000 Po."
+  },
+  {
+    "Competence": "Le chevalier de Balibari",
+    "Description": "INT+2, AD+2 et CHA+2 pour tricher à un jeu. De plus, le héros a CHA+2 pour inciter un adversaire à mettre en jeu un bien ou un service pour tenter de se refaire."
+  },
+  {
+    "Competence": "Patron des arts et des sciences",
+    "Description": "1 fois toutes les 2 décades, le héros peut financer une expédition pour 1D10x100 PO (négociables) pour qu’une compagnie d’aventurier de plus bas niveau lui ramène un objet dont il connait l’emplacement, le propriétaire ou une piste y menant. La compagnie trouvera l’objet sur 1 à 10 au D20 auquel les informations fournies par le héros ajouteront des bonus. L’expédition prendra 1D10 jours en plus du temps dû à la distance. La nature et la complexité de l’objet peuvent nuire à la réussite de l’expédition en fonction du niveau des aventurier envoyés. "
+  },
+  {
+    "Competence": "Soutien aux artisans régionaux",
+    "Description": "Lorsque le héros ou un membre de la compagnie passe une commande de confection auprès d’un artisan, le héros peut stimuler la création de celui-ci sur CHA afin d’augmenter la qualité de l’objet confectionné ou d’augmenter les chances de critique de l’artisan de Crit+7. S’il échoue le test de CHA, le héros peut retenter l’épreuve en offrant 1D100 Po à l’artisan autant de fois qu’il le désire sauf en cas d’échec critique. En cas de réussite critique, il provoque la réussite critique à la confection de l’objet pour l’artisan. "
+  },
+  {
+    "Competence": "Ca c'est mon champion",
+    "Description": "Lorsqu’il assiste à des tournois, le héros peut parier 1 à 3 Honneurs sur un chevalier ou noble y participant. Si le champion remporte un combat, le héros remporte le double des Honneurs pariés. Si le champion remporte le tournoi, le héros remporte une prime de 3 Honneurs. "
+  },
+  {
+    "Competence": "Flamelixir",
+    "Description": "1 fois par décade, le héros peut financer des alchimistes afin qu’ils préparent des potions ou élixirs expérimentaux qui associent les effets de 2 potions pour 50% du prix combiné des 2 potions. Sur 1à2 au D6 : le héros obtient 4 potions. Sur 3à4 au D6 : le héros obtient 1 potion. Sur 5à6 : l’expérimentation a échouée."
+  },
+  {
+    "Competence": "La seconde défenestration de Glargh",
+    "Description": "Au lieu d’attaquer, le héros peut repousser un ennemi au CàC de 5m sur confrontation de FO+4 vs FO cible. Ceci déclenche les attaques d’opportunité des alliés. Les dégâts de chute subis par les ennemis sont doublés."
+  },
+  {
+    "Competence": "Allergique à la plèbe",
+    "Description": "Le héros a ES+2 et Pi+6 contre les ennemis non-nobles. Les ennemis à 5m du héros sont forcés de l’attaquer si possible. Si le héros est attaqué par un ennemi non-noble, il ne perd pas son attaque après une esquive."
+  },
+  {
+    "Competence": "Monsieur Insupportable",
+    "Description": "Le héros peut utiliser PENIBLE sur les PNJ sur INT pour leur infliger un malus de -2 à toutes leurs épreuves. Utilisable en combat à la place d’une attaque, dure jusqu’à la fin du combat. Non cumulable."
+  },
+  {
+    "Competence": "L'honneur fait tout",
+    "Description": "Le héros peut dépenser 1 Honneur pour garantir une réussite à son prochain jet."
+  },
+  {
+    "Competence": "Truculente tirade de lettres et d'esprit",
+    "Description": "Avant chaque attaque le héros peut narguer son adversaire d’un petit vers, si le vers suivant rime avec le précédent, il a Crit+1 pour son attaque. Cumulable mais que sur la même cible."
+  },
+  {
+    "Competence": "Dragonnade",
+    "Description": "Le héros a AMBIDEXTRIE avec les armes de tir à 1 main et ignore les malus dus à la distance et à la 2ème arme. "
+  },
+  {
+    "Competence": "Tu es un tirailleur Harry",
+    "Description": "Les armes à feu à 2 mains ignorent la PR mag. Le changement d’une arme à feu pour une autre ne coûte pas d’assaut."
+  },
+  {
+    "Competence": "Tactiques de harcèlement",
+    "Description": "Lorsque le héros utilise APPEL DES RENFORTS il a MvT+3m et peut effectuer gratuitement une AT à distance."
+  },
+  {
+    "Competence": "Armure de courage et de médailles",
+    "Description": "1 fois par combat, si le héros a PR sol < 4, il peut relancer une attaque ou une parade ratée même critique. Une réussite critique du héros lors d’une attaque ou d’une parade durant le même combat recharge la compétence."
+  },
+  {
+    "Competence": "Rolly Polly",
+    "Description": "Si le héros pare une attaque il peut effectuer une AT à distance gratuitement."
+  },
+  {
+    "Competence": "Auxillires de l'armée",
+    "Description": "Le héros peut obtenir un laisser-passer auprès d’un officier militaire afin de circuler dans des lieux gardés. De plus la compagnie a accès au magasin de l’armée. Le héros peut échanger avec un officier militaire 1 Honneur contre du matériel militaire pour une valeur de 1000Po."
+  },
+  {
+    "Competence": "La lumière nous apportera la victoire",
+    "Description": "1 fois par combat, au lieu d’attaquer, sur INT le héros peut rendre 50% des Pv à un de ses alliés et lui-même. Ils gagnent aussi COU+1 jusqu’à la fin du combat. "
+  },
+  {
+    "Competence": "Aura farming",
+    "Description": "En combat, les PnJ sous les ordres du héros ont Pv+15, AT+2, PRD+2, AD tir+1, Pi+5 et PR mag+2."
+  },
+  {
+    "Competence": "Pervers narcissique",
+    "Description": "En combat, à chaque fois qu’un allié perd des Pv, le héros gagne Pi+2, AT+1, PRD+1 et COU+1, cumulable 3 fois."
+  },
+  {
+    "Competence": "Monsieur Connard",
+    "Description": "Le héros est un expert pour s’attribuer le mérite des autres discrètement et remettre la faute de ses erreurs sur des innocents. CHA+3 pour convaincre dans un conflit s’il n’est pas seul. En combat, CHA+3 pour envoyer un ennemi à son contact attaquer un allié du héros à la place. "
+  },
+  {
+    "Competence": "Emplois fictifs",
+    "Description": "Le héros peut occuper 2 postes dans la ville."
+  },
+  {
+    "Competence": "Les archives ont encore brûlées",
+    "Description": "1 fois par décade, le héros peut convaincre la garde de faire disparaître les poursuites à l’encontre d’un membre de la compagnie sur confrontation CHA vs INT-3 cible. Le membre de la compagnie ne sera plus recherché."
+  },
+  {
+    "Competence": "Garde du corps",
+    "Description": "Avant un combat, le héros peut choisir un membre de la compagnie ayant plus de PR phy que lui. Lorsque ce dernier est à moins de 5m en combat, il subit la moitié des Pi infligeant la perte de Pv subis par le héros, à sa place. Chaque Pi subi donne 1xp au garde du corps. Le garde du corps déduit toujours l’ensemble de son armure lorsqu’il encaisse ces Pi."
+  },
+  {
+    "Competence": "Et là si je vous souffle dans l'oreille",
+    "Description": "En combat, le héros peut agacer les ennemis sur confrontation de CHA vs INT cible. La cible perd sa concentration et ne peut pas utiliser ou lancer de sorts, de prodiges, de maîtrises, de coups spéciaux, de compétences ou de gardes durant 1T."
+  },
+  {
+    "Competence": "Gratte-papier",
+    "Description": "1 fois par jour, le héros peut utiliser PENIBLE contre un individu sur INT. S’il réussit, il absorbe l’attention de l’individu et lui inflige PER-5 pendant 1D20+5 minutes ou jusqu’à ce que le héros décide d’arrêter. Les actions discrètes des alliés contre cet individu ont un bonus de+2."
+  },
+  {
+    "Competence": "Armure de pognon",
+    "Description": "Au début d’un combat, chaque tranche de 50 Po qu’il possède sur lui donne 1 Pv en extra. Ces Pv ne peuvent pas être récupérés, ne comptent pas dans la barre de vie et sont consommés avant ses Pv normaux. "
+  },
+  {
+    "Competence": "Je le jure par le Dieu Gobi",
+    "Description": "Hors combat, si le héros remarque qu’on lui a menti il a CHA+3 pour intimider la personne qui lui a menti et il a l’avantage pour son prochain jet. De plus, s’il entre en combat avec cette cible il a AT+3, AD tir+2, Crit+1 et Pi+5."
+  },
+  {
+    "Competence": "Ecolo du dimanche",
+    "Description": "Les alliés obtiennent 1 objet supplémentaire lors de craft, cuisine, alchimie, fabrication, minage, récolte, chasse etc. Les alliés qui s’entraînent obtiennent 1 point supplémentaire d’une des caractéristique entrainée."
+  },
+  {
+    "Competence": "Gardien de la paix avant tout",
+    "Description": "En combat, au lieu d’attaquer, le héros peut retenir jusqu’à 2 ennemis au CàC de taille similaire ou inférieure ou 1 ennemi d’une taille supérieure, sur FO vs FO cible (de l’ennemi ayant le plus de FO). Les ennemis ciblés ne peuvent pas attaquer ni se déplacer."
+  },
+  {
+    "Competence": "Compréhension de la pègre",
+    "Description": "Le héros a CHA+2 et INT+2 pour les épreuves sociales auprès des membres de la pègre, les politiciens, assureurs et banquiers."
+  },
+  {
+    "Competence": "Connaissances aquatiques",
+    "Description": "Le héros a INT+4 pour les épreuves concernant les mileux aquatiques."
+  },
+  {
+    "Competence": "Connaissances des cavernes",
+    "Description": "Le héros a INT+4 pour les épreuves concernant le milieu des cavernes. Connaît la valeur des gemmes et pierres précieuses."
+  },
+  {
+    "Competence": "C'est pas du toc",
+    "Description": "Le héros peut identifier et connaître la valeur des gemmes et pierres précieuses sans épreuve."
+  },
+  {
+    "Competence": "Connaissances des steppes",
+    "Description": "Le héros a INT+4 pour les épreuves concernant les steppes."
+  },
+  {
+    "Competence": "Berserker",
+    "Description": "1 fois par combat, lorsque le héros n'a plus que 50% de ses Pv max, il gagne 3D+son niveau de Pv temporaires, AT+2 et Pi+6 jusqu'à la fin du combat. Mais il ne fais pas de distinction entre ses alliés et ses ennemis sauf INT jusqu'à être raisonné sur confrontation (INT-5 vs CHA cible)."
+  },
+  {
+    "Competence": "Campeur forestier",
+    "Description": "Le héros a un bonus de +2 pour toutes les activités en campement dans un milieu forestier et récupère 2Pv et 4Pa par nuit."
+  },
+  {
+    "Competence": "Campeur souterrain",
+    "Description": "Le héros a un bonus de +2 pour toutes les activités en campement dans un milieu cavernicole et récupère 2Pv et 4Pa par nuit."
+  },
+  {
+    "Competence": "Campeur tout-terrain",
+    "Description": "Le héros a un bonus de +2 pour toutes les activités en campement."
+  },
+  {
+    "Competence": "Chance du pirate",
+    "Description": "1 fois par jour le héros peut compter sur sa bonne étoile (le MJ) pour lui trouver un moyen de s'échapper d'un lieu via un jet d'une caractéristique au choix du MJ."
+  },
+  {
+    "Competence": "Maître en la matière",
+    "Description": "1 fois par jour le héros peut relancer un jet d'épreuve lié à sa spécialisation (même critique)."
+  },
+  {
+    "Competence": "Vendeur de peaux",
+    "Description": "Le héros a un bonus de +4 pour les épreuves de dépeçage d'un animal ou monstre."
+  },
+  {
+    "Competence": "Haïs par les \"civilisés\"",
+    "Description": "Le héros a un malus de CHA-3 pour les épreuves sociales auprès des peuples civilisés."
+  },
+  {
+    "Competence": "Haïs par les \"sauvages\"",
+    "Description": "Le héros a un malus de CHA-3 pour les épreuves sociales auprès des peuples sauvages."
+  },
+  {
+    "Competence": "Haïs par les nains",
+    "Description": "Le héros a un malus de CHA-3 pour les épreuves sociales auprès des nains."
+  },
+  {
+    "Competence": "Haïs par les elfes",
+    "Description": "Le héros a un malus de CHA-3 pour les épreuves sociales auprès des elfes."
+  },
+  {
+    "Competence": "Haïs de tous",
+    "Description": "Le héros a un malus de CHA-3 pour les épreuves sociales auprès des autres origines."
+  },
+  {
+    "Competence": "Esquive naturelle",
+    "Description": "Le héros peut attaquer lors de son tour après une esquive réussie sur 4, 5 ou 6 au D6."
+  },
+  {
+    "Competence": "Prière de soin des Meuldors",
+    "Description": "1 fois par jour le héros peut invoquer la magie des Elfes Meuldors pour se soigner ou soigner un allié sur Moyenne (INT et CHA)-3. Les soins rendent 1D10+niveau Pv, réduisent les fractures et les hémorragies et supprime 1D12 points de corruption."
+  },
+  {
+    "Competence": "Prière magique des Meuldors",
+    "Description": "1 fois par jour le héros peut invoquer la magie des Elfes Meuldors pour supprimer une mutation mineure ou une malédiction sur soi-même ou sur un allié sur Moyenne (INT et CHA)-4."
+  },
+  {
+    "Competence": "Pied marin",
+    "Description": "Le héros ne subit pas de malus à ses caractéristiques lié au tangage d'une embarcation ou de combats dans de l'eau sauf pour le mouvement."
+  },
+  {
+    "Competence": "Résistance des Pieds-Velus",
+    "Description": "Le héros peut relancer un jet de RM lors de l'utilisation d'objets maudits, de contrôle mental ou de malédictions et a RM+4 pour les jets concernant des anneaux maudits."
+  },
+  {
+    "Competence": "Ressenti du surnaturel",
+    "Description": "Le héros peut détecter l'aura magique d'un objet ou d'un lieu à moins de 5 mètres sur PER-4 ou INT-4."
+  },
+  {
+    "Competence": "Affinité du surnatuel",
+    "Description": "Le héros peut détecter l'aura magique d'un objet ou d'un lieu à moins de 5 mètres sans épreuve et savoir s'il s'agit d'un effet positif ou négatif pour lui sur PER-2 ou INT-2."
+  },
+  {
+    "Competence": "Affinité kharmique",
+    "Description": "Le héros peut détecter l'aura bénie ou maudite d'un objet ou d'un lieu à moins de 5 mètres sans épreuve et savoir à quel dieu elle est affiliée sur PER-2 ou INT-2."
+  },
+  {
+    "Competence": "Second petit-déjeuner",
+    "Description": "Le héros doit manger au moins 4 repas par jour. Le héros peut récupérer des Pv jusqu'à 5 repas par jour"
+  },
+  {
+    "Competence": "Séduction des drows",
+    "Description": "Le héros a CHA+2 pour séduire les PNJs des autres origines."
+  },
+  {
+    "Competence": "Déteste les dieux et la magie",
+    "Description": "Le héros a un malus de -2 et d'échec critique+2 à toutes les épreuves s'il utilise un objet béni, maudit ou magique sauf ceux de son origine et métier"
+  },
+  {
+    "Competence": "Ventre sur pattes",
+    "Description": "Le héros doit manger au moins 5 repas par jour. Le héros peut récupérer des Pv jusqu'à 6 repas par jour"
+  }
+]

@@ -235,7 +235,12 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
 
             {/* Vitals Section - Always Visible */}
             <div className="border-t border-leather/30 pt-4">
-                <VitalsPanel vitals={vitals} onChange={onVitalsChange} />
+                <VitalsPanel
+                    vitals={vitals}
+                    onChange={onVitalsChange}
+                    origine={identity.origine}
+                    corruptionRules={rules ? { origine: rules.corruption_origine, palier: rules.corruption_palier } : null}
+                />
             </div>
         </div>
     );

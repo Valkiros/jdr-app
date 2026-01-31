@@ -172,6 +172,9 @@ export interface CharacterData {
     characteristics: Characteristics;
     temp_modifiers: TempModifiers;
     inventory: any[]; // Placeholder for now, will link to existing inventory structure
+    competences: CharacterCompetence[];
+    competences_specialisation: CharacterCompetence[];
+    competences_sous_specialisation: CharacterCompetence[];
 }
 
 export interface CharacterSummary {
@@ -221,7 +224,46 @@ export interface Metier {
     max: Requirements;
 }
 
+export interface CorruptionOrigineRef {
+    Masculin: string;
+    Féminin: string;
+    Effets: string;
+}
+
+export interface CorruptionPalierRef {
+    Paliers: number;
+    "Aura chaotique (arme)": number;
+    "Aura divine (arme)": number;
+    "Aura chaotique (protection)": number;
+    "Aura divine (protection)": number;
+    "Résistance magique (RM)": number;
+    "Force (FO)": number;
+    "Intelligence (INT)": number;
+    "Charisme (CHA)": number;
+    Effets: string;
+}
+
 export interface GameRules {
     origines: Origine[];
     metiers: Metier[];
+    corruption_origine: CorruptionOrigineRef[];
+    corruption_palier: CorruptionPalierRef[];
+}
+
+export interface Competence {
+    nom: string;
+    description: string;
+    tableau?: string;
+}
+
+export interface CharacterCompetence {
+    id: string; // Unique ID (uuid)
+    nom: string;
+    description: string;
+    tableau?: string;
+}
+
+export interface UserProfile {
+    id: string; // References auth.users.id
+    role: string; // 'admin', 'gm', 'player'
 }

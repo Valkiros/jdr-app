@@ -9,6 +9,7 @@ import { MagicStealthPanel } from './MagicStealthPanel';
 import { CharacteristicsPanel } from './CharacteristicsPanel';
 import { TempModifiersPanel } from './TempModifiersPanel';
 import { Inventory } from './Inventory';
+import { CompetencesPanel } from './CompetencesPanel';
 import { CharacterData, Equipement, Characteristics, GameRules, Origine } from '../types';
 
 
@@ -68,7 +69,10 @@ const INITIAL_DATA: CharacterData = {
         mod2: '',
         mod3: ''
     },
-    inventory: []
+    inventory: [],
+    competences: [],
+    competences_specialisation: [],
+    competences_sous_specialisation: []
 };
 
 export interface CharacterSheetHandle {
@@ -89,6 +93,7 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
 
     const saveCharacter = async () => {
         try {
+            console.log("Saving character data:", data);
             await invoke('save_personnage_local', {
                 id: characterId,
                 name: data.identity.nom || 'Sans nom',
@@ -148,7 +153,10 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                         magic: { ...INITIAL_DATA.magic, ...(char.data.magic || {}) },
                         characteristics: { ...INITIAL_DATA.characteristics, ...(char.data.characteristics || {}) },
                         temp_modifiers: { ...INITIAL_DATA.temp_modifiers, ...(char.data.temp_modifiers || {}) },
-                        inventory: char.data.inventory || []
+                        inventory: char.data.inventory || [],
+                        competences: char.data.competences || [],
+                        competences_specialisation: char.data.competences_specialisation || [],
+                        competences_sous_specialisation: char.data.competences_sous_specialisation || []
                     };
                     setDataState(mergedData);
                 }
@@ -163,7 +171,7 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
             });
     }, [characterId]);
 
-    const [activeTab, setActiveTab] = useState<'fiche' | 'equipement'>('fiche');
+    const [activeTab, setActiveTab] = useState<'fiche' | 'equipement' | 'competences'>('fiche');
 
     // Computed Values for Characteristics Table
     // The "Equipé" column now represents the TOTAL Value for each characteristic
@@ -450,94 +458,116 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                 >
                     Equipements
                 </button>
+                <button
+                    onClick={() => setActiveTab('competences')}
+                    className={`px-6 py-2 font-bold text-lg transition-colors ${activeTab === 'competences' ? 'bg-leather text-parchment' : 'text-leather hover:bg-leather hover:text-parchment hover:bg-opacity-10'}`}
+                >
+                    Compétences
+                </button>
             </div>
 
-            {activeTab === 'fiche' && (
-                <div className="space-y-6 animate-fade-in">
+            <div className={activeTab === 'fiche' ? 'space-y-6 animate-fade-in' : 'hidden'}>
 
-                    {/* Updates: Moved Characteristics below, others in a top grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        <div className="space-y-6">
-                            <GeneralStatsPanel
-                                stats={data.general}
-                                onChange={(general) => {
-                                    // Auto-calculate level based on XP
-                                    // Formula: XP = 50 * level * (level - 1)
-                                    // Inverse: Level = floor((1 + sqrt(1 + 4 * (xp / 50))) / 2)
-                                    const xp = general.experience || 0;
-                                    const calculatedLevel = Math.floor((1 + Math.sqrt(1 + 4 * (xp / 50))) / 2);
-                                    const newLevel = Math.max(1, calculatedLevel);
+                {/* Updates: Moved Characteristics below, others in a top grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div className="space-y-6">
+                        <GeneralStatsPanel
+                            stats={data.general}
+                            onChange={(general) => {
+                                // Auto-calculate level based on XP
+                                // Formula: XP = 50 * level * (level - 1)
+                                // Inverse: Level = floor((1 + sqrt(1 + 4 * (xp / 50))) / 2)
+                                const xp = general.experience || 0;
+                                const calculatedLevel = Math.floor((1 + Math.sqrt(1 + 4 * (xp / 50))) / 2);
+                                const newLevel = Math.max(1, calculatedLevel);
 
-                                    setData({
-                                        ...data,
-                                        general: {
-                                            ...general,
-                                            niveau: newLevel
-                                        }
-                                    });
-                                }}
-                            />
-                            <MagicStealthPanel
-                                stats={data.magic}
-                                computedMagic={{
-                                    magie_physique: computedStats.magie_physique,
-                                    magie_psychique: computedStats.magie_psychique,
-                                    resistance_magique: computedStats.resistance_magique
-                                }}
-                                onChange={(magic) => setData({ ...data, magic })}
-                            />
-                        </div>
-                        <div className="space-y-6">
-                            <DefensePanel
-                                defenses={data.defenses}
-                                movement={data.movement}
-                                magic={data.magic}
-                                computedDefenses={{
-                                    solide: computedStats.solide,
-                                    speciale: computedStats.speciale,
-                                    magique: computedStats.magique
-                                }}
-                                computedMovement={{
-                                    marche: computedStats.marche,
-                                    course: computedStats.course
-                                }}
-                                computedDiscretion={computedStats.discretion}
-                                onDefenseChange={(defenses) => setData({ ...data, defenses })}
-                                onMovementChange={(movement) => setData({ ...data, movement })}
-                                onMagicChange={(magic) => setData({ ...data, magic })}
-                            />
-                        </div>
-                    </div>
-
-                    {/* Characteristics - Full Width */}
-                    <div>
-                        <CharacteristicsPanel
-                            characteristics={data.characteristics}
-                            equippedValues={equippedValues}
-                            inventory={data.inventory}
-                            referenceOptions={refs}
-                            onChange={(characteristics) => setData({ ...data, characteristics })}
+                                setData({
+                                    ...data,
+                                    general: {
+                                        ...general,
+                                        niveau: newLevel
+                                    }
+                                });
+                            }}
+                        />
+                        <MagicStealthPanel
+                            stats={data.magic}
+                            computedMagic={{
+                                magie_physique: computedStats.magie_physique,
+                                magie_psychique: computedStats.magie_psychique,
+                                resistance_magique: computedStats.resistance_magique
+                            }}
+                            onChange={(magic) => setData({ ...data, magic })}
                         />
                     </div>
-
-                    {/* Temp Modifiers - Bottom */}
-                    <TempModifiersPanel
-                        modifiers={data.temp_modifiers}
-                        onChange={(temp_modifiers) => setData({ ...data, temp_modifiers })}
-                    />
+                    <div className="space-y-6">
+                        <DefensePanel
+                            defenses={data.defenses}
+                            movement={data.movement}
+                            magic={data.magic}
+                            computedDefenses={{
+                                solide: computedStats.solide,
+                                speciale: computedStats.speciale,
+                                magique: computedStats.magique
+                            }}
+                            computedMovement={{
+                                marche: computedStats.marche,
+                                course: computedStats.course
+                            }}
+                            computedDiscretion={computedStats.discretion}
+                            onDefenseChange={(defenses) => setData({ ...data, defenses })}
+                            onMovementChange={(movement) => setData({ ...data, movement })}
+                            onMagicChange={(magic) => setData({ ...data, magic })}
+                        />
+                    </div>
                 </div>
-            )}
 
-            {activeTab === 'equipement' && (
-                <div className="animate-fade-in">
-                    <Inventory
+                {/* Characteristics - Full Width */}
+                <div>
+                    <CharacteristicsPanel
+                        characteristics={data.characteristics}
+                        equippedValues={equippedValues}
                         inventory={data.inventory}
-                        onInventoryChange={(inventory) => setData({ ...data, inventory })}
-                        characterForce={equippedValues.force}
-                        bouclierActif={data.defenses.bouclier_actif}
+                        referenceOptions={refs}
+                        onChange={(characteristics) => setData({ ...data, characteristics })}
                     />
                 </div>
-            )}
+
+                {/* Temp Modifiers - Bottom */}
+                <TempModifiersPanel
+                    modifiers={data.temp_modifiers}
+                    onChange={(temp_modifiers) => setData({ ...data, temp_modifiers })}
+                />
+            </div>
+
+            <div className={activeTab === 'equipement' ? 'animate-fade-in' : 'hidden'}>
+                <Inventory
+                    inventory={data.inventory}
+                    onInventoryChange={(inventory) => setData({ ...data, inventory })}
+                    characterForce={equippedValues.force}
+                    bouclierActif={data.defenses.bouclier_actif}
+                />
+            </div>
+
+            <div className={activeTab === 'competences' ? 'animate-fade-in' : 'hidden'}>
+                <CompetencesPanel
+                    title="Compétences origine et métier"
+                    competences={data.competences || []}
+                    onCompetencesChange={(newCompetences) => setData({ ...data, competences: newCompetences })}
+                />
+
+                <CompetencesPanel
+                    title="Compétences spécialisation"
+                    competences={data.competences_specialisation || []}
+                    onCompetencesChange={(newCompetences) => setData({ ...data, competences_specialisation: newCompetences })}
+                />
+
+                <CompetencesPanel
+                    title="Compétences sous spécialisation"
+                    competences={data.competences_sous_specialisation || []}
+                    onCompetencesChange={(newCompetences) => setData({ ...data, competences_sous_specialisation: newCompetences })}
+                />
+            </div>
 
             {/* Portal for Save Button in Header */}
             {document.getElementById('header-actions') && createPortal(

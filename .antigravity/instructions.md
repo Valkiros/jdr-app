@@ -19,3 +19,5 @@ Targets: Windows, macOS, Android, iOS (iPad).
 ## Notes
 - Keep a clean structure.
 - Document major changes here.
+- Always speak in french.
+- **IMPERATIF : PARLER UNIQUEMENT EN FRANCAIS.**
