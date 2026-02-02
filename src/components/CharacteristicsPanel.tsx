@@ -55,7 +55,7 @@ export const CharacteristicsPanel: React.FC<CharacteristicsPanelProps> = ({
         ...armes.map((item, idx) => ({
             id: item.uid,
             label: `A${idx + 1}`,
-            type: 'Arme'
+            type: 'Armes'
         }))
     ];
 
@@ -164,9 +164,25 @@ export const CharacteristicsPanel: React.FC<CharacteristicsPanelProps> = ({
                                     if (key === 'degats') {
                                         if (!item) return <td key={col.id}></td>;
 
-                                        const dice = item.degats_pr || '';
                                         const refItem = referenceOptions.find(r => r.id === item.refId);
-                                        const refPi = refItem ? refItem.pi : 0;
+
+                                        // Resolve Dice: Item Override > Ref Object (New) > Ref String (Legacy/Flat) > Empty
+                                        let dice = item.degats;
+                                        if (!dice && refItem) {
+                                            if (typeof refItem.degats === 'object') {
+                                                dice = refItem.degats.degats || refItem.degats.valeur;
+                                            } else if (typeof refItem.degats === 'string') {
+                                                dice = refItem.degats;
+                                            }
+                                        }
+                                        dice = dice || '';
+
+                                        // Resolve PI from Reference (Legacy Root or New Object)
+                                        let refPi = refItem ? (refItem.pi || 0) : 0;
+                                        if (refItem?.degats && typeof refItem.degats === 'object') {
+                                            const val = parseInt(refItem.degats.pi, 10);
+                                            if (!isNaN(val)) refPi = val;
+                                        }
 
                                         let modifVal = 0;
                                         if (item.modif_pi) {
@@ -175,12 +191,18 @@ export const CharacteristicsPanel: React.FC<CharacteristicsPanelProps> = ({
                                         }
 
                                         // Calculate Bonus FO for this specific item column
-                                        // 1. Get Base Force (Character Total)
+                                        // 1. Get Base Force (Character Total without this weapon)
                                         const baseForce = equippedValues.force;
-                                        // 2. Get Item Force Bonus (if any)
-                                        const itemForceBonus = item.char_values?.force || 0;
+                                        // 2. Get Item Force Bonus (Instance + Reference)
+                                        const instanceForceBonus = item.char_values?.force || 0;
+
+                                        const refValCarac = (refItem as any)?.caracteristiques?.force;
+                                        const refValRoot = (refItem as any)?.force;
+                                        const refValRaw = refItem?.raw?.caracteristiques?.force;
+                                        const refForceBonus = parseInt(String(refValCarac || refValRoot || refValRaw || 0), 10);
+
                                         // 3. Compute Effective Force for this item
-                                        const effectiveForce = baseForce + itemForceBonus;
+                                        const effectiveForce = baseForce + instanceForceBonus + refForceBonus;
                                         // 4. Compute Bonus FO
                                         const bonusFo = Math.max(0, effectiveForce - 12);
 
@@ -205,11 +227,13 @@ export const CharacteristicsPanel: React.FC<CharacteristicsPanelProps> = ({
                                     // Use parseInt for robust parsing of strings like "+2" or "-1"
                                     const instanceBonus = parseInt(String(item?.char_values?.[key] || 0), 10);
 
-                                    // Check RefItem root property or fallback to raw.caracteristiques
-                                    // Use 'any' cast if needed for dynamic access
+                                    // Check RefItem root, nested caracteristiques, or raw
+                                    // Priority: Nested (New Schema) > Root (Old) > Raw (Legacy)
                                     const refValRoot = (refItem as any)?.[key];
+                                    const refValCarac = (refItem as any)?.caracteristiques?.[key];
                                     const refValRaw = refItem?.raw?.caracteristiques?.[key];
-                                    const refBonus = parseInt(String(refValRoot || refValRaw || 0), 10);
+
+                                    const refBonus = parseInt(String(refValCarac || refValRoot || refValRaw || 0), 10);
 
                                     const total = (equippedValues[key] || 0) + instanceBonus + refBonus;
 
@@ -232,13 +256,15 @@ export const CharacteristicsPanel: React.FC<CharacteristicsPanelProps> = ({
                 const item = inventory.find(i => i.uid === hoveredInfo.id);
                 if (!item) return null;
                 const refItem = referenceOptions.find(r => r.id === item.refId);
-                // Fallback to raw/details if distinct properties are missing
-                const rawDetails = refItem?.raw?.details || {};
-                const effet = refItem?.effet || rawDetails.effet || '-';
-                const aura = refItem?.aura || rawDetails.aura || '-';
-                const rupture = refItem?.rupture || rawDetails.rupture || '-';
-                // Fix: Priority to Ref Type (Specific) > Ref Category > Item Type (Generic)
-                const type = refItem?.item_type || '-';
+
+                // Prioritize 'details' object from correct backend schema
+                const details = refItem?.details || {};
+
+                const effet = details.effet || '-';
+                const aura = details.aura || '-';
+                const rupture = details.rupture || '-';
+                const type = details.type || '-';
+
                 const idDisplay = refItem?.ref_id || '-';
 
                 return (
