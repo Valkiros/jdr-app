@@ -10,6 +10,17 @@
 
 :root {
   font-family: 'Inter', sans-serif;
+  overscroll-behavior: none;
+  overflow: hidden; /* Prevent scroll on body itself, let app container handle it */
+}
+
+body {
+  overscroll-behavior: none;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* Hide number input spinners */

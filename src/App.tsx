@@ -140,7 +140,7 @@ function App() {
   }
 
   return (
-    <div className="flex flex-col h-screen bg-parchment text-leather font-sans">
+    <div className="flex flex-col h-screen w-screen bg-parchment text-leather font-sans overflow-hidden overscroll-none">
       <header className="p-4 bg-leather text-parchment shadow-md flex justify-between items-center sticky top-0 z-50">
         <div className="flex items-center gap-4">
           <h1 className="text-xl font-bold">JDR Manager</h1>
