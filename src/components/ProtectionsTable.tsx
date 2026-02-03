@@ -195,7 +195,7 @@ export const ProtectionsTable: React.FC<ProtectionsTableProps> = ({ items, onIte
                                     {/* Sélecteur d'objet */}
                                     <td className="p-2 w-48 max-w-[12rem]" title={(() => {
                                         const r = referenceOptions.find(o => o.id === item.refId);
-                                        return r?.raw.details?.description || '';
+                                        return r?.raw.details?.effet || '';
                                     })()}>
                                         <SearchableSelect
                                             options={referenceOptions.map(r => ({ id: r.id, label: r.nom }))}
@@ -258,11 +258,11 @@ export const ProtectionsTable: React.FC<ProtectionsTableProps> = ({ items, onIte
                                     {/* Description / Effet */}
                                     <td className="p-2 text-sm max-w-[150px] truncate" title={(() => {
                                         const r = referenceOptions.find(o => o.id === item.refId);
-                                        return r?.raw.details?.description || '';
+                                        return r?.raw.details?.effet || '';
                                     })()}>
                                         {(() => {
                                             const r = referenceOptions.find(o => o.id === item.refId);
-                                            return r?.raw.details?.description || '';
+                                            return r?.raw.details?.effet || '';
                                         })()}
                                     </td>
 

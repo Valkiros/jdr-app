@@ -1,9 +1,14 @@
 @import "tailwindcss";
 @import "@fontsource/inter";
 
+/* Note: The @theme warning below is a false positive in VS Code for Tailwind v4. It is valid and necessary. */
 @theme {
-  --color-parchment: #f4e4bc;
-  --color-leather: #8b5a2b;
+  --color-parchment: var(--parchment);
+  --color-leather: var(--leather);
+  --color-leather-light: var(--leather-light);
+  --color-leather-dark: var(--leather-dark);
+  --color-ink: var(--ink);
+  --color-ink-light: var(--ink-light);
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Georgia', 'Cambria', 'Times New Roman', serif;
 }
@@ -11,7 +16,37 @@
 :root {
   font-family: 'Inter', sans-serif;
   overscroll-behavior: none;
-  overflow: hidden; /* Prevent scroll on body itself, let app container handle it */
+  overflow: hidden;
+
+  /* Default Theme (Livre/Parchemin) */
+  --parchment: #f4e4bc;
+  --leather: #8b5a2b;
+  --leather-light: #a67c52;
+  /* Lighter leather */
+  --leather-dark: #5e3b1f;
+  /* Darker leather */
+  --ink: #0f0f0f;
+  --ink-light: #4a4a4a;
+}
+
+/* Dark Theme (Obsidienne) */
+[data-theme='dark'] {
+  --parchment: #1a1a1a;
+  --leather: #4a4a4a;
+  --leather-light: #6e6e6e;
+  --leather-dark: #2d2d2d;
+  --ink: #e0e0e0;
+  --ink-light: #a0a0a0;
+}
+
+/* Forest Theme (Elfe) */
+[data-theme='forest'] {
+  --parchment: #e8f5e9;
+  --leather: #2e7d32;
+  --leather-light: #60ad5e;
+  --leather-dark: #005005;
+  --ink: #1b5e20;
+  --ink-light: #4c8c4a;
 }
 
 body {
@@ -21,6 +56,11 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  background-color: var(--parchment);
+  /* Apply theme background */
+  color: var(--ink);
+  /* Apply theme color */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Hide number input spinners */
@@ -32,6 +72,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 @keyframes fade-in {

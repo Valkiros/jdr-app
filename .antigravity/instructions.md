@@ -20,4 +20,4 @@ Targets: Windows, macOS, Android, iOS (iPad).
 - Keep a clean structure.
 - Document major changes here.
 - Always speak in french.
-- **IMPERATIF : PARLER UNIQUEMENT EN FRANCAIS.**
+- **IMPERATIF** : PARLER UNIQUEMENT EN FRANCAIS.

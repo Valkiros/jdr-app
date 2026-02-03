@@ -126,9 +126,9 @@ export const ArmesTable: React.FC<ArmesTableProps> = ({ items, onItemsChange, re
         return r?.rupture || '';
     };
 
-    const getRefDescription = (refId: number): string => {
+    const getRefEffet = (refId: number): string => {
         const r = referenceOptions.find(o => o.id === refId);
-        return r?.raw.details?.description || '';
+        return r?.raw.details?.effet || '';
     };
 
     const getRefCategory = (refId: number): string => {
@@ -262,8 +262,8 @@ export const ArmesTable: React.FC<ArmesTableProps> = ({ items, onItemsChange, re
                                             placeholder="+0"
                                         />
                                     </td>
-                                    <td className="p-2 text-sm max-w-[150px] truncate" title={getRefDescription(item.refId)}>
-                                        {getRefDescription(item.refId) || ''}
+                                    <td className="p-2 text-sm max-w-[150px] truncate" title={getRefEffet(item.refId)}>
+                                        {getRefEffet(item.refId) || ''}
                                     </td>
                                     <td className="p-2 text-center">
                                         <button

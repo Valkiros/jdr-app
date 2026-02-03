@@ -2,23 +2,27 @@ import React, { useEffect, useState } from 'react';
 import { invoke } from '@tauri-apps/api/core';
 import { open } from '@tauri-apps/plugin-dialog';
 import { readFile } from '@tauri-apps/plugin-fs';
-import { Identity, Vitals, CharacterData, GameRules, Origine, Metier, Requirements, Characteristics } from '../types';
+import { Identity, Vitals, CharacterData, GameRules, Origine, Metier, Requirements, Characteristics, GeneralStats } from '../types';
 import { VitalsPanel } from './VitalsPanel';
 
 interface CharacterHeaderProps {
     identity: Identity;
     vitals: Vitals;
+    generalStats: GeneralStats;
     characterData: CharacterData;
     onIdentityChange: (identity: Identity) => void;
     onVitalsChange: (vitals: Vitals) => void;
+    onGeneralChange: (stats: GeneralStats) => void;
 }
 
 export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
     identity,
     vitals,
+    generalStats,
     characterData,
     onIdentityChange,
-    onVitalsChange
+    onVitalsChange,
+    onGeneralChange
 }) => {
     const [rules, setRules] = useState<GameRules | null>(null);
 
@@ -167,7 +171,7 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
                 </div>
 
                 {/* Identity Fields Grid */}
-                <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="flex flex-col">
                         <label className="text-xs font-bold uppercase text-leather-light">Nom</label>
                         <input
@@ -230,11 +234,36 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
                             className="w-full bg-transparent border-b border-leather focus:border-leather-dark outline-none py-1 font-serif text-lg text-leather-dark"
                         />
                     </div>
+                    {/* General Stats Integrated */}
+                    <div className="flex flex-col">
+                        <label className="text-xs font-bold uppercase text-leather-light">Niveau</label>
+                        <div className="w-full bg-transparent border-b border-leather py-1 font-serif text-lg text-leather-dark font-bold">
+                            {generalStats.niveau}
+                        </div>
+                    </div>
+                    <div className="flex flex-col">
+                        <label className="text-xs font-bold uppercase text-leather-light">Expérience</label>
+                        <input
+                            type="number"
+                            value={generalStats.experience || ''}
+                            onChange={(e) => onGeneralChange({ ...generalStats, experience: parseInt(e.target.value) || 0 })}
+                            className="w-full bg-transparent border-b border-leather focus:border-leather-dark outline-none py-1 font-serif text-lg text-leather-dark"
+                        />
+                    </div>
+                    <div className="flex flex-col">
+                        <label className="text-xs font-bold uppercase text-leather-light">Points de Destin</label>
+                        <input
+                            type="number"
+                            value={generalStats.points_destin || ''}
+                            onChange={(e) => onGeneralChange({ ...generalStats, points_destin: parseInt(e.target.value) || 0 })}
+                            className="w-full bg-transparent border-b border-leather focus:border-leather-dark outline-none py-1 font-serif text-lg text-leather-dark"
+                        />
+                    </div>
                 </div>
             </div>
 
             {/* Vitals Section - Always Visible */}
-            <div className="border-t border-leather/30 pt-4">
+            <div className="pt-2">
                 <VitalsPanel
                     vitals={vitals}
                     onChange={onVitalsChange}

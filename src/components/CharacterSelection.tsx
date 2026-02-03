@@ -6,10 +6,9 @@ import { supabase } from "../lib/supabase";
 
 interface CharacterSelectionProps {
     onSelect: (id: string) => void;
-    onLogout: () => void;
 }
 
-export function CharacterSelection({ onSelect, onLogout }: CharacterSelectionProps) {
+export function CharacterSelection({ onSelect }: CharacterSelectionProps) {
     const [historyData, setHistoryData] = useState<{ id: string, name: string, versions: { version_id: number, saved_at: string }[] } | null>(null);
     const [characters, setCharacters] = useState<CharacterSummary[]>([]);
     const [loading, setLoading] = useState(true);
@@ -169,12 +168,6 @@ export function CharacterSelection({ onSelect, onLogout }: CharacterSelectionPro
 
             <div className="flex justify-between items-center mb-8">
                 <h2 className="text-3xl font-bold text-leather">Choix du Personnage</h2>
-                <button
-                    onClick={onLogout}
-                    className="px-4 py-2 bg-leather text-parchment rounded hover:bg-opacity-90"
-                >
-                    Déconnexion
-                </button>
             </div>
 
             {error && (

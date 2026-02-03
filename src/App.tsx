@@ -13,7 +13,10 @@ import { AdminPanel } from "./components/AdminPanel";
 
 // ... (existing imports)
 
-function App() {
+import { ThemeProvider } from "./context/ThemeContext";
+import { ThemeSelector } from "./components/ThemeSelector";
+
+function AppContent() {
   const [session, setSession] = useState<Session | null>(null);
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [selectedCharacterId, setSelectedCharacterId] = useState<string | null>(null);
@@ -115,7 +118,12 @@ function App() {
   };
 
   if (!session) {
-    return <Login />;
+    return (
+      <div className="flex justify-center items-center h-screen bg-parchment animate-fade-in relative">
+        <ThemeSelector />
+        <Login />
+      </div>
+    );
   }
 
   // Render Logic based on View
@@ -134,14 +142,13 @@ function App() {
     content = (
       <CharacterSelection
         onSelect={(id) => { setSelectedCharacterId(id); }}
-        onLogout={handleLogout}
       />
     );
   }
 
   return (
-    <div className="flex flex-col h-screen w-screen bg-parchment text-leather font-sans overflow-hidden overscroll-none">
-      <header className="p-4 bg-leather text-parchment shadow-md flex justify-between items-center sticky top-0 z-50">
+    <div className="flex flex-col h-screen w-screen bg-parchment text-leather font-sans overflow-hidden overscroll-none relative">
+      <header className="p-4 bg-leather text-parchment shadow-md flex justify-between items-center sticky top-0 z-40">
         <div className="flex items-center gap-4">
           <h1 className="text-xl font-bold">JDR Manager</h1>
           {userProfile && (
@@ -152,6 +159,8 @@ function App() {
         </div>
         <div className="flex gap-4 items-center">
           <div id="header-actions"></div>
+
+          <ThemeSelector />
 
           {userProfile?.role === 'admin' && view !== 'admin' && (
             <button
@@ -213,6 +222,14 @@ function App() {
         saveLabel="Sauvegarder et Quitter"
       />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 }
 

@@ -46,8 +46,8 @@ export const MagicStealthPanel: React.FC<MagicStealthPanelProps> = ({ stats, com
         }
 
         return (
-            <div className="flex items-center gap-2 mb-2">
-                <label className="flex-1 text-sm font-bold text-leather whitespace-nowrap">{label}</label>
+            <div className="flex items-center gap-1 mb-2">
+                <label className="flex-1 text-sm font-bold text-leather leading-tight mr-1">{label}</label>
                 <div className="flex flex-col items-center relative">
                     <span className="text-[10px] uppercase opacity-60">Base</span>
                     <input
@@ -55,7 +55,7 @@ export const MagicStealthPanel: React.FC<MagicStealthPanelProps> = ({ stats, com
                         value={isComputed ? baseValue : (data.base || '')}
                         onChange={(e) => !isComputed && handleChange(category, 'base', e.target.value)}
                         readOnly={isComputed}
-                        className={`w-16 border border-leather/30 rounded text-center ${isComputed ? 'bg-black/5 text-leather-dark cursor-help font-bold' : 'bg-white/50'}`}
+                        className={`w-14 md:w-16 border border-leather/30 rounded text-center ${isComputed ? 'bg-black/5 text-leather-dark cursor-help font-bold' : 'bg-white/50'}`}
                         onMouseEnter={(e) => {
                             if (isComputed && details) {
                                 const rect = e.currentTarget.getBoundingClientRect();
@@ -69,20 +69,20 @@ export const MagicStealthPanel: React.FC<MagicStealthPanelProps> = ({ stats, com
                         onMouseLeave={() => setHoveredInfo(null)}
                     />
                 </div>
-                <span className="text-leather-light mt-4">+</span>
+                <span className="text-leather-light mt-4 px-1">+</span>
                 <div className="flex flex-col items-center">
                     <span className="text-[10px] uppercase opacity-60">Add.</span>
                     <input
                         type="number"
                         value={data.temp || ''}
                         onChange={(e) => handleChange(category, 'temp', e.target.value)}
-                        className="w-16 bg-white/50 border border-leather/30 rounded text-center"
+                        className="w-14 md:w-16 bg-white/50 border border-leather/30 rounded text-center"
                     />
                 </div>
-                <span className="text-leather-light mt-4">=</span>
+                <span className="text-leather-light mt-4 px-1">=</span>
                 <div className="flex flex-col items-center">
                     <span className="text-[10px] uppercase opacity-60">Total</span>
-                    <span className="w-12 py-1 font-bold text-center bg-leather/10 rounded my-auto block border border-leather/20">
+                    <span className="min-w-[2.5rem] w-auto px-2 py-1 font-bold text-center bg-leather/10 rounded my-auto block border border-leather/20">
                         {baseValue + (data.temp || 0)}
                     </span>
                 </div>

@@ -92,6 +92,11 @@ export const AccessoiresTable: React.FC<AccessoiresTableProps> = ({ items, onIte
         return r ? r[field] : '';
     };
 
+    const getRefEffet = (refId: number): string => {
+        const r = referenceOptions.find(o => o.id === refId);
+        return r?.raw.details?.effet || '';
+    };
+
     const calculateTotalPr = (base: number | undefined, modif: number | undefined): string | number => {
         const baseVal = parseInt(String(base || 0), 10);
         const modifVal = parseInt(String(modif || 0), 10);
@@ -214,8 +219,9 @@ export const AccessoiresTable: React.FC<AccessoiresTableProps> = ({ items, onIte
                                         />
                                     </td>
 
-                                    <td className="p-2 text-sm max-w-[200px] truncate" title={getRefValue(item.refId, 'effet')}>
-                                        {getRefValue(item.refId, 'effet') || ''}
+                                    {/* Effet */}
+                                    <td className="p-2 text-sm max-w-[200px] truncate" title={getRefEffet(item.refId)}>
+                                        {getRefEffet(item.refId) || ''}
                                     </td>
 
                                     <td className="p-2 text-center">

@@ -214,7 +214,7 @@ export const CharacteristicsPanel: React.FC<CharacteristicsPanelProps> = ({
 
                                         return (
                                             <td key={col.id} className="p-2">
-                                                <span className="block w-full text-center py-1 opacity-70 text-xs font-bold" title={`Dégâts Total (Bonus FO: ${bonusFo})`}>
+                                                <span className="block w-full text-center py-1 opacity-70 text-xs font-bold truncate px-1" title={`Dégâts Total (Bonus FO: ${bonusFo})\n${display || '-'}`}>
                                                     {display || '-'}
                                                 </span>
                                             </td>

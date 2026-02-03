@@ -3,8 +3,8 @@ import { createPortal } from 'react-dom';
 import { invoke } from '@tauri-apps/api/core';
 import { CharacterHeader } from './CharacterHeader';
 import { LocalSaveButton } from './LocalSaveButton';
-import { GeneralStatsPanel } from './GeneralStatsPanel';
-import { DefensePanel } from './DefensePanel';
+import { MovementPanel } from './MovementPanel';
+import { ProtectionsPanel } from './ProtectionsPanel';
 import { MagicStealthPanel } from './MagicStealthPanel';
 import { CharacteristicsPanel } from './CharacteristicsPanel';
 import { TempModifiersPanel } from './TempModifiersPanel';
@@ -472,8 +472,23 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                 characterData={data}
                 identity={data.identity}
                 vitals={data.vitals}
+                generalStats={data.general}
                 onIdentityChange={(identity) => setData({ ...data, identity })}
                 onVitalsChange={(vitals) => setData({ ...data, vitals })}
+                onGeneralChange={(general) => {
+                    // Auto-calculate level based on XP
+                    const xp = general.experience || 0;
+                    const calculatedLevel = Math.floor((1 + Math.sqrt(1 + 4 * (xp / 50))) / 2);
+                    const newLevel = Math.max(1, calculatedLevel);
+
+                    setData({
+                        ...data,
+                        general: {
+                            ...general,
+                            niveau: newLevel
+                        }
+                    });
+                }}
             />
 
             {/* Tab Navigation */}
@@ -502,57 +517,34 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
 
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <div className="space-y-6">
-                        <GeneralStatsPanel
-                            stats={data.general}
-                            onChange={(general) => {
-                                // Auto-calculate level based on XP
-                                // Formula: XP = 50 * level * (level - 1)
-                                // Inverse: Level = floor((1 + sqrt(1 + 4 * (xp / 50))) / 2)
-                                const xp = general.experience || 0;
-                                const calculatedLevel = Math.floor((1 + Math.sqrt(1 + 4 * (xp / 50))) / 2);
-                                const newLevel = Math.max(1, calculatedLevel);
+                    <div className="flex flex-col gap-6">
 
-                                setData({
-                                    ...data,
-                                    general: {
-                                        ...general,
-                                        niveau: newLevel
-                                    }
-                                });
-                            }}
-                        />
-                        <MagicStealthPanel
-                            stats={data.magic}
-                            computedMagic={{
-                                magie_physique: computedStats.magie_physique,
-                                magie_psychique: computedStats.magie_psychique,
-                                resistance_magique: computedStats.resistance_magique,
-                                protection_pluie: computedStats.protection_pluie,
-                                protection_froid: computedStats.protection_froid,
-                                protection_chaleur: computedStats.protection_chaleur
-                            }}
-                            onChange={(magic) => setData({ ...data, magic })}
-                        />
-                    </div>
-                    <div className="space-y-6">
-                        <DefensePanel
-                            defenses={data.defenses}
+                        <MovementPanel
                             movement={data.movement}
                             magic={data.magic}
-                            computedDefenses={{
-                                solide: computedStats.solide,
-                                speciale: computedStats.speciale,
-                                magique: computedStats.magique
-                            }}
+                            malusTete={data.general.malus_tete}
                             computedMovement={{
                                 marche: computedStats.marche,
                                 course: computedStats.course
                             }}
                             computedDiscretion={computedStats.discretion}
-                            onDefenseChange={(defenses) => setData({ ...data, defenses })}
                             onMovementChange={(movement) => setData({ ...data, movement })}
                             onMagicChange={(magic) => setData({ ...data, magic })}
+                            onMalusTeteChange={(val) => setData({
+                                ...data,
+                                general: { ...data.general, malus_tete: val }
+                            })}
+                        />
+                    </div>
+                    <div className="flex flex-col gap-6">
+                        <ProtectionsPanel
+                            defenses={data.defenses}
+                            computedDefenses={{
+                                solide: computedStats.solide,
+                                speciale: computedStats.speciale,
+                                magique: computedStats.magique
+                            }}
+                            onDefenseChange={(defenses) => setData({ ...data, defenses })}
                         />
                     </div>
                 </div>
@@ -565,6 +557,21 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                         inventory={data.inventory}
                         referenceOptions={refs}
                         onChange={(characteristics) => setData({ ...data, characteristics })}
+                    />
+                </div>
+
+                <div>
+                    <MagicStealthPanel
+                        stats={data.magic}
+                        computedMagic={{
+                            magie_physique: computedStats.magie_physique,
+                            magie_psychique: computedStats.magie_psychique,
+                            resistance_magique: computedStats.resistance_magique,
+                            protection_pluie: computedStats.protection_pluie,
+                            protection_froid: computedStats.protection_froid,
+                            protection_chaleur: computedStats.protection_chaleur
+                        }}
+                        onChange={(magic) => setData({ ...data, magic })}
                     />
                 </div>
 
