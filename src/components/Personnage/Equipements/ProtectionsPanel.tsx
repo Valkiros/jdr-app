@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Defenses, ProtectionValue, StatDetail } from '../types';
+import { Defenses, ProtectionValue, StatDetail } from '../../../types';
 import { Tooltip } from '../../Shared/Tooltip';
 import { CalculationDetails } from '../Fiche/CalculationDetails';
 

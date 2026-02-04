@@ -255,10 +255,14 @@ function AppContent() {
   );
 }
 
+import { RefProvider } from "./context/RefContext";
+
 function App() {
   return (
     <ThemeProvider>
-      <AppContent />
+      <RefProvider>
+        <AppContent />
+      </RefProvider>
     </ThemeProvider>
   );
 }

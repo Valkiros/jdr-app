@@ -93,7 +93,7 @@ export interface Equipement {
     modif_pr_sol?: number;
     modif_pr_mag?: number;
     modif_pr_spe?: number;
-    equipement_type: 'Armes' | 'Protections' | 'Accessoires' | 'MainsNues';    // Références aux catégories de la page "Equipements"
+    equipement_type: 'Armes' | 'Protections' | 'Accessoires' | 'MainsNues' | 'Sacoches' | 'Potions' | 'Objets_magiques' | 'Munitions' | 'Armes_de_jet' | 'Pieges' | 'Outils';    // Références aux catégories
 }
 
 // Interface pour l'identité du personnage (avec image)

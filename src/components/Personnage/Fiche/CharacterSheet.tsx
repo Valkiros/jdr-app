@@ -11,8 +11,10 @@ import { TempModifiersPanel } from './TempModifiersPanel';
 import { Inventory } from '../Equipements/Inventory';
 import { CompetencesPanel } from '../Competences/CompetencesPanel';
 import { StatusPanel } from '../Etat/StatusPanel';
-import { CharacterData, Equipement, Characteristics, GameRules, Origine } from '../../../types';
+import { SacochesEtPoches } from '../SacochesEtPoches/SacochesEtPoches';
+import { CharacterData, Equipement, Characteristics, Origine } from '../../../types';
 import { INITIAL_DATA } from '../../../constants';
+import { useRefContext } from '../../../context/RefContext';
 import { getAlcoholModifiers } from '../../../utils/alcohol';
 
 export interface CharacterSheetHandle {
@@ -26,9 +28,8 @@ interface CharacterSheetProps {
 
 export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetProps>(({ characterId, onDirtyChange }, ref) => {
     const [data, setDataState] = useState<CharacterData>(INITIAL_DATA);
-    const [loading, setLoading] = useState(true);
-    const [refs, setRefs] = useState<any[]>([]);
-    const [gameRules, setGameRules] = useState<GameRules | null>(null);
+    const [characterLoading, setCharacterLoading] = useState(true);
+    const { refs, gameRules, loading: refLoading } = useRefContext();
     const isInitialLoad = React.useRef(true);
 
     const saveCharacter = async () => {
@@ -60,21 +61,7 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
     };
 
 
-    useEffect(() => {
-        // Fetch Refs & Game Rules
-        const fetchData = async () => {
-            try {
-                const refData = await invoke('get_ref_items') as any[];
-                setRefs(refData);
-
-                const rules = await invoke('get_game_rules') as GameRules;
-                setGameRules(rules);
-            } catch (err) {
-                console.error("Failed to fetch initial data:", err);
-            }
-        };
-        fetchData();
-    }, []);
+    // Removed local fetch of Refs & Game Rules (moved to RefContext)
 
     useEffect(() => {
         if (!characterId) return;
@@ -100,18 +87,18 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                     };
                     setDataState(mergedData);
                 }
-                setLoading(false);
+                setCharacterLoading(false);
                 // Allow subsequent updates to trigger dirty state
                 setTimeout(() => { isInitialLoad.current = false; }, 500);
             })
             .catch(err => {
                 console.error("Failed to load character:", err);
-                setLoading(false);
+                setCharacterLoading(false);
                 isInitialLoad.current = false;
             });
     }, [characterId]);
 
-    const [activeTab, setActiveTab] = useState<'fiche' | 'equipement' | 'status' | 'competences'>('fiche');
+    const [activeTab, setActiveTab] = useState<'fiche' | 'equipement' | 'sacoches' | 'status' | 'competences'>('fiche');
 
     // Computed Values for Characteristics Table
     // Computed Values for Characteristics Table
@@ -131,7 +118,8 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
     };
 
     // Helper to calculate PR Solide Encumbrance EARLY (for Dodge and Movement)
-    const calculateEncumbrance = () => {
+    // Helper to calculate PR Solide Encumbrance EARLY (for Dodge and Movement)
+    const currentEncumbrance = React.useMemo(() => {
         let totalSolide = 0;
         data.inventory.forEach(item => {
             // Only protections and accessories
@@ -151,11 +139,11 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
         totalSolide += (data.defenses.solide.temp || 0);
 
         return totalSolide;
-    };
+    }, [data.inventory, data.defenses.solide.temp, data.defenses.bouclier_actif, refs]);
 
-    const currentEncumbrance = calculateEncumbrance();
 
-    const calculateEquippedValues = () => {
+
+    const equippedValues = React.useMemo(() => {
         // Detailed structure for tooltips
         const values: Record<keyof Characteristics, { value: number, components: { label: string, value: number, displayValue?: string }[], overrideDisplay?: string }> = {
             courage: { value: 0, components: [] },
@@ -321,9 +309,9 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
         });
 
         return values;
-    };
+    }, [data.characteristics, data.status, data.general.malus_tete, data.inventory, data.defenses.bouclier_actif, refs, currentEncumbrance]);
 
-    const equippedValues = calculateEquippedValues();
+
 
     // Calculate Total Protections (Base) from Inventory
     // Protection Solide = pr_sol (toutes protections) + modif_pr_sol (toutes protections) + pr_sol (tous accessoires) + modif_pr_sol (tous les accessoires)
@@ -332,7 +320,7 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
     // Magie Physique = Moyenne Sup(Int + Adr) + Bonus
     // Magie Psychique = Moyenne Sup(Int + Cha) + Bonus
     // Resistance Magique = Moyenne Sup(Cour + Int + For) + Bonus
-    const calculateComputedStats = () => {
+    const computedStats = React.useMemo(() => {
         const totals = {
             solide: { value: 0, details: { formula: "Protections + Accessoires", components: [] as any[], total: 0 } },
             speciale: { value: 0, details: { formula: "Protections + Accessoires", components: [] as any[], total: 0 } },
@@ -553,11 +541,11 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
         totals.course.details.total = totals.course.value;
 
         return totals;
-    };
+    }, [data.characteristics.adresse.naturel, equippedValues, data.inventory, data.defenses, gameRules, data.identity.origine, refs]);
 
-    const computedStats = calculateComputedStats();
 
-    if (loading) {
+
+    if (characterLoading || refLoading) {
         return <div className="p-8 text-center text-leather">Chargement de la feuille de personnage...</div>;
     }
 
@@ -600,6 +588,12 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                     className={`px-6 py-2 font-bold text-lg transition-colors ${activeTab === 'equipement' ? 'bg-leather text-parchment' : 'text-leather hover:bg-leather hover:text-parchment hover:bg-opacity-10'}`}
                 >
                     Equipements
+                </button>
+                <button
+                    onClick={() => setActiveTab('sacoches')}
+                    className={`px-6 py-2 font-bold text-lg transition-colors ${activeTab === 'sacoches' ? 'bg-leather text-parchment' : 'text-leather hover:bg-leather hover:text-parchment hover:bg-opacity-10'}`}
+                >
+                    Sacoches & Poches
                 </button>
                 <button
                     onClick={() => setActiveTab('status')}
@@ -696,6 +690,15 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                     onInventoryChange={(inventory) => setData({ ...data, inventory })}
                     characterForce={equippedValues.force.value}
                     bouclierActif={data.defenses.bouclier_actif}
+                />
+            </div>
+
+            {/* Sacoches et Poches */}
+            <div className={activeTab === 'sacoches' ? 'animate-fade-in' : 'hidden'}>
+                <SacochesEtPoches
+                    inventory={data.inventory}
+                    onInventoryChange={(inventory) => setData({ ...data, inventory })}
+                    characterForce={equippedValues.force.value}
                 />
             </div>
 
