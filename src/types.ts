@@ -93,7 +93,16 @@ export interface Equipement {
     modif_pr_sol?: number;
     modif_pr_mag?: number;
     modif_pr_spe?: number;
+    capacite?: number;
+    quantite?: number;
     equipement_type: 'Armes' | 'Protections' | 'Accessoires' | 'MainsNues' | 'Sacoches' | 'Potions' | 'Objets_magiques' | 'Munitions' | 'Armes_de_jet' | 'Pieges' | 'Outils';    // Références aux catégories
+}
+
+// Interface simplifiée pour les APE
+export interface ApeEntry {
+    uid: string; // ID unique pour React
+    id: number;  // ID de l'APE (1-100)
+    niveau: number; // 0, 1, 2, 3
 }
 
 // Interface pour l'identité du personnage (avec image)
@@ -210,6 +219,7 @@ export interface CharacterData {
     characteristics: Characteristics;
     temp_modifiers: TempModifiers;
     inventory: any[]; // Placeholder for now, will link to existing inventory structure
+    ape: ApeEntry[]; // Nouvelle structures pour les APE
     competences: CharacterCompetence[];
     competences_specialisation: CharacterCompetence[];
     competences_sous_specialisation: CharacterCompetence[];

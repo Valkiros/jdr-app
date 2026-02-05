@@ -60,6 +60,7 @@ export const INITIAL_DATA: CharacterData = {
         mod3: ''
     },
     inventory: [],
+    ape: [],
     competences: [],
     competences_specialisation: [],
     competences_sous_specialisation: [],

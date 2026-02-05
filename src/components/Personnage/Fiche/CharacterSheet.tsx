@@ -12,6 +12,7 @@ import { Inventory } from '../Equipements/Inventory';
 import { CompetencesPanel } from '../Competences/CompetencesPanel';
 import { StatusPanel } from '../Etat/StatusPanel';
 import { SacochesEtPoches } from '../SacochesEtPoches/SacochesEtPoches';
+import { APE } from '../APE/APE';
 import { CharacterData, Equipement, Characteristics, Origine } from '../../../types';
 import { INITIAL_DATA } from '../../../constants';
 import { useRefContext } from '../../../context/RefContext';
@@ -98,7 +99,7 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
             });
     }, [characterId]);
 
-    const [activeTab, setActiveTab] = useState<'fiche' | 'equipement' | 'sacoches' | 'status' | 'competences'>('fiche');
+    const [activeTab, setActiveTab] = useState<'fiche' | 'equipement' | 'sacoches' | 'status' | 'competences' | 'ape'>('fiche');
 
     // Computed Values for Characteristics Table
     // Computed Values for Characteristics Table
@@ -607,6 +608,12 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                 >
                     Compétences
                 </button>
+                <button
+                    onClick={() => setActiveTab('ape')}
+                    className={`px-6 py-2 font-bold text-lg transition-colors ${activeTab === 'ape' ? 'bg-leather text-parchment' : 'text-leather hover:bg-leather hover:text-parchment hover:bg-opacity-10'}`}
+                >
+                    APE
+                </button>
             </div>
 
             <div className={activeTab === 'fiche' ? 'space-y-6 animate-fade-in' : 'hidden'}>
@@ -730,6 +737,15 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                     description={data.identity.description}
                     onChange={(newStatus) => setData({ ...data, status: newStatus })}
                     onDescriptionChange={(desc) => setData({ ...data, identity: { ...data.identity, description: desc } })}
+                />
+            </div>
+
+            {/* APE Tab */}
+            <div className={activeTab === 'ape' ? 'animate-fade-in' : 'hidden'}>
+                <APE
+                    ape={data.ape || []}
+                    onApeChange={(ape) => setData({ ...data, ape })}
+                    origin={data.identity.origine}
                 />
             </div>
 

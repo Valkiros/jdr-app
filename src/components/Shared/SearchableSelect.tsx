@@ -13,6 +13,7 @@ interface SearchableSelectProps {
     placeholder?: string;
     className?: string;
     direction?: 'up' | 'down' | 'auto';
+    disableSort?: boolean;
 }
 
 export const SearchableSelect: React.FC<SearchableSelectProps> = ({
@@ -21,7 +22,8 @@ export const SearchableSelect: React.FC<SearchableSelectProps> = ({
     onChange,
     placeholder = "-- Sélectionner --",
     className = "",
-    direction = 'auto'
+    direction = 'auto',
+    disableSort = false
 }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
@@ -113,8 +115,11 @@ export const SearchableSelect: React.FC<SearchableSelectProps> = ({
         str ? str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase() : "";
 
     const filteredOptions = options
-        .filter(option => normalize(option.label).includes(normalize(searchTerm)))
-        .sort((a, b) => a.label.localeCompare(b.label, 'fr', { sensitivity: 'base' }));
+        .filter(option => normalize(option.label).includes(normalize(searchTerm)));
+
+    if (!disableSort) {
+        filteredOptions.sort((a, b) => a.label.localeCompare(b.label, 'fr', { sensitivity: 'base' }));
+    }
 
     // Calculate position style
     const getDropdownStyle = () => {

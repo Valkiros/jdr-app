@@ -1,0 +1,110 @@
+const fs = require('fs');
+const path = require('path');
+
+const apePath = path.join(__dirname, 'src-tauri/data/config/ape.json');
+let rawData = fs.readFileSync(apePath, 'utf8');
+let apeData = JSON.parse(rawData);
+
+const peauVerteData = {
+    11: { nom: "Sans pitié: contre les adversaires qui ont 25% de leur PV ou moins", epreuve: "PI", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    12: { nom: "Fléau de l'humanité: contre les adversaires humains", epreuve: "AT / Tir", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    13: { nom: "Lui trop beau: contre les adversaires qui ont 12 et plus de charisme", epreuve: "PI", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    14: { nom: "Sprotch moustique: contre les adversaires qui ont le trait \"AGILE\"", epreuve: "PI", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    15: { nom: "Contre attaque: contre les adversaires qui ont une arme à deux mains", epreuve: "AT / Tir", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    16: { nom: "Jalousie aggressive: si l'adversaire transporte plus de 1000PO", epreuve: "AT / Tir", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    17: { nom: "Rebelle: contre les humanoïdes qui sentent bon", epreuve: "AT / Tir", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    18: { nom: "Boucher des dragons: contre les dragons de toutes tailles", epreuve: "AT / Tir", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    19: { nom: "Cauchemar des Elfes: contre les Hauts-Elfes, Sylvains, Demis-Elfes et Elfes noirs", epreuve: "AT / Tir", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    20: { nom: "Haine des Géants: contre les humanoïdes de très grande taille", epreuve: "AT / Tir", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    21: { nom: "Bouclier par temps sec: avec un bouclier, en extérieur par temps sec", epreuve: "PRD", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    22: { nom: "Crainte du magique: contre les armes enchantées", epreuve: "PRD", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    23: { nom: "Préservation du bourrinisme: contre les armes à deux mains", epreuve: "PRD", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    24: { nom: "Méfiant dans les grottes: dans une grotte", epreuve: "PRD", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    25: { nom: "Rescapé de la ville: en milieu urbain (ville moyenne ou grande)", epreuve: "ES", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    26: { nom: "Rescapé montagnard: en extérieur, en milieu montagneux", epreuve: "ES", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    27: { nom: "Pas brûler!: pour éviter le feu et les projectiles enflammées", epreuve: "ES", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    28: { nom: "Survie du baroudeur: dans un donjon ou dans des ruines", epreuve: "PRD", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    29: { nom: "Ivresse bienvenue: si l'adversaire est en état d'ébriété", epreuve: "PRD", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    30: { nom: "Préservation: contre les armes contondantes", epreuve: "PRD", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    31: { nom: "Abri du soleil: si jamais le héros porte un chapeau en tissu", epreuve: "PRD", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    32: { nom: "Méfiance du propre: contre les adversaires propres", epreuve: "PRD", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    33: { nom: "Phobie du rouge: contre les ennemis qui portent des vêtements rouges", epreuve: "PRD", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    34: { nom: "Peau épaisse: contre les cailloux et rochers lancés", epreuve: "PR (Mag.)", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    35: { nom: "Sales trucs d'elfes: contre les flèches", epreuve: "PR (Mag.)", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    36: { nom: "Hantise du sournois: contre les dagues et lames courtes", epreuve: "PRD", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    37: { nom: "Fils des vents: en extérieur, s'il y a beaucoup de vent", epreuve: "RM", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    38: { nom: "Providence du brouillard: en extérieur, s'il y a du brouillard", epreuve: "RM", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    39: { nom: "Mineur né: dans une grotte", epreuve: "RM", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    40: { nom: "Courage de l'ivresse: si le héros est en état d'ébriété", epreuve: "RM", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    41: { nom: "Expert en humains: pour comprendre la culture humains", epreuve: "INT", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    42: { nom: "Etude des villes: pour comprendre les plans des villes", epreuve: "INT", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    43: { nom: "Campagnard: pour comprendre les enjeux agricoles", epreuve: "INT", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    44: { nom: "Bon manger: pour interpréter les cris des sangliers", epreuve: "INT", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    45: { nom: "Héritage des grottes: pour interpréter les cris des monstres", epreuve: "INT", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    46: { nom: "Fils du Chaos: pour dialoguer avec les monstres/personnages maudits", epreuve: "CHA", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    47: { nom: "Air innocent: pour dialoguer avec les forces de l'ordre", epreuve: "CHA", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    48: { nom: "Expert en équipement: pour marchander les sacs, cordes, gourdes et torches", epreuve: "CHA", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    49: { nom: "Pinailleur de forge: pour marchander les armes et armures (non magiques)", epreuve: "CHA", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    50: { nom: "Soiffard: pour marchander de l'alcool", epreuve: "CHA", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    51: { nom: "Ventre à pattes: pour marchander de la nourriture", epreuve: "CHA", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    52: { nom: "Contrebandier: pour marchander la contrebande", epreuve: "CHA", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    53: { nom: "Fripier: pour marchander les vêtements (non magiques)", epreuve: "CHA", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    54: { nom: "Intimidation des ombres: pour intimider, la nuit (extérieur ou intérieur)", epreuve: "CHA", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    55: { nom: "Territorial: pour intimider, dans les grottes", epreuve: "CHA", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    56: { nom: "Très gros bourrin: pour intimider les monstres", epreuve: "CHA", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    57: { nom: "Aura de Glakarz: pour intimider les nobles", epreuve: "CHA", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    58: { nom: "Aura de Zormouch: pour intimider les femmes humanoïdes", epreuve: "CHA", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    59: { nom: "Aura de Jiork: pour impressionner les personnes âgées", epreuve: "CHA", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    60: { nom: "Fils de la rue: pour convaincre ou impressionner les mendiants", epreuve: "CHA", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    61: { nom: "Voyageur fourbu: pour trouver une taverne ou une auberge", epreuve: "PER", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    62: { nom: "Sprinter: augmente la vitesse de déplacement de 10%", epreuve: "-", bonus1: "-", bonus2: "-", bonus3: "-" },
+    63: { nom: "Coursier: augmente la vitesse de course lancée de 25%", epreuve: "-", bonus1: "-", bonus2: "-", bonus3: "-" },
+    64: { nom: "Fouisseur: pour creuser un trou avec ses mains", epreuve: "FO ou AD", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    65: { nom: "Grandes poches: peut porter 2kg d'équipement en plus", epreuve: "-", bonus1: "-", bonus2: "-", bonus3: "-" },
+    66: { nom: "Récupérateur: pour fabriquer une arme de récupération", epreuve: "INT ou AD", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    67: { nom: "Brise-machin: pour casser des arcs, arbalètes ou armes à poudre", epreuve: "FO", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    68: { nom: "Equarissage: pour découper correctement un animal abattu", epreuve: "INT ou AD", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    69: { nom: "Eboueur né: pour trouver des objets dans les poubelles", epreuve: "PER", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    70: { nom: "Sens de la pierre: pour s'orienter dans des souterrains", epreuve: "PER", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    71: { nom: "Sur le terrain: pour désamorcer des pièges mécaniques", epreuve: "INT ou AD", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    72: { nom: "Recyclage: pour réparer une arme cassée", epreuve: "INT ou AD", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    73: { nom: "Copains 1: pour cuisiner des plats non dangereux pour les humains", epreuve: "INT", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    74: { nom: "Putain de porte: pour casser les portes en bois", epreuve: "FO", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    75: { nom: "Saloperie de grille: pour forcer les grilles métalliques", epreuve: "FO", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    76: { nom: "Paranoïaque: pour effacer vos traces", epreuve: "INT ou AD", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    77: { nom: "Destin du mineur: pour trouver un filon de gemmes dans une grotte", epreuve: "PER", bonus1: "+3", bonus2: "+6", bonus3: "+9" },
+    78: { nom: "Couardise de naissance: pour trouver la sortie d'un donjon ou d'une grotte", epreuve: "PER", bonus1: "+3", bonus2: "+6", bonus3: "+9" },
+    79: { nom: "Démolition: pour démolir un bâtiment ou aider à sa démolition", epreuve: "INT, FO ou AD", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    80: { nom: "Piégeur: pour fabriquer des pièges à corde", epreuve: "INT ou AD", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    81: { nom: "Adresse inutile: le héros peut jongler avec trois saucissons", epreuve: "Roleplay!", bonus1: "-", bonus2: "-", bonus3: "-" },
+    82: { nom: "Malodorant: l'odeur du héros éloigne les insectes", epreuve: "-", bonus1: "-", bonus2: "-", bonus3: "-" },
+    83: { nom: "Poigne de fer: pour mettre à terre un adversaire", epreuve: "FO", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    84: { nom: "Moi fort!: divise par deux les effets des poisons", epreuve: "-", bonus1: "-", bonus2: "-", bonus3: "-" },
+    85: { nom: "Estomac d'acier: immunité aux maladies du système digestif", epreuve: "-", bonus1: "-", bonus2: "-", bonus3: "-" },
+    86: { nom: "Touki-Touki: permet d'imiter le cri d'un dragon", epreuve: "Roleplay!", bonus1: "-", bonus2: "-", bonus3: "-" },
+    87: { nom: "Bêêêêêê: permet d'imiter parfaitement les chèvres et moutons", epreuve: "Roleplay!", bonus1: "-", bonus2: "-", bonus3: "-" },
+    88: { nom: "Plic-ploc: permet d'imiter le bruit de l'eau à la bouche", epreuve: "Roleplay!", bonus1: "-", bonus2: "-", bonus3: "-" },
+    89: { nom: "Jambes solides: pour résister à une mise à terre", epreuve: "FO", bonus1: "+1", bonus2: "+2", bonus3: "+3" },
+    90: { nom: "Odorat subtil: le héros peut deviner si de la nourriture est avariée", epreuve: "PER", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    91: { nom: "Chasseur expert: le héros peut trouver un gibier à la fourrure rare", epreuve: "PER", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    92: { nom: "Aquaphobe: le héros n'aime vraiment pas boire de l'eau", epreuve: "Roleplay!", bonus1: "-", bonus2: "-", bonus3: "-" },
+    93: { nom: "Découpeur d'élite: pour récolter des organes sur des bestioles", epreuve: "INT ou AD", bonus1: "+2", bonus2: "+4", bonus3: "+6" },
+    94: { nom: "Artificier chanceux: armes à poudre, permet de relancer le D6 de fonctionnement", epreuve: "-", bonus1: "-", bonus2: "-", bonus3: "-" },
+    95: { nom: "Caillasseur: le héros peut chasser avec des gros cailloux", epreuve: "-", bonus1: "-", bonus2: "-", bonus3: "-" },
+    96: { nom: "Aura chaotique: le héros attire généralement les ennemis maudits", epreuve: "-", bonus1: "-", bonus2: "-", bonus3: "-" },
+    97: { nom: "Force de l'habitude: le héros se fait moins mal lors d'une chute", epreuve: "Dégâts", bonus1: "-2", bonus2: "-4", bonus3: "-8" },
+    98: { nom: "Spectaculaire: le héros sait chanter avec des rots", epreuve: "Roleplay!", bonus1: "-", bonus2: "-", bonus3: "-" },
+    99: { nom: "Attractivité stupéfiante: le héros attire les oiseaux de manière bizarre", epreuve: "-", bonus1: "-", bonus2: "-", bonus3: "-" },
+    100: { nom: "Sent-la-mort: le héros attire les morts-vivants", epreuve: "-", bonus1: "-", bonus2: "-", bonus3: "-" }
+};
+
+apeData.forEach(entry => {
+    if (entry.id >= 11 && entry.id <= 100) {
+        if (peauVerteData[entry.id]) {
+            entry["peau-verte"] = peauVerteData[entry.id];
+        }
+    }
+});
+
+fs.writeFileSync(apePath, JSON.stringify(apeData, null, '\t'), 'utf8');
+console.log('Peau-Verte data updated.');
