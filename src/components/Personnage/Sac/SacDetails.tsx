@@ -38,11 +38,7 @@ export const SacDetails: React.FC<SacDetailsProps> = ({
 
     const refItem = sac ? referenceOptions.find(r => r.id === sac.refId) : undefined;
 
-    // Determine opacity/red color logic
-    // We try to use 'capacite' first, fallback to 'places' if that's what is used for limit
-    // Assuming capacite is the boolean/weight comparison target
-    // Determine capacity: Check top-level 'capacite', then 'places', then deep 'details'
-    // Determine capacity: Check top-level 'capacite', then 'places', then deep 'details' (legacy), then direct 'details' (from Rust)
+    // Determine capacity: Check details.capacite
     const capacityRaw = refItem
         ? (
             (refItem as any).details?.capacite ||
@@ -80,7 +76,7 @@ export const SacDetails: React.FC<SacDetailsProps> = ({
                         <div className="grid grid-cols-3 gap-2">
                             <div>
                                 <span className="font-bold text-leather text-xs block">Rupture:</span>
-                                <span className="text-ink">{refItem?.rupture || '-'}</span>
+                                <span className="text-ink">{(refItem as any)?.details?.rupture || '-'}</span>
                             </div>
                             <div>
                                 <span className="font-bold text-leather text-xs block">Capacité:</span>

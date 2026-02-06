@@ -57,14 +57,14 @@ export const SacItemSelector: React.FC<SacItemSelectorProps> = ({ referenceOptio
 
             {/* Item Selection Area */}
             {selectedCategory && (
-                <div className="animate-fade-in bg-white/40 p-3 rounded border border-leather/10">
+                <div className="animate-fade-in bg-input-bg p-3 rounded border border-leather/10">
                     <div className="mb-3">
                         <input
                             type="text"
                             placeholder={`Rechercher dans ${selectedCategory}...`}
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="w-full p-1 bg-white/70 border-b border-leather/30 focus:border-leather outline-none text-sm"
+                            className="w-full p-1 bg-transparent border-b border-leather/30 focus:border-leather outline-none text-sm text-ink font-bold placeholder-leather/50"
                         />
                     </div>
 

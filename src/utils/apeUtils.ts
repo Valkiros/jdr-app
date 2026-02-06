@@ -28,33 +28,36 @@ export const getApeOriginKey = (origin: string): string => {
         return 'elfe_noir';
     }
     // Check "elfe" AFTER "elfe noir" to avoid partial match issues
-    if (normalized.includes('Elfe Sylvain') || normalized.includes('Haut Elfe') ||
-        normalized.includes('Haute Elfe') || normalized.includes('Demi-Elfe (E)') ||
-        normalized.includes('Demie-Elfe (E)') || normalized.includes('Homme-Lézard') ||
-        normalized.includes('Femme-Lézard') || normalized.includes('Fée')) {
+    if (normalized.includes('elfe sylvain') ||
+        normalized.includes('haut elfe') || normalized.includes('haute elfe') ||
+        normalized === 'elfe' || // Explicit Exact Match
+        normalized === 'Elfe' ||
+        normalized.includes('demi-elfe (e)') || normalized.includes('demie-elfe (e)') ||
+        normalized.includes('homme-lézard') || normalized.includes('femme-lézard') ||
+        normalized.includes('fée')) {
         return 'elfe';
     }
-    if (normalized.includes('Orque') || normalized.includes('Demi-Orque (O)') ||
-        normalized.includes('Demie-Orque (O)') || normalized.includes('Ogre') ||
-        normalized.includes('Ogresse') || normalized.includes('Gobelin') ||
-        normalized.includes('Gobeline') || normalized.includes('Murloc') ||
-        normalized.includes('Troll') || normalized.includes('Skaven') ||
-        normalized.includes('Changelin') || normalized.includes('Changeline') ||
-        normalized.includes('Homme-Légume') || normalized.includes('Femme-légume') ||
-        normalized.includes('Demi-Démon') || normalized.includes('Demi-Démone') ||
-        normalized.includes('Homme-bête (Caprin)') || normalized.includes('Femme-bête (Caprin)') ||
-        normalized.includes('Homme-bête (Bovin/Porcin)') || normalized.includes('Femme-bête (Bovin/Porcin)')) {
+    if (normalized.includes('orque') || normalized.includes('demi-orque (o)') ||
+        normalized.includes('demie-orque (o)') || normalized.includes('ogre') ||
+        normalized.includes('ogresse') || normalized.includes('gobelin') ||
+        normalized.includes('gobeline') || normalized.includes('murloc') ||
+        normalized.includes('troll') || normalized.includes('skaven') ||
+        normalized.includes('changelin') || normalized.includes('changeline') ||
+        normalized.includes('homme-légume') || normalized.includes('femme-légume') ||
+        normalized.includes('demi-démon') || normalized.includes('demie-démone') ||
+        normalized.includes('homme-bête (caprin)') || normalized.includes('femme-bête (caprin)') ||
+        normalized.includes('homme-bête (bovin/porcin)') || normalized.includes('femme-bête (bovin/porcin)')) {
         return 'peau-verte';
     }
-    if (normalized.includes('Nain') || normalized.includes('Naine') ||
-        normalized.includes('Nain de la Mafia') || normalized.includes('Naine de la Mafia') ||
-        normalized.includes('Nain Duregar') || normalized.includes('Naine Duregar') ||
-        normalized.includes('Harpie') || normalized.includes('Profond') ||
-        normalized.includes('Profonde')) {
+    if (normalized.includes('nain') || normalized.includes('naine') ||
+        normalized.includes('nain de la mafia') || normalized.includes('naine de la mafia') ||
+        normalized.includes('nain duregar') || normalized.includes('naine duregar') ||
+        normalized.includes('harpie') || normalized.includes('profond') ||
+        normalized.includes('profonde')) {
         return 'nain';
     }
-    if (normalized.includes('Gnôme') || normalized.includes('Kobold') ||
-        normalized.includes('Tengu')) {
+    if (normalized.includes('gnôme') || normalized.includes('kobold') ||
+        normalized.includes('tengu')) {
         return 'gnome';
     }
     if (normalized.includes('Hobbit')) {

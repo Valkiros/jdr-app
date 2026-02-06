@@ -758,6 +758,8 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                 <SacPanel
                     inventory={data.inventory}
                     onInventoryChange={(inventory) => setData({ ...data, inventory })}
+                    customItems={data.custom_sac_items}
+                    onCustomItemsChange={(custom_sac_items) => setData({ ...data, custom_sac_items })}
                 />
             </div>
 

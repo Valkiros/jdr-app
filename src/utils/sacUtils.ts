@@ -15,7 +15,6 @@ export const getItemWeight = (refItem: RefEquipement | undefined): number => {
     if (!refItem) return 0;
 
     // Specific Rule for Boissons
-    // Note: Checking category case-insensitively just in case
     if (refItem.category === 'Boissons') {
         if (refItem.nom === "Outre d'abondance (enchantée)") {
             return 12.5;

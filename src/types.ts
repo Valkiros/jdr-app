@@ -216,6 +216,13 @@ export interface TempModifiers {
     mod3: string;
 }
 
+export interface CustomSacItem {
+    uid: string;
+    nom: string;
+    quantite: number;
+    poids: number; // Poids Unitaire
+}
+
 // Interface pour les données du personnage
 export interface CharacterData {
     identity: Identity;
@@ -227,6 +234,7 @@ export interface CharacterData {
     characteristics: Characteristics;
     temp_modifiers: TempModifiers;
     inventory: any[]; // Placeholder for now, will link to existing inventory structure
+    custom_sac_items: CustomSacItem[]; // Nouveaux objets personnalisés du sac
     ape: ApeEntry[]; // Nouvelle structures pour les APE
     competences: CharacterCompetence[];
     competences_specialisation: CharacterCompetence[];

@@ -1,18 +1,21 @@
 import React from 'react';
-import { Sac, RefEquipement } from '../../../types';
+import { Sac, RefEquipement, CustomSacItem } from '../../../types';
 import { useRefContext } from '../../../context/RefContext';
 import { SacTable } from './SacTable';
 import { SacDetails } from './SacDetails';
 import { SacItemSelector } from './SacItemSelector';
+import { SacCustomTable } from './SacCustomTable';
 import { v4 as uuidv4 } from 'uuid';
 import { getItemWeight } from '../../../utils/sacUtils';
 
 interface SacPanelProps {
     inventory: Sac[];
     onInventoryChange: (items: Sac[]) => void;
+    customItems: CustomSacItem[];
+    onCustomItemsChange: (items: CustomSacItem[]) => void;
 }
 
-export const SacPanel: React.FC<SacPanelProps> = ({ inventory, onInventoryChange }) => {
+export const SacPanel: React.FC<SacPanelProps> = ({ inventory, onInventoryChange, customItems, onCustomItemsChange }) => {
     const { refs } = useRefContext();
 
     // 1. Filter items belonging to the "Sac" tab (equipement_type === 'Sacs')
@@ -98,12 +101,19 @@ export const SacPanel: React.FC<SacPanelProps> = ({ inventory, onInventoryChange
         handleContentChange(newSacList as Sac[]);
     };
 
-    // Calculate Content Weight
-    const contentsWeight = sacContentItems.reduce((acc, item) => {
+    // Calculate Standard Content Weight
+    const standardContentWeight = sacContentItems.reduce((acc, item) => {
         const refItem = refs.find(r => r.id === item.refId);
         const unitWeight = getItemWeight(refItem);
         return acc + (unitWeight * (item.quantite ?? 1));
     }, 0);
+
+    // Calculate Custom Content Weight
+    const customContentWeight = (customItems || []).reduce((acc, item) => {
+        return acc + (item.poids * item.quantite);
+    }, 0);
+
+    const totalWeight = standardContentWeight + customContentWeight;
 
     // Optimize: Memoize filtered references
     const backpackRefOptions = React.useMemo(() => refs.filter(r => r.category === 'Sacs'), [refs]);
@@ -122,7 +132,7 @@ export const SacPanel: React.FC<SacPanelProps> = ({ inventory, onInventoryChange
                     onSacChange={handleBackpackChange}
                     // Filter: ONLY 'Sacs' category for the Backpack Selector
                     referenceOptions={backpackRefOptions}
-                    currentTotalWeight={contentsWeight}
+                    currentTotalWeight={totalWeight}
                 />
 
                 <SacItemSelector
@@ -136,6 +146,11 @@ export const SacPanel: React.FC<SacPanelProps> = ({ inventory, onInventoryChange
                     onUpdateNotes={handleUpdateNotes}
                     // Filter: All items EXCEPT 'Mains_nues' for the Content Table
                     referenceOptions={contentRefOptions}
+                />
+
+                <SacCustomTable
+                    items={customItems || []}
+                    onItemsChange={onCustomItemsChange}
                 />
             </div>
         </div>

@@ -172,55 +172,55 @@ export const VitalsPanel: React.FC<VitalsPanelProps> = ({ vitals, onChange, orig
                         <div className="space-y-4">
                             {/* Section 1: Effets généraux */}
                             <div>
-                                <div className="font-bold text-[#eebb44] border-b border-[#cca43b]/20 mb-1">Effets généraux :</div>
+                                <div className="font-bold text-leather-dark border-b border-leather/20 mb-1">Effets généraux :</div>
                                 {palierEffect ? (
                                     <>
-                                        <div className="text-xs text-[#f0e6d2] mb-2 font-bold opacity-80">
+                                        <div className="text-xs text-leather mb-2 font-bold opacity-80">
                                             Palier actuel: {palierEffect.Paliers}%
                                         </div>
-                                        <p className="text-xs leading-relaxed text-[#f0e6d2] mb-2 italic">
+                                        <p className="text-xs leading-relaxed text-ink mb-2 italic">
                                             {palierEffect.Effets || "Aucun effet narratif."}
                                         </p>
 
-                                        <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs opacity-90 bg-black/20 p-2 rounded">
+                                        <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs opacity-90 bg-leather/5 p-2 rounded">
                                             {palierEffect["Force (FO)"] !== 0 && (
-                                                <div className="flex justify-between"><span>Force:</span> <span className={`${palierEffect["Force (FO)"] > 0 ? 'text-[#eebb44]' : 'text-red-400'} font-bold`}>{palierEffect["Force (FO)"] > 0 ? '+' : ''}{palierEffect["Force (FO)"]}</span></div>
+                                                <div className="flex justify-between text-ink"><span>Force:</span> <span className={`${palierEffect["Force (FO)"] > 0 ? 'text-leather-dark' : 'text-red-600'} font-bold`}>{palierEffect["Force (FO)"] > 0 ? '+' : ''}{palierEffect["Force (FO)"]}</span></div>
                                             )}
                                             {palierEffect["Intelligence (INT)"] !== 0 && (
-                                                <div className="flex justify-between"><span>Intelligence:</span> <span className={`${palierEffect["Intelligence (INT)"] > 0 ? 'text-[#eebb44]' : 'text-red-400'} font-bold`}>{palierEffect["Intelligence (INT)"] > 0 ? '+' : ''}{palierEffect["Intelligence (INT)"]}</span></div>
+                                                <div className="flex justify-between text-ink"><span>Intelligence:</span> <span className={`${palierEffect["Intelligence (INT)"] > 0 ? 'text-leather-dark' : 'text-red-600'} font-bold`}>{palierEffect["Intelligence (INT)"] > 0 ? '+' : ''}{palierEffect["Intelligence (INT)"]}</span></div>
                                             )}
                                             {palierEffect["Charisme (CHA)"] !== 0 && (
-                                                <div className="flex justify-between"><span>Charisme:</span> <span className={`${palierEffect["Charisme (CHA)"] > 0 ? 'text-[#eebb44]' : 'text-red-400'} font-bold`}>{palierEffect["Charisme (CHA)"] > 0 ? '+' : ''}{palierEffect["Charisme (CHA)"]}</span></div>
+                                                <div className="flex justify-between text-ink"><span>Charisme:</span> <span className={`${palierEffect["Charisme (CHA)"] > 0 ? 'text-leather-dark' : 'text-red-600'} font-bold`}>{palierEffect["Charisme (CHA)"] > 0 ? '+' : ''}{palierEffect["Charisme (CHA)"]}</span></div>
                                             )}
                                             {palierEffect["Résistance magique (RM)"] !== 0 && (
-                                                <div className="flex justify-between"><span>Résistance Mag.:</span> <span className={`${palierEffect["Résistance magique (RM)"] > 0 ? 'text-[#eebb44]' : 'text-red-400'} font-bold`}>{palierEffect["Résistance magique (RM)"] > 0 ? '+' : ''}{palierEffect["Résistance magique (RM)"]}</span></div>
+                                                <div className="flex justify-between text-ink"><span>Résistance Mag.:</span> <span className={`${palierEffect["Résistance magique (RM)"] > 0 ? 'text-leather-dark' : 'text-red-600'} font-bold`}>{palierEffect["Résistance magique (RM)"] > 0 ? '+' : ''}{palierEffect["Résistance magique (RM)"]}</span></div>
                                             )}
                                             {palierEffect["Aura chaotique (arme)"] !== 0 && (
-                                                <div className="flex justify-between text-red-300"><span>Aura Chaotique (Arme):</span> <span className="font-bold">{palierEffect["Aura chaotique (arme)"]}</span></div>
+                                                <div className="flex justify-between text-red-600"><span>Aura Chaotique (Arme):</span> <span className="font-bold">{palierEffect["Aura chaotique (arme)"]}</span></div>
                                             )}
                                             {palierEffect["Aura divine (arme)"] !== 0 && (
-                                                <div className="flex justify-between text-blue-300"><span>Aura Divine (Arme):</span> <span className="font-bold">{palierEffect["Aura divine (arme)"]}</span></div>
+                                                <div className="flex justify-between text-blue-600"><span>Aura Divine (Arme):</span> <span className="font-bold">{palierEffect["Aura divine (arme)"]}</span></div>
                                             )}
                                             {palierEffect["Aura chaotique (protection)"] !== 0 && (
-                                                <div className="flex justify-between text-red-300"><span>Aura Chaotique (Prot):</span> <span className="font-bold">{palierEffect["Aura chaotique (protection)"]}</span></div>
+                                                <div className="flex justify-between text-red-600"><span>Aura Chaotique (Prot):</span> <span className="font-bold">{palierEffect["Aura chaotique (protection)"]}</span></div>
                                             )}
                                             {palierEffect["Aura divine (protection)"] !== 0 && (
-                                                <div className="flex justify-between text-blue-300"><span>Aura Divine (Prot):</span> <span className="font-bold">{palierEffect["Aura divine (protection)"]}</span></div>
+                                                <div className="flex justify-between text-blue-600"><span>Aura Divine (Prot):</span> <span className="font-bold">{palierEffect["Aura divine (protection)"]}</span></div>
                                             )}
                                         </div>
                                     </>
                                 ) : (
-                                    <div className="text-gray-400 italic text-xs">Aucun effet général actif (Corruption - de 5%)</div>
+                                    <div className="text-ink-light italic text-xs">Aucun effet général actif (Corruption - de 5%)</div>
                                 )}
                             </div>
 
                             {/* Section 2: Effets liés à l'origine (affiché seulement si corruption > 0) */}
                             {current > 0 && (
                                 <div>
-                                    <div className="font-bold text-[#eebb44] border-b border-[#cca43b]/20 mb-1">Effets liés à l'origine :</div>
-                                    <div className="bg-black/20 p-2 rounded">
-                                        <div className="text-xs text-[#f0e6d2] mb-1 font-bold opacity-80">{origine || 'Inconnue'}</div>
-                                        <p className="text-xs leading-relaxed text-[#f0e6d2] italic">
+                                    <div className="font-bold text-leather-dark border-b border-leather/20 mb-1">Effets liés à l'origine :</div>
+                                    <div className="bg-leather/5 p-2 rounded">
+                                        <div className="text-xs text-leather mb-1 font-bold opacity-80">{origine || 'Inconnue'}</div>
+                                        <p className="text-xs leading-relaxed text-ink italic">
                                             {originEffect ? originEffect.Effets : "Aucun effet spécifique ou origine inconnue."}
                                         </p>
                                     </div>

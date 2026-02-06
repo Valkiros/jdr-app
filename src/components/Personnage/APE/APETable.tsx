@@ -155,9 +155,7 @@ export const APETable: React.FC<APETableProps> = ({ items, onItemsChange, origin
                     </tbody>
                 </table>
             </div>
-            <div className="mt-2 text-right text-xs text-leather/50 italic">
-                {origin ? `Origine en cours : ${origin} (${getApeOriginKey(origin)})` : 'Aucune origine définie'}
-            </div>
+
         </div>
     );
 };
