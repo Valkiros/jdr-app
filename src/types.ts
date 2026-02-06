@@ -93,9 +93,17 @@ export interface Equipement {
     modif_pr_sol?: number;
     modif_pr_mag?: number;
     modif_pr_spe?: number;
-    capacite?: number;
     quantite?: number;
-    equipement_type: 'Armes' | 'Protections' | 'Accessoires' | 'MainsNues' | 'Sacoches' | 'Potions' | 'Objets_magiques' | 'Munitions' | 'Armes_de_jet' | 'Pieges' | 'Outils';    // Références aux catégories
+    equipement_type?: 'Armes' | 'Protections' | 'Accessoires' | 'MainsNues' | 'Sacoches' | 'Potions' | 'Objets_magiques' | 'Munitions' | 'Armes_de_jet' | 'Pieges' | 'Outils';    // Références aux catégories
+}
+
+export interface Sac {
+    uid: string; // ID unique pour React key (uuid)
+    id: string; // ID de Supabase
+    refId: number; // ID de référence (Notre référence à nous)
+    quantite?: number;
+    equipement_type: 'Sacs';    // Références aux catégories
+    notes?: string;
 }
 
 // Interface simplifiée pour les APE

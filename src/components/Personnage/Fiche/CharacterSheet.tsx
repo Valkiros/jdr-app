@@ -12,11 +12,14 @@ import { Inventory } from '../Equipements/Inventory';
 import { CompetencesPanel } from '../Competences/CompetencesPanel';
 import { StatusPanel } from '../Etat/StatusPanel';
 import { SacochesEtPoches } from '../SacochesEtPoches/SacochesEtPoches';
+import { SacPanel } from '../Sac/SacPanel';
 import { APE } from '../APE/APE';
 import { CharacterData, Equipement, Characteristics, Origine } from '../../../types';
 import { INITIAL_DATA } from '../../../constants';
 import { useRefContext } from '../../../context/RefContext';
 import { getAlcoholModifiers } from '../../../utils/alcohol';
+import { getItemWeight } from '../../../utils/sacUtils';
+
 
 export interface CharacterSheetHandle {
     save: () => Promise<void>;
@@ -99,7 +102,7 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
             });
     }, [characterId]);
 
-    const [activeTab, setActiveTab] = useState<'fiche' | 'equipement' | 'sacoches' | 'status' | 'competences' | 'ape'>('fiche');
+    const [activeTab, setActiveTab] = useState<'fiche' | 'equipement' | 'sacoches' | 'sac' | 'status' | 'competences' | 'ape'>('fiche');
 
     // Computed Values for Characteristics Table
     // Computed Values for Characteristics Table
@@ -163,6 +166,34 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
 
         // Get Alcohol Modifiers
         const { leger, fort, gueule_de_bois } = getAlcoholModifiers(data.status || INITIAL_DATA.status);
+
+        // --- Backpack Encumbrance Malus Logic ---
+        const sacItems = data.inventory.filter(i => i.equipement_type === 'Sacs');
+        const backpack = sacItems.find(i => {
+            const ref = refs.find(r => r.id === i.refId);
+            return ref?.category === 'Sacs';
+        });
+
+        let sacMalus = 0;
+        if (backpack) {
+            const refBackpack = refs.find(r => r.id === backpack.refId);
+            const capacityRaw = (refBackpack as any)?.details?.capacite || 0;
+            const capacity = typeof capacityRaw === 'string' ? parseInt(capacityRaw) : capacityRaw;
+
+            // Calculate Content Weight (Items in 'Sacs' but not the bag itself)
+            const contentWeight = sacItems
+                .filter(i => i.uid !== backpack.uid)
+                .reduce((acc, item) => {
+                    const refItem = refs.find(r => r.id === item.refId);
+                    const unitWeight = getItemWeight(refItem);
+                    return acc + (unitWeight * (item.quantite ?? 1));
+                }, 0);
+
+            if (capacity > 0 && contentWeight >= (0.9 * capacity)) {
+                sacMalus = -2;
+            }
+        }
+        // ----------------------------------------
 
         // Initialize with Base values (Naturel + Temp - Malus)
         (Object.keys(values) as Array<keyof Characteristics>).forEach((key) => {
@@ -267,7 +298,14 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
             base += drugMalus;
 
             // Add encumbrance malus (Esquive only)
-            if (key === 'esquive') base += encumbranceMalus;
+            if (key === 'esquive') {
+                base += encumbranceMalus;
+                base += sacMalus;
+
+                if (sacMalus !== 0) {
+                    components.push({ label: 'Sac surchargé', value: sacMalus });
+                }
+            }
 
             values[key].value = base;
             values[key].components = components;
@@ -597,6 +635,12 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                     Sacoches & Poches
                 </button>
                 <button
+                    onClick={() => setActiveTab('sac')}
+                    className={`px-6 py-2 font-bold text-lg transition-colors ${activeTab === 'sac' ? 'bg-leather text-parchment' : 'text-leather hover:bg-leather hover:text-parchment hover:bg-opacity-10'}`}
+                >
+                    Sac
+                </button>
+                <button
                     onClick={() => setActiveTab('status')}
                     className={`px-6 py-2 font-bold text-lg transition-colors ${activeTab === 'status' ? 'bg-leather text-parchment' : 'text-leather hover:bg-leather hover:text-parchment hover:bg-opacity-10'}`}
                 >
@@ -706,6 +750,14 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                     inventory={data.inventory}
                     onInventoryChange={(inventory) => setData({ ...data, inventory })}
                     characterForce={equippedValues.force.value}
+                />
+            </div>
+
+            {/* Sac */}
+            <div className={activeTab === 'sac' ? 'animate-fade-in' : 'hidden'}>
+                <SacPanel
+                    inventory={data.inventory}
+                    onInventoryChange={(inventory) => setData({ ...data, inventory })}
                 />
             </div>
 
