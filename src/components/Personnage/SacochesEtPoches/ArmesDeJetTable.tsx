@@ -18,6 +18,7 @@ export const ArmesDeJetTable: React.FC<ArmesDeJetTableProps> = ({ items, onItems
             id: '',
             refId: 0,
             equipement_type: 'Armes_de_jet',
+            etat: 'Intact',
             modif_pi: 0,
             modif_rupture: 0
         };
@@ -74,6 +75,7 @@ export const ArmesDeJetTable: React.FC<ArmesDeJetTableProps> = ({ items, onItems
                             <th className="p-2 w-24">Total</th>
                             <th className="p-2 w-16">Portée</th>
                             <th className="p-2">Effet</th>
+                            <th className="p-2 w-28 text-center">Etat</th>
                             <th className="p-2 w-16 text-center">Rupture</th>
                             <th className="p-2 w-16 text-center">Modif</th>
                             <th className="p-2 w-8"></th>
@@ -131,6 +133,17 @@ export const ArmesDeJetTable: React.FC<ArmesDeJetTableProps> = ({ items, onItems
                                     </td>
                                     <td className="p-2 italic text-ink-light truncate max-w-[150px]" title={refItem?.effet || getRefValue(item.refId, 'details', 'effet')}>
                                         {refItem?.effet || getRefValue(item.refId, 'details', 'effet') || '-'}
+                                    </td>
+                                    <td className="p-2">
+                                        <select
+                                            value={item.etat || 'Intact'}
+                                            onChange={(e) => handleUpdateField(item.uid, 'etat', e.target.value)}
+                                            className="w-full p-1 bg-transparent border-b border-leather-light focus:border-leather outline-none text-sm text-center"
+                                        >
+                                            <option value="Intact">Intact</option>
+                                            <option value="Endommagé">Endommagé</option>
+                                            <option value="Cassé">Cassé</option>
+                                        </select>
                                     </td>
                                     <td className="p-2 text-center text-ink-light">
                                         {refItem?.rupture || getRefValue(item.refId, 'details', 'rupture') || '-'}

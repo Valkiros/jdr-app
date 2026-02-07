@@ -33,6 +33,7 @@ export const ProtectionsTable: React.FC<ProtectionsTableProps> = ({ items, onIte
             modif_pr_sol: 0,
             modif_pr_mag: 0,
             modif_pr_spe: 0,
+            etat: 'Intact',
             ...defaultItem
         };
         onItemsChange([...items, newItem]);
@@ -166,6 +167,8 @@ export const ProtectionsTable: React.FC<ProtectionsTableProps> = ({ items, onIte
                             <th className="p-2 w-16 text-center">Pr Mag</th>
                             <th className="p-2 w-16 text-center">Mod</th>
 
+                            <th className="p-2 w-28 text-center pt-2">Etat</th>
+
                             <th className="p-2 w-20 text-center">Rupture</th>
                             <th className="p-2 w-16 text-center">Mod</th>
 
@@ -263,6 +266,19 @@ export const ProtectionsTable: React.FC<ProtectionsTableProps> = ({ items, onIte
                                             className="w-full p-1 bg-transparent border-b border-leather-light focus:border-leather outline-none text-center"
                                             placeholder="+0"
                                         />
+                                    </td>
+
+                                    {/* --- Etat --- */}
+                                    <td className="p-2">
+                                        <select
+                                            value={item.etat || 'Intact'}
+                                            onChange={(e) => handleUpdateField(item.uid, 'etat', e.target.value)}
+                                            className="w-full p-1 bg-transparent border-b border-leather-light focus:border-leather outline-none text-sm text-center"
+                                        >
+                                            <option value="Intact">Intact</option>
+                                            <option value="Endommagé">Endommagé</option>
+                                            <option value="Cassé">Cassé</option>
+                                        </select>
                                     </td>
 
                                     {/* --- Rupture --- */}

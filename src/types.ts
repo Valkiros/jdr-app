@@ -94,6 +94,7 @@ export interface Equipement {
     modif_pr_mag?: number;
     modif_pr_spe?: number;
     quantite?: number;
+    etat?: string; // 'Intact', 'Endommagé', 'Cassé'
     equipement_type?: 'Armes' | 'Protections' | 'Accessoires' | 'MainsNues' | 'Sacoches' | 'Potions' | 'Objets_magiques' | 'Munitions' | 'Armes_de_jet' | 'Pieges' | 'Outils';    // Références aux catégories
 }
 
@@ -104,6 +105,12 @@ export interface Sac {
     quantite?: number;
     equipement_type: 'Sacs';    // Références aux catégories
     notes?: string;
+    etat?: string; // 'Intact', 'Endommagé', 'Cassé'
+    modif_rupture?: number;
+    modif_pr_sol?: number;
+    modif_pr_mag?: number;
+    modif_pr_spe?: number;
+    charges?: number;
 }
 
 // Interface simplifiée pour les APE

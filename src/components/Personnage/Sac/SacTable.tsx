@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sac, RefEquipement } from '../../../types';
 import { getItemWeight } from '../../../utils/sacUtils';
+import { Tooltip } from '../../Shared/Tooltip';
 
 interface SacTableProps {
     items: Sac[];
@@ -9,25 +10,39 @@ interface SacTableProps {
 }
 
 // Memoized Row Component
-const SacRow = React.memo(({ item, referenceOptions, onUpdateQuantity, onRemove, onUpdateNotes }: {
+const SacRow = React.memo(({ item, referenceOptions, onUpdateQuantity, onRemove, onUpdateNotes, onUpdateField, onHover, onLeave }: {
     item: Sac,
     referenceOptions: RefEquipement[],
     onUpdateQuantity: (uid: string, qty: number) => void,
     onRemove: (uid: string) => void,
-    onUpdateNotes?: (uid: string, notes: string) => void
+    onUpdateNotes?: (uid: string, notes: string) => void,
+    onUpdateField: (uid: string, field: keyof Sac, value: any) => void,
+    onHover: (e: React.MouseEvent, title: string, content: string) => void,
+    onLeave: () => void
 }) => {
     const refItem = referenceOptions.find(r => r.id === item.refId);
+    const effect = refItem?.effet || (refItem as any)?.details?.effet;
     const unitWeight = getItemWeight(refItem);
     const totalItemWeight = unitWeight * (item.quantite ?? 1);
     const displayRefId = refItem?.ref_id || '-';
 
-    // Check if category allows notes (case insensitive just in case)
-    const isFood = refItem?.category?.toLowerCase() === 'bouffes';
+    // Determine category from RefItem (or fallback to 'Sacs' if mismatch)
+    const category = refItem?.category || 'Divers';
+    const catLower = category.toLowerCase();
 
-    // Local state for notes to avoid re-renders on every keystroke
+    // Field Visibility Logic
+    const showEtat = ['accessoires', 'armes', 'armes_de_jet', 'munitions', 'objets_speciaux', 'outils', 'pieges', 'protections', 'sacoches', 'poches', 'sacs'].includes(catLower);
+    const showModRupt = ['accessoires', 'armes', 'armes_de_jet', 'munitions', 'objets_speciaux', 'outils', 'pieges', 'protections', 'sacoches', 'poches', 'sacs'].includes(catLower);
+    const showModProts = ['accessoires', 'protections'].includes(catLower);
+    const showCharges = ['objets_magiques'].includes(catLower);
+
+    // Local state for notes
     const [localNotes, setLocalNotes] = React.useState(item.notes || '');
 
-    // Sync local state if item.notes changes externally
+    // Tooltip state removed from here
+
+
+    // Sync local state
     React.useEffect(() => {
         setLocalNotes(item.notes || '');
     }, [item.notes]);
@@ -39,21 +54,29 @@ const SacRow = React.memo(({ item, referenceOptions, onUpdateQuantity, onRemove,
     };
 
     return (
-        <tr className="border-b border-leather/10 hover:bg-leather/5 transition-colors">
-            <td className="p-2 text-center font-mono text-xs text-ink-light">
+        <tr className="border-b border-leather/10 hover:bg-leather/5 transition-colors text-sm">
+            {/* ID */}
+            <td className="p-2 text-center font-mono text-xs text-ink-light align-top pt-3">
                 {displayRefId}
             </td>
-            <td className="p-2">
-                <div className="font-bold text-leather">
+
+            {/* Objet + Notes */}
+            <td className="p-2 align-top pt-2">
+                <div
+                    className={`font-bold text-leather ${effect ? 'cursor-help' : ''} inline-block`}
+                    onMouseEnter={(e) => {
+                        if (effect && onHover) onHover(e, refItem?.nom || 'Objet', effect);
+                    }}
+                    onMouseMove={(e) => {
+                        if (effect && onHover) onHover(e, refItem?.nom || 'Objet', effect);
+                    }}
+                    onMouseLeave={onLeave}
+                >
                     {refItem?.nom || 'Objet inconnu'}
                 </div>
-                {refItem?.effet && (
-                    <div className="text-xs text-ink-light italic mt-1 ml-2 border-l-2 border-leather/20 pl-2">
-                        {refItem.effet}
-                    </div>
-                )}
-                {isFood && onUpdateNotes && (
-                    <div className="mt-1 ml-2">
+                {/* Notes Field */}
+                {catLower === 'bouffes' && onUpdateNotes && (
+                    <div className="mt-1">
                         <input
                             type="text"
                             placeholder="Notes..."
@@ -65,9 +88,87 @@ const SacRow = React.memo(({ item, referenceOptions, onUpdateQuantity, onRemove,
                     </div>
                 )}
             </td>
+
+            {/* Etat */}
+            <td className="p-2 text-center align-top pt-2">
+                {showEtat ? (
+                    <select
+                        value={item.etat || 'Intact'}
+                        onChange={(e) => onUpdateField(item.uid, 'etat', e.target.value)}
+                        className="w-full min-w-[80px] p-1 bg-transparent border-b border-leather-light focus:border-leather outline-none text-xs text-center"
+                    >
+                        <option value="Intact">Intact</option>
+                        <option value="Endommagé">Endommagé</option>
+                        <option value="Cassé">Cassé</option>
+                    </select>
+                ) : <span className="text-gray-300">-</span>}
+            </td>
+
+            {/* Mod Rupt */}
+            <td className="p-2 text-center align-top pt-2">
+                {showModRupt ? (
+                    <input
+                        type="number"
+                        value={item.modif_rupture || ''}
+                        onChange={(e) => onUpdateField(item.uid, 'modif_rupture', parseInt(e.target.value) || 0)}
+                        className="w-10 bg-transparent border-b border-leather/20 text-center focus:border-leather outline-none text-xs"
+                        placeholder="+0"
+                    />
+                ) : <span className="text-gray-300">-</span>}
+            </td>
+
+            {/* Mod Protections (Sol/Mag/Spe) */}
+            <td className="p-2 text-center align-top pt-2">
+                {showModProts ? (
+                    <div className="flex flex-col gap-1">
+                        <input
+                            type="number"
+                            title="Modif PR Solide"
+                            placeholder="Sol."
+                            value={item.modif_pr_sol || ''}
+                            onChange={(e) => onUpdateField(item.uid, 'modif_pr_sol', parseInt(e.target.value) || 0)}
+                            className="w-12 bg-transparent border-b border-leather/20 text-center focus:border-leather outline-none text-xs"
+                        />
+                        <input
+                            type="number"
+                            title="Modif PR Magique"
+                            placeholder="Mag."
+                            value={item.modif_pr_mag || ''}
+                            onChange={(e) => onUpdateField(item.uid, 'modif_pr_mag', parseInt(e.target.value) || 0)}
+                            className="w-12 bg-transparent border-b border-leather/20 text-center focus:border-leather outline-none text-xs"
+                        />
+                        <input
+                            type="number"
+                            title="Modif PR Spéciale"
+                            placeholder="Spé."
+                            value={item.modif_pr_spe || ''}
+                            onChange={(e) => onUpdateField(item.uid, 'modif_pr_spe', parseInt(e.target.value) || 0)}
+                            className="w-12 bg-transparent border-b border-leather/20 text-center focus:border-leather outline-none text-xs"
+                        />
+                    </div>
+                ) : <span className="text-gray-300">-</span>}
+            </td>
+
+            {/* Charges */}
+            <td className="p-2 text-center align-top pt-2">
+                {showCharges ? (
+                    <input
+                        type="number"
+                        value={item.charges || ''}
+                        onChange={(e) => onUpdateField(item.uid, 'charges', parseInt(e.target.value) || 0)}
+                        className="w-12 bg-transparent border-b border-leather/20 text-center focus:border-leather outline-none text-xs"
+                        placeholder="0"
+                    />
+                ) : <span className="text-gray-300">-</span>}
+            </td>
+
+
+            {/* Poids Unit */}
             <td className="p-2 text-center text-ink-light align-top pt-3">
                 {unitWeight > 0 ? `${unitWeight} g` : '-'}
             </td>
+
+            {/* Qté */}
             <td className="p-2 text-center align-top pt-2">
                 <input
                     type="number"
@@ -77,12 +178,16 @@ const SacRow = React.memo(({ item, referenceOptions, onUpdateQuantity, onRemove,
                         const val = parseInt(e.target.value);
                         onUpdateQuantity(item.uid, isNaN(val) ? 0 : val);
                     }}
-                    className="w-12 bg-transparent border-b border-leather/20 text-center focus:border-leather outline-none font-medium"
+                    className="w-10 bg-transparent border-b border-leather/20 text-center focus:border-leather outline-none font-medium text-xs"
                 />
             </td>
+
+            {/* Poids Total */}
             <td className="p-2 text-center font-medium align-top pt-3 text-leather">
                 {totalItemWeight > 0 ? `${totalItemWeight} g` : '-'}
             </td>
+
+            {/* Action */}
             <td className="p-2 text-center align-top pt-2">
                 <button
                     onClick={() => onRemove(item.uid)}
@@ -102,14 +207,42 @@ export const SacTable: React.FC<SacTableProps & { onUpdateNotes?: (uid: string, 
         onItemsChange(items.filter(item => item.uid !== uid));
     }, [items, onItemsChange]);
 
-    const handleUpdateQuantity = React.useCallback((uid: string, qty: number) => {
+    const handleUpdateField = React.useCallback((uid: string, field: keyof Sac, value: any) => {
         onItemsChange(items.map(item => {
             if (item.uid === uid) {
-                return { ...item, quantite: qty };
+                return { ...item, [field]: value };
             }
             return item;
         }));
     }, [items, onItemsChange]);
+
+    // Tooltip state lifted to Table
+    const [tooltipState, setTooltipState] = React.useState<{ visible: boolean, x: number, y: number, title: string, content: string }>({
+        visible: false, x: 0, y: 0, title: '', content: ''
+    });
+
+    const handleItemHover = React.useCallback((e: React.MouseEvent, title: string, content: string) => {
+        setTooltipState({
+            visible: true,
+            x: e.clientX,
+            y: e.clientY,
+            title,
+            content
+        });
+    }, []);
+
+    const handleItemLeave = React.useCallback(() => {
+        setTooltipState(prev => ({ ...prev, visible: false }));
+    }, []);
+
+    let activeTooltip = null;
+    if (tooltipState.visible) {
+        activeTooltip = (
+            <Tooltip visible={true} position={{ x: tooltipState.x, y: tooltipState.y }} title={tooltipState.title} requireCtrl={true}>
+                {tooltipState.content}
+            </Tooltip>
+        );
+    }
 
 
     return (
@@ -130,10 +263,14 @@ export const SacTable: React.FC<SacTableProps & { onUpdateNotes?: (uid: string, 
                     <thead>
                         <tr className="text-xs font-bold text-leather uppercase tracking-wider border-b border-leather/20">
                             <th className="p-2 w-1/12 text-center">ID</th>
-                            <th className="p-2 w-5/12">Objet</th>
-                            <th className="p-2 w-1/12 text-center">Poids Unit.</th>
+                            <th className="p-2 w-3/12">Objet</th>
+                            <th className="p-2 w-1/12 text-center">Etat</th>
+                            <th className="p-2 w-1/12 text-center">Mod(R)</th>
+                            <th className="p-2 w-1/12 text-center">Mod(P)</th>
+                            <th className="p-2 w-1/12 text-center">Ch.</th>
+                            <th className="p-2 w-1/12 text-center">Pds U.</th>
                             <th className="p-2 w-1/12 text-center">Qté</th>
-                            <th className="p-2 w-2/12 text-center">Poids Total</th>
+                            <th className="p-2 w-1/12 text-center">Total</th>
                             <th className="p-2 w-1/12 text-center"></th>
                         </tr>
                     </thead>
@@ -167,7 +304,7 @@ export const SacTable: React.FC<SacTableProps & { onUpdateNotes?: (uid: string, 
                                 <tbody key={category}>
                                     {/* Category Header Row */}
                                     <tr className="bg-leather/5">
-                                        <td colSpan={6} className="px-4 py-1.5 font-bold text-leather-dark uppercase text-xs tracking-wider border-y border-leather/20">
+                                        <td colSpan={10} className="px-4 py-1.5 font-bold text-leather-dark uppercase text-xs tracking-wider border-y border-leather/20">
                                             {category}
                                         </td>
                                     </tr>
@@ -177,9 +314,12 @@ export const SacTable: React.FC<SacTableProps & { onUpdateNotes?: (uid: string, 
                                             key={item.uid}
                                             item={item}
                                             referenceOptions={referenceOptions}
-                                            onUpdateQuantity={handleUpdateQuantity}
+                                            onUpdateQuantity={(uid, qty) => handleUpdateField(uid, 'quantite', qty)}
                                             onRemove={handleRemoveRow}
                                             onUpdateNotes={onUpdateNotes}
+                                            onUpdateField={handleUpdateField}
+                                            onHover={handleItemHover}
+                                            onLeave={handleItemLeave}
                                         />
                                     ))}
                                 </tbody>
@@ -188,6 +328,7 @@ export const SacTable: React.FC<SacTableProps & { onUpdateNotes?: (uid: string, 
                     })()}
                 </table>
             )}
+            {activeTooltip}
         </div>
     );
 };

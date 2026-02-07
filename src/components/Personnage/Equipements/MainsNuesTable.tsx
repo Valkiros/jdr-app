@@ -25,6 +25,7 @@ export const MainsNuesTable: React.FC<MainsNuesTableProps> = ({ items, onItemsCh
             modif_pr_sol: 0,
             modif_pr_mag: 0,
             modif_pr_spe: 0,
+            etat: 'Intact', // Default state
             ...defaultItem
         };
         onItemsChange([...items, newItem]);
@@ -175,6 +176,7 @@ export const MainsNuesTable: React.FC<MainsNuesTableProps> = ({ items, onItemsCh
                             <th className="p-2 w-20">Modif (PI)</th>
                             <th className="p-2 w-20">Bonus FO</th>
                             <th className="p-2 w-32">Total</th>
+                            <th className="p-2 w-28">Etat</th>
                             <th className="p-2 w-24">Rupture</th>
                             <th className="p-2 w-20">Modif (Rup)</th>
                             <th className="p-2">Effet</th>
@@ -243,6 +245,17 @@ export const MainsNuesTable: React.FC<MainsNuesTableProps> = ({ items, onItemsCh
 
                                             return calculateTotal(degats, refPi, (item.modif_pi || 0), bonusFo);
                                         })()}
+                                    </td>
+                                    <td className="p-2">
+                                        <select
+                                            value={item.etat || 'Intact'}
+                                            onChange={(e) => handleUpdateField(item.uid, 'etat', e.target.value)}
+                                            className="w-full p-1 bg-transparent border-b border-leather-light focus:border-leather outline-none text-sm"
+                                        >
+                                            <option value="Intact">Intact</option>
+                                            <option value="Endommagé">Endommagé</option>
+                                            <option value="Cassé">Cassé</option>
+                                        </select>
                                     </td>
                                     <td className="p-2">{getRefRupture(item.refId) || '-'}</td>
                                     <td className="p-2">

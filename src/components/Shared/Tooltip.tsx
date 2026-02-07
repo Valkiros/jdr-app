@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 interface TooltipProps {
     visible: boolean;
@@ -35,9 +36,12 @@ export const Tooltip: React.FC<TooltipProps> = ({ visible, position, title, chil
     const verticalClass = direction === 'top' ? '-translate-y-full' : 'translate-y-0';
     const topStyle = direction === 'top' ? position.y - 10 : position.y + 10;
 
-    return (
+    // Debug log
+    console.log('Tooltip rendering at:', position, title);
+
+    return createPortal(
         <div
-            className={`fixed z-50 p-4 bg-tooltip-bg text-tooltip-text rounded-lg shadow-xl border-2 border-tooltip-border w-96 pointer-events-none transform -translate-x-1/2 ${verticalClass}`}
+            className={`fixed z-[9999] p-4 bg-tooltip-bg text-tooltip-text rounded-lg shadow-xl border-2 border-tooltip-border w-96 pointer-events-none transform -translate-x-1/2 ${verticalClass}`}
             style={{ left: position.x, top: topStyle }}
         >
             {title && (
@@ -49,6 +53,7 @@ export const Tooltip: React.FC<TooltipProps> = ({ visible, position, title, chil
             <div className="text-sm space-y-1.5 opacity-90 font-sans">
                 {children}
             </div>
-        </div>
+        </div>,
+        document.body
     );
 };

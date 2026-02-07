@@ -45,43 +45,37 @@ export const SacochesEtPoches: React.FC<SacochesEtPochesProps> = ({ inventory = 
                 onItemsChange={(newItems) => updateInventory('Sacoches', newItems)}
                 referenceOptions={getRefsByCategory('Sacoches')}
             />
+            <PotionsTable
+                items={potions}
+                onItemsChange={(newItems) => updateInventory('Potions', newItems)}
+                referenceOptions={getRefsByCategory('Potions')}
+            />
             <ArmesDeJetTable
                 items={armesDeJet}
                 onItemsChange={(newItems) => updateInventory('Armes_de_jet', newItems)}
                 referenceOptions={getRefsByCategory('Armes_de_jet')}
                 characterForce={characterForce}
             />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <PotionsTable
-                        items={potions}
-                        onItemsChange={(newItems) => updateInventory('Potions', newItems)}
-                        referenceOptions={getRefsByCategory('Potions')}
-                    />
-                    <ObjetsMagiquesTable
-                        items={objetsMagiques}
-                        onItemsChange={(newItems) => updateInventory('Objets_magiques', newItems)}
-                        referenceOptions={getRefsByCategory('Objets_magiques')}
-                    />
-                    <MunitionsTable
-                        items={munitions}
-                        onItemsChange={(newItems) => updateInventory('Munitions', newItems)}
-                        referenceOptions={getRefsByCategory('Munitions')}
-                    />
-                </div>
-                <div>
-                    <PiegesTable
-                        items={pieges}
-                        onItemsChange={(newItems) => updateInventory('Pieges', newItems)}
-                        referenceOptions={getRefsByCategory('Pieges')}
-                    />
-                    <OutilsTable
-                        items={outils}
-                        onItemsChange={(newItems) => updateInventory('Outils', newItems)}
-                        referenceOptions={getRefsByCategory('Outils')}
-                    />
-                </div>
-            </div>
+            <MunitionsTable
+                items={munitions}
+                onItemsChange={(newItems) => updateInventory('Munitions', newItems)}
+                referenceOptions={getRefsByCategory('Munitions')}
+            />
+            <PiegesTable
+                items={pieges}
+                onItemsChange={(newItems) => updateInventory('Pieges', newItems)}
+                referenceOptions={getRefsByCategory('Pieges')}
+            />
+            <ObjetsMagiquesTable
+                items={objetsMagiques}
+                onItemsChange={(newItems) => updateInventory('Objets_magiques', newItems)}
+                referenceOptions={getRefsByCategory('Objets_magiques')}
+            />
+            <OutilsTable
+                items={outils}
+                onItemsChange={(newItems) => updateInventory('Outils', newItems)}
+                referenceOptions={getRefsByCategory('Outils')}
+            />
         </div>
     );
 };
