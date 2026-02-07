@@ -328,27 +328,34 @@ export interface Origine {
 }
 
 export interface SousSpecialisation {
-    ID: string;
-    Name: string;
-    Description: string;
-    // Structure libre pour les bonus, à adapter selon vos besoins
-    Bonus?: {
-        caracteristiques?: Partial<Characteristics>;
-        competences?: string[];
-        [key: string]: any;
+    id: string; // Rust "id"
+    name_m: string;
+    name_f: string;
+    necessite_competence: string;
+    attributs_automatisables: {
+        [key: string]: number;
     };
+    attributs_specifiques: {
+        [key: string]: string;
+    };
+    competences_obligatoires?: string[];
+    nombre_competences_choix?: number;
+    competences_choix?: string[];
 }
 
 export interface Specialisation {
-    ID: string;
-    Name: string;
-    Description: string;
-    SousSpecialisations?: SousSpecialisation[];
-    Bonus?: {
-        caracteristiques?: Partial<Characteristics>;
-        competences?: string[];
-        [key: string]: any;
+    id: string;
+    name_m: string;
+    name_f: string;
+    necessite_competence: string;
+    attributs_automatisables: {
+        [key: string]: number;
     };
+    attributs_specifiques: {
+        [key: string]: string;
+    };
+    competences?: string[];
+    sous_specialisations?: SousSpecialisation[];
 }
 
 // Interface pour les métiers
@@ -358,7 +365,7 @@ export interface Metier {
     name_f: string;
     min: Requirements;
     max: Requirements;
-    Specialisations?: Specialisation[];
+    specialisations?: Specialisation[];
 }
 
 // Interface pour les inf-bulles des corruptions d'origine

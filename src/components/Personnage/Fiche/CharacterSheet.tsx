@@ -10,6 +10,7 @@ import { CharacteristicsPanel } from './CharacteristicsPanel';
 import { TempModifiersPanel } from './TempModifiersPanel';
 import { Inventory } from '../Equipements/Inventory';
 import { CompetencesPanel } from '../Competences/CompetencesPanel';
+import { SpecializationCompetencesPanel } from '../Competences/SpecializationCompetencesPanel';
 import { StatusPanel } from '../Etat/StatusPanel';
 import { SacochesEtPoches } from '../SacochesEtPoches/SacochesEtPoches';
 import { SacPanel } from '../Sac/SacPanel';
@@ -167,6 +168,39 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
         // Get Alcohol Modifiers
         const { leger, fort, gueule_de_bois } = getAlcoholModifiers(data.status || INITIAL_DATA.status);
 
+        // --- SPECIALIZATION & SUB-SPECIALIZATION AUTOMATED ATTRIBUTES ---
+        const getSpecAttributes = () => {
+            if (!gameRules) return {};
+            const currentMetier = gameRules.metiers.find(m => m.name_m === data.identity.metier || m.name_f === data.identity.metier);
+            if (!currentMetier) return {};
+
+            let bonuses: { [key: string]: number } = {};
+
+            // Specialization
+            if (data.identity.specialisation) {
+                const spec = currentMetier.specialisations?.find(s => s.name_m === data.identity.specialisation || s.name_f === data.identity.specialisation);
+                if (spec && spec.attributs_automatisables) {
+                    for (const [key, value] of Object.entries(spec.attributs_automatisables)) {
+                        bonuses[key] = (bonuses[key] || 0) + value;
+                    }
+                }
+            }
+
+            // Sub-Specialization
+            if (data.identity.sous_specialisation && data.identity.specialisation) {
+                const spec = currentMetier.specialisations?.find(s => s.name_m === data.identity.specialisation || s.name_f === data.identity.specialisation);
+                const subSpec = spec?.sous_specialisations?.find(s => s.name_m === data.identity.sous_specialisation || s.name_f === data.identity.sous_specialisation);
+                if (subSpec && subSpec.attributs_automatisables) {
+                    for (const [key, value] of Object.entries(subSpec.attributs_automatisables)) {
+                        bonuses[key] = (bonuses[key] || 0) + value;
+                    }
+                }
+            }
+            return bonuses;
+        };
+        const specBonuses = getSpecAttributes();
+        // ----------------------------------------------------------------
+
         // --- Backpack Encumbrance Malus Logic ---
         const sacItems = data.inventory.filter(i => i.equipement_type === 'Sacs');
         const backpack = sacItems.find(i => {
@@ -248,6 +282,29 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
             }
             // ------------------------
 
+            // --- SPECIALIZATION BONUS ---
+            // Mapping: JSON keys -> Characteristics keys
+            // COU, INT, CHA, AD, FO, PER, ES, AT, PRD, DEG
+            const keyMap: { [key: string]: keyof Characteristics } = {
+                'COU': 'courage',
+                'INT': 'intelligence',
+                'CHA': 'charisme',
+                'AD': 'adresse',
+                'FO': 'force',
+                'PER': 'perception',
+                'ES': 'esquive',
+                'AT': 'attaque',
+                'PRD': 'parade',
+                'DEG': 'degats'
+            };
+
+            // Reverse map to check if current 'key' matches any spec bonus
+            const specKey = Object.keys(keyMap).find(k => keyMap[k] === key);
+            if (specKey && specBonuses[specKey]) {
+                components.push({ label: 'Spécialisation', value: specBonuses[specKey] });
+            }
+            // ----------------------------
+
             // --- ENCUMBRANCE (Dodge) LOGIC ---
             // Only affects Esquive 'equipé'
             let encumbranceMalus = 0;
@@ -295,7 +352,12 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
             if (key in gueule_de_bois) base += gueule_de_bois[key];
 
             // Add drug malus to base
+            // Add drug malus to base
             base += drugMalus;
+
+            // Add specialization bonus to base
+            // @ts-ignore
+            if (specKey && specBonuses[specKey]) base += specBonuses[specKey];
 
             // Add encumbrance malus (Esquive only)
             if (key === 'esquive') {
@@ -595,7 +657,19 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                 identity={data.identity}
                 vitals={data.vitals}
                 generalStats={data.general}
-                onIdentityChange={(identity) => setData({ ...data, identity })}
+                onIdentityChange={(newIdentity) => {
+                    // Reset Specialization if Metier changes (handled in Header but good to be safe)
+                    // Reset Sub-Specialization if Specialization changes
+                    const updatedIdentity = { ...newIdentity };
+                    if (updatedIdentity.metier !== data.identity.metier) {
+                        updatedIdentity.specialisation = '';
+                        updatedIdentity.sous_specialisation = '';
+                    }
+                    if (updatedIdentity.specialisation !== data.identity.specialisation) {
+                        updatedIdentity.sous_specialisation = '';
+                    }
+                    setData({ ...data, identity: updatedIdentity });
+                }}
                 onVitalsChange={(vitals) => setData({ ...data, vitals })}
                 onGeneralChange={(general) => {
                     // Auto-calculate level based on XP
@@ -611,6 +685,7 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                         }
                     });
                 }}
+                competences={data.competences}
             />
 
             {/* Tab Navigation */}
@@ -771,17 +846,29 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                     onCompetencesChange={(newCompetences) => setData({ ...data, competences: newCompetences })}
                 />
 
-                <CompetencesPanel
-                    title="Compétences spécialisation"
-                    competences={data.competences_specialisation || []}
-                    onCompetencesChange={(newCompetences) => setData({ ...data, competences_specialisation: newCompetences })}
-                />
+                {/* Specialization Competencies */}
+                {data.identity.specialisation && (
+                    <SpecializationCompetencesPanel
+                        title={`Spécialisation : ${data.identity.specialisation}`}
+                        competences={data.competences_specialisation || []}
+                        onCompetencesChange={(newComps) => setData({ ...data, competences_specialisation: newComps })}
+                        identity={data.identity}
+                        type="specialisation"
+                    />
+                )}
 
-                <CompetencesPanel
-                    title="Compétences sous spécialisation"
-                    competences={data.competences_sous_specialisation || []}
-                    onCompetencesChange={(newCompetences) => setData({ ...data, competences_sous_specialisation: newCompetences })}
-                />
+                {/* Sub-Specialization Competencies */}
+                {data.identity.sous_specialisation && (
+                    <SpecializationCompetencesPanel
+                        title={`Sous-Spécialisation : ${data.identity.sous_specialisation}`}
+                        competences={data.competences_sous_specialisation || []}
+                        onCompetencesChange={(newComps) => setData({ ...data, competences_sous_specialisation: newComps })}
+                        identity={data.identity}
+                        type="sous_specialisation"
+                    />
+                )}
+
+
             </div>
 
             {/* Etat (StatusPanel) */}

@@ -36,7 +36,7 @@ export const SearchableSelect: React.FC<SearchableSelectProps> = ({
         if (!isOpen) {
             setSearchTerm(selectedOption ? selectedOption.label : '');
         }
-    }, [isOpen, selectedOption, value]);
+    }, [isOpen, value, selectedOption?.label]);
 
     // We need a ref for the dropdown content to check clicks
     const dropdownRef = useRef<HTMLDivElement>(null);

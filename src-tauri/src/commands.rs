@@ -325,6 +325,50 @@ pub struct Metier {
     pub min: Requirements,
     #[serde(alias = "Max")]
     pub max: Requirements,
+    #[serde(alias = "Specialisations", default)]
+    pub specialisations: Option<Vec<Specialisation>>,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Specialisation {
+    #[serde(alias = "ID")]
+    pub id: String,
+    #[serde(alias = "Name_M")]
+    pub name_m: String,
+    #[serde(alias = "Name_F")]
+    pub name_f: String,
+    #[serde(alias = "Necessite_competence")]
+    pub necessite_competence: String,
+    #[serde(alias = "Attributs_automatisables")]
+    pub attributs_automatisables: serde_json::Value,
+    #[serde(alias = "Attributs_specifiques")]
+    pub attributs_specifiques: serde_json::Value,
+    #[serde(alias = "Competences", default)]
+    pub competences: Option<Vec<String>>,
+    #[serde(alias = "SousSpecialisations", default)]
+    pub sous_specialisations: Option<Vec<SousSpecialisation>>,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct SousSpecialisation {
+    #[serde(alias = "ID")]
+    pub id: String,
+    #[serde(alias = "Name_M")]
+    pub name_m: String,
+    #[serde(alias = "Name_F")]
+    pub name_f: String,
+    #[serde(alias = "Necessite_competence")]
+    pub necessite_competence: String,
+    #[serde(alias = "Attributs_automatisables")]
+    pub attributs_automatisables: serde_json::Value,
+    #[serde(alias = "Attributs_specifiques")]
+    pub attributs_specifiques: serde_json::Value,
+    #[serde(alias = "Competences_obligatoires", default)]
+    pub competences_obligatoires: Option<Vec<String>>,
+    #[serde(alias = "Nombre_competences_choix", default)]
+    pub nombre_competences_choix: Option<i32>,
+    #[serde(alias = "Competences_choix", default)]
+    pub competences_choix: Option<Vec<String>>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]

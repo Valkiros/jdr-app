@@ -43,6 +43,7 @@ export const CompetencesPanel: React.FC<CompetencesPanelProps> = ({ title, compe
     };
 
     const handleMouseMove = (e: React.MouseEvent) => {
+        if (!isCtrlPressed) return;
         setMousePos({ x: e.clientX, y: e.clientY });
     };
 

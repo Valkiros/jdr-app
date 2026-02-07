@@ -13,6 +13,7 @@ interface CharacterHeaderProps {
     onIdentityChange: (identity: Identity) => void;
     onVitalsChange: (vitals: Vitals) => void;
     onGeneralChange: (stats: GeneralStats) => void;
+    competences: CharacterData['competences']; // Add competences prop to check requirements
 }
 
 export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
@@ -22,9 +23,11 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
     characterData,
     onIdentityChange,
     onVitalsChange,
-    onGeneralChange
+    onGeneralChange,
+    competences // Destructure new prop
 }) => {
     const [rules, setRules] = useState<GameRules | null>(null);
+    const [hoveredSpec, setHoveredSpec] = useState<any | null>(null); // For tooltip
 
     useEffect(() => {
         invoke<GameRules>('get_game_rules')
@@ -157,6 +160,7 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
     };
 
     return (
+
         <div className="flex flex-col gap-6 p-4 bg-parchment/30 rounded-lg border border-leather/50 relative">
             <div className="flex flex-col md:flex-row gap-6">
                 {/* Image Placeholder */}
@@ -185,7 +189,17 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
                 </div>
 
                 {/* Identity Fields Grid */}
-                <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4 relative">
+                    {/* Tooltip for Specs */}
+                    {hoveredSpec && (
+                        <div className="absolute z-50 bg-black/90 text-white p-2 rounded shadow-lg text-xs w-64 pointer-events-none" style={{ top: '100%', left: '50%', transform: 'translateX(-50%)' }}>
+                            <div className="font-bold underline mb-1">{hoveredSpec.title}</div>
+                            {Object.entries(hoveredSpec.data).map(([key, value]) => (
+                                <div key={key}><span className="font-bold text-yellow-500">{key}:</span> {String(value)}</div>
+                            ))}
+                        </div>
+                    )}
+
                     <div className="flex flex-col">
                         <label className="text-xs font-bold uppercase text-leather-light">Nom</label>
                         <input
@@ -235,24 +249,120 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
                             {rules && renderOptions(rules.metiers)}
                         </select>
                     </div>
+
+                    {/* Specialisation Selector */}
                     <div className="flex flex-col">
-                        <label className="text-xs font-bold uppercase text-leather-light">Spécialisation</label>
-                        <input
-                            type="text"
-                            value={identity.specialisation}
-                            onChange={(e) => handleIdentityChange('specialisation', e.target.value)}
-                            className="w-full bg-transparent border-b border-leather focus:border-leather-dark outline-none py-1 font-serif text-lg text-leather-dark"
-                        />
+                        <label className="text-xs font-bold uppercase text-leather-light flex items-center justify-between">
+                            Spécialisation
+                            <span className="text-[10px] text-gray-500">(Niv 5+)</span>
+                        </label>
+                        <div className="relative">
+                            <select
+                                value={identity.specialisation || ''}
+                                onChange={(e) => handleIdentityChange('specialisation', e.target.value)}
+                                onMouseEnter={() => {
+                                    if (!identity.specialisation || !rules) return;
+                                    const currentMetier = rules.metiers.find(m => m.name_m === identity.metier || m.name_f === identity.metier);
+                                    if (!currentMetier || !currentMetier.specialisations) return;
+
+                                    const spec = currentMetier.specialisations.find(s => s.name_m === identity.specialisation || s.name_f === identity.specialisation);
+                                    if (spec && spec.attributs_specifiques) {
+                                        setHoveredSpec({ title: identity.specialisation, data: spec.attributs_specifiques });
+                                    }
+                                }}
+                                onMouseLeave={() => setHoveredSpec(null)}
+                                disabled={generalStats.niveau < 5}
+                                className={`w-full bg-transparent border-b border-leather focus:border-leather-dark outline-none py-1 font-serif text-lg text-leather-dark appearance-none ${generalStats.niveau < 5 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            >
+                                <option value="">Sélectionner</option>
+                                {rules && identity.metier && (() => {
+                                    const currentMetier = rules.metiers.find(m => m.name_m === identity.metier || m.name_f === identity.metier);
+
+                                    if (!currentMetier || !currentMetier.specialisations) return null;
+
+                                    return currentMetier.specialisations.map(spec => {
+                                        const isMale = identity.sexe === 'Masculin';
+                                        const label = isMale ? spec.name_m : spec.name_f;
+                                        // Check requirements
+                                        let disabled = false;
+                                        let reason = "";
+
+                                        if (spec.necessite_competence) {
+                                            const hasComp = competences?.some(c => c.nom.toLowerCase() === spec.necessite_competence.toLowerCase());
+                                            if (!hasComp) {
+                                                disabled = true;
+                                                reason = `(Req: ${spec.necessite_competence})`;
+                                            }
+                                        }
+
+                                        return (
+                                            <option key={spec.id} value={label} disabled={disabled}>
+                                                {label} {reason}
+                                            </option>
+                                        );
+                                    });
+                                })()}
+                            </select>
+                        </div>
                     </div>
+
+                    {/* Sous-Specialisation Selector */}
                     <div className="flex flex-col">
-                        <label className="text-xs font-bold uppercase text-leather-light">Sous-Spécialisation</label>
-                        <input
-                            type="text"
-                            value={identity.sous_specialisation}
-                            onChange={(e) => handleIdentityChange('sous_specialisation', e.target.value)}
-                            className="w-full bg-transparent border-b border-leather focus:border-leather-dark outline-none py-1 font-serif text-lg text-leather-dark"
-                        />
+                        <label className="text-xs font-bold uppercase text-leather-light flex items-center justify-between">
+                            Sous-Spécialisation
+                            <span className="text-[10px] text-gray-500">(Niv 10+)</span>
+                        </label>
+                        <div className="relative">
+                            <select
+                                value={identity.sous_specialisation || ''}
+                                onChange={(e) => handleIdentityChange('sous_specialisation', e.target.value)}
+                                onMouseEnter={() => {
+                                    if (!identity.sous_specialisation || !rules || !identity.specialisation) return;
+                                    const currentMetier = rules.metiers.find(m => m.name_m === identity.metier || m.name_f === identity.metier);
+                                    const currentSpec = currentMetier?.specialisations?.find(s => s.name_m === identity.specialisation || s.name_f === identity.specialisation);
+                                    const subSpec = currentSpec?.sous_specialisations?.find(s => s.name_m === identity.sous_specialisation || s.name_f === identity.sous_specialisation);
+
+                                    if (subSpec && subSpec.attributs_specifiques) {
+                                        setHoveredSpec({ title: identity.sous_specialisation, data: subSpec.attributs_specifiques });
+                                    }
+                                }}
+                                onMouseLeave={() => setHoveredSpec(null)}
+                                disabled={generalStats.niveau < 10 || !identity.specialisation}
+                                className={`w-full bg-transparent border-b border-leather focus:border-leather-dark outline-none py-1 font-serif text-lg text-leather-dark appearance-none ${generalStats.niveau < 10 || !identity.specialisation ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            >
+                                <option value="">Sélectionner</option>
+                                {rules && identity.specialisation && (() => {
+                                    const currentMetier = rules.metiers.find(m => m.name_m === identity.metier || m.name_f === identity.metier);
+                                    const currentSpec = currentMetier?.specialisations?.find(s => s.name_m === identity.specialisation || s.name_f === identity.specialisation);
+
+                                    if (!currentSpec || !currentSpec.sous_specialisations) return null;
+
+                                    return currentSpec.sous_specialisations.map(sub => {
+                                        const isMale = identity.sexe === 'Masculin';
+                                        const label = isMale ? sub.name_m : sub.name_f;
+                                        // Check requirements
+                                        let disabled = false;
+                                        let reason = "";
+
+                                        if (sub.necessite_competence) {
+                                            const hasComp = competences?.some(c => c.nom.toLowerCase() === sub.necessite_competence.toLowerCase());
+                                            if (!hasComp) {
+                                                disabled = true;
+                                                reason = `(Req: ${sub.necessite_competence})`;
+                                            }
+                                        }
+
+                                        return (
+                                            <option key={label} value={label} disabled={disabled}>
+                                                {label} {reason}
+                                            </option>
+                                        );
+                                    });
+                                })()}
+                            </select>
+                        </div>
                     </div>
+
                     {/* General Stats Integrated */}
                     <div className="flex flex-col">
                         <label className="text-xs font-bold uppercase text-leather-light">Niveau</label>
