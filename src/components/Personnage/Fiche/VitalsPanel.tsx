@@ -12,6 +12,33 @@ interface VitalsPanelProps {
     } | null;
 }
 
+const OnBlurInput: React.FC<{
+    value: number;
+    onChange: (val: string) => void;
+    className?: string;
+    description?: string; // Optional label for logging/debugging
+}> = ({ value, onChange, className }) => {
+    const [localValue, setLocalValue] = useState(String(value));
+
+    React.useEffect(() => {
+        setLocalValue(String(value));
+    }, [value]);
+
+    return (
+        <input
+            type="number"
+            value={localValue}
+            onChange={(e) => setLocalValue(e.target.value)}
+            onBlur={() => {
+                if (localValue !== String(value)) {
+                    onChange(localValue);
+                }
+            }}
+            className={className}
+        />
+    );
+};
+
 export const VitalsPanel: React.FC<VitalsPanelProps> = ({ vitals, onChange, origine, corruptionRules }) => {
     const [tooltipPosition, setTooltipPosition] = useState<{ x: number, y: number } | null>(null);
 
@@ -61,10 +88,9 @@ export const VitalsPanel: React.FC<VitalsPanelProps> = ({ vitals, onChange, orig
                 <div className="flex gap-2 text-center text-sm">
                     <div className="flex flex-col w-1/3">
                         <label className="text-[10px] uppercase opacity-70">Actuel</label>
-                        <input
-                            type="number"
-                            value={data.current || ''}
-                            onChange={(e) => handleValueMaxChange(category, 'current', e.target.value)}
+                        <OnBlurInput
+                            value={data.current || 0}
+                            onChange={(val) => handleValueMaxChange(category, 'current', val)}
                             className="bg-input-bg border border-leather/30 rounded px-1 w-full text-center"
                         />
                     </div>
@@ -126,10 +152,9 @@ export const VitalsPanel: React.FC<VitalsPanelProps> = ({ vitals, onChange, orig
                 <div className="flex gap-2 text-center text-sm">
                     <div className="flex flex-col w-1/2">
                         <label className="text-[10px] uppercase opacity-70">Actuel</label>
-                        <input
-                            type="number"
-                            value={vitals.corruption.current || ''}
-                            onChange={(e) => handleCorruptionChange('current', e.target.value)}
+                        <OnBlurInput
+                            value={vitals.corruption.current || 0}
+                            onChange={(val) => handleCorruptionChange('current', val)}
                             className="bg-input-bg border border-leather/30 rounded px-1 w-full text-center"
                         />
                     </div>

@@ -127,8 +127,8 @@ export interface Identity {
     sexe: string;
     origine: string;
     metier: string;
-    specialisation: string;
-    sous_specialisation: string;
+    specialisation?: string;
+    sous_specialisation?: string;
     description?: string;
 }
 
@@ -327,6 +327,30 @@ export interface Origine {
     vitesse: number;
 }
 
+export interface SousSpecialisation {
+    ID: string;
+    Name: string;
+    Description: string;
+    // Structure libre pour les bonus, à adapter selon vos besoins
+    Bonus?: {
+        caracteristiques?: Partial<Characteristics>;
+        competences?: string[];
+        [key: string]: any;
+    };
+}
+
+export interface Specialisation {
+    ID: string;
+    Name: string;
+    Description: string;
+    SousSpecialisations?: SousSpecialisation[];
+    Bonus?: {
+        caracteristiques?: Partial<Characteristics>;
+        competences?: string[];
+        [key: string]: any;
+    };
+}
+
 // Interface pour les métiers
 export interface Metier {
     id: number;
@@ -334,6 +358,7 @@ export interface Metier {
     name_f: string;
     min: Requirements;
     max: Requirements;
+    Specialisations?: Specialisation[];
 }
 
 // Interface pour les inf-bulles des corruptions d'origine

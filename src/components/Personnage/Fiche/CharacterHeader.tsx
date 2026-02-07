@@ -32,6 +32,20 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
             .catch(err => console.error("Failed to load game rules:", err));
     }, []);
 
+    // Local state for Experience to prevent Level jumping while typing
+    const [localExperience, setLocalExperience] = useState(String(generalStats.experience || 0));
+
+    useEffect(() => {
+        setLocalExperience(String(generalStats.experience || 0));
+    }, [generalStats.experience]);
+
+    // Local state for Name
+    const [localName, setLocalName] = useState(identity.nom);
+
+    useEffect(() => {
+        setLocalName(identity.nom);
+    }, [identity.nom]);
+
     const handleIdentityChange = (field: keyof Identity, value: string) => {
         let newIdentity = { ...identity, [field]: value };
 
@@ -176,8 +190,13 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
                         <label className="text-xs font-bold uppercase text-leather-light">Nom</label>
                         <input
                             type="text"
-                            value={identity.nom}
-                            onChange={(e) => handleIdentityChange('nom', e.target.value)}
+                            value={localName}
+                            onChange={(e) => setLocalName(e.target.value)}
+                            onBlur={() => {
+                                if (localName !== identity.nom) {
+                                    handleIdentityChange('nom', localName);
+                                }
+                            }}
                             className="w-full bg-transparent border-b border-leather focus:border-leather-dark outline-none py-1 font-serif text-lg text-leather-dark"
                             placeholder="Nom du personnage"
                         />
@@ -245,8 +264,14 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
                         <label className="text-xs font-bold uppercase text-leather-light">Expérience</label>
                         <input
                             type="number"
-                            value={generalStats.experience || ''}
-                            onChange={(e) => onGeneralChange({ ...generalStats, experience: parseInt(e.target.value) || 0 })}
+                            value={localExperience}
+                            onChange={(e) => setLocalExperience(e.target.value)}
+                            onBlur={() => {
+                                const newXp = parseInt(localExperience) || 0;
+                                if (newXp !== generalStats.experience) {
+                                    onGeneralChange({ ...generalStats, experience: newXp });
+                                }
+                            }}
                             className="w-full bg-transparent border-b border-leather focus:border-leather-dark outline-none py-1 font-serif text-lg text-leather-dark"
                         />
                     </div>

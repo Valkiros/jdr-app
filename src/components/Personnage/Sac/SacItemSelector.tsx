@@ -23,7 +23,10 @@ export const SacItemSelector: React.FC<SacItemSelectorProps> = ({ referenceOptio
 
         if (searchTerm) {
             const lowerTerm = searchTerm.toLowerCase();
-            items = items.filter(r => r.nom.toLowerCase().includes(lowerTerm));
+            items = items.filter(r =>
+                r.nom.toLowerCase().includes(lowerTerm) ||
+                String(r.ref_id).includes(lowerTerm)
+            );
         }
         return items.sort((a, b) => a.nom.localeCompare(b.nom));
     }, [referenceOptions, selectedCategory, searchTerm]);
@@ -76,7 +79,9 @@ export const SacItemSelector: React.FC<SacItemSelectorProps> = ({ referenceOptio
                                 className="text-left p-2 hover:bg-leather/10 rounded border border-transparent hover:border-leather/20 text-sm flex flex-col group transition-all"
                                 title={item.effet || ''}
                             >
-                                <span className="font-bold text-leather group-hover:text-leather-dark">{item.nom}</span>
+                                <span className="font-bold text-leather group-hover:text-leather-dark">
+                                    {item.nom} <span className="text-xs text-leather/50 font-normal">#{item.ref_id}</span>
+                                </span>
                                 <span className="text-xs text-ink-light">
                                     {getItemWeight(item)} g
                                 </span>

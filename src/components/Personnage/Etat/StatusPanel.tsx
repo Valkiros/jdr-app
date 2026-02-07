@@ -9,6 +9,63 @@ interface StatusPanelProps {
     onDescriptionChange: (desc: string) => void;
 }
 
+// Helper Components for local state management
+const OnBlurInput: React.FC<{
+    value: number;
+    onChange: (val: number) => void;
+    className?: string;
+    min?: string | number;
+}> = ({ value, onChange, className, min }) => {
+    const [localValue, setLocalValue] = useState(String(value));
+
+    useEffect(() => {
+        setLocalValue(String(value));
+    }, [value]);
+
+    return (
+        <input
+            type="number"
+            min={min}
+            value={localValue}
+            onChange={(e) => setLocalValue(e.target.value)}
+            onBlur={() => {
+                const parsed = parseInt(localValue);
+                if (!isNaN(parsed) && parsed !== value) {
+                    onChange(parsed);
+                }
+            }}
+            className={className}
+        />
+    );
+};
+
+const OnBlurTextArea: React.FC<{
+    value: string;
+    onChange: (val: string) => void;
+    placeholder?: string;
+    className?: string;
+}> = ({ value, onChange, placeholder, className }) => {
+    const [localValue, setLocalValue] = useState(value);
+
+    useEffect(() => {
+        setLocalValue(value);
+    }, [value]);
+
+    return (
+        <textarea
+            value={localValue}
+            onChange={(e) => setLocalValue(e.target.value)}
+            onBlur={() => {
+                if (localValue !== value) {
+                    onChange(localValue);
+                }
+            }}
+            placeholder={placeholder}
+            className={className}
+        />
+    );
+};
+
 export const StatusPanel: React.FC<StatusPanelProps> = ({ status, description = '', onChange, onDescriptionChange }) => {
     // Derived state for calculation display
     const [recoveryPreview, setRecoveryPreview] = useState({ pv: 0, pa: 0 });
@@ -95,10 +152,9 @@ export const StatusPanel: React.FC<StatusPanelProps> = ({ status, description = 
                         ))}
                         <div className="flex flex-col">
                             <label className="text-[13px] font-bold uppercase text-leather-light mb-1">Sentir le danger à (m)</label>
-                            <input
-                                type="number"
-                                value={status.senses.sentir_danger || ''}
-                                onChange={(e) => updateStatus('senses', 'sentir_danger', parseInt(e.target.value) || 0)}
+                            <OnBlurInput
+                                value={status.senses.sentir_danger || 0}
+                                onChange={(val) => updateStatus('senses', 'sentir_danger', val)}
                                 className="p-2 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none"
                             />
                         </div>
@@ -135,11 +191,10 @@ export const StatusPanel: React.FC<StatusPanelProps> = ({ status, description = 
                         </div>
                         <div className="flex flex-col">
                             <label className="text-[13px] font-bold uppercase text-leather-light mb-1">Nombre d'heures</label>
-                            <input
-                                type="number"
+                            <OnBlurInput
                                 min="0"
-                                value={status.fatigue.nb_heure || ''}
-                                onChange={(e) => updateStatus('fatigue', 'nb_heure', parseInt(e.target.value) || 0)}
+                                value={status.fatigue.nb_heure || 0}
+                                onChange={(val) => updateStatus('fatigue', 'nb_heure', val)}
                                 className="p-2 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none"
                             />
                         </div>
@@ -160,31 +215,28 @@ export const StatusPanel: React.FC<StatusPanelProps> = ({ status, description = 
                     <div className="space-y-4">
                         <div className="flex flex-col">
                             <label className="text-[13px] font-bold uppercase text-leather-light mb-1">Alcool Léger (Doses)</label>
-                            <input
-                                type="number"
+                            <OnBlurInput
                                 min="0"
-                                value={status.alcohol.leger || ''}
-                                onChange={(e) => updateStatus('alcohol', 'leger', parseInt(e.target.value) || 0)}
+                                value={status.alcohol.leger || 0}
+                                onChange={(val) => updateStatus('alcohol', 'leger', val)}
                                 className="p-2 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none"
                             />
                         </div>
                         <div className="flex flex-col">
                             <label className="text-[13px] font-bold uppercase text-leather-light mb-1">Alcool Fort (Doses)</label>
-                            <input
-                                type="number"
+                            <OnBlurInput
                                 min="0"
-                                value={status.alcohol.fort || ''}
-                                onChange={(e) => updateStatus('alcohol', 'fort', parseInt(e.target.value) || 0)}
+                                value={status.alcohol.fort || 0}
+                                onChange={(val) => updateStatus('alcohol', 'fort', val)}
                                 className="p-2 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none"
                             />
                         </div>
                         <div className="flex flex-col">
                             <label className="text-[13px] font-bold uppercase text-leather-light mb-1">Gueule de bois</label>
-                            <input
-                                type="number"
+                            <OnBlurInput
                                 min="0"
-                                value={status.alcohol.gueule_de_bois || ''}
-                                onChange={(e) => updateStatus('alcohol', 'gueule_de_bois', parseInt(e.target.value) || 0)}
+                                value={status.alcohol.gueule_de_bois || 0}
+                                onChange={(val) => updateStatus('alcohol', 'gueule_de_bois', val)}
                                 className={`p-2 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none`}
                             />
                         </div>
@@ -210,11 +262,10 @@ export const StatusPanel: React.FC<StatusPanelProps> = ({ status, description = 
                         </div>
                         <div className="flex flex-col">
                             <label className="text-[13px] font-bold uppercase text-leather-light mb-1">Jours de retard</label>
-                            <input
-                                type="number"
+                            <OnBlurInput
                                 min="0"
-                                value={status.drug?.jours_retard || ''}
-                                onChange={(e) => updateStatus('drug', 'jours_retard', parseInt(e.target.value) || 0)}
+                                value={status.drug?.jours_retard || 0}
+                                onChange={(val) => updateStatus('drug', 'jours_retard', val)}
                                 className="p-2 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none"
                             />
                         </div>
@@ -237,9 +288,9 @@ export const StatusPanel: React.FC<StatusPanelProps> = ({ status, description = 
                 <div className="bg-parchment/30 p-6 rounded-lg shadow-sm border border-leather/20 md:col-span-2 lg:col-span-2 flex flex-col">
                     <h2 className="text-xl font-bold text-leather mb-4 border-b border-leather/20 pb-2">Description</h2>
                     <div className="flex-1 min-h-[150px] flex flex-col">
-                        <textarea
+                        <OnBlurTextArea
                             value={description}
-                            onChange={(e) => onDescriptionChange(e.target.value)}
+                            onChange={(val) => onDescriptionChange(val)}
                             placeholder="Description physique, signes particuliers..."
                             className="w-full flex-1 p-3 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none resize-none font-serif leading-relaxed"
                         />

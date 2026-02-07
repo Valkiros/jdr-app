@@ -3,280 +3,679 @@
 		"ID": 1,
 		"Name_M": "Guerrier",
 		"Name_F": "Guerrière",
-		"Min": {"COU": 12, "INT": 8, "CHA": 8, "AD": 8, "FO": 11},
-		"Max": {}
+		"Min": {
+			"COU": 12,
+			"INT": 8,
+			"CHA": 8,
+			"AD": 8,
+			"FO": 11
+		},
+		"Max": {},
+		"Specialisations": [
+			{
+				"ID": "briseur_de_crane",
+				"Name_M": "Briseur de crâne",
+				"Name_F": "Briseuse de crâne",
+				"Necessite_competence": "",
+				"Attributs_automatisables": {
+					"AT": 1,
+					"PRD": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "AT +1 (automatique)",
+					"AS2": "PRD +1 (automatique)",
+					"AS3": "PR nat+1",
+					"AS4": "Réduit de 2pts les malus des attaques ciblées.",
+					"AS5": "Pi+3 pour les attaques non ciblées.",
+					"AS6": "Donne les compétences 'Ils ne font pas le poids' et 'Frappe lourde'."
+				},
+				"Competences": [
+					"Ils ne font pas le poids",
+					"Frappe lourde"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "fossoyeur_armees",
+						"Name_M": "Fossoyeur d'armées",
+						"Name_F": "Fossoyeuse d'armées",
+						"Necessite_competence": "",
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Tous les points d'AT au-dessus de 12 s'ajoutent en Pi additionnels lors du calcul des dégâts en plus du bonus de force.",
+							"AS2": "S'il y a au moins 3 ennemis au contact, le héros peut effectuer une attaque circulaire à 180° ou 360° (au choix) sur AT touchant toutes les cibles au contact (1 fois par assaut max et non compatible avec la compétence 'IL Y EN AURA POUR TOUT LE MONDE').",
+							"AS3": "Tuer un ennemi au CàC permet d'attaquer immédiatement un autre ennemi au CàC durant le même assaut.",
+							"AS4": "Si le héros a la compétence 'INDIMIDER', il obtient 'CHERCHER DES NOISES' et inversément.",
+							"AS5": "Donne accès à 3 compétences au choix."
+						},
+						"Competences_obligatoires": [
+							"Indimider",
+							"Chercher des noises"
+						],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Fallait prendre une armure",
+							"Il y en aura pour tout le monde",
+							"Les yeux révolvers",
+							"L'union fait la force",
+							"Vous partez déjà?"
+						]
+					},
+					{
+						"ID": "mesure_desesperee",
+						"Name_M": "Mesure désespérée",
+						"Name_F": "Mesure désespérée",
+						"Necessite_competence": "Chercher des noises",
+						"Attributs_automatisables": {
+							"ES": 1,
+							"PRD": 1
+						},
+						"Attributs_specifiques": {
+							"AS1": "ES +1",
+							"AS2": "PRD +1",
+							"AS3": "Critique +1",
+							"AS4": "Toutes les armes à 1 mains peuvent être utilisées à 2 mains avec le bonus de Pi+2.",
+							"AS5": "Les coups critiques subis par ou infligés au héros ne peuvent pas faire 19 ou 20.",
+							"AS6": "Après une esquive sur 1 au D4, le héros peut quand même attaquer à son tour.",
+							"AS7": "Le héros est immunisé aux effets de 'Peur'.",
+							"AS8": "Les ennemis faisant un échec critique frappent forcément leur allié le plus proche (si possible).",
+							"AS9": "Donne accès à 3 compétences au choix."
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Le feu par le feu",
+							"Inondation de sang",
+							"Je suis le déluge",
+							"Pour Frodon",
+							"Si ça saigne"
+						]
+					}
+				]
+			},
+			{
+				"ID": "homme_arme",
+				"Name_M": "Homme d'arme",
+				"Name_F": "Femme d'arme",
+				"Necessite_competence": "",
+				"Attributs_automatisables": {
+					"FO": 1,
+					"PRD": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "FO +1",
+					"AS2": "PRD +1",
+					"AS3": "AT +2 si le héros utilise un bouclier.",
+					"AS4": "Peut relancer une épreuve de COU ratée sauf critique.",
+					"AS5": "Le héros dispose de 2 parades et 1 attaque par assaut.",
+					"AS6": "Donne les compétences 'Même pas mal', 'C'est moi le monstre ici' et 'Chef de groupe'."
+				},
+				"Competences_obligatoires": [
+					"Même pas mal",
+					"C'est moi le monstre ici",
+					"Chef de groupe"
+				],
+				"Specialisations": [
+					{
+						"ID": "mur_acier_mobile",
+						"Name_M": "Mur d'acier mobile",
+						"Name_F": "Mur d'acier mobile",
+						"Necessite_competence": "",
+						"Attributs_automatisables": {
+							"PRD": 1
+						},
+						"Attributs_specifiques": {
+							"AS1": "PRD +1",
+							"AS2": "PRD critique +3 et effet de parade critique +5.",
+							"AS3": "PR naturelle +1",
+							"AS4": "Pv max +10",
+							"AS5": "La PR solide ne réduit plus la vitesse de déplacement tactique.",
+							"AS6": "Chaque ennemi au contact du héros lui donne PR naturelle +1.",
+							"AS7": "En combat, le premier coup subi par le héros n'inflige aucun dégât.",
+							"AS8": "Donne accès à 3 compétences au choix."
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Ecarte-toi",
+							"Ma grand-mère se bat mieux que toi",
+							"NOOOON AAAAATTEEEENTIOOON",
+							"Revêtement en âmes fraiches",
+							"Rondache tamponeuse"
+						]
+					},
+					{
+						"ID": "maitre_de_guerre",
+						"Name_M": "Maître de guerre",
+						"Name_F": "Maîtresse de guerre",
+						"Necessite_competence": "",
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "En combat, le héros a INT +2.",
+							"AS2": "Si la compagnie a prévu un plan avant un combat le héros a COU+1, AT+1, PRD+1 et AD tir+1 pendant les 3 premiers assauts.",
+							"AS3": "1 fois par combat, au lieu d'attaquer, le héros peut désigner une cible à ses alliés sur INT. Toutes les attaques infligées à cette cible ont Pi+3. Si le héros a désigné cette cible avant le combat alors le bonus est de Pi+5. La cible doit être visible par le héros.",
+							"AS4": "L'action de changer d'arme ne prends pas d'assaut. Fouiller dans un sac ne prend qu'1D4 assauts.",
+							"AS5": "Donne accès à 3 compétences au choix."
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Maîtrise martiale",
+							"Exploiter les failles",
+							"Forth Eorlingas",
+							"Message à caractère informatif",
+							"Voici vos ordres"
+						]
+					}
+				]
+			}
+		]
 	},
 	{
 		"ID": 2,
 		"Name_M": "Gladiateur",
 		"Name_F": "Gladiateur",
-		"Min": {"COU": 12, "INT": 8, "CHA": 8, "AD": 8, "FO": 12},
+		"Min": {
+			"COU": 12,
+			"INT": 8,
+			"CHA": 8,
+			"AD": 8,
+			"FO": 12
+		},
 		"Max": {}
 	},
 	{
 		"ID": 3,
 		"Name_M": "Ninja",
 		"Name_F": "Ninja",
-		"Min": {"COU": 8, "INT": 8, "CHA": 8, "AD": 13, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 8,
+			"CHA": 8,
+			"AD": 13,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 4,
 		"Name_M": "Assassin",
 		"Name_F": "Assassin",
-		"Min": {"COU": 8, "INT": 8, "CHA": 8, "AD": 12, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 8,
+			"CHA": 8,
+			"AD": 12,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 5,
 		"Name_M": "Voleur",
 		"Name_F": "Voleuse",
-		"Min": {"COU": 8, "INT": 8, "CHA": 8, "AD": 11, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 8,
+			"CHA": 8,
+			"AD": 11,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 6,
 		"Name_M": "Ranger",
 		"Name_F": "Ranger",
-		"Min": {"COU": 8, "INT": 8, "CHA": 10, "AD": 10, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 8,
+			"CHA": 10,
+			"AD": 10,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 7,
 		"Name_M": "Ménestrel",
 		"Name_F": "Ménestrel",
-		"Min": {"COU": 8, "INT": 8, "CHA": 12, "AD": 11, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 8,
+			"CHA": 12,
+			"AD": 11,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 8,
 		"Name_M": "Marchand",
 		"Name_F": "Marchande",
-		"Min": {"COU": 8, "INT": 12, "CHA": 11, "AD": 8, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 12,
+			"CHA": 11,
+			"AD": 8,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 9,
 		"Name_M": "Négociant",
 		"Name_F": "Négociante",
-		"Min": {"COU": 8, "INT": 11, "CHA": 11, "AD": 8, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 11,
+			"CHA": 11,
+			"AD": 8,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 10,
 		"Name_M": "Ingénieur",
 		"Name_F": "Ingénieur",
-		"Min": {"COU": 8, "INT": 8, "CHA": 8, "AD": 11, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 8,
+			"CHA": 8,
+			"AD": 11,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 11,
 		"Name_M": "Pirate",
 		"Name_F": "Pirate",
-		"Min": {"COU": 11, "INT": 8, "CHA": 8, "AD": 11, "FO": 8},
+		"Min": {
+			"COU": 11,
+			"INT": 8,
+			"CHA": 8,
+			"AD": 11,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 12,
 		"Name_M": "Bourgeois",
 		"Name_F": "Bourgeoise",
-		"Min": {"COU": 8, "INT": 10, "CHA": 10, "AD": 8, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 10,
+			"CHA": 10,
+			"AD": 8,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 13,
 		"Name_M": "Noble",
 		"Name_F": "Noble",
-		"Min": {"COU": 8, "INT": 10, "CHA": 11, "AD": 8, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 10,
+			"CHA": 11,
+			"AD": 8,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 14,
 		"Name_M": "Chamane",
 		"Name_F": "Chamane",
-		"Min": {"COU": 8, "INT": 11, "CHA": 11, "AD": 11, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 11,
+			"CHA": 11,
+			"AD": 11,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 15,
 		"Name_M": "Druide",
 		"Name_F": "Druide",
-		"Min": {"COU": 8, "INT": 8, "CHA": 8, "AD": 8, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 8,
+			"CHA": 8,
+			"AD": 8,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 16,
 		"Name_M": "Cavalier",
 		"Name_F": "Cavalière",
-		"Min": {"COU": 11, "INT": 10, "CHA": 10, "AD": 8, "FO": 9},
+		"Min": {
+			"COU": 11,
+			"INT": 10,
+			"CHA": 10,
+			"AD": 8,
+			"FO": 9
+		},
 		"Max": {}
 	},
 	{
 		"ID": 17,
 		"Name_M": "Chevalier",
 		"Name_F": "Chevaleresse",
-		"Min": {"COU": 12, "INT": 10, "CHA": 11, "AD": 8, "FO": 9},
+		"Min": {
+			"COU": 12,
+			"INT": 10,
+			"CHA": 11,
+			"AD": 8,
+			"FO": 9
+		},
 		"Max": {}
 	},
 	{
 		"ID": 18,
 		"Name_M": "Bourreau",
 		"Name_F": "Bourreau",
-		"Min": {"COU": 8, "INT": 8, "CHA": 8, "AD": 8, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 8,
+			"CHA": 8,
+			"AD": 8,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 19,
 		"Name_M": "Sbire",
 		"Name_F": "Sbire",
-		"Min": {"AD": 8, "FO": 8},
-		"Max": {"COU": 10, "INT": 11, "CHA": 11}
+		"Min": {
+			"AD": 8,
+			"FO": 8
+		},
+		"Max": {
+			"COU": 10,
+			"INT": 11,
+			"CHA": 11
+		}
 	},
 	{
 		"ID": 20,
 		"Name_M": "Prêtre de Slanoush",
 		"Name_F": "Prêtresse de Slanoush",
-		"Min": {"COU": 8, "INT": 8, "CHA": 12, "AD": 8, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 8,
+			"CHA": 12,
+			"AD": 8,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 21,
 		"Name_M": "Prêtre de Dlul",
 		"Name_F": "Prêtresse de Dlul",
-		"Min": {"COU": 8, "INT": 8, "CHA": 12, "AD": 8, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 8,
+			"CHA": 12,
+			"AD": 8,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 22,
 		"Name_M": "Prêtre de Youclidh",
 		"Name_F": "Prêtresse de Youclidh",
-		"Min": {"COU": 8, "INT": 8, "CHA": 12, "AD": 8, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 8,
+			"CHA": 12,
+			"AD": 8,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 23,
 		"Name_M": "Prêtre d'Adathie",
 		"Name_F": "Prêtresse d'Adathie",
-		"Min": {"COU": 8, "INT": 8, "CHA": 12, "AD": 8, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 8,
+			"CHA": 12,
+			"AD": 8,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 24,
 		"Name_M": "Paladin de Dlul",
 		"Name_F": "Paladin de Dlul",
-		"Min": {"COU": 12, "INT": 10, "CHA": 11, "AD": 8, "FO": 9},
+		"Min": {
+			"COU": 12,
+			"INT": 10,
+			"CHA": 11,
+			"AD": 8,
+			"FO": 9
+		},
 		"Max": {}
 	},
 	{
 		"ID": 25,
 		"Name_M": "Paladin de Brave",
 		"Name_F": "Paladin de Brave",
-		"Min": {"COU": 12, "INT": 10, "CHA": 11, "AD": 8, "FO": 9},
+		"Min": {
+			"COU": 12,
+			"INT": 10,
+			"CHA": 11,
+			"AD": 8,
+			"FO": 9
+		},
 		"Max": {}
 	},
 	{
 		"ID": 26,
 		"Name_M": "Paladin de Slanoush",
 		"Name_F": "Paladin de Slanoush",
-		"Min": {"COU": 12, "INT": 10, "CHA": 11, "AD": 8, "FO": 9},
+		"Min": {
+			"COU": 12,
+			"INT": 10,
+			"CHA": 11,
+			"AD": 8,
+			"FO": 9
+		},
 		"Max": {}
 	},
 	{
 		"ID": 27,
 		"Name_M": "Paladin de Khornettoh",
 		"Name_F": "Paladin de Khornettoh",
-		"Min": {"COU": 12, "INT": 10, "CHA": 11, "AD": 8, "FO": 9},
+		"Min": {
+			"COU": 12,
+			"INT": 10,
+			"CHA": 11,
+			"AD": 8,
+			"FO": 9
+		},
 		"Max": {}
 	},
 	{
 		"ID": 28,
 		"Name_M": "Sorcier",
 		"Name_F": "Sorcière",
-		"Min": {"COU": 8, "INT": 12, "CHA": 8, "AD": 8, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 12,
+			"CHA": 8,
+			"AD": 8,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 29,
 		"Name_M": "Mage",
 		"Name_F": "Mage",
-		"Min": {"COU": 8, "INT": 11, "CHA": 8, "AD": 8, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 11,
+			"CHA": 8,
+			"AD": 8,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 30,
 		"Name_M": "Dompteur",
 		"Name_F": "Dompteuse",
-		"Min": {"COU": 8, "INT": 8, "CHA": 10, "AD": 10, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 8,
+			"CHA": 10,
+			"AD": 10,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 31,
 		"Name_M": "Mage Pirate",
 		"Name_F": "Mage Pirate",
-		"Min": {"COU": 10, "INT": 11, "CHA": 8, "AD": 10, "FO": 8},
+		"Min": {
+			"COU": 10,
+			"INT": 11,
+			"CHA": 8,
+			"AD": 10,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 32,
 		"Name_M": "Soldat",
 		"Name_F": "Soldat",
-		"Min": {"COU": 10, "INT": 9, "CHA": 8, "AD": 10, "FO": 10},
+		"Min": {
+			"COU": 10,
+			"INT": 9,
+			"CHA": 8,
+			"AD": 10,
+			"FO": 10
+		},
 		"Max": {}
 	},
 	{
 		"ID": 33,
 		"Name_M": "Officier",
 		"Name_F": "Officier",
-		"Min": {"COU": 8, "INT": 11, "CHA": 12, "AD": 8, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 11,
+			"CHA": 12,
+			"AD": 8,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 34,
 		"Name_M": "Eclaireur",
 		"Name_F": "Eclaireuse",
-		"Min": {"COU": 8, "INT": 8, "CHA": 8, "AD": 12, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 8,
+			"CHA": 8,
+			"AD": 12,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 35,
 		"Name_M": "Soldat lourd",
 		"Name_F": "Soldat lourd",
-		"Min": {"COU": 11, "INT": 8, "CHA": 8, "AD": 8, "FO": 12},
+		"Min": {
+			"COU": 11,
+			"INT": 8,
+			"CHA": 8,
+			"AD": 8,
+			"FO": 12
+		},
 		"Max": {}
 	},
 	{
 		"ID": 36,
 		"Name_M": "Médecin",
 		"Name_F": "Médecin",
-		"Min": {"COU": 8, "INT": 12, "CHA": 8, "AD": 12, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 12,
+			"CHA": 8,
+			"AD": 12,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 37,
 		"Name_M": "Armurier-artificier",
 		"Name_F": "Armurière-artificière",
-		"Min": {"COU": 8, "INT": 12, "CHA": 8, "AD": 12, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 12,
+			"CHA": 8,
+			"AD": 12,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 38,
 		"Name_M": "Auxilliaire militaire",
 		"Name_F": "Auxilliaire militaire",
-		"Min": {"COU": 8, "INT": 8, "CHA": 8, "AD": 8, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 8,
+			"CHA": 8,
+			"AD": 8,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 39,
 		"Name_M": "Moine de la Peste",
 		"Name_F": "Nonne de la Peste",
-		"Min": {"COU": 8, "INT": 10, "CHA": 8, "AD": 8, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 10,
+			"CHA": 8,
+			"AD": 8,
+			"FO": 8
+		},
 		"Max": {}
 	},
 	{
 		"ID": 40,
 		"Name_M": "Disciple",
 		"Name_F": "Disciple",
-		"Min": {"COU": 8, "INT": 10, "CHA": 9, "AD": 8, "FO": 8},
+		"Min": {
+			"COU": 8,
+			"INT": 10,
+			"CHA": 9,
+			"AD": 8,
+			"FO": 8
+		},
 		"Max": {}
 	}
 ]
