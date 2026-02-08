@@ -177,19 +177,22 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
         const { leger, fort, gueule_de_bois } = getAlcoholModifiers(data.status || INITIAL_DATA.status);
 
         // --- SPECIALIZATION & SUB-SPECIALIZATION AUTOMATED ATTRIBUTES ---
-        const getSpecAttributes = () => {
-            if (!gameRules) return {};
+        const getSpecData = () => {
+            if (!gameRules) return { specBonuses: {}, subSpecBonuses: {} };
             const currentMetier = gameRules.metiers.find(m => m.name_m === data.identity.metier || m.name_f === data.identity.metier);
-            if (!currentMetier) return {};
+            if (!currentMetier) return { specBonuses: {}, subSpecBonuses: {} };
 
-            let bonuses: { [key: string]: number } = {};
+            let specBonuses: { [key: string]: number } = {};
+            let subSpecBonuses: { [key: string]: number } = {};
 
             // Specialization
             if (data.identity.specialisation) {
                 const spec = currentMetier.specialisations?.find(s => s.name_m === data.identity.specialisation || s.name_f === data.identity.specialisation);
-                if (spec && spec.attributs_automatisables) {
-                    for (const [key, value] of Object.entries(spec.attributs_automatisables)) {
-                        bonuses[key] = (bonuses[key] || 0) + value;
+                // Backend sends 'attributs_automatisables' (snake_case)
+                const attrs = spec?.attributs_automatisables || (spec as any)?.Attributs_automatisables;
+                if (attrs) {
+                    for (const [key, value] of Object.entries(attrs)) {
+                        specBonuses[key] = (specBonuses[key] || 0) + (value as number);
                     }
                 }
             }
@@ -198,15 +201,16 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
             if (data.identity.sous_specialisation && data.identity.specialisation) {
                 const spec = currentMetier.specialisations?.find(s => s.name_m === data.identity.specialisation || s.name_f === data.identity.specialisation);
                 const subSpec = spec?.sous_specialisations?.find(s => s.name_m === data.identity.sous_specialisation || s.name_f === data.identity.sous_specialisation);
-                if (subSpec && subSpec.attributs_automatisables) {
-                    for (const [key, value] of Object.entries(subSpec.attributs_automatisables)) {
-                        bonuses[key] = (bonuses[key] || 0) + value;
+                const attrs = subSpec?.attributs_automatisables || (subSpec as any)?.Attributs_automatisables;
+                if (attrs) {
+                    for (const [key, value] of Object.entries(attrs)) {
+                        subSpecBonuses[key] = (subSpecBonuses[key] || 0) + (value as number);
                     }
                 }
             }
-            return bonuses;
+            return { specBonuses, subSpecBonuses };
         };
-        const specBonuses = getSpecAttributes();
+        const { specBonuses, subSpecBonuses } = getSpecData();
         // ----------------------------------------------------------------
 
         // --- Backpack Encumbrance Malus Logic ---
@@ -311,6 +315,9 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
             if (specKey && specBonuses[specKey]) {
                 components.push({ label: 'Spécialisation', value: specBonuses[specKey] });
             }
+            if (specKey && subSpecBonuses[specKey]) {
+                components.push({ label: 'Sous-spécialisation', value: subSpecBonuses[specKey] });
+            }
             // ----------------------------
 
             // --- ENCUMBRANCE (Dodge) LOGIC ---
@@ -360,12 +367,13 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
             if (key in gueule_de_bois) base += gueule_de_bois[key];
 
             // Add drug malus to base
-            // Add drug malus to base
             base += drugMalus;
 
-            // Add specialization bonus to base
+            // Add specialization/sub-specialization bonus to base
             // @ts-ignore
             if (specKey && specBonuses[specKey]) base += specBonuses[specKey];
+            // @ts-ignore
+            if (specKey && subSpecBonuses[specKey]) base += subSpecBonuses[specKey];
 
             // Add encumbrance malus (Esquive only)
             if (key === 'esquive') {
@@ -418,7 +426,7 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
         });
 
         return values;
-    }, [data.characteristics, data.status, data.general.malus_tete, data.inventory, data.defenses.bouclier_actif, refs, currentEncumbrance]);
+    }, [data.characteristics, data.status, data.general.malus_tete, data.inventory, data.defenses.bouclier_actif, refs, currentEncumbrance, data.identity, gameRules]);
 
 
 
