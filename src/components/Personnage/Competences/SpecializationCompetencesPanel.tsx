@@ -15,6 +15,7 @@ interface SpecializationCompetencesPanelProps {
         sous_specialisation?: string;
     };
     type: 'specialisation' | 'sous_specialisation';
+    globalCompetences: CharacterCompetence[]; // Main character competences for checking requirements
 }
 
 export const SpecializationCompetencesPanel: React.FC<SpecializationCompetencesPanelProps> = ({
@@ -22,7 +23,8 @@ export const SpecializationCompetencesPanel: React.FC<SpecializationCompetencesP
     competences,
     onCompetencesChange,
     identity,
-    type
+    type,
+    globalCompetences
 }) => {
     const [rules, setRules] = useState<GameRules | null>(null);
     const [referenceCompetences, setReferenceCompetences] = useState<Competence[]>([]);
@@ -46,6 +48,7 @@ export const SpecializationCompetencesPanel: React.FC<SpecializationCompetencesP
 
 
         let requiredComps: string[] = [];
+        let isFossoyeur = false;
 
         if (type === 'specialisation' && identity.specialisation) {
             const spec = currentMetier.specialisations?.find(s => s.name_m === identity.specialisation || s.name_f === identity.specialisation);
@@ -58,14 +61,57 @@ export const SpecializationCompetencesPanel: React.FC<SpecializationCompetencesP
             const subSpec = spec?.sous_specialisations?.find(s => s.name_m === identity.sous_specialisation || s.name_f === identity.sous_specialisation);
 
             if (subSpec) {
-                if (subSpec.competences_obligatoires) requiredComps = subSpec.competences_obligatoires;
+                if (subSpec.competences_obligatoires) {
+                    requiredComps = [...subSpec.competences_obligatoires];
+                }
+
+                // Check if it's Fossoyeur d'armées
+                if (subSpec.id === 'fossoyeur_armees') {
+                    isFossoyeur = true;
+                }
             }
         }
 
+        // --- FOSSOYEUR D'ARMEES SPECIFIC LOGIC ---
+        if (isFossoyeur) {
+            // 1. Remove "Intimider" and "Chercher des noises" from the default mandatory list
+            //    (Because we handle them conditionally)
+            requiredComps = requiredComps.filter(c => c !== 'Intimider' && c !== 'Chercher des noises');
+
+            // 2. Check Global Competences
+            const hasIntimider = globalCompetences.some(c => c.nom === 'Intimider');
+            const hasChercher = globalCompetences.some(c => c.nom === 'Chercher des noises');
+
+            // 3. Logic:
+            //    - If has Intimider -> Add Chercher des noises
+            //    - If has Chercher -> Add Intimider
+
+            if (hasIntimider && !hasChercher) {
+                requiredComps.push('Chercher des noises');
+            } else if (hasChercher && !hasIntimider) {
+                requiredComps.push('Intimider');
+            }
+        }
+        // -----------------------------------------
+
+        // --- BONUS LOGIC: "Les yeux révolver" ---
+        // Applies to ANY Specialization/Sub-Spec that allows this choice (currently Fossoyeur)
+        // Check if "Les yeux révolver" is selected in THIS panel
+        const hasYeux = competences.some(c => c.nom === 'Les yeux révolver' || c.nom === 'Les yeux révolvers'); // handling typo just in case
+
+        if (hasYeux) {
+            const globalHasT1 = globalCompetences.some(c => c.nom === 'Terrifiant I');
+
+            if (globalHasT1) {
+                requiredComps.push('Terrifiant II');
+            } else {
+                requiredComps.push('Terrifiant I');
+            }
+        }
+        // ----------------------------------------
+
         // Sync logic: Ensure required comps are present
         // We do strictly additive specific logic here to avoid wiping user data accidentally
-        // But for required specs, we should enforce them.
-
         let newCompetences = [...competences];
         let hasChanges = false;
 
@@ -84,6 +130,22 @@ export const SpecializationCompetencesPanel: React.FC<SpecializationCompetencesP
             }
         });
 
+        // Remove mandatory skills that are NO LONGER required (e.g. if conditions changed)
+        // BUT ONLY if they were added as mandatory (we can't easily track that without a flag, 
+        // but for Fossoyeur we know specifically we might need to remove them if condition fails)
+        if (isFossoyeur) {
+            const toRemoveNames = ['Intimider', 'Chercher des noises', 'Terrifiant I', 'Terrifiant II']; // Added Terrifiant to tracked
+            const shouldHaveNames = requiredComps.filter(name => toRemoveNames.includes(name));
+
+            const currentNames = newCompetences.map(c => c.nom);
+            const unwanted = currentNames.filter(name => toRemoveNames.includes(name) && !shouldHaveNames.includes(name));
+
+            if (unwanted.length > 0) {
+                newCompetences = newCompetences.filter(c => !unwanted.includes(c.nom));
+                hasChanges = true;
+            }
+        }
+
         // 2. Handle Choices (Initial population of empty slots if needed, but easier to let user add)
         // Actually, for choices, we should probably just ensure the user can't add more than allowed
         // or facilitate the UI for it.
@@ -93,7 +155,7 @@ export const SpecializationCompetencesPanel: React.FC<SpecializationCompetencesP
             onCompetencesChange(newCompetences);
         }
 
-    }, [rules, identity, type, referenceCompetences]); // Check dependencies carefully to avoid loops
+    }, [rules, identity, type, referenceCompetences, globalCompetences, competences]); // Added competences to dep array
 
     const handleRemoveRow = (id: string) => {
         onCompetencesChange(competences.filter(c => c.id !== id));
@@ -104,16 +166,38 @@ export const SpecializationCompetencesPanel: React.FC<SpecializationCompetencesP
         if (!rules || !identity.metier) return false;
         const currentMetier = rules.metiers.find(m => m.name_m === identity.metier || m.name_f === identity.metier);
 
+        let requiredComps: string[] = [];
+        let isFossoyeur = false;
+
         if (type === 'specialisation' && identity.specialisation) {
             const spec = currentMetier?.specialisations?.find(s => s.name_m === identity.specialisation || s.name_f === identity.specialisation);
-            return spec?.competences?.includes(compName);
+            if (spec?.competences) requiredComps = spec.competences;
         }
         else if (type === 'sous_specialisation' && identity.specialisation && identity.sous_specialisation) {
             const spec = currentMetier?.specialisations?.find(s => s.name_m === identity.specialisation || s.name_f === identity.specialisation);
             const subSpec = spec?.sous_specialisations?.find(s => s.name_m === identity.sous_specialisation || s.name_f === identity.sous_specialisation);
-            return subSpec?.competences_obligatoires?.includes(compName);
+
+            if (subSpec?.competences_obligatoires) requiredComps = [...subSpec.competences_obligatoires];
+            if (subSpec?.id === 'fossoyeur_armees') isFossoyeur = true;
         }
-        return false;
+
+        // Apply same dynamic logic
+        if (isFossoyeur) {
+            requiredComps = requiredComps.filter(c => c !== 'Intimider' && c !== 'Chercher des noises');
+            const hasIntimider = globalCompetences.some(c => c.nom === 'Intimider');
+            const hasChercher = globalCompetences.some(c => c.nom === 'Chercher des noises');
+
+            if (hasIntimider && !hasChercher) requiredComps.push('Chercher des noises');
+            else if (hasChercher && !hasIntimider) requiredComps.push('Intimider');
+
+            const hasYeux = competences.some(c => c.nom === 'Les yeux révolver' || c.nom === 'Les yeux révolvers');
+            if (hasYeux) {
+                const globalHasT1 = globalCompetences.some(c => c.nom === 'Terrifiant I');
+                requiredComps.push(globalHasT1 ? 'Terrifiant II' : 'Terrifiant I');
+            }
+        }
+
+        return requiredComps.includes(compName);
     };
 
     // Filter for choice dropdown

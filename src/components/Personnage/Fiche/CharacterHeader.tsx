@@ -67,15 +67,32 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
 
             // Sync Metier
             if (identity.metier) {
-                const currentObj = rules.metiers.find(m => m.name_m === identity.metier || m.name_f === identity.metier);
-                if (currentObj) {
-                    const rawName = isMale ? currentObj.name_m : currentObj.name_f;
-                    newIdentity.metier = rawName || (isMale ? currentObj.name_f : currentObj.name_m) || currentObj.name_m;
+                const currentMetier = rules.metiers.find(m => m.name_m === identity.metier || m.name_f === identity.metier);
+                if (currentMetier) {
+                    const rawNameMetier = isMale ? currentMetier.name_m : currentMetier.name_f;
+                    newIdentity.metier = rawNameMetier || (isMale ? currentMetier.name_f : currentMetier.name_m) || currentMetier.name_m;
+
+                    // Sync Specialisation (Dependent on Metier)
+                    if (identity.specialisation) {
+                        const currentSpec = currentMetier.specialisations?.find(s => s.name_m === identity.specialisation || s.name_f === identity.specialisation);
+                        if (currentSpec) {
+                            const rawNameSpec = isMale ? currentSpec.name_m : currentSpec.name_f;
+                            newIdentity.specialisation = rawNameSpec || (isMale ? currentSpec.name_f : currentSpec.name_m) || currentSpec.name_m;
+
+                            // Sync Sous-Specialisation (Dependent on Specialisation)
+                            if (identity.sous_specialisation) {
+                                const currentSubSpec = currentSpec.sous_specialisations?.find(s => s.name_m === identity.sous_specialisation || s.name_f === identity.sous_specialisation);
+                                if (currentSubSpec) {
+                                    const rawNameSub = isMale ? currentSubSpec.name_m : currentSubSpec.name_f;
+                                    newIdentity.sous_specialisation = rawNameSub || (isMale ? currentSubSpec.name_f : currentSubSpec.name_m) || currentSubSpec.name_m;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
 
-        onIdentityChange(newIdentity);
         onIdentityChange(newIdentity);
     };
 

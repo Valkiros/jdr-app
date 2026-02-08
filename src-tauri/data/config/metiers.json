@@ -44,18 +44,18 @@
 							"AS1": "Tous les points d'AT au-dessus de 12 s'ajoutent en Pi additionnels lors du calcul des dégâts en plus du bonus de force.",
 							"AS2": "S'il y a au moins 3 ennemis au contact, le héros peut effectuer une attaque circulaire à 180° ou 360° (au choix) sur AT touchant toutes les cibles au contact (1 fois par assaut max et non compatible avec la compétence 'IL Y EN AURA POUR TOUT LE MONDE').",
 							"AS3": "Tuer un ennemi au CàC permet d'attaquer immédiatement un autre ennemi au CàC durant le même assaut.",
-							"AS4": "Si le héros a la compétence 'INDIMIDER', il obtient 'CHERCHER DES NOISES' et inversément.",
+							"AS4": "Si le héros a la compétence 'INTIMIDER', il obtient 'CHERCHER DES NOISES' et inversément.",
 							"AS5": "Donne accès à 3 compétences au choix."
 						},
 						"Competences_obligatoires": [
-							"Indimider",
+							"Intimider",
 							"Chercher des noises"
 						],
 						"Nombre_competences_choix": 3,
 						"Competences_choix": [
 							"Fallait prendre une armure",
 							"Il y en aura pour tout le monde",
-							"Les yeux révolvers",
+							"Les yeux révolver",
 							"L'union fait la force",
 							"Vous partez déjà?"
 						]

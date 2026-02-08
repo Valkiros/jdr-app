@@ -325,6 +325,7 @@ export interface Origine {
     min: Requirements;
     max: Requirements;
     vitesse: number;
+    competences?: string[];
 }
 
 export interface SousSpecialisation {
@@ -366,6 +367,9 @@ export interface Metier {
     min: Requirements;
     max: Requirements;
     specialisations?: Specialisation[];
+    competences_obligatoires?: string[];
+    nombre_competences_choix?: number;
+    competences_choix?: string[];
 }
 
 // Interface pour les inf-bulles des corruptions d'origine

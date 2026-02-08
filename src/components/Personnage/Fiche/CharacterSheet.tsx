@@ -35,7 +35,14 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
     const [data, setDataState] = useState<CharacterData>(INITIAL_DATA);
     const [characterLoading, setCharacterLoading] = useState(true);
     const { refs, gameRules, loading: refLoading } = useRefContext();
+    const [referenceCompetences, setReferenceCompetences] = useState<any[]>([]);
     const isInitialLoad = React.useRef(true);
+
+    useEffect(() => {
+        invoke('get_competences')
+            .then((comps: any) => setReferenceCompetences(comps))
+            .catch(err => console.error("Failed to load competences:", err));
+    }, []);
 
     const saveCharacter = async () => {
         try {
@@ -658,16 +665,55 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                 vitals={data.vitals}
                 generalStats={data.general}
                 onIdentityChange={(newIdentity) => {
-                    // Reset Specialization if Metier changes (handled in Header but good to be safe)
-                    // Reset Sub-Specialization if Specialization changes
+                    // Smart update logic to prevent resetting specs on gender swap
                     const updatedIdentity = { ...newIdentity };
-                    if (updatedIdentity.metier !== data.identity.metier) {
-                        updatedIdentity.specialisation = '';
-                        updatedIdentity.sous_specialisation = '';
+                    const oldIdentity = data.identity;
+
+                    if (!gameRules) {
+                        // Fallback to simple logic if rules not loaded
+                        if (updatedIdentity.metier !== oldIdentity.metier &&
+                            !updatedIdentity.specialisation // Don't reset if already populated (by Header logic)
+                        ) {
+                            updatedIdentity.specialisation = '';
+                            updatedIdentity.sous_specialisation = '';
+                        }
+                        if (updatedIdentity.specialisation !== oldIdentity.specialisation &&
+                            !updatedIdentity.sous_specialisation // Don't reset if already populated
+                        ) {
+                            updatedIdentity.sous_specialisation = '';
+                        }
+                    } else {
+                        // Advanced logic using IDs
+                        const getMetierId = (name: string) => gameRules.metiers.find(m => m.name_m === name || m.name_f === name)?.id;
+                        const getSpecId = (metierName: string, specName: string) => {
+                            const m = gameRules.metiers.find(m => m.name_m === metierName || m.name_f === metierName);
+                            return m?.specialisations?.find(s => s.name_m === specName || s.name_f === specName)?.id;
+                        };
+
+                        const oldMetierId = getMetierId(oldIdentity.metier);
+                        const newMetierId = getMetierId(updatedIdentity.metier);
+
+                        // If Metier changed ID (different job), clear specs
+                        // BUT if Header already provided a valid spec (e.g. from gender swap logic), keep it!
+                        if (oldMetierId !== newMetierId && !updatedIdentity.specialisation) {
+                            updatedIdentity.specialisation = '';
+                            updatedIdentity.sous_specialisation = '';
+                        }
+
+                        // Same for Specialization -> Sub-Spec
+                        if (updatedIdentity.specialisation) {
+                            const oldSpecId = getSpecId(oldIdentity.metier, oldIdentity.specialisation || '');
+                            const newSpecId = getSpecId(updatedIdentity.metier, updatedIdentity.specialisation);
+
+                            if (oldSpecId !== newSpecId && !updatedIdentity.sous_specialisation) {
+                                updatedIdentity.sous_specialisation = '';
+                            }
+                        } else {
+                            // Spec cleared
+                            updatedIdentity.sous_specialisation = '';
+                        }
                     }
-                    if (updatedIdentity.specialisation !== data.identity.specialisation) {
-                        updatedIdentity.sous_specialisation = '';
-                    }
+
                     setData({ ...data, identity: updatedIdentity });
                 }}
                 onVitalsChange={(vitals) => setData({ ...data, vitals })}
@@ -843,7 +889,83 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                 <CompetencesPanel
                     title="Compétences origine et métier"
                     competences={data.competences || []}
-                    onCompetencesChange={(newCompetences) => setData({ ...data, competences: newCompetences })}
+                    onCompetencesChange={(newCompetences) => {
+                        // --- BONUS LOGIC: "Les yeux révolver" ---
+                        const hasYeux = newCompetences.some(c => c.nom === 'Les yeux révolver' || c.nom === 'Les yeux révolvers');
+
+                        if (hasYeux && gameRules && data.identity) {
+                            let hasBaseT1 = false;
+
+                            // 1. Check Native
+                            if (data.identity.origine) {
+                                const origin = gameRules.origines.find(o => o.name_m === data.identity.origine || o.name_f === data.identity.origine);
+                                if (origin) {
+                                    const comps = origin.competences || (origin as any).Competences || [];
+                                    if (comps.includes('Terrifiant I')) hasBaseT1 = true;
+                                }
+                            }
+                            if (!hasBaseT1 && data.identity.metier) {
+                                const job = gameRules.metiers.find(m => m.name_m === data.identity.metier || m.name_f === data.identity.metier);
+                                if (job) {
+                                    const mandatory = job.competences_obligatoires || (job as any).Competences_obligatoires || [];
+                                    if (mandatory.includes('Terrifiant I')) hasBaseT1 = true;
+                                }
+                            }
+
+                            // 2. Check Manual/Item (Non-System T1)
+                            // We look for T1 that does NOT have the 'les_yeux' tag
+                            if (!hasBaseT1) {
+                                hasBaseT1 = newCompetences.some(c => c.nom === 'Terrifiant I' && (c as any).source !== 'les_yeux');
+                            }
+
+                            // Apply Logic: Reactive Swap
+                            if (hasBaseT1) {
+                                // Target: T2 (System)
+                                // Add T2 if missing
+                                if (!newCompetences.some(c => c.nom === 'Terrifiant II')) {
+                                    const refComp = referenceCompetences.find(r => r.nom === 'Terrifiant II');
+                                    newCompetences = [
+                                        ...newCompetences,
+                                        {
+                                            id: crypto.randomUUID(),
+                                            nom: 'Terrifiant II',
+                                            description: refComp?.description || '',
+                                            tableau: refComp?.tableau,
+                                            // @ts-ignore
+                                            source: 'les_yeux'
+                                        }
+                                    ];
+                                }
+                                // Cleanup: Remove T1 (System) IF present (to avoid having both T1 and T2 from system)
+                                // Only remove if source is 'les_yeux'
+                                newCompetences = newCompetences.filter(c => !(c.nom === 'Terrifiant I' && (c as any).source === 'les_yeux'));
+                            }
+                            else {
+                                // Target: T1 (System)
+                                // Add T1 if missing
+                                const hasSystemT1 = newCompetences.some(c => c.nom === 'Terrifiant I' && (c as any).source === 'les_yeux');
+                                if (!hasSystemT1) {
+                                    const refComp = referenceCompetences.find(r => r.nom === 'Terrifiant I');
+                                    newCompetences = [
+                                        ...newCompetences,
+                                        {
+                                            id: crypto.randomUUID(),
+                                            nom: 'Terrifiant I',
+                                            description: refComp?.description || '',
+                                            tableau: refComp?.tableau,
+                                            // @ts-ignore
+                                            source: 'les_yeux'
+                                        }
+                                    ];
+                                }
+                                // Cleanup: Remove T2 (System) IF present (Downgrade)
+                                // Only remove if source is 'les_yeux'
+                                newCompetences = newCompetences.filter(c => !(c.nom === 'Terrifiant II' && (c as any).source === 'les_yeux'));
+                            }
+                        }
+
+                        setData({ ...data, competences: newCompetences });
+                    }}
                 />
 
                 {/* Specialization Competencies */}
@@ -854,6 +976,7 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                         onCompetencesChange={(newComps) => setData({ ...data, competences_specialisation: newComps })}
                         identity={data.identity}
                         type="specialisation"
+                        globalCompetences={data.competences || []}
                     />
                 )}
 
@@ -865,6 +988,7 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                         onCompetencesChange={(newComps) => setData({ ...data, competences_sous_specialisation: newComps })}
                         identity={data.identity}
                         type="sous_specialisation"
+                        globalCompetences={data.competences || []}
                     />
                 )}
 
