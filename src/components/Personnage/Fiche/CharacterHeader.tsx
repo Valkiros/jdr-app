@@ -319,11 +319,14 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
                                         let disabled = false;
                                         let reason = "";
 
-                                        if (spec.necessite_competence) {
-                                            const hasComp = competences?.some(c => c.nom.toLowerCase() === spec.necessite_competence.toLowerCase());
-                                            if (!hasComp) {
+                                        if (spec.necessite_competence && spec.necessite_competence.length > 0) {
+                                            const missingComps = spec.necessite_competence.filter(req =>
+                                                !competences?.some(c => c.nom.toLowerCase() === req.toLowerCase())
+                                            );
+
+                                            if (missingComps.length > 0) {
                                                 disabled = true;
-                                                reason = `(Req: ${spec.necessite_competence})`;
+                                                reason = `(Req: ${missingComps.join(', ')})`;
                                             }
                                         }
 
@@ -382,11 +385,14 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
                                         let disabled = false;
                                         let reason = "";
 
-                                        if (sub.necessite_competence) {
-                                            const hasComp = competences?.some(c => c.nom.toLowerCase() === sub.necessite_competence.toLowerCase());
-                                            if (!hasComp) {
+                                        if (sub.necessite_competence && sub.necessite_competence.length > 0) {
+                                            const missingComps = sub.necessite_competence.filter(req =>
+                                                !competences?.some(c => c.nom.toLowerCase() === req.toLowerCase())
+                                            );
+
+                                            if (missingComps.length > 0) {
                                                 disabled = true;
-                                                reason = `(Req: ${sub.necessite_competence})`;
+                                                reason = `(Req: ${missingComps.join(', ')})`;
                                             }
                                         }
 

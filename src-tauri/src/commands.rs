@@ -337,8 +337,8 @@ pub struct Specialisation {
     pub name_m: String,
     #[serde(alias = "Name_F")]
     pub name_f: String,
-    #[serde(alias = "Necessite_competence")]
-    pub necessite_competence: String,
+    #[serde(alias = "Necessite_competence", default)]
+    pub necessite_competence: Vec<String>,
     #[serde(alias = "Attributs_automatisables")]
     pub attributs_automatisables: serde_json::Value,
     #[serde(alias = "Attributs_specifiques")]
@@ -357,8 +357,8 @@ pub struct SousSpecialisation {
     pub name_m: String,
     #[serde(alias = "Name_F")]
     pub name_f: String,
-    #[serde(alias = "Necessite_competence")]
-    pub necessite_competence: String,
+    #[serde(alias = "Necessite_competence", default)]
+    pub necessite_competence: Vec<String>,
     #[serde(alias = "Attributs_automatisables")]
     pub attributs_automatisables: serde_json::Value,
     #[serde(alias = "Attributs_specifiques")]

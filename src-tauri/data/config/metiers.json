@@ -16,7 +16,7 @@
 				"ID": "briseur_de_crane",
 				"Name_M": "Briseur de crâne",
 				"Name_F": "Briseuse de crâne",
-				"Necessite_competence": "",
+				"Necessite_competence": [],
 				"Attributs_automatisables": {
 					"AT": 1,
 					"PRD": 1
@@ -24,9 +24,9 @@
 				"Attributs_specifiques": {
 					"AS1": "AT+1 et PRD+1 (automatique)",
 					"AS2": "PR nat+1",
-					"AS3": "Réduit de 2pts les malus des attaques ciblées.",
-					"AS4": "Pi+3 pour les attaques non ciblées.",
-					"AS5": "Donne les compétences 'Ils ne font pas le poids' et 'Frappe lourde'."
+					"AS3": "Réduit de 2pts les malus des attaques ciblées",
+					"AS4": "Pi+3 pour les attaques non ciblées",
+					"AS5": "Donne les compétences 'Ils ne font pas le poids' et 'Frappe lourde'"
 				},
 				"Competences": [
 					"Ils ne font pas le poids",
@@ -37,14 +37,14 @@
 						"ID": "fossoyeur_armees",
 						"Name_M": "Fossoyeur d'armées",
 						"Name_F": "Fossoyeuse d'armées",
-						"Necessite_competence": "",
+						"Necessite_competence": [],
 						"Attributs_automatisables": {},
 						"Attributs_specifiques": {
-							"AS1": "Tous les points d'AT au-dessus de 12 s'ajoutent en Pi additionnels lors du calcul des dégâts en plus du bonus de force.",
-							"AS2": "S'il y a au moins 3 ennemis au contact, le héros peut effectuer une attaque circulaire à 180° ou 360° (au choix) sur AT touchant toutes les cibles au contact (1 fois par assaut max et non compatible avec la compétence 'IL Y EN AURA POUR TOUT LE MONDE').",
-							"AS3": "Tuer un ennemi au CàC permet d'attaquer immédiatement un autre ennemi au CàC durant le même assaut.",
-							"AS4": "Si le héros a la compétence 'INTIMIDER', il obtient 'CHERCHER DES NOISES' et inversément.",
-							"AS5": "Donne accès à 3 compétences au choix."
+							"AS1": "Tous les points d'AT au-dessus de 12 s'ajoutent en Pi additionnels lors du calcul des dégâts en plus du bonus de force",
+							"AS2": "S'il y a au moins 3 ennemis au contact, le héros peut effectuer une attaque circulaire à 180° ou 360° (au choix) sur AT touchant toutes les cibles au contact (1 fois par assaut max et non compatible avec la compétence 'Il y en aura pour tout le monde')",
+							"AS3": "Tuer un ennemi au CàC permet d'attaquer immédiatement un autre ennemi au CàC durant le même assaut",
+							"AS4": "Si le héros a la compétence 'Intimider', il obtient 'Chercher des noises' et inversément",
+							"AS5": "Donne accès à 3 compétences au choix"
 						},
 						"Competences_obligatoires": [
 							"Intimider",
@@ -63,7 +63,9 @@
 						"ID": "mesure_desesperee",
 						"Name_M": "Mesure désespérée",
 						"Name_F": "Mesure désespérée",
-						"Necessite_competence": "Chercher des noises",
+						"Necessite_competence": [
+							"Chercher des noises"
+						],
 						"Attributs_automatisables": {
 							"ES": 1,
 							"PRD": 1
@@ -71,12 +73,12 @@
 						"Attributs_specifiques": {
 							"AS1": "ES+1 et PRD+1 (automatique)",
 							"AS2": "Crit+1",
-							"AS3": "Toutes les armes à 1 mains peuvent être utilisées à 2 mains avec le bonus de Pi+2.",
-							"AS4": "Les coups critiques subis par ou infligés au héros ne peuvent pas faire 19 ou 20.",
-							"AS5": "Après une esquive sur 1 au D4, le héros peut quand même attaquer à son tour.",
-							"AS6": "Le héros est immunisé aux effets de 'Peur'.",
-							"AS7": "Les ennemis faisant un échec critique frappent forcément leur allié le plus proche (si possible).",
-							"AS8": "Donne accès à 3 compétences au choix."
+							"AS3": "Toutes les armes à 1 mains peuvent être utilisées à 2 mains avec le bonus de Pi+2",
+							"AS4": "Les coups critiques subis par ou infligés au héros ne peuvent pas faire 19 ou 20",
+							"AS5": "Après une esquive sur 1 au D4, le héros peut quand même attaquer à son tour",
+							"AS6": "Le héros est immunisé aux effets de 'Peur'",
+							"AS7": "Les ennemis faisant un échec critique frappent forcément leur allié le plus proche (si possible)",
+							"AS8": "Donne accès à 3 compétences au choix"
 						},
 						"Competences_obligatoires": [],
 						"Nombre_competences_choix": 3,
@@ -94,17 +96,17 @@
 				"ID": "homme_arme",
 				"Name_M": "Homme d'arme",
 				"Name_F": "Femme d'arme",
-				"Necessite_competence": "",
+				"Necessite_competence": [],
 				"Attributs_automatisables": {
 					"FO": 1,
 					"PRD": 1
 				},
 				"Attributs_specifiques": {
 					"AS1": "FO+1 et PRD+1 (automatique)",
-					"AS2": "AT+2 si le héros utilise un bouclier.",
-					"AS3": "Peut relancer une épreuve de COU ratée sauf critique.",
-					"AS4": "Le héros dispose de 2 parades et 1 attaque par assaut.",
-					"AS5": "Donne les compétences 'Même pas mal', 'C'est moi le monstre ici' et 'Chef de groupe'."
+					"AS2": "AT+2 si le héros utilise un bouclier",
+					"AS3": "Peut relancer une épreuve de COU ratée sauf critique",
+					"AS4": "Le héros dispose de 2 parades et 1 attaque par assaut",
+					"AS5": "Donne les compétences 'Même pas mal', 'C'est moi le monstre ici' et 'Chef de groupe'"
 				},
 				"Competences": [
 					"Même pas mal",
@@ -116,19 +118,19 @@
 						"ID": "mur_acier_mobile",
 						"Name_M": "Mur d'acier mobile",
 						"Name_F": "Mur d'acier mobile",
-						"Necessite_competence": "",
+						"Necessite_competence": [],
 						"Attributs_automatisables": {
 							"PRD": 1
 						},
 						"Attributs_specifiques": {
 							"AS1": "PRD+1 (automatique)",
-							"AS2": "PRD crit+3 et effet de parade critique +5.",
+							"AS2": "PRD crit+3 et effet de parade critique +5",
 							"AS3": "PR nat+1",
 							"AS4": "Pv max +10",
-							"AS5": "La PR solide ne réduit plus la vitesse de déplacement tactique.",
-							"AS6": "Chaque ennemi au contact du héros lui donne PR nat+1.",
-							"AS7": "En combat, le premier coup subi par le héros n'inflige aucun dégât.",
-							"AS8": "Donne accès à 3 compétences au choix."
+							"AS5": "La PR solide ne réduit plus la vitesse de déplacement tactique",
+							"AS6": "Chaque ennemi au contact du héros lui donne PR nat+1",
+							"AS7": "En combat, le premier coup subi par le héros n'inflige aucun dégât",
+							"AS8": "Donne accès à 3 compétences au choix"
 						},
 						"Competences_obligatoires": [],
 						"Nombre_competences_choix": 3,
@@ -144,14 +146,14 @@
 						"ID": "maitre_de_guerre",
 						"Name_M": "Maître de guerre",
 						"Name_F": "Maîtresse de guerre",
-						"Necessite_competence": "",
+						"Necessite_competence": [],
 						"Attributs_automatisables": {},
 						"Attributs_specifiques": {
-							"AS1": "En combat, le héros a INT+2.",
-							"AS2": "Si la compagnie a prévu un plan avant un combat le héros a COU+1, AT+1, PRD+1 et AD tir+1 pendant les 3 premiers assauts.",
-							"AS3": "1 fois par combat, au lieu d'attaquer, le héros peut désigner une cible à ses alliés sur INT. Toutes les attaques infligées à cette cible ont Pi+3. Si le héros a désigné cette cible avant le combat alors le bonus est de Pi+5. La cible doit être visible par le héros.",
-							"AS4": "L'action de changer d'arme ne prends pas d'assaut. Fouiller dans un sac ne prend qu'1D4 assauts.",
-							"AS5": "Donne accès à 3 compétences au choix."
+							"AS1": "En combat, le héros a INT+2",
+							"AS2": "Si la compagnie a prévu un plan avant un combat le héros a COU+1, AT+1, PRD+1 et AD tir+1 pendant les 3 premiers assauts",
+							"AS3": "1 fois par combat, au lieu d'attaquer, le héros peut désigner une cible à ses alliés sur INT. Toutes les attaques infligées à cette cible ont Pi+3. Si le héros a désigné cette cible avant le combat alors le bonus est de Pi+5. La cible doit être visible par le héros",
+							"AS4": "L'action de changer d'arme ne prends pas d'assaut. Fouiller dans un sac ne prend qu'1D4 assauts",
+							"AS5": "Donne accès à 3 compétences au choix"
 						},
 						"Competences_obligatoires": [],
 						"Nombre_competences_choix": 3,
@@ -169,14 +171,14 @@
 				"ID": "champion_arene",
 				"Name_M": "Champion d'arène",
 				"Name_F": "Championne d'arène",
-				"Necessite_competence": "",
+				"Necessite_competence": [],
 				"Attributs_automatisables": {},
 				"Attributs_specifiques": {
-					"AS1": "Si le héros affronte un ennemi ayant plus de Force que lui, il obtient AT+1, AD Tir+1 et Crit+1.",
-					"AS2": "Si le héros porte moins de 5 PR solide, il obtient AT+1 et PRD+1.",
-					"AS3": "Pi+3 à mains nues et avec les armes ayant un minimum de FO requis.",
-					"AS4": "Le héros est immunisé à l'effet 'Peur'.",
-					"AS5": "Donne les compétences 'Je suis là pour boire des bières et trancher des têtes', 'Et je suis à court de bière' et 'Combo'."
+					"AS1": "Si le héros affronte un ennemi ayant plus de Force que lui, il obtient AT+1, AD Tir+1 et Crit+1",
+					"AS2": "Si le héros porte moins de 5 PR solide, il obtient AT+1 et PRD+1",
+					"AS3": "Pi+3 à mains nues et avec les armes ayant un minimum de FO requis",
+					"AS4": "Le héros est immunisé à l'effet 'Peur'",
+					"AS5": "Donne les compétences 'Je suis là pour boire des bières et trancher des têtes', 'Et je suis à court de bière' et 'Combo'"
 				},
 				"Competences": [
 					"Je suis là pour boire des bières et trancher des têtes",
@@ -188,16 +190,16 @@
 						"ID": "tueur_geant",
 						"Name_M": "Tueur de géants",
 						"Name_F": "Tueuse de géants",
-						"Necessite_competence": "",
+						"Necessite_competence": [],
 						"Attributs_automatisables": {},
 						"Attributs_specifiques": {
-							"AS1": "Inflige 1D de Pi supplémentaire aux ennemis de grande taille.",
+							"AS1": "Inflige 1D de Pi supplémentaire aux ennemis de grande taille",
 							"AS2": "Tant que l'adversaire que le héros attaque, a plus de Pv que lui, le héros a Pi+3 et Crit+2",
-							"AS3": "Le héros peut attaquer après avoir esquivé s'il affronte un ennemi imparable (trait, arme ou attaque spéciale).",
-							"AS4": "Si le héros a 'INTIMIDER' alors la compagnie ne souffre pas des effets de 'Terreur/Peur' et du trait 'Terrifiant'.",
-							"AS5": "Le héros ignore la PR nat des monstre.",
-							"AS6": "Le héros est imunisé aux hémorragies.",
-							"AS7": "Donne accès à 3 compétences au choix."
+							"AS3": "Le héros peut attaquer après avoir esquivé s'il affronte un ennemi imparable (trait, arme ou attaque spéciale)",
+							"AS4": "Si le héros a 'Intimider' alors la compagnie ne souffre pas des effets de 'Terreur/Peur' et du trait 'Terrifiant'",
+							"AS5": "Le héros ignore la PR nat des monstre",
+							"AS6": "Le héros est imunisé aux hémorragies",
+							"AS7": "Donne accès à 3 compétences au choix"
 						},
 						"Competences_obligatoires": [],
 						"Nombre_competences_choix": 3,
@@ -213,7 +215,7 @@
 						"ID": "boxeur_renomme",
 						"Name_M": "Boxeur de renom",
 						"Name_F": "Boxeuse de renom",
-						"Necessite_competence": "",
+						"Necessite_competence": [],
 						"Attributs_automatisables": {
 							"FO": 1,
 							"AT": 1,
@@ -221,10 +223,10 @@
 						},
 						"Attributs_specifiques": {
 							"AS1": "FO+1, AT+1 et ES+1 (automatique)",
-							"AS2": "Réduit de 2 pts les malus des attaques ciblées à mains nues et aux coups spéciaux à mains nues.",
-							"AS3": "Le héros peut attaquer après une ES réussie à mains nues.",
-							"AS4": "1 fois par combat : le héros peut ajouter son bonus de FO 2 fois pour un coup au moment de lancer les dés de dégât.",
-							"AS5": "Donne accès à 3 compétences au choix."
+							"AS2": "Réduit de 2 pts les malus des attaques ciblées à mains nues et aux coups spéciaux à mains nues",
+							"AS3": "Le héros peut attaquer après une ES réussie à mains nues",
+							"AS4": "1 fois par combat : le héros peut ajouter son bonus de FO 2 fois pour un coup au moment de lancer les dés de dégât",
+							"AS5": "Donne accès à 3 compétences au choix"
 						},
 						"Competences_obligatoires": [],
 						"Nombre_competences_choix": 3,
@@ -251,7 +253,237 @@
 			"AD": 8,
 			"FO": 12
 		},
-		"Max": {}
+		"Max": {},
+		"Specialisations": [
+			{
+				"ID": "briseur_de_crane",
+				"Name_M": "Briseur de crâne",
+				"Name_F": "Briseuse de crâne",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {
+					"AT": 1,
+					"PRD": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "AT+1 et PRD+1 (automatique)",
+					"AS2": "PR nat+1",
+					"AS3": "Réduit de 2pts les malus des attaques ciblées",
+					"AS4": "Pi+3 pour les attaques non ciblées",
+					"AS5": "Donne les compétences 'Ils ne font pas le poids' et 'Frappe lourde'"
+				},
+				"Competences": [
+					"Ils ne font pas le poids",
+					"Frappe lourde"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "fossoyeur_armees",
+						"Name_M": "Fossoyeur d'armées",
+						"Name_F": "Fossoyeuse d'armées",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Tous les points d'AT au-dessus de 12 s'ajoutent en Pi additionnels lors du calcul des dégâts en plus du bonus de force",
+							"AS2": "S'il y a au moins 3 ennemis au contact, le héros peut effectuer une attaque circulaire à 180° ou 360° (au choix) sur AT touchant toutes les cibles au contact (1 fois par assaut max et non compatible avec la compétence 'Il y en aura pour tout le monde')",
+							"AS3": "Tuer un ennemi au CàC permet d'attaquer immédiatement un autre ennemi au CàC durant le même assaut",
+							"AS4": "Si le héros a la compétence 'Intimider', il obtient 'Chercher des noises' et inversément",
+							"AS5": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [
+							"Intimider",
+							"Chercher des noises"
+						],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Fallait prendre une armure",
+							"Il y en aura pour tout le monde",
+							"Les yeux révolver",
+							"L'union fait la force",
+							"Vous partez déjà?"
+						]
+					},
+					{
+						"ID": "mesure_desesperee",
+						"Name_M": "Mesure désespérée",
+						"Name_F": "Mesure désespérée",
+						"Necessite_competence": [
+							"Chercher des noises"
+						],
+						"Attributs_automatisables": {
+							"ES": 1,
+							"PRD": 1
+						},
+						"Attributs_specifiques": {
+							"AS1": "ES+1 et PRD+1 (automatique)",
+							"AS2": "Crit+1",
+							"AS3": "Toutes les armes à 1 mains peuvent être utilisées à 2 mains avec le bonus de Pi+2",
+							"AS4": "Les coups critiques subis par ou infligés au héros ne peuvent pas faire 19 ou 20",
+							"AS5": "Après une esquive sur 1 au D4, le héros peut quand même attaquer à son tour",
+							"AS6": "Le héros est immunisé aux effets de 'Peur'",
+							"AS7": "Les ennemis faisant un échec critique frappent forcément leur allié le plus proche (si possible)",
+							"AS8": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Le feu par le feu",
+							"Inondation de sang",
+							"Je suis le déluge",
+							"Pour Frodon",
+							"Si ça saigne"
+						]
+					}
+				]
+			},
+			{
+				"ID": "homme_arme",
+				"Name_M": "Homme d'arme",
+				"Name_F": "Femme d'arme",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {
+					"FO": 1,
+					"PRD": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "FO+1 et PRD+1 (automatique)",
+					"AS2": "AT+2 si le héros utilise un bouclier",
+					"AS3": "Peut relancer une épreuve de COU ratée sauf critique",
+					"AS4": "Le héros dispose de 2 parades et 1 attaque par assaut",
+					"AS5": "Donne les compétences 'Même pas mal', 'C'est moi le monstre ici' et 'Chef de groupe'"
+				},
+				"Competences": [
+					"Même pas mal",
+					"C'est moi le monstre ici",
+					"Chef de groupe"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "mur_acier_mobile",
+						"Name_M": "Mur d'acier mobile",
+						"Name_F": "Mur d'acier mobile",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {
+							"PRD": 1
+						},
+						"Attributs_specifiques": {
+							"AS1": "PRD+1 (automatique)",
+							"AS2": "PRD crit+3 et effet de parade critique +5",
+							"AS3": "PR nat+1",
+							"AS4": "Pv max +10",
+							"AS5": "La PR solide ne réduit plus la vitesse de déplacement tactique",
+							"AS6": "Chaque ennemi au contact du héros lui donne PR nat+1",
+							"AS7": "En combat, le premier coup subi par le héros n'inflige aucun dégât",
+							"AS8": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Ecarte-toi",
+							"Ma grand-mère se bat mieux que toi",
+							"NOOOOON AAAAATTEEEENTIOOON",
+							"Revêtement en âmes fraiches",
+							"Rondache tamponneuse"
+						]
+					},
+					{
+						"ID": "maitre_de_guerre",
+						"Name_M": "Maître de guerre",
+						"Name_F": "Maîtresse de guerre",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "En combat, le héros a INT+2",
+							"AS2": "Si la compagnie a prévu un plan avant un combat le héros a COU+1, AT+1, PRD+1 et AD tir+1 pendant les 3 premiers assauts",
+							"AS3": "1 fois par combat, au lieu d'attaquer, le héros peut désigner une cible à ses alliés sur INT. Toutes les attaques infligées à cette cible ont Pi+3. Si le héros a désigné cette cible avant le combat alors le bonus est de Pi+5. La cible doit être visible par le héros",
+							"AS4": "L'action de changer d'arme ne prends pas d'assaut. Fouiller dans un sac ne prend qu'1D4 assauts",
+							"AS5": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Maîtrise martiale",
+							"Exploiter les failles",
+							"Forth Eorlingas",
+							"Message à caractère informatif",
+							"Voici vos ordres"
+						]
+					}
+				]
+			},
+			{
+				"ID": "champion_arene",
+				"Name_M": "Champion d'arène",
+				"Name_F": "Championne d'arène",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {},
+				"Attributs_specifiques": {
+					"AS1": "Si le héros affronte un ennemi ayant plus de Force que lui, il obtient AT+1, AD Tir+1 et Crit+1",
+					"AS2": "Si le héros porte moins de 5 PR solide, il obtient AT+1 et PRD+1",
+					"AS3": "Pi+3 à mains nues et avec les armes ayant un minimum de FO requis",
+					"AS4": "Le héros est immunisé à l'effet 'Peur'",
+					"AS5": "Donne les compétences 'Je suis là pour boire des bières et trancher des têtes', 'Et je suis à court de bière' et 'Combo'"
+				},
+				"Competences": [
+					"Je suis là pour boire des bières et trancher des têtes",
+					"Et je suis à court de bière",
+					"Combo"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "tueur_geant",
+						"Name_M": "Tueur de géants",
+						"Name_F": "Tueuse de géants",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Inflige 1D de Pi supplémentaire aux ennemis de grande taille",
+							"AS2": "Tant que l'adversaire que le héros attaque, a plus de Pv que lui, le héros a Pi+3 et Crit+2",
+							"AS3": "Le héros peut attaquer après avoir esquivé s'il affronte un ennemi imparable (trait, arme ou attaque spéciale)",
+							"AS4": "Si le héros a 'Intimider' alors la compagnie ne souffre pas des effets de 'Terreur/Peur' et du trait 'Terrifiant'",
+							"AS5": "Le héros ignore la PR nat des monstre",
+							"AS6": "Le héros est imunisé aux hémorragies",
+							"AS7": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Canon anti-aérien",
+							"Mangeur de flèches",
+							"Ça ne mange pas de pain",
+							"C'est celui-là?",
+							"Double peine"
+						]
+					},
+					{
+						"ID": "boxeur_renomme",
+						"Name_M": "Boxeur de renom",
+						"Name_F": "Boxeuse de renom",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {
+							"FO": 1,
+							"AT": 1,
+							"ES": 1
+						},
+						"Attributs_specifiques": {
+							"AS1": "FO+1, AT+1 et ES+1 (automatique)",
+							"AS2": "Réduit de 2 pts les malus des attaques ciblées à mains nues et aux coups spéciaux à mains nues",
+							"AS3": "Le héros peut attaquer après une ES réussie à mains nues",
+							"AS4": "1 fois par combat : le héros peut ajouter son bonus de FO 2 fois pour un coup au moment de lancer les dés de dégât",
+							"AS5": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Sel sur les plaies",
+							"Pains, beignes et patates",
+							"Feinte",
+							"Riposte",
+							"Descente de l'oiseau"
+						]
+					}
+				]
+			}
+		]
 	},
 	{
 		"ID": 3,
@@ -264,7 +496,299 @@
 			"AD": 13,
 			"FO": 8
 		},
-		"Max": {}
+		"Max": {},
+		"Specialisations": [
+			{
+				"ID": "tueur_gages",
+				"Name_M": "Tueur de gages",
+				"Name_F": "Tueuse de gages",
+				"Necessite_competence": [
+					"Escalader"
+				],
+				"Attributs_automatisables": {
+					"AD": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "AD+1 (automatique)",
+					"AS2": "Pi+3 pour les armes à distance",
+					"AS3": "CHA+2 pour négocier de meilleures récompenses de quêtes pour les missions d'assassinat",
+					"AS4": "Recharge-1T avec les armes à distance (arcs, arbalète, armes à feu, frondes, etc)",
+					"AS5": "Donne les compétences 'Conseil du Général Kenobi' et 'Conseil du Général Grievous'"
+				},
+				"Competences": [
+					"Conseil du Général Kenobi",
+					"Conseil du Général Grievous"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "tireur_elite",
+						"Name_M": "Tireur d'élite",
+						"Name_F": "Tireuse d'élite",
+						"Necessite_competence": [
+							"Tirer correctement"
+						],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Crit à distance+2",
+							"AS2": "Hors combat, le héros peut relancer un test de tir raté sauf critique",
+							"AS3": "Portée des armes à distance +10m et ignore les malus de distance",
+							"AS4": "Les munitions coûtent 25% moins cher",
+							"AS5": "AD tir+3 et recharge-1T",
+							"AS6": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"1 tir 1 mort",
+							"Arc surtendu",
+							"Je l'ai en travers de la gorge",
+							"Tir solaire",
+							"Tir lunaire"
+						]
+					},
+					{
+						"ID": "sicaire",
+						"Name_M": "Sicaire",
+						"Name_F": "Sicaire",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {
+							"ES": 1,
+							"PRD": 1
+						},
+						"Attributs_specifiques": {
+							"AS1": "Les contre-attaques et les attaques suivant une esquive ont Pi+3",
+							"AS2": "Les couteaux de lancer, shuriken, poignards et affilés ont Pi+3",
+							"AS3": "Chaque parade réussie engendre une contre-attaque indépendamment des actions effectuées par le héros durant le tour mais l'AT ne peut être une réussite critique",
+							"AS4": "Donne la compétence 'Armes de bourrin'",
+							"AS5": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [
+							"Armes de bourrin"
+						],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Et tu Brute",
+							"Frappe fantôme",
+							"Lame spectrale",
+							"Tu quoque mi filii",
+							"Pas vu venir"
+						]
+					}
+				]
+			},
+			{
+				"ID": "infiltre",
+				"Name_M": "Infiltré",
+				"Name_F": "Infiltrée",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {},
+				"Attributs_specifiques": {
+					"AS1": "En combat, le héros peut utiliser 'Frapper lâchement' tous les 4 assauts",
+					"AS2": "Le héros peut relancer un jet de discrétion raté sauf critique",
+					"AS3": "La nuit, le héros a AT+1 et AD+1",
+					"AS4": "Donne les compétences 'Serrurier', 'Diversion' et 'Tourner en bourrique'"
+				},
+				"Competences": [
+					"Serrurier",
+					"Diversion",
+					"Tourner en bourrique"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "ombre",
+						"Name_M": "Ombre",
+						"Name_F": "Ombre",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "En combat, si le héros n'est pas au CàC, il peut redevenir discret en sacrifiant 1 assaut",
+							"AS2": "Le héros donne le désavantage aux détections adverses",
+							"AS3": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Il va faire tout noir",
+							"TA GUEULE",
+							"Vue de l'esprit",
+							"Chance inouïe",
+							"Sans un bruit"
+						]
+					},
+					{
+						"ID": "empoisonneur",
+						"Name_M": "Empoisonneur",
+						"Name_F": "Empoisonneuse",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "En combat, les poisons font effet immédiatement",
+							"AS2": "Les antidotes ne fonctionnent pour les ennemis que sur 1à3 au D6",
+							"AS3": "Imprégner une lame d'une dose de poison ne consomme pas le poison sur 1à3 au D6",
+							"AS4": "Le poison sur les projectiles reste jusqu'au nettoyage ou jusqu'é ce que le projectile soit tiré",
+							"AS5": "Donne la compétence 'Cuistot'",
+							"AS6": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [
+							"Cuistot"
+						],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Porter un toast",
+							"Membre du personnel",
+							"My name is Bomb, JAGER Bomb",
+							"Emo Globine",
+							"Cocktail funeste"
+						]
+					}
+				]
+			},
+			{
+				"ID": "egorgeur",
+				"Name_M": "Egorgeur",
+				"Name_F": "Egorgeuse",
+				"Necessite_competence": [
+					"Ressemble à rien"
+				],
+				"Attributs_automatisables": {
+					"CHA": 1,
+					"FO": 2
+				},
+				"Attributs_specifiques": {
+					"AS1": "CHA+1 et FO+2 (automatique)",
+					"AS2": "Les couteaux, dagues et affiliés ont Pi+3 et ignore 3 PR sol",
+					"AS3": "Donne les compétences 'Arme dissimulée', 'Hémophilie contagieuse' et 'Ouvert au dialogue'"
+				},
+				"Competences": [
+					"Arme dissimulée",
+					"Hémophilie contagieuse",
+					"Ouvert au dialogue"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "veuve_noire",
+						"Name_M": "Veuve noire",
+						"Name_F": "Veuve noire",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Hors combat, une AT ciblée à la tête au CàC Crit+5",
+							"AS2": "Crit+5 pour les épreuves de séduction",
+							"AS3": "Pi+3 pour les attaques dans le dos",
+							"AS4": "Donne les compétences 'Naïveté touchante' et 'Fariboles'",
+							"AS5": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [
+							"Naïveté touchante",
+							"Fariboles"
+						],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Je l'ai fait exprès de dire que j'étais mort",
+							"Suite présidentielle de Benny",
+							"Haut les mains",
+							"Baiser de la mort",
+							"Sauve-moi mon Roméo"
+						]
+					},
+					{
+						"ID": "maitre_lames",
+						"Name_M": "Maître des lames",
+						"Name_F": "Maîtresse des lames",
+						"Necessite_competence": [
+							"Ambidextrie",
+							"Chercher des noises"
+						],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Diminue de 3 le malus d'AT dû à l'ambidextrie",
+							"AS2": "Les couteaux, dagues et affiliés infligent une hémorragie à chaque coup causant une perte de Pv",
+							"AS3": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Et à la fin de l'envoi, je touche",
+							"Laisser la main pour mieux la trancher",
+							"Tornade de lames",
+							"Effusion de sang",
+							"Viser les jointures"
+						]
+					}
+				]
+			},
+			{
+				"ID": "ninja_veteran",
+				"Name_M": "Ninja vétéran",
+				"Name_F": "Ninja vétéran",
+				"Necessite_competence": [
+					"Escalader"
+				],
+				"Attributs_automatisables": {
+					"AT": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "AT+1 (automatique)",
+					"AS2": "Le héros peut utiliser 'Frapper lâchement' avec des armes à distance",
+					"AS3": "Le héros a l'avantage pour les épreuves d'acrobaties",
+					"AS4": "Donne les compétences 'Stalactite humaine', 'Saute-mouton', 'Chamois urbain' et 'Chute maîtrisée'"
+				},
+				"Competences": [
+					"Stalactite humaine",
+					"Saute-mouton",
+					"Chamois urbain",
+					"Chute maîtrisée"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "shinobi",
+						"Name_M": "Shinobi",
+						"Name_F": "Shinobi",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Les armes du Pays de Nugh coûtent 50% de moins",
+							"AS2": "Les armes du Pays de Nugh ont AT+1, PRD+1 et Pi+5",
+							"AS3": "Les shurikens infligent Pi+5",
+							"AS4": "Le héros peut relancer un jet d'AD raté pour sauter de toits en toits (sauf critique)",
+							"AS5": "La compétence 'Escalader' ne peut pas être un échec critique",
+							"AS6": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Ecran de fumée",
+							"Pyrotechnicien",
+							"Serment de l'homme chauve-souris",
+							"Parkour",
+							"Ichi, ni, san"
+						]
+					},
+					{
+						"ID": "hashashin",
+						"Name_M": "Hashashin",
+						"Name_F": "Hashashin",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Les armes du Birmilistan coûtent 50% de moins",
+							"AS2": "Les armes du Birmilistan ont AT+1, PRD+1 et Pi+5",
+							"AS3": "Le héros peut consommer jusqu'à 4 potions et 4 élixirs par jour",
+							"AS4": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"404 douleur NOT FOUND",
+							"Fanatisme ésotérique",
+							"Zélote hypocrite",
+							"Dentier de grand-mère",
+							"Propagande tintée de vérité"
+						]
+					}
+				]
+			}
+		]
 	},
 	{
 		"ID": 4,
@@ -277,7 +801,299 @@
 			"AD": 12,
 			"FO": 8
 		},
-		"Max": {}
+		"Max": {},
+		"Specialisations": [
+			{
+				"ID": "tueur_gages",
+				"Name_M": "Tueur de gages",
+				"Name_F": "Tueuse de gages",
+				"Necessite_competence": [
+					"Escalader"
+				],
+				"Attributs_automatisables": {
+					"AD": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "AD+1 (automatique)",
+					"AS2": "Pi+3 pour les armes à distance",
+					"AS3": "CHA+2 pour négocier de meilleures récompenses de quêtes pour les missions d'assassinat",
+					"AS4": "Recharge-1T avec les armes à distance (arcs, arbalète, armes à feu, frondes, etc)",
+					"AS5": "Donne les compétences 'Conseil du Général Kenobi' et 'Conseil du Général Grievous'"
+				},
+				"Competences": [
+					"Conseil du Général Kenobi",
+					"Conseil du Général Grievous"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "tireur_elite",
+						"Name_M": "Tireur d'élite",
+						"Name_F": "Tireuse d'élite",
+						"Necessite_competence": [
+							"Tirer correctement"
+						],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Crit à distance+2",
+							"AS2": "Hors combat, le héros peut relancer un test de tir raté sauf critique",
+							"AS3": "Portée des armes à distance +10m et ignore les malus de distance",
+							"AS4": "Les munitions coûtent 25% moins cher",
+							"AS5": "AD tir+3 et recharge-1T",
+							"AS6": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"1 tir 1 mort",
+							"Arc surtendu",
+							"Je l'ai en travers de la gorge",
+							"Tir solaire",
+							"Tir lunaire"
+						]
+					},
+					{
+						"ID": "sicaire",
+						"Name_M": "Sicaire",
+						"Name_F": "Sicaire",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {
+							"ES": 1,
+							"PRD": 1
+						},
+						"Attributs_specifiques": {
+							"AS1": "Les contre-attaques et les attaques suivant une esquive ont Pi+3",
+							"AS2": "Les couteaux de lancer, shuriken, poignards et affilés ont Pi+3",
+							"AS3": "Chaque parade réussie engendre une contre-attaque indépendamment des actions effectuées par le héros durant le tour mais l'AT ne peut être une réussite critique",
+							"AS4": "Donne la compétence 'Armes de bourrin'",
+							"AS5": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [
+							"Armes de bourrin"
+						],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Et tu Brute",
+							"Frappe fantôme",
+							"Lame spectrale",
+							"Tu quoque mi filii",
+							"Pas vu venir"
+						]
+					}
+				]
+			},
+			{
+				"ID": "infiltre",
+				"Name_M": "Infiltré",
+				"Name_F": "Infiltrée",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {},
+				"Attributs_specifiques": {
+					"AS1": "En combat, le héros peut utiliser 'Frapper lâchement' tous les 4 assauts",
+					"AS2": "Le héros peut relancer un jet de discrétion raté sauf critique",
+					"AS3": "La nuit, le héros a AT+1 et AD+1",
+					"AS4": "Donne les compétences 'Serrurier', 'Diversion' et 'Tourner en bourrique'"
+				},
+				"Competences": [
+					"Serrurier",
+					"Diversion",
+					"Tourner en bourrique"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "ombre",
+						"Name_M": "Ombre",
+						"Name_F": "Ombre",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "En combat, si le héros n'est pas au CàC, il peut redevenir discret en sacrifiant 1 assaut",
+							"AS2": "Le héros donne le désavantage aux détections adverses",
+							"AS3": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Il va faire tout noir",
+							"TA GUEULE",
+							"Vue de l'esprit",
+							"Chance inouïe",
+							"Sans un bruit"
+						]
+					},
+					{
+						"ID": "empoisonneur",
+						"Name_M": "Empoisonneur",
+						"Name_F": "Empoisonneuse",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "En combat, les poisons font effet immédiatement",
+							"AS2": "Les antidotes ne fonctionnent pour les ennemis que sur 1à3 au D6",
+							"AS3": "Imprégner une lame d'une dose de poison ne consomme pas le poison sur 1à3 au D6",
+							"AS4": "Le poison sur les projectiles reste jusqu'au nettoyage ou jusqu'é ce que le projectile soit tiré",
+							"AS5": "Donne la compétence 'Cuistot'",
+							"AS6": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [
+							"Cuistot"
+						],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Porter un toast",
+							"Membre du personnel",
+							"My name is Bomb, JAGER Bomb",
+							"Emo Globine",
+							"Cocktail funeste"
+						]
+					}
+				]
+			},
+			{
+				"ID": "egorgeur",
+				"Name_M": "Egorgeur",
+				"Name_F": "Egorgeuse",
+				"Necessite_competence": [
+					"Ressemble à rien"
+				],
+				"Attributs_automatisables": {
+					"CHA": 1,
+					"FO": 2
+				},
+				"Attributs_specifiques": {
+					"AS1": "CHA+1 et FO+2 (automatique)",
+					"AS2": "Les couteaux, dagues et affiliés ont Pi+3 et ignore 3 PR sol",
+					"AS3": "Donne les compétences 'Arme dissimulée', 'Hémophilie contagieuse' et 'Ouvert au dialogue'"
+				},
+				"Competences": [
+					"Arme dissimulée",
+					"Hémophilie contagieuse",
+					"Ouvert au dialogue"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "veuve_noire",
+						"Name_M": "Veuve noire",
+						"Name_F": "Veuve noire",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Hors combat, une AT ciblée à la tête au CàC Crit+5",
+							"AS2": "Crit+5 pour les épreuves de séduction",
+							"AS3": "Pi+3 pour les attaques dans le dos",
+							"AS4": "Donne les compétences 'Naïveté touchante' et 'Fariboles'",
+							"AS5": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [
+							"Naïveté touchante",
+							"Fariboles"
+						],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Je l'ai fait exprès de dire que j'étais mort",
+							"Suite présidentielle de Benny",
+							"Haut les mains",
+							"Baiser de la mort",
+							"Sauve-moi mon Roméo"
+						]
+					},
+					{
+						"ID": "maitre_lames",
+						"Name_M": "Maître des lames",
+						"Name_F": "Maîtresse des lames",
+						"Necessite_competence": [
+							"Ambidextrie",
+							"Chercher des noises"
+						],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Diminue de 3 le malus d'AT dû à l'ambidextrie",
+							"AS2": "Les couteaux, dagues et affiliés infligent une hémorragie à chaque coup causant une perte de Pv",
+							"AS3": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Et à la fin de l'envoi, je touche",
+							"Laisser la main pour mieux la trancher",
+							"Tornade de lames",
+							"Effusion de sang",
+							"Viser les jointures"
+						]
+					}
+				]
+			},
+			{
+				"ID": "ninja_veteran",
+				"Name_M": "Ninja vétéran",
+				"Name_F": "Ninja vétéran",
+				"Necessite_competence": [
+					"Escalader"
+				],
+				"Attributs_automatisables": {
+					"AT": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "AT+1 (automatique)",
+					"AS2": "Le héros peut utiliser 'Frapper lâchement' avec des armes à distance",
+					"AS3": "Le héros a l'avantage pour les épreuves d'acrobaties",
+					"AS4": "Donne les compétences 'Stalactite humaine', 'Saute-mouton', 'Chamois urbain' et 'Chute maîtrisée'"
+				},
+				"Competences": [
+					"Stalactite humaine",
+					"Saute-mouton",
+					"Chamois urbain",
+					"Chute maîtrisée"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "shinobi",
+						"Name_M": "Shinobi",
+						"Name_F": "Shinobi",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Les armes du Pays de Nugh coûtent 50% de moins",
+							"AS2": "Les armes du Pays de Nugh ont AT+1, PRD+1 et Pi+5",
+							"AS3": "Les shurikens infligent Pi+5",
+							"AS4": "Le héros peut relancer un jet d'AD raté pour sauter de toits en toits (sauf critique)",
+							"AS5": "La compétence 'Escalader' ne peut pas être un échec critique",
+							"AS6": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Ecran de fumée",
+							"Pyrotechnicien",
+							"Serment de l'homme chauve-souris",
+							"Parkour",
+							"Ichi, ni, san"
+						]
+					},
+					{
+						"ID": "hashashin",
+						"Name_M": "Hashashin",
+						"Name_F": "Hashashin",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Les armes du Birmilistan coûtent 50% de moins",
+							"AS2": "Les armes du Birmilistan ont AT+1, PRD+1 et Pi+5",
+							"AS3": "Le héros peut consommer jusqu'à 4 potions et 4 élixirs par jour",
+							"AS4": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"404 douleur NOT FOUND",
+							"Fanatisme ésotérique",
+							"Zélote hypocrite",
+							"Dentier de grand-mère",
+							"Propagande tintée de vérité"
+						]
+					}
+				]
+			}
+		]
 	},
 	{
 		"ID": 5,

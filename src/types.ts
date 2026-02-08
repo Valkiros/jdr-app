@@ -332,7 +332,7 @@ export interface SousSpecialisation {
     id: string; // Rust "id"
     name_m: string;
     name_f: string;
-    necessite_competence: string;
+    necessite_competence: string[];
     attributs_automatisables: {
         [key: string]: number;
     };
@@ -348,7 +348,7 @@ export interface Specialisation {
     id: string;
     name_m: string;
     name_f: string;
-    necessite_competence: string;
+    necessite_competence: string[];
     attributs_automatisables: {
         [key: string]: number;
     };
