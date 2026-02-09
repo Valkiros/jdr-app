@@ -12,6 +12,7 @@ import { TempModifiersPanel } from './TempModifiersPanel';
 import { Inventory } from '../Equipements/Inventory';
 import { CompetencesPanel } from '../Competences/CompetencesPanel';
 import { SpecializationCompetencesPanel } from '../Competences/SpecializationCompetencesPanel';
+import { DomainPanel } from '../Competences/DomainPanel';
 import { StatusPanel } from '../Etat/StatusPanel';
 import { SacochesEtPoches } from '../SacochesEtPoches/SacochesEtPoches';
 import { SacPanel } from '../Sac/SacPanel';
@@ -176,6 +177,8 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
         // Get Alcohol Modifiers
         const { leger, fort, gueule_de_bois } = getAlcoholModifiers(data.status || INITIAL_DATA.status);
 
+        const isFlibustier = data.identity.specialisation?.toLowerCase() === 'flibustier';
+
         // --- SPECIALIZATION & SUB-SPECIALIZATION AUTOMATED ATTRIBUTES ---
         const getSpecData = () => {
             if (!gameRules) return { specBonuses: {}, subSpecBonuses: {} };
@@ -224,6 +227,7 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
         if (backpack) {
             const refBackpack = refs.find(r => r.id === backpack.refId);
             const capacityRaw = (refBackpack as any)?.details?.capacite || 0;
+            // eslint-disable-next-line
             const capacity = typeof capacityRaw === 'string' ? parseInt(capacityRaw) : capacityRaw;
 
             // Calculate Content Weight (Items in 'Sacs' but not the bag itself)
@@ -272,7 +276,15 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
             if (key in fort) {
                 // @ts-ignore
                 const val = fort[key];
-                if (val !== 0) components.push({ label: 'Alcool (fort)', value: val });
+                let effectiveVal = val;
+
+                if (isFlibustier && val < 0) {
+                    effectiveVal = 0;
+                }
+
+                if (effectiveVal !== 0) {
+                    components.push({ label: 'Alcool (fort)', value: effectiveVal });
+                }
             }
             if (key in gueule_de_bois) {
                 // @ts-ignore
@@ -362,7 +374,13 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
             // @ts-ignore
             if (key in leger) base += leger[key];
             // @ts-ignore
-            if (key in fort) base += fort[key];
+            if (key in fort) {
+                // @ts-ignore
+                const val = fort[key];
+                if (!isFlibustier || val >= 0) {
+                    base += val;
+                }
+            }
             // @ts-ignore
             if (key in gueule_de_bois) base += gueule_de_bois[key];
 
@@ -632,7 +650,7 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                 const baseMarche = Math.ceil(speed * marcheMult / 100);
                 totals.marche.value += baseMarche;
                 totals.marche.details.components.push({
-                    label: `Base origine: ${speed / 100} * (PR sol ${prSolide} => ${marcheMult})`,
+                    label: `Base origine: ${speed / 100} * (PR Sol ${prSolide} => x${marcheMult / 100})`,
                     value: baseMarche
                 });
 
@@ -640,12 +658,70 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                 const baseCourse = Math.ceil(speed * courseMult / 100);
                 totals.course.value += baseCourse;
                 totals.course.details.components.push({
-                    label: `Base origine: ${speed / 100} * (PR sol ${prSolide} => ${courseMult})`,
+                    label: `Base origine: ${speed / 100} * (PR Sol ${prSolide} => x${courseMult / 100})`,
                     value: baseCourse
                 });
+
+                // --- Specialization / Sub-Spec Bonuses for Movement & RM ---
+                const getSpecData = () => {
+                    if (!gameRules) return { specBonuses: {} as any, subSpecBonuses: {} as any };
+                    const currentMetier = gameRules.metiers.find((m: any) => m.name_m === data.identity.metier || m.name_f === data.identity.metier);
+                    if (!currentMetier) return { specBonuses: {}, subSpecBonuses: {} };
+
+                    let specBonuses: { [key: string]: number } = {};
+                    let subSpecBonuses: { [key: string]: number } = {};
+
+                    // Specialization
+                    if (data.identity.specialisation) {
+                        const spec = currentMetier.specialisations?.find((s: any) => s.name_m === data.identity.specialisation || s.name_f === data.identity.specialisation);
+                        const attrs = spec?.attributs_automatisables || (spec as any)?.Attributs_automatisables;
+                        if (attrs) Object.entries(attrs).forEach(([k, v]) => specBonuses[k] = (specBonuses[k] || 0) + (v as number));
+                    }
+
+                    // Sub-Specialization
+                    if (data.identity.sous_specialisation && data.identity.specialisation) {
+                        const spec = currentMetier.specialisations?.find((s: any) => s.name_m === data.identity.specialisation || s.name_f === data.identity.specialisation);
+                        const subSpec = spec?.sous_specialisations?.find((s: any) => s.name_m === data.identity.sous_specialisation || s.name_f === data.identity.sous_specialisation);
+                        const attrs = subSpec?.attributs_automatisables || (subSpec as any)?.Attributs_automatisables;
+                        if (attrs) Object.entries(attrs).forEach(([k, v]) => subSpecBonuses[k] = (subSpecBonuses[k] || 0) + (v as number));
+                    }
+                    return { specBonuses, subSpecBonuses };
+                };
+
+                const { specBonuses, subSpecBonuses } = getSpecData();
+
+                // RM
+                if (specBonuses['RM']) {
+                    totals.resistance_magique.value += specBonuses['RM'];
+                    totals.resistance_magique.details.components.push({ label: 'Spécialisation', value: specBonuses['RM'] });
+                }
+                if (subSpecBonuses['RM']) {
+                    totals.resistance_magique.value += subSpecBonuses['RM'];
+                    totals.resistance_magique.details.components.push({ label: 'Sous-spécialisation', value: subSpecBonuses['RM'] });
+                }
+
+                // Marche (MVTm)
+                if (specBonuses['MVTm']) {
+                    totals.marche.value += specBonuses['MVTm'];
+                    totals.marche.details.components.push({ label: 'Spécialisation', value: specBonuses['MVTm'] });
+                }
+                if (subSpecBonuses['MVTm']) {
+                    totals.marche.value += subSpecBonuses['MVTm'];
+                    totals.marche.details.components.push({ label: 'Sous-spécialisation', value: subSpecBonuses['MVTm'] });
+                }
+
+                // Course (MVTc)
+                if (specBonuses['MVTc']) {
+                    totals.course.value += specBonuses['MVTc'];
+                    totals.course.details.components.push({ label: 'Spécialisation', value: specBonuses['MVTc'] });
+                }
+                if (subSpecBonuses['MVTc']) {
+                    totals.course.value += subSpecBonuses['MVTc'];
+                    totals.course.details.components.push({ label: 'Sous-spécialisation', value: subSpecBonuses['MVTc'] });
+                }
+                // -----------------------------------------------------------
             }
         }
-
         // Set totals in details
         totals.solide.details.total = totals.solide.value;
         totals.speciale.details.total = totals.speciale.value;
@@ -953,6 +1029,21 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                         globalCompetences={data.competences || []}
                     />
                 )}
+
+                {/* Preux Chevalier Domain Selection */}
+                {gameRules && data.identity.metier && data.identity.specialisation && data.identity.sous_specialisation && (() => {
+                    const currentMetier = gameRules.metiers.find(m => m.name_m === data.identity.metier || m.name_f === data.identity.metier);
+                    const spec = currentMetier?.specialisations?.find(s => s.name_m === data.identity.specialisation || s.name_f === data.identity.specialisation);
+                    const subSpec = spec?.sous_specialisations?.find(s => s.name_m === data.identity.sous_specialisation || s.name_f === data.identity.sous_specialisation);
+
+                    return subSpec?.id === 'preux_chevalier';
+                })() && (
+                        <DomainPanel
+                            domaines={gameRules.domaines || []}
+                            selectedDomaine={data.identity.domaine}
+                            onDomaineChange={(dom) => setData({ ...data, identity: { ...data.identity, domaine: dom } })}
+                        />
+                    )}
 
 
             </div>

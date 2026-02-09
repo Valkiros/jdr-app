@@ -224,7 +224,16 @@ export const ArmesTable: React.FC<ArmesTableProps> = ({ items, onItemsChange, re
                                             // Access nested caracs safely
                                             const itemForceBonus = parseInt(String(r?.raw.caracteristiques?.force || 0), 10);
                                             const totalForce = parseInt(String(characterForce), 10) + itemForceBonus;
-                                            const bonusFo = Math.max(0, totalForce - 12);
+                                            const rawBonusFo = Math.max(0, totalForce - 12);
+
+                                            // Check for excluded types
+                                            const type = r?.type || getRefCategory(item.refId) || item.equipement_type || '';
+                                            const excludedTypes = ['Arbalète', 'Pistolet', 'Fusil', 'Arme de siège', 'Engins explosifs', 'Engin incendiaire', 'Arme à projectiles'];
+                                            const isExcluded = excludedTypes.includes(type);
+
+                                            const bonusFo = isExcluded ? 0 : rawBonusFo;
+
+                                            if (isExcluded) return <span title="Bonus de Force non applicable">-</span>;
                                             return bonusFo > 0 ? `+${bonusFo}` : '0';
                                         })()}
                                     </td>
@@ -236,7 +245,14 @@ export const ArmesTable: React.FC<ArmesTableProps> = ({ items, onItemsChange, re
 
                                             const itemForceBonus = parseInt(String(r?.raw.caracteristiques?.force || 0), 10);
                                             const totalForce = parseInt(String(characterForce), 10) + itemForceBonus;
-                                            const bonusFo = Math.max(0, totalForce - 12);
+                                            const rawBonusFo = Math.max(0, totalForce - 12);
+
+                                            // Check for excluded types
+                                            const type = r?.type || getRefCategory(item.refId) || item.equipement_type || '';
+                                            const excludedTypes = ['Arbalète', 'Pistolet', 'Fusil', 'Arme de siège', 'Engins explosifs', 'Engin incendiaire', 'Arme à projectiles'];
+                                            const isExcluded = excludedTypes.includes(type);
+
+                                            const bonusFo = isExcluded ? 0 : rawBonusFo;
 
                                             return calculateTotal(degats, refPi, String(item.modif_pi || 0), bonusFo);
                                         })()}

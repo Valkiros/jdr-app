@@ -130,6 +130,7 @@ export interface Identity {
     specialisation?: string;
     sous_specialisation?: string;
     description?: string;
+    domaine?: string;
 }
 
 // Interface pour les PVs et PMs (schéma de base)
@@ -393,12 +394,19 @@ export interface CorruptionPalierRef {
     Effets: string;
 }
 
+// Interface pour les domaines (Preux Chevalier)
+export interface Domaine {
+    domaine: string;
+    description: string;
+}
+
 // Interface pour les réglages et configurations du jeu
 export interface GameRules {
     origines: Origine[];
     metiers: Metier[];
     corruption_origine: CorruptionOrigineRef[];
     corruption_palier: CorruptionPalierRef[];
+    domaines: Domaine[];
 }
 
 // Interface pour les compétences

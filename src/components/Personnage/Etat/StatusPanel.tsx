@@ -15,12 +15,17 @@ const OnBlurInput: React.FC<{
     onChange: (val: number) => void;
     className?: string;
     min?: string | number;
-}> = ({ value, onChange, className, min }) => {
-    const [localValue, setLocalValue] = useState(String(value));
+    hideZero?: boolean;
+}> = ({ value, onChange, className, min, hideZero }) => {
+    const [localValue, setLocalValue] = useState(hideZero && value === 0 ? '' : String(value));
 
     useEffect(() => {
-        setLocalValue(String(value));
-    }, [value]);
+        if (hideZero && value === 0) {
+            setLocalValue('');
+        } else {
+            setLocalValue(String(value));
+        }
+    }, [value, hideZero]);
 
     return (
         <input
@@ -29,7 +34,11 @@ const OnBlurInput: React.FC<{
             value={localValue}
             onChange={(e) => setLocalValue(e.target.value)}
             onBlur={() => {
-                const parsed = parseInt(localValue);
+                let parsed = parseInt(localValue);
+                if (localValue.trim() === '') {
+                    parsed = 0;
+                }
+
                 if (!isNaN(parsed) && parsed !== value) {
                     onChange(parsed);
                 }
@@ -220,6 +229,7 @@ export const StatusPanel: React.FC<StatusPanelProps> = ({ status, description = 
                                 value={status.alcohol.leger || 0}
                                 onChange={(val) => updateStatus('alcohol', 'leger', val)}
                                 className="p-2 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none"
+                                hideZero
                             />
                         </div>
                         <div className="flex flex-col">
@@ -229,6 +239,7 @@ export const StatusPanel: React.FC<StatusPanelProps> = ({ status, description = 
                                 value={status.alcohol.fort || 0}
                                 onChange={(val) => updateStatus('alcohol', 'fort', val)}
                                 className="p-2 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none"
+                                hideZero
                             />
                         </div>
                         <div className="flex flex-col">
@@ -238,6 +249,7 @@ export const StatusPanel: React.FC<StatusPanelProps> = ({ status, description = 
                                 value={status.alcohol.gueule_de_bois || 0}
                                 onChange={(val) => updateStatus('alcohol', 'gueule_de_bois', val)}
                                 className={`p-2 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none`}
+                                hideZero
                             />
                         </div>
                     </div>

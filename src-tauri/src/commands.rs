@@ -406,11 +406,20 @@ pub struct CorruptionPalierRef {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
+pub struct Domaine {
+    #[serde(alias = "Domaine")]
+    pub domaine: String,
+    #[serde(alias = "Description")]
+    pub description: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
 pub struct GameRules {
     pub origines: Vec<Origine>,
     pub metiers: Vec<Metier>,
     pub corruption_origine: Vec<CorruptionOrigineRef>,
     pub corruption_palier: Vec<CorruptionPalierRef>,
+    pub domaines: Vec<Domaine>,
 }
 
 #[tauri::command]
@@ -419,6 +428,7 @@ pub fn get_game_rules() -> Result<GameRules, String> {
     let metiers_json = include_str!("../data/config/metiers.json");
     let corruption_origine_json = include_str!("../data/config/corruption_origine.json");
     let corruption_palier_json = include_str!("../data/config/corruption_palier.json");
+    let domaines_json = include_str!("../data/config/domaines.json");
 
     let origines: Vec<Origine> = serde_json::from_str(origines_json)
         .map_err(|e| format!("Failed to parse origines.json: {}", e))?;
@@ -429,12 +439,15 @@ pub fn get_game_rules() -> Result<GameRules, String> {
             .map_err(|e| format!("Failed to parse corruption_origine.json: {}", e))?;
     let corruption_palier: Vec<CorruptionPalierRef> = serde_json::from_str(corruption_palier_json)
         .map_err(|e| format!("Failed to parse corruption_palier.json: {}", e))?;
+    let domaines: Vec<Domaine> = serde_json::from_str(domaines_json)
+        .map_err(|e| format!("Failed to parse domaines.json: {}", e))?;
 
     Ok(GameRules {
         origines,
         metiers,
         corruption_origine,
         corruption_palier,
+        domaines,
     })
 }
 

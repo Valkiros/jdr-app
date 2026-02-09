@@ -247,7 +247,15 @@ export const CharacteristicsPanel: React.FC<CharacteristicsPanelProps> = ({
                                         // 3. Compute Effective Force for this item
                                         const effectiveForce = baseForce + instanceForceBonus + refForceBonus;
                                         // 4. Compute Bonus FO
-                                        const bonusFo = Math.max(0, effectiveForce - 12);
+                                        const rawBonusFo = Math.max(0, effectiveForce - 12);
+
+                                        // Check for excluded types
+                                        // Try to find type in details (new), direct (legacy), or fallback
+                                        const type = (refItem as any)?.details?.type || (refItem as any)?.type || item.equipement_type || '';
+                                        const excludedTypes = ['Arbalète', 'Pistolet', 'Fusil', 'Arme de siège', 'Engins explosifs', 'Engin incendiaire', 'Arme à projectiles'];
+                                        const isExcluded = excludedTypes.includes(type);
+
+                                        const bonusFo = isExcluded ? 0 : rawBonusFo;
 
                                         // Global PI modifiers (Alcohol, Hangover...)
                                         const globalPi = (globalModifiers?.pi || 0);
