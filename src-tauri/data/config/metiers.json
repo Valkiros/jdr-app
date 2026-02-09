@@ -104,7 +104,7 @@
 				"Attributs_specifiques": {
 					"AS1": "FO+1 et PRD+1 (automatique)",
 					"AS2": "AT+2 si le héros utilise un bouclier",
-					"AS3": "Peut relancer une épreuve de COU ratée sauf critique",
+					"AS3": "Le héros peut relancer une épreuve de COU ratée (sauf critique)",
 					"AS4": "Le héros dispose de 2 parades et 1 attaque par assaut",
 					"AS5": "Donne les compétences 'Même pas mal', 'C'est moi le monstre ici' et 'Chef de groupe'"
 				},
@@ -347,7 +347,7 @@
 				"Attributs_specifiques": {
 					"AS1": "FO+1 et PRD+1 (automatique)",
 					"AS2": "AT+2 si le héros utilise un bouclier",
-					"AS3": "Peut relancer une épreuve de COU ratée sauf critique",
+					"AS3": "Le héros peut relancer une épreuve de COU ratée (sauf critique)",
 					"AS4": "Le héros dispose de 2 parades et 1 attaque par assaut",
 					"AS5": "Donne les compétences 'Même pas mal', 'C'est moi le monstre ici' et 'Chef de groupe'"
 				},
@@ -530,7 +530,7 @@
 						"Attributs_automatisables": {},
 						"Attributs_specifiques": {
 							"AS1": "Crit à distance+2",
-							"AS2": "Hors combat, le héros peut relancer un test de tir raté sauf critique",
+							"AS2": "Hors combat, le héros peut relancer une épreuve de tir ratée (sauf critique)",
 							"AS3": "Portée des armes à distance +10m et ignore les malus de distance",
 							"AS4": "Les munitions coûtent 25% moins cher",
 							"AS5": "AD tir+3 et recharge-1T",
@@ -584,7 +584,7 @@
 				"Attributs_automatisables": {},
 				"Attributs_specifiques": {
 					"AS1": "En combat, le héros peut utiliser 'Frapper lâchement' tous les 4 assauts",
-					"AS2": "Le héros peut relancer un jet de discrétion raté sauf critique",
+					"AS2": "Le héros peut relancer une épreuve de Discrétion ratée (sauf critique)",
 					"AS3": "La nuit, le héros a AT+1 et AD+1",
 					"AS4": "Donne les compétences 'Serrurier', 'Diversion' et 'Tourner en bourrique'"
 				},
@@ -750,7 +750,7 @@
 							"AS1": "Les armes du Pays de Nugh coûtent 50% de moins",
 							"AS2": "Les armes du Pays de Nugh ont AT+1, PRD+1 et Pi+5",
 							"AS3": "Les shurikens infligent Pi+5",
-							"AS4": "Le héros peut relancer un jet d'AD raté pour sauter de toits en toits (sauf critique)",
+							"AS4": "Le héros peut relancer une épreuve d'AD ratée pour sauter de toits en toits (sauf critique)",
 							"AS5": "La compétence 'Escalader' ne peut pas être un échec critique",
 							"AS6": "Donne accès à 3 compétences au choix"
 						},
@@ -835,7 +835,7 @@
 						"Attributs_automatisables": {},
 						"Attributs_specifiques": {
 							"AS1": "Crit à distance+2",
-							"AS2": "Hors combat, le héros peut relancer un test de tir raté sauf critique",
+							"AS2": "Hors combat, le héros peut relancer une épreuve de tir ratée (sauf critique)",
 							"AS3": "Portée des armes à distance +10m et ignore les malus de distance",
 							"AS4": "Les munitions coûtent 25% moins cher",
 							"AS5": "AD tir+3 et recharge-1T",
@@ -889,7 +889,7 @@
 				"Attributs_automatisables": {},
 				"Attributs_specifiques": {
 					"AS1": "En combat, le héros peut utiliser 'Frapper lâchement' tous les 4 assauts",
-					"AS2": "Le héros peut relancer un jet de discrétion raté sauf critique",
+					"AS2": "Le héros peut relancer une épreuve de Discrétion ratée (sauf critique)",
 					"AS3": "La nuit, le héros a AT+1 et AD+1",
 					"AS4": "Donne les compétences 'Serrurier', 'Diversion' et 'Tourner en bourrique'"
 				},
@@ -1055,7 +1055,7 @@
 							"AS1": "Les armes du Pays de Nugh coûtent 50% de moins",
 							"AS2": "Les armes du Pays de Nugh ont AT+1, PRD+1 et Pi+5",
 							"AS3": "Les shurikens infligent Pi+5",
-							"AS4": "Le héros peut relancer un jet d'AD raté pour sauter de toits en toits (sauf critique)",
+							"AS4": "Le héros peut relancer une épreuve d'AD ratée pour sauter de toits en toits (sauf critique)",
 							"AS5": "La compétence 'Escalader' ne peut pas être un échec critique",
 							"AS6": "Donne accès à 3 compétences au choix"
 						},
@@ -1106,7 +1106,163 @@
 			"AD": 11,
 			"FO": 8
 		},
-		"Max": {}
+		"Max": {},
+		"Specialisations": [
+			{
+				"ID": "espion",
+				"Name_M": "Espion",
+				"Name_F": "Espionne",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {
+					"CHA": 1,
+					"PER": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "CHA+1 et PER+1 (automatique)",
+					"AS2": "Le héros peut relancer une épreuve de Discrétion ratée (sauf critique)",
+					"AS3": "La compétence 'Serrurier' ne peut pas faire d'échec critique",
+					"AS4": "Donne les compétences 'Embuscade', 'Roublard', 'Méfiance', 'Fariboles', 'Expert en camouflage' et 'Prise du dormeur'"
+				},
+				"Competences": [
+					"Embuscade",
+					"Roublard",
+					"Méfiance",
+					"Fariboles",
+					"Expert en camouflage",
+					"Prise du dormeur"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "saboteur",
+						"Name_M": "Saboteur",
+						"Name_F": "Saboteuse",
+						"Necessite_competence": [
+							"Désamorcer"
+						],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Crit+1",
+							"AS2": "Le héros peut relancer une épreuve de Désamorçage ratée (sauf critique)",
+							"AS3": "Les explosifs et armes incendiaires ont Pi+2D6",
+							"AS4": "Les dés de dégâts des pièges et des armes incendiaires ou acides ne peuvent pas faire 1 ou 2",
+							"AS5": "Bonus de+3 pour saboter un véhicule, un bâtiment ou du matériel",
+							"AS6": "Le héros peut fragiliser un objet non magique en 1 minute pour qu'il se casse lors de son utilisation sur AD-2",
+							"AS7": "Les explosifs coûtent 50% moins cher",
+							"AS8": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Robin des boom",
+							"Armement contrefait",
+							"Sangle mal attachée",
+							"Trucage de dés",
+							"Agent du chaos"
+						]
+					},
+					{
+						"ID": "agent_double",
+						"Name_M": "Agent double",
+						"Name_F": "Agent double",
+						"Necessite_competence": [
+							"Ressemble à rien"
+						],
+						"Attributs_automatisables": {
+							"ES": 1
+						},
+						"Attributs_specifiques": {
+							"AS1": "ES+1 (automatique)",
+							"AS2": "Le héros a INT+2 pour déchiffrer des messages secrets ou obtenir un indice à une énigme",
+							"AS3": "Au début d'un combat, s'il y a des civils présents, le héros peut commencer le combat camouflé parmi les civils",
+							"AS4": "Lors d'un contrôle sur 1à3 au D4, le hlris a une copie de laissez-passer sur lui pour la compagnie",
+							"AS5": "Le héros peut lire sur les lèvres",
+							"AS6": "Le héros ignore 50% des dégâts des armes à feu",
+							"AS7": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Habillé chez Tati",
+							"Gogo Gadgeto",
+							"Jumeau buisson",
+							"Je n'aurais pas du dire ça",
+							"Agent double zero cheh't"
+						]
+					}
+				]
+			},
+			{
+				"ID": "cambrioleur",
+				"Name_M": "Cambrioleur",
+				"Name_F": "Cambrioleuse",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {
+					"PRD": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "PRD+1 (automatique)",
+					"AS2": "Le héros peut relancer une épreuve de 'Chouraver' et 'Serrurier' ratée (sauf critique)",
+					"AS3": "Les couteaux et affiliés ont Pi+3",
+					"AS4": "Les armes à feu ont AD tir+1 et Pi+3",
+					"AS5": "Donne les compétences 'Commerce', 'Tomber du chariot', 'Survie à tout prix', 'Papiers en règle' et 'Robin des boom'"
+				},
+				"Competences": [
+					"Commerce",
+					"Tomber du chariot",
+					"Survie à tout prix",
+					"Papiers en règle",
+					"Robin des boom"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "pickpocket",
+						"Name_M": "Pickpocket",
+						"Name_F": "Pickpocket",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Hors combat, le héros peut échanger l'arme d'un adversaire par un sandwich sur confrontation AD vs PER cible",
+							"AS2": "En milieu urbain, le héros gagne passivement 1D20 PO par heure, s'il se déplace en ville",
+							"AS3": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"C'est quoi là-bas",
+							"Tomber dans ma poche",
+							"Connu dans le métier",
+							"Je suis si maladroit",
+							"A MOUUUAA"
+						]
+					},
+					{
+						"ID": "voltigeur",
+						"Name_M": "Voltigeur",
+						"Name_F": "Voltigeuse",
+						"Necessite_competence": [
+							"Escalader"
+						],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Lorsque le héros effectue un larcin, il a un bonus d'AD pour chouraver de+1 par membre de la compagnie présent à 15m (cumulable 3x)",
+							"AS2": "Les noeuds de cordes fait par le héros peuvent être défaits en tirant sur la corde de façon particulière",
+							"AS3": "Chaque bâtiment que le héros souhaite cambrioler a 1 chance sur 2 d'avir une fenêtre ouverte ou une cheminée éteinte",
+							"AS4": "Lorsque le héros tombe dans un piège, il a 1 chance sur 2 pour que le piège ne se déclenche pas",
+							"AS5": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Toujours à sa place",
+							"Perturbation magique",
+							"Intérimaire au cirque",
+							"Oiseau de nuit",
+							"Sur le fil"
+						]
+					}
+				]
+			}
+		]
 	},
 	{
 		"ID": 6,
@@ -1184,7 +1340,453 @@
 			"AD": 11,
 			"FO": 8
 		},
-		"Max": {}
+		"Max": {},
+		"Specialisations": [
+			{
+				"ID": "flibustier",
+				"Name_M": "Flibustier",
+				"Name_F": "Flibustière",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {},
+				"Attributs_specifiques": {
+					"AS1": "AT+2 et AD tir+2 avec les sabres, dagues et affiliés, les pistolets et arbalètes à 1 main",
+					"AS2": "AD+2 pour les épreuves d'acrobatie sur un navire ou en jungle",
+					"AS3": "AT+1 et Pi+3 sur mer ou dans une taverne",
+					"AS4": "Après un tir de pistolet, le héros peut changer de pistolet gratuitement",
+					"AS5": "Donne les compétences 'Ambidextrie', 'Pile je gagne, face tu perds' et 'Marin supersticieux'"
+				},
+				"Competences": [
+					"Ambidextrie",
+					"Pile je gagne, face tu perds",
+					"Marin supersticieux"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "maudit_forban",
+						"Name_M": "Maudit Forban",
+						"Name_F": "Maudit Forban",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {
+							"PRD": 1
+						},
+						"Attributs_specifiques": {
+							"AS1": "PRD+1 (automatique)",
+							"AS2": "Si le héros boit de l'alcool fort, il ignore les malus d'AD, AT et PRD (automatique)",
+							"AS3": "Le héros peut utiliser 'Ambidextrie' sans malus à la 2ème arme",
+							"AS4": "Les attaques dans le dos ou sur un cible déjà au contact avec un allié ont Pi+4",
+							"AS5": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Feinte de canaille",
+							"Un cageot de pommes par jour ça maintient la santé",
+							"Rasade de château cambusard",
+							"Ballablan dans ta gueule",
+							"Capitaine bigleux"
+						]
+					},
+					{
+						"ID": "ecumeur_mer",
+						"Name_M": "Ecumeur des mers",
+						"Name_F": "Ecumeuse des mers",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "INT+5 pour les épreuves d'orientation navale",
+							"AS2": "INT+2 pour lire les cartes au trésor",
+							"AS3": "INT+1 ou PER+1 pour estimer la nature de la cargaison d'un véhicule à distance",
+							"AS4": "FO+5 pour les épreuves d'apnée",
+							"AS5": "Le héros peut connaître la valeur des pierres précieuses",
+							"AS6": "Le héros a l'avantage aux dégâts des armes de siège",
+							"AS7": "Le héros peut attaquer après une ES réussie sur 1à2 au D6",
+							"AS8": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Gibier de potence",
+							"Combattu souvent, battu parfois, abattu jamais",
+							"Moi, ma bite et mon couteau",
+							"Un marin peut tout faire, mal",
+							"C'est pas la mer qui prend l'ohm"
+						]
+					}
+				]
+			},
+			{
+				"ID": "contrebandier",
+				"Name_M": "Contrebandier",
+				"Name_F": "Contrebandier",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {
+					"PRD": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "PRD+1 (automatique)",
+					"AS2": "CHA+2 pour distraire les forces de l'ordre",
+					"AS3": "INT+3 pour deviner si quelqu'un est susceptible d'accepter des pots de vins et pour estimer le montant à donner",
+					"AS4": "+50% sur le prix de revente de produits de contrebande (drogues, objets chaotques ou maudits, biens de valeurs volés, objets interdits dans un lieu par une législation, etc)",
+					"AS5": "Le héros a CHA+3 pour mentir",
+					"AS6": "Donne les compétences 'Je n'ai rien sur moi', 'Négociations coreliennes' et 'Service rendu, serveur pendu'"
+				},
+				"Competences": [
+					"Je n'ai rien sur moi",
+					"Négociations coreliennes",
+					"Service rendu, serveur pendu"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "honnete_commercant",
+						"Name_M": "Honnête Commerçant",
+						"Name_F": "Honnête Commerçante",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {
+							"ES": 1
+						},
+						"Attributs_specifiques": {
+							"AS1": "ES+1 (automatique)",
+							"AS2": "Les épreuves de détections des forces de l'ordre contre le héros ont PER-3 et Echec Crit+2",
+							"AS3": "INT+3 et AD+3 pour fabriquer des doubles-fonds à des contenants (nécessite 1 dose de 'Bois' et 1 dose de 'Clous' par contenant)",
+							"AS4": "Un chariot dirigé par le héros ne souffre pas de malus en forêt et colline",
+							"AS5": "Donne les compétences 'Fariboles' et 'Naïveté touchante'",
+							"AS6": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [
+							"Fariboles",
+							"Naïveté touchante"
+						],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Mes papiers sont en règles",
+							"Grosse pièce en chocolat",
+							"L'ami de tous",
+							"Technique de combat Coorrrrreellllllli",
+							"C'est tombé de votre poche"
+						]
+					},
+					{
+						"ID": "veritable_anguille",
+						"Name_M": "Véritable Anguille",
+						"Name_F": "Véritable Anguille",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {
+							"MVTm": 2,
+							"MVTc": 4
+						},
+						"Attributs_specifiques": {
+							"AS1": "Vitesse de déplacement tactique +2m et vitesse de course +4m (automatique)",
+							"AS2": "AD+1 pour les épreuves de discrétion",
+							"AS3": "Le héros peut se libérer de menottes, chaînes, fers et cordes sur AD+2 et peut le faire discrètement sur AD",
+							"AS4": "Le héros peut forcer les barreaux d'une cellule de prison sur moyenne (FO + INT)+2",
+							"AS5": "CHA+3 pour se déguiser",
+							"AS6": "Donne la compétence 'Ressemble à rien'",
+							"AS7": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [
+							"Ressemble à rien"
+						],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Je connais une autre route",
+							"Elle s'appelle retour",
+							"Maître des clés",
+							"Saut du foie",
+							"A toi de parer"
+						]
+					}
+				]
+			},
+			{
+				"ID": "quartier_maitre",
+				"Name_M": "Quartier-maitre",
+				"Name_F": "Quartier-maitre",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {
+					"PRD": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "Si un autre membre de la compagnie a la compétence 'Chef de groupe', le héros a COU+1, AT+1 et PRD+1 en combat",
+					"AS2": "INT+3 et AD+3 pour les épreuves de navigation",
+					"AS3": "CHA+2 auprès des marins, pirates et pêcheurs",
+					"AS4": "Le héros sait instinctivement où se trouve les tavernes et bordels de chaque ville portuaire",
+					"AS5": "Le héros donne un bonus d'AD+2 et INT+2 à toute la compagnie pour effectuer des réparations sur un navire",
+					"AS6": "Pi+6 avec les sabres, les coutelas et les cimeterres",
+					"AS7": "Donne les compétences 'Marchand de mort subite', 'Equipage de marins d'eau douce' et 'Avantage naval'"
+				},
+				"Competences": [
+					"Marchand de mort subite",
+					"Equipage de marins d'eau douce",
+					"Avantage naval"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "capitaine_pirate",
+						"Name_M": "Capitaine Pirate",
+						"Name_F": "Capitaine Pirate",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "En combat, le héros peut prononcer un juron de marin durant son attaque ce qui donne Pi+3 à son coup",
+							"AS2": "En mer, 1 fois par jour, le héros peut relancer n'importe quelle épreuve ratée (sauf critique)",
+							"AS3": "AT+2 et ES+2 en duel avec une arme à une main",
+							"AS4": "Le héros peut obtenir des renseignements sur la garde, les navires marchands au départ et les guildes criminelles locales sans épreuve",
+							"AS5": "Le prix à l'achat de navires est réduit de 50%",
+							"AS6": "La nuit, le héros peut relancer des épreuves d'orientation en se basant sur les étoiles",
+							"AS7": "En mer, le héros peut relancer une épreuve d'orientation ratée (sauf critique)",
+							"AS8": "Sur un navire, le héros est le seul à avoir 'Chef de groupe'",
+							"AS9": "Donne la compétence 'Chef de groupe'",
+							"AS10": "Donne accès à 6 compétences au choix"
+						},
+						"Competences_obligatoires": [
+							"Chef de groupe"
+						],
+						"Nombre_competences_choix": 6,
+						"Competences_choix": [
+							"La malédiction du Pearl",
+							"Hissez le pavillon noir",
+							"Tout le monde sur le pont",
+							"Service rendu, serveur pendu",
+							"Nous avons le vent, c'est tout ce qu'il nous faut",
+							"Pavillon rouge et pas de quatiers",
+							"Vieux gourganier",
+							"Border l'artimon"
+						]
+					}
+				]
+			},
+			{
+				"ID": "viking",
+				"Name_M": "Viking",
+				"Name_F": "Viking",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {
+					"FO": 2
+				},
+				"Attributs_specifiques": {
+					"AS1": "Nécessite d'être d'origine 'Barbare' ou d'être originaire de 'Raalnig', de 'Syldérie' ou du 'Srölnagud'",
+					"AS2": "FO+2 (automatique)",
+					"AS3": "INT+3 et AD+3 pour les épreuves de navigation",
+					"AS4": "CHA+2 auprès des pirates et barbares",
+					"AS5": "Résistance de 50% aux maladies du froid",
+					"AS6": "Pi+3 avec les haches, lances et épées à 1 main",
+					"AS7": "Pi+6 avec les haches, lances et épées à 2 mains",
+					"AS8": "Crit+1 au CàC s'il y a de la neige, de la glace s'il neige ou s'il pleut",
+					"AS9": "Donne les compétences 'Armes de bourrin', 'Naviguation fluviale' et 'Héritage de Lindisfarne'"
+				},
+				"Competences": [
+					"Armes de bourrin",
+					"Naviguation fluviale",
+					"Héritage de Lindisfarne"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "capitaine_pirate",
+						"Name_M": "Capitaine Pirate",
+						"Name_F": "Capitaine Pirate",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "En combat, le héros peut prononcer un juron de marin durant son attaque ce qui donne Pi+3 à son coup",
+							"AS2": "En mer, 1 fois par jour, le héros peut relancer n'importe quelle épreuve ratée (sauf critique)",
+							"AS3": "AT+2 et ES+2 en duel avec une arme à une main",
+							"AS4": "Le héros peut obtenir des renseignements sur la garde, les navires marchands au départ et les guildes criminelles locales sans épreuve",
+							"AS5": "Le prix à l'achat de navires est réduit de 50%",
+							"AS6": "La nuit, le héros peut relancer des épreuves d'orientation en se basant sur les étoiles",
+							"AS7": "En mer, le héros peut relancer une épreuve d'orientation ratée (sauf critique)",
+							"AS8": "Sur un navire, le héros est le seul à avoir 'Chef de groupe'",
+							"AS9": "Donne la compétence 'Chef de groupe'",
+							"AS10": "Donne accès à 6 compétences au choix"
+						},
+						"Competences_obligatoires": [
+							"Chef de groupe"
+						],
+						"Nombre_competences_choix": 6,
+						"Competences_choix": [
+							"La malédiction du Pearl",
+							"Hissez le pavillon noir",
+							"Tout le monde sur le pont",
+							"Service rendu, serveur pendu",
+							"Nous avons le vent, c'est tout ce qu'il nous faut",
+							"Pavillon rouge et pas de quatiers",
+							"Vieux gourganier",
+							"Border l'artimon"
+						]
+					}
+				]
+			},
+			{
+				"ID": "barbaresque",
+				"Name_M": "Barbaresque",
+				"Name_F": "Barbaresque",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {},
+				"Attributs_specifiques": {
+					"AS1": "Nécessite d'être originaire de 'Birmilistan'",
+					"AS2": "INT+3 et AD+3 pour les épreuves de navigation",
+					"AS3": "CHA+2 auprès des pirates et marchands",
+					"AS4": "Résistance de 50% aux maladies du sud et dus aux moustiques",
+					"AS5": "AT+1 et PRD+1 avec les sabres",
+					"AS6": "RM+1 et PR nat+3 contre les sorts et les dégâts magiques",
+					"AS7": "Pi+6 avec les armes du Birmilistan",
+					"AS8": "Donne les compétences 'Revente de prisonniers', 'Pilleur des tombes de Sk'ka' et 'Lecteur du Necronomicon'"
+				},
+				"Competences": [
+					"Revente de prisonniers",
+					"Pilleur des tombes de Sk'ka",
+					"Lecteur du Necronomicon"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "capitaine_pirate",
+						"Name_M": "Capitaine Pirate",
+						"Name_F": "Capitaine Pirate",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "En combat, le héros peut prononcer un juron de marin durant son attaque ce qui donne Pi+3 à son coup",
+							"AS2": "En mer, 1 fois par jour, le héros peut relancer n'importe quelle épreuve ratée (sauf critique)",
+							"AS3": "AT+2 et ES+2 en duel avec une arme à une main",
+							"AS4": "Le héros peut obtenir des renseignements sur la garde, les navires marchands au départ et les guildes criminelles locales sans épreuve",
+							"AS5": "Le prix à l'achat de navires est réduit de 50%",
+							"AS6": "La nuit, le héros peut relancer des épreuves d'orientation en se basant sur les étoiles",
+							"AS7": "En mer, le héros peut relancer une épreuve d'orientation ratée (sauf critique)",
+							"AS8": "Sur un navire, le héros est le seul à avoir 'Chef de groupe'",
+							"AS9": "Donne la compétence 'Chef de groupe'",
+							"AS10": "Donne accès à 6 compétences au choix"
+						},
+						"Competences_obligatoires": [
+							"Chef de groupe"
+						],
+						"Nombre_competences_choix": 6,
+						"Competences_choix": [
+							"La malédiction du Pearl",
+							"Hissez le pavillon noir",
+							"Tout le monde sur le pont",
+							"Service rendu, serveur pendu",
+							"Nous avons le vent, c'est tout ce qu'il nous faut",
+							"Pavillon rouge et pas de quatiers",
+							"Vieux gourganier",
+							"Border l'artimon"
+						]
+					}
+				]
+			},
+			{
+				"ID": "wako",
+				"Name_M": "Wakô",
+				"Name_F": "Wakô",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {
+					"AD": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "Nécessite d'être originaire du 'Pays de Nugh'",
+					"AS2": "AD+1 (automatique)",
+					"AS3": "INT+3 et AD+3 pour les épreuves de navigation",
+					"AS4": "CHA+2 auprès des pirates et pêcheurs",
+					"AS5": "Crit au tir+1",
+					"AS6": "Le héros a l'avantage aux épreuves de navigation durant une tempête",
+					"AS7": "Pas de malus de déplacement dans les marais",
+					"AS8": "Pi+6 avec les armes du Pays de Nugh",
+					"AS9": "Donne les compétences 'Barrage de Nagashino', 'Chasse au Kaiju' et 'Bubble Gum Gum'"
+				},
+				"Competences": [
+					"Barrage de Nagashino",
+					"Chasse au Kaiju",
+					"Bubble Gum Gum"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "capitaine_pirate",
+						"Name_M": "Capitaine Pirate",
+						"Name_F": "Capitaine Pirate",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "En combat, le héros peut prononcer un juron de marin durant son attaque ce qui donne Pi+3 à son coup",
+							"AS2": "En mer, 1 fois par jour, le héros peut relancer n'importe quelle épreuve ratée (sauf critique)",
+							"AS3": "AT+2 et ES+2 en duel avec une arme à une main",
+							"AS4": "Le héros peut obtenir des renseignements sur la garde, les navires marchands au départ et les guildes criminelles locales sans épreuve",
+							"AS5": "Le prix à l'achat de navires est réduit de 50%",
+							"AS6": "La nuit, le héros peut relancer des épreuves d'orientation en se basant sur les étoiles",
+							"AS7": "En mer, le héros peut relancer une épreuve d'orientation ratée (sauf critique)",
+							"AS8": "Sur un navire, le héros est le seul à avoir 'Chef de groupe'",
+							"AS9": "Donne la compétence 'Chef de groupe'",
+							"AS10": "Donne accès à 6 compétences au choix"
+						},
+						"Competences_obligatoires": [
+							"Chef de groupe"
+						],
+						"Nombre_competences_choix": 6,
+						"Competences_choix": [
+							"La malédiction du Pearl",
+							"Hissez le pavillon noir",
+							"Tout le monde sur le pont",
+							"Service rendu, serveur pendu",
+							"Nous avons le vent, c'est tout ce qu'il nous faut",
+							"Pavillon rouge et pas de quatiers",
+							"Vieux gourganier",
+							"Border l'artimon"
+						]
+					}
+				]
+			},
+			{
+				"ID": "corsaire",
+				"Name_M": "Corsaire",
+				"Name_F": "Corsaire",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {},
+				"Attributs_specifiques": {
+					"AS1": "INT+3 et AD+3 pour les épreuves de navigation",
+					"AS2": "CHA+2 auprès des pirates et nobles",
+					"AS3": "AT+1 et Pi+3 contre les marchands",
+					"AS4": "Pi+6 avec les sabres, coutelats et cimeterres",
+					"AS9": "Donne les compétences 'Erudition', 'Lettre de marque' et 'Réquisition légale'"
+				},
+				"Competences": [
+					"Erudition",
+					"Lettre de marque",
+					"Réquisition légale"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "capitaine_pirate",
+						"Name_M": "Capitaine Pirate",
+						"Name_F": "Capitaine Pirate",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "En combat, le héros peut prononcer un juron de marin durant son attaque ce qui donne Pi+3 à son coup",
+							"AS2": "En mer, 1 fois par jour, le héros peut relancer n'importe quelle épreuve ratée (sauf critique)",
+							"AS3": "AT+2 et ES+2 en duel avec une arme à une main",
+							"AS4": "Le héros peut obtenir des renseignements sur la garde, les navires marchands au départ et les guildes criminelles locales sans épreuve",
+							"AS5": "Le prix à l'achat de navires est réduit de 50%",
+							"AS6": "La nuit, le héros peut relancer des épreuves d'orientation en se basant sur les étoiles",
+							"AS7": "En mer, le héros peut relancer une épreuve d'orientation ratée (sauf critique)",
+							"AS8": "Sur un navire, le héros est le seul à avoir 'Chef de groupe'",
+							"AS9": "Donne la compétence 'Chef de groupe'",
+							"AS10": "Donne accès à 6 compétences au choix"
+						},
+						"Competences_obligatoires": [
+							"Chef de groupe"
+						],
+						"Nombre_competences_choix": 6,
+						"Competences_choix": [
+							"La malédiction du Pearl",
+							"Hissez le pavillon noir",
+							"Tout le monde sur le pont",
+							"Service rendu, serveur pendu",
+							"Nous avons le vent, c'est tout ce qu'il nous faut",
+							"Pavillon rouge et pas de quatiers",
+							"Vieux gourganier",
+							"Border l'artimon"
+						]
+					}
+				]
+			}
+		]
 	},
 	{
 		"ID": 12,
@@ -1197,7 +1799,239 @@
 			"AD": 8,
 			"FO": 8
 		},
-		"Max": {}
+		"Max": {},
+		"Specialisations": [
+			{
+				"ID": "gestilhomme",
+				"Name_M": "Gestilhomme",
+				"Name_F": "Gestilhomme",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {},
+				"Attributs_specifiques": {
+					"AS1": "CHA+2 avec les bourgeois, nobles, chevaliers, paladins et prêtres",
+					"AS2": "CHA-1 avec les paysans, militaires et voleurs",
+					"AS3": "Le premier niveau de rente ne coûte aucun Honneur",
+					"AS4": "AD+2 pour les épreuves de 'Jonglage et danse'",
+					"AS5": "INT+1 pour les épreuves 'Pénible'",
+					"AS7": "Honneurs+1 par bals et banquets",
+					"AS8": "En ville, le héros peut lancer 1D20+4 PO à la foule pour gagner CHA+1 pour toutes les épreuves",
+					"AS9": "Au passage de niveau, le héros peut échanger 1 Honneur contre 1 pt de caractéristique ou 1D6Pv",
+					"AS10": "Donne les compétences 'Fariboles' et 'Tonton chepaki est mort'"
+				},
+				"Competences": [
+					"Fariboles",
+					"Tonton chepaki est mort"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "mecene",
+						"Name_M": "Mécène",
+						"Name_F": "Mécène",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {
+							"ES": 1
+						},
+						"Attributs_specifiques": {
+							"AS1": "ES+1 (automatique)",
+							"AS2": "Le héros peut tenter de déterminer l'effet d'un objet magique sur INT-2",
+							"AS3": "Le héros reconnaît toujours les reliques, objets célèbres et anciens ou liés à des légendes",
+							"AS4": "INT+3 pour tout ce qui est lié à l'art, à la musique, aux sciences non magiques ou aux jeux",
+							"AS5": "Chaque relique possédée donne Crit+1 à toutes épreuves",
+							"AS6": "Les accessoires coûtent 50% moins cher",
+							"AS7": "Faire enchantter, bénir, améliorer, réparer ou ajouter des runes sur un objet coûte 25% moins cher",
+							"AS8": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Le chevalier de Balibari",
+							"Patron des arts et des sciences",
+							"Soutien aux artisans régionaux",
+							"Ca c'est mon champion",
+							"Flamelixir"
+						]
+					},
+					{
+						"ID": "courtisan",
+						"Name_M": "Courtisan",
+						"Name_F": "Courtisane",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "1 Honneur supplémentaire remporté pour rendre service à un chevalier, un seigneur ou un noble",
+							"AS2": "CHA+3 pour séduire",
+							"AS3": "Le héros connaît toutes les familles nobles importantes du pays et des pays voisins",
+							"AS4": "Quand le donneur de quête est un noble, chevalier ou marchand, le héros reçoit 50% de PO supplémentaires en récompense si la récompense est en argent",
+							"AS5": "INT+3 ou CHA+3 pour dialoguer avec des espions ou comprendre des complots",
+							"AS6": "INT+3 pour trouver des membres de société secrète, réseau criminel ou des espions",
+							"AS7": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Admis à la vénerie",
+							"La seconde défenestration de Glargh",
+							"Allergique à la plèbe",
+							"Monsieur Insupportable",
+							"L'honneur fait tout"
+						]
+					}
+				]
+			},
+			{
+				"ID": "bretteur",
+				"Name_M": "Bretteur",
+				"Name_F": "Bretteuse",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {
+					"AT": 1,
+					"PRD": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "AT+1 et PRD+1 (automatique)",
+					"AS2": "PR nat+1",
+					"AS3": "CHA+1 pour insulter et attirer l'attention",
+					"AS4": "Crit+1 avec une rapière, épée d'estoc, colichemarde ou fleuret",
+					"AS5": "Honneurs+1 par duel remporté",
+					"AS6": "Donne les compétences 'Armes de bourrin' et 'Truculente tirade de lettres et d'esprit'"
+				},
+				"Competences": [
+					"Armes de bourrin",
+					"Truculente tirade de lettres et d'esprit"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "dragon",
+						"Name_M": "Dragon",
+						"Name_F": "Dragon",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Si la première action qu'il effectue lors d'un combat est de descendre de sa monture, il a AT+1, AD tir+1 et Pi+3 durant tout le combat",
+							"AS2": "Les armes à feu ignorent 3 PR sol",
+							"AS3": "Honneurs+2 par batailles",
+							"AS4": "AD tir+1 et recharge-2T pour les armes à feu et les arbalètes",
+							"AS5": "Le héros peut effectuer une attaque à distance au lieu d'une attaque au CàC pour les attaques d'opportunité",
+							"AS6": "Une arme de tir à 1 main non utilisée est toujours prête à tirer pour les attaques d'opportunité et les attaques gratuites",
+							"AS7": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Dragonnade",
+							"Tu es un tirailleur Harry",
+							"Tactiques de harcèlement",
+							"Armure de courage et de médailles",
+							"Rolly Polly"
+						]
+					},
+					{
+						"ID": "condottiere",
+						"Name_M": "Condottière",
+						"Name_F": "Condottière",
+						"Necessite_competence": [
+							"Chef de groupe"
+						],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "En combat, COU+1 par tranche de 100 PO sur soi (cumulable 3x)",
+							"AS2": "INT+2 et CHA+2 pour comprendre les stratégies et dialoguer avec les militaires",
+							"AS3": "Pi+5 pour les armes à feu et les armes d'hast",
+							"AS4": "Pi+ 1 par point de COU au-dessus de 12",
+							"AS5": "Le héros et ses alliés ont 'Récupération' améliorée de 1 niveau et 'Pv/H'+1 en sommeil, de plus, pour les activités en campement, ils peuvent relancer une épreuve ratée (sauf critique)",
+							"AS6": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Auxillires de l'armée",
+							"La lumière nous apportera la victoire",
+							"Clipitaine des grandes compagnies",
+							"Voici vos ordres",
+							"Aura farming"
+						]
+					}
+				]
+			},
+			{
+				"ID": "flagorneur",
+				"Name_M": "Flagorneur",
+				"Name_F": "Flagorneuse",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {
+					"CHA": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "CHA+1 (automatique)",
+					"AS2": "INT+3 pour les épreuves d'orientation dans les villes",
+					"AS3": "CHA+2 pour mentir aux nobles",
+					"AS4": "Le prix des transports est réduit de 50%",
+					"AS5": "Le héros obtient un poste dans la ville où il réside, fréquente le plus ou dans une ville proche (le poste obtenu est au niveau le plus bas)",
+					"AS6": "Le héros peut obtenir une promotion dans la ville sur 1à2 au D6 à chaque passage de niveau, une fois Prévôt, au lieu d'une promotion, il reçoit une augmentation de 50 PO sur son salaire",
+					"AS7": "Donne les compétences 'Fariboles', 'Pervers narcissique' et 'Monsieur Connard'"
+				},
+				"Competences": [
+					"Fariboles",
+					"Pervers narcissique",
+					"Monsieur Connard"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "notable",
+						"Name_M": "Notable",
+						"Name_F": "Notable",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "CHA+2 pour séduire",
+							"AS2": "PR mag+1 pour les armures en or",
+							"AS3": "Pi+2 pour les armes en or",
+							"AS4": "Crit+1 pour les boucles d'oreilles en or ou bague en or (max 2 au total)",
+							"AS5": "Pi+3 contre les ennemis ayant moins de CHA que le héros",
+							"AS6": "Le héros peut connaître 2 langues étrangères de son choix",
+							"AS7": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Emplois fictifs",
+							"Les archives ont encore brûlées",
+							"Garde du corps",
+							"Sauve-moi mon Roméo",
+							"Et là si je vous souffle dans l'oreille"
+						]
+					},
+					{
+						"ID": "officier_ville",
+						"Name_M": "Officier de la ville",
+						"Name_F": "Officier de la ville",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {
+							"FO": 1,
+							"INT": 1,
+							"AT": 1
+						},
+						"Attributs_specifiques": {
+							"AS1": "FO+1, INT+1 et AT+1 (automatique)",
+							"AS2": "CHA+2 dans la ville où il a un poste et est toujours invité aux bals",
+							"AS3": "Le héros peut relancer une épreuve de 'Méfiance' ratée (sauf critique)",
+							"AS4": "Le héros ne peut pas échouer un test d'orientation en ville",
+							"AS5": "Le héros a 1 promotion de salaire par passage de niveau",
+							"AS6": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Gratte-papier",
+							"Armure de pognon",
+							"Je le jure par le Dieu Gobi",
+							"Ecolo du dimanche",
+							"Gardien de la paix avant tout"
+						]
+					}
+				]
+			}
+		]
 	},
 	{
 		"ID": 13,
@@ -1210,7 +2044,239 @@
 			"AD": 8,
 			"FO": 8
 		},
-		"Max": {}
+		"Max": {},
+		"Specialisations": [
+			{
+				"ID": "gestilhomme",
+				"Name_M": "Gestilhomme",
+				"Name_F": "Gestilhomme",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {},
+				"Attributs_specifiques": {
+					"AS1": "CHA+2 avec les bourgeois, nobles, chevaliers, paladins et prêtres",
+					"AS2": "CHA-1 avec les paysans, militaires et voleurs",
+					"AS3": "Le premier niveau de rente ne coûte aucun Honneur",
+					"AS4": "AD+2 pour les épreuves de 'Jonglage et danse'",
+					"AS5": "INT+1 pour les épreuves 'Pénible'",
+					"AS7": "Honneurs+1 par bals et banquets",
+					"AS8": "En ville, le héros peut lancer 1D20+4 PO à la foule pour gagner CHA+1 pour toutes les épreuves",
+					"AS9": "Au passage de niveau, le héros peut échanger 1 Honneur contre 1 pt de caractéristique ou 1D6Pv",
+					"AS10": "Donne les compétences 'Fariboles' et 'Tonton chepaki est mort'"
+				},
+				"Competences": [
+					"Fariboles",
+					"Tonton chepaki est mort"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "mecene",
+						"Name_M": "Mécène",
+						"Name_F": "Mécène",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {
+							"ES": 1
+						},
+						"Attributs_specifiques": {
+							"AS1": "ES+1 (automatique)",
+							"AS2": "Le héros peut tenter de déterminer l'effet d'un objet magique sur INT-2",
+							"AS3": "Le héros reconnaît toujours les reliques, objets célèbres et anciens ou liés à des légendes",
+							"AS4": "INT+3 pour tout ce qui est lié à l'art, à la musique, aux sciences non magiques ou aux jeux",
+							"AS5": "Chaque relique possédée donne Crit+1 à toutes épreuves",
+							"AS6": "Les accessoires coûtent 50% moins cher",
+							"AS7": "Faire enchantter, bénir, améliorer, réparer ou ajouter des runes sur un objet coûte 25% moins cher",
+							"AS8": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Le chevalier de Balibari",
+							"Patron des arts et des sciences",
+							"Soutien aux artisans régionaux",
+							"Ca c'est mon champion",
+							"Flamelixir"
+						]
+					},
+					{
+						"ID": "courtisan",
+						"Name_M": "Courtisan",
+						"Name_F": "Courtisane",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "1 Honneur supplémentaire remporté pour rendre service à un chevalier, un seigneur ou un noble",
+							"AS2": "CHA+3 pour séduire",
+							"AS3": "Le héros connaît toutes les familles nobles importantes du pays et des pays voisins",
+							"AS4": "Quand le donneur de quête est un noble, chevalier ou marchand, le héros reçoit 50% de PO supplémentaires en récompense si la récompense est en argent",
+							"AS5": "INT+3 ou CHA+3 pour dialoguer avec des espions ou comprendre des complots",
+							"AS6": "INT+3 pour trouver des membres de société secrète, réseau criminel ou des espions",
+							"AS7": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Admis à la vénerie",
+							"La seconde défenestration de Glargh",
+							"Allergique à la plèbe",
+							"Monsieur Insupportable",
+							"L'honneur fait tout"
+						]
+					}
+				]
+			},
+			{
+				"ID": "bretteur",
+				"Name_M": "Bretteur",
+				"Name_F": "Bretteuse",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {
+					"AT": 1,
+					"PRD": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "AT+1 et PRD+1 (automatique)",
+					"AS2": "PR nat+1",
+					"AS3": "CHA+1 pour insulter et attirer l'attention",
+					"AS4": "Crit+1 avec une rapière, épée d'estoc, colichemarde ou fleuret",
+					"AS5": "Honneurs+1 par duel remporté",
+					"AS6": "Donne les compétences 'Armes de bourrin' et 'Truculente tirade de lettres et d'esprit'"
+				},
+				"Competences": [
+					"Armes de bourrin",
+					"Truculente tirade de lettres et d'esprit"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "dragon",
+						"Name_M": "Dragon",
+						"Name_F": "Dragon",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Si la première action qu'il effectue lors d'un combat est de descendre de sa monture, il a AT+1, AD tir+1 et Pi+3 durant tout le combat",
+							"AS2": "Les armes à feu ignorent 3 PR sol",
+							"AS3": "Honneurs+2 par batailles",
+							"AS4": "AD tir+1 et recharge-2T pour les armes à feu et les arbalètes",
+							"AS5": "Le héros peut effectuer une attaque à distance au lieu d'une attaque au CàC pour les attaques d'opportunité",
+							"AS6": "Une arme de tir à 1 main non utilisée est toujours prête à tirer pour les attaques d'opportunité et les attaques gratuites",
+							"AS7": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Dragonnade",
+							"Tu es un tirailleur Harry",
+							"Tactiques de harcèlement",
+							"Armure de courage et de médailles",
+							"Rolly Polly"
+						]
+					},
+					{
+						"ID": "condottiere",
+						"Name_M": "Condottière",
+						"Name_F": "Condottière",
+						"Necessite_competence": [
+							"Chef de groupe"
+						],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "En combat, COU+1 par tranche de 100 PO sur soi (cumulable 3x)",
+							"AS2": "INT+2 et CHA+2 pour comprendre les stratégies et dialoguer avec les militaires",
+							"AS3": "Pi+5 pour les armes à feu et les armes d'hast",
+							"AS4": "Pi+ 1 par point de COU au-dessus de 12",
+							"AS5": "Le héros et ses alliés ont 'Récupération' améliorée de 1 niveau et 'Pv/H'+1 en sommeil, de plus, pour les activités en campement, ils peuvent relancer une épreuve ratée (sauf critique)",
+							"AS6": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Auxillires de l'armée",
+							"La lumière nous apportera la victoire",
+							"Clipitaine des grandes compagnies",
+							"Voici vos ordres",
+							"Aura farming"
+						]
+					}
+				]
+			},
+			{
+				"ID": "flagorneur",
+				"Name_M": "Flagorneur",
+				"Name_F": "Flagorneuse",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {
+					"CHA": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "CHA+1 (automatique)",
+					"AS2": "INT+3 pour les épreuves d'orientation dans les villes",
+					"AS3": "CHA+2 pour mentir aux nobles",
+					"AS4": "Le prix des transports est réduit de 50%",
+					"AS5": "Le héros obtient un poste dans la ville où il réside, fréquente le plus ou dans une ville proche (le poste obtenu est au niveau le plus bas)",
+					"AS6": "Le héros peut obtenir une promotion dans la ville sur 1à2 au D6 à chaque passage de niveau, une fois Prévôt, au lieu d'une promotion, il reçoit une augmentation de 50 PO sur son salaire",
+					"AS7": "Donne les compétences 'Fariboles', 'Pervers narcissique' et 'Monsieur Connard'"
+				},
+				"Competences": [
+					"Fariboles",
+					"Pervers narcissique",
+					"Monsieur Connard"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "notable",
+						"Name_M": "Notable",
+						"Name_F": "Notable",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "CHA+2 pour séduire",
+							"AS2": "PR mag+1 pour les armures en or",
+							"AS3": "Pi+2 pour les armes en or",
+							"AS4": "Crit+1 pour les boucles d'oreilles en or ou bague en or (max 2 au total)",
+							"AS5": "Pi+3 contre les ennemis ayant moins de CHA que le héros",
+							"AS6": "Le héros peut connaître 2 langues étrangères de son choix",
+							"AS7": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Emplois fictifs",
+							"Les archives ont encore brûlées",
+							"Garde du corps",
+							"Sauve-moi mon Roméo",
+							"Et là si je vous souffle dans l'oreille"
+						]
+					},
+					{
+						"ID": "officier_ville",
+						"Name_M": "Officier de la ville",
+						"Name_F": "Officier de la ville",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {
+							"FO": 1,
+							"INT": 1,
+							"AT": 1
+						},
+						"Attributs_specifiques": {
+							"AS1": "FO+1, INT+1 et AT+1 (automatique)",
+							"AS2": "CHA+2 dans la ville où il a un poste et est toujours invité aux bals",
+							"AS3": "Le héros peut relancer une épreuve de 'Méfiance' ratée (sauf critique)",
+							"AS4": "Le héros ne peut pas échouer un test d'orientation en ville",
+							"AS5": "Le héros a 1 promotion de salaire par passage de niveau",
+							"AS6": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Gratte-papier",
+							"Armure de pognon",
+							"Je le jure par le Dieu Gobi",
+							"Ecolo du dimanche",
+							"Gardien de la paix avant tout"
+						]
+					}
+				]
+			}
+		]
 	},
 	{
 		"ID": 14,
@@ -1249,7 +2315,223 @@
 			"AD": 8,
 			"FO": 9
 		},
-		"Max": {}
+		"Max": {},
+		"Specialisations": [
+			{
+				"ID": "chevalier_errant",
+				"Name_M": "Chevalier errant",
+				"Name_F": "Chevaleresse errante",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {},
+				"Attributs_specifiques": {
+					"AS1": "AT+1 et PR nat+1 lorsqu'il échoue au test d'INT de 'Appel du Braav'",
+					"AS2": "AT+2 à cheval avec une lance",
+					"AS3": "CHA+1 pour séduire et pour vanter ses exploits",
+					"AS4": "Si à cheval: AT+1 et PRD+1 contre les adversaires à cheval",
+					"AS5": "Si à pied: AT+1 et PRD+1 contre les adversaires à pied",
+					"AS6": "Honneurs+1 par affrontement lorsqu'il participe à un tournoi",
+					"AS7": "Donne les compétences 'Amour courtois' et 'Fidèle destrier'"
+				},
+				"Competences": [
+					"Amour courtois",
+					"Fidèle destrier"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "preux_chevalier",
+						"Name_M": "Preux chevalier",
+						"Name_F": "Preuse chevaleresse",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {
+							"CHA": 1
+						},
+						"Attributs_specifiques": {
+							"AS1": "CHA+1 (automatique)",
+							"AS2": "AT+1 et Pi+3 contre les monstres, chevaliers, démons et dragons",
+							"AS3": "AT+1, PRD+1 et Pi+3 avec les épées",
+							"AS4": "Le héros peut relancer une épreuve de 'Courage' ratée (sauf critique)",
+							"AS5": "Le héros ne peut pas être désarçonné",
+							"AS6": "Donne accès à 3 compétences au choix",
+							"AS7": "Donne accès à 1 domaine au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Protection de la Dame",
+							"Bouclier de la Loegrie",
+							"Il s'en va tour à tour de tour en tour",
+							"Défenseur du Toboso",
+							"Vade retro satanas"
+						]
+					},
+					{
+						"ID": "parangon_chevalerie",
+						"Name_M": "Parangon de chevalerie",
+						"Name_F": "Parangon de chevalerie",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "CHA+1 auprès des nobles et bourgeois",
+							"AS2": "Commence chaque session avec 1 point d'inspiration",
+							"AS3": "En extérieur et de jour, s'il porte un plastron en métal, inflige les effets de la blessure grave 'Oeil crevé' à tous les ennemis de face jusqu'à la fin du 1er tour du combat",
+							"AS4": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Jouteur d'exception",
+							"Nobles faits d'armes",
+							"Bon parti",
+							"Ce n'était que l'échauffement",
+							"Entre-soi nobiliaire"
+						]
+					}
+				]
+			},
+			{
+				"ID": "chevalier_banneret",
+				"Name_M": "Chevalier banneret",
+				"Name_F": "Chevaleresse banneret",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {
+					"AT": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "AT+1 (automatique)",
+					"AS2": "Crit+2 si la PR sol > 5",
+					"AS3": "Pi+3 à cheval et AT+2 à cheval contre les cibles à pied",
+					"AS4": "Augmente de 50 PO x 1D6 par décade les revenus d'un fief",
+					"AS5": "Obtient une bannière unique (voir document 'Occupation et loisirs de la noblesse')",
+					"AS6": "1 Honneur supplémentaire par duel remporté, participation à une bataille et par service rendu à un seigneur",
+					"AS7": "Donne les compétences 'Brochette de pécores' et 'Montjoie Sainte-Lucienne'"
+				},
+				"Competences": [
+					"Brochette de pécores",
+					"Montjoie Sainte-Lucienne"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "sénéchal",
+						"Name_M": "Sénéchal",
+						"Name_F": "Sénéchale",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "CHA+2 pour parler et donner des ordres à des militaires, guerriers ou chevaliers",
+							"AS2": "Le héros peut réduire les coûts d'1D4 Honneurs sur une épreuve de 'Charisme'-2",
+							"AS3": "La monture du héros a Pv+10, vitesse tactique +4m et vitesse de course +6m",
+							"AS4": "Le héros obtient un poste dans une ville qu'il fréquente beaucoup ou une ville proche",
+							"AS5": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Admis à la vénerie",
+							"Courtisan de la salle de bal",
+							"Pris pour rançon",
+							"Fils d'unijambiste",
+							"Prix pour rançon"
+						]
+					},
+					{
+						"ID": "seigneur_banneret",
+						"Name_M": "Seigneur banneret",
+						"Name_F": "Seigneur banneret",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Le héros gagne une amélioration de sa bannière unique (gratuite)",
+							"AS2": "Si le héros est à cheval: AT+1 pour tous les alliés",
+							"AS3": "Si le héros est à pied: PRD+1 pour tous les alliés",
+							"AS4": "Subir une blessure grave ou une hémorragie grave lors d'un combat donne 1 Honneur",
+							"AS5": "La monture du héros a Pv+35, vitesse tactique +4m, vitesse de course +10m et COU+2",
+							"AS6": "Pi+5 avec les armes d'hast et lances",
+							"AS7": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Vétéran de nombreuses guerres",
+							"Ici c'est Castillon pas Azincourt",
+							"Ma femme, mon fils et mon domaine",
+							"A l'aube, regardez à l'est",
+							"Oriflamme de Castel Mauro"
+						]
+					}
+				]
+			},
+			{
+				"ID": "cavalier_leger",
+				"Name_M": "Cavalier léger",
+				"Name_F": "Cavalière légère",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {},
+				"Attributs_specifiques": {
+					"AS1": "AD Tir+2 à cheval",
+					"AS2": "Pi+3 à cheval avec les armes à distance",
+					"AS3": "AT+1 et PRD+1 avec les armes à 1 main",
+					"AS4": "INT+2 pour comprendre le jargon militaire",
+					"AS5": "La monture du héros a vitesse tactique +4m et vitesse de course +10,",
+					"AS6": "Donne les compétences 'Ambidextrie', 'Renard et tornade' et 'Rochet d'Alexandra'"
+				},
+				"Competences": [
+					"Ambidextrie",
+					"Renard et tornade",
+					"Rochet d'Alexandra"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "hussard",
+						"Name_M": "Hussard",
+						"Name_F": "Hussarde",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "INT+2 pour les épreuves d'orientation",
+							"AS2": "CHA+2 auprès des militaires",
+							"AS3": "CHA-2 auprès des chevaliers et paladins",
+							"AS4": "CHA+2 pour intimider à cheval",
+							"AS5": "AD+2 à cheval",
+							"AS6": "La monture du héros a COU+2",
+							"AS7": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"J'ai passé l'âge des contes de fées",
+							"A la hussarde",
+							"Le cran des corbeaux",
+							"Pillages et paiements",
+							"Les ailes de Sobieski"
+						]
+					},
+					{
+						"ID": "cuirassier",
+						"Name_M": "Cuirassier",
+						"Name_F": "Cuirassière",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Le héros a PR nat+2 à cheval",
+							"AS2": "Le héros a AD tir+2 et Pi+3 avec des pistolets ou arbalètes à cheval",
+							"AS3": "Les charges à cheval avec des sabres ou des épées ont Pi+3 en plus des autres bonus",
+							"AS4": "Les projectiles non magiques et non ciblées contre le héros ont 1 chance sur 6 d'être déviés par son armure si celui-ci a un plastron avec un PR totale de 4 ou plus",
+							"AS5": "Le héros peut relancer une épreuve de 'Courage' et 'Chevaucher' ratée (sauf critique)",
+							"AS6": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Quand il est bon",
+							"Nous laisseras-tu dévoré par ces gens-là",
+							"L'infernale",
+							"Le Pew Pew des Scythes",
+							"Esquive la balle"
+						]
+					}
+				]
+			}
+		]
 	},
 	{
 		"ID": 17,
@@ -1262,7 +2544,223 @@
 			"AD": 8,
 			"FO": 9
 		},
-		"Max": {}
+		"Max": {},
+		"Specialisations": [
+			{
+				"ID": "chevalier_errant",
+				"Name_M": "Chevalier errant",
+				"Name_F": "Chevaleresse errante",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {},
+				"Attributs_specifiques": {
+					"AS1": "AT+1 et PR nat+1 lorsqu'il échoue au test d'INT de 'Appel du Braav'",
+					"AS2": "AT+2 à cheval avec une lance",
+					"AS3": "CHA+1 pour séduire et pour vanter ses exploits",
+					"AS4": "Si à cheval: AT+1 et PRD+1 contre les adversaires à cheval",
+					"AS5": "Si à pied: AT+1 et PRD+1 contre les adversaires à pied",
+					"AS6": "Honneurs+1 par affrontement lorsqu'il participe à un tournoi",
+					"AS7": "Donne les compétences 'Amour courtois' et 'Fidèle destrier'"
+				},
+				"Competences": [
+					"Amour courtois",
+					"Fidèle destrier"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "preux_chevalier",
+						"Name_M": "Preux chevalier",
+						"Name_F": "Preuse chevaleresse",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {
+							"CHA": 1
+						},
+						"Attributs_specifiques": {
+							"AS1": "CHA+1 (automatique)",
+							"AS2": "AT+1 et Pi+3 contre les monstres, chevaliers, démons et dragons",
+							"AS3": "AT+1, PRD+1 et Pi+3 avec les épées",
+							"AS4": "Le héros peut relancer une épreuve de 'Courage' ratée (sauf critique)",
+							"AS5": "Le héros ne peut pas être désarçonné",
+							"AS6": "Donne accès à 3 compétences au choix",
+							"AS7": "Donne accès à 1 domaine au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Protection de la Dame",
+							"Bouclier de la Loegrie",
+							"Il s'en va tour à tour de tour en tour",
+							"Défenseur du Toboso",
+							"Vade retro satanas"
+						]
+					},
+					{
+						"ID": "parangon_chevalerie",
+						"Name_M": "Parangon de chevalerie",
+						"Name_F": "Parangon de chevalerie",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "CHA+1 auprès des nobles et bourgeois",
+							"AS2": "Commence chaque session avec 1 point d'inspiration",
+							"AS3": "En extérieur et de jour, s'il porte un plastron en métal, inflige les effets de la blessure grave 'Oeil crevé' à tous les ennemis de face jusqu'à la fin du 1er tour du combat",
+							"AS4": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Jouteur d'exception",
+							"Nobles faits d'armes",
+							"Bon parti",
+							"Ce n'était que l'échauffement",
+							"Entre-soi nobiliaire"
+						]
+					}
+				]
+			},
+			{
+				"ID": "chevalier_banneret",
+				"Name_M": "Chevalier banneret",
+				"Name_F": "Chevaleresse banneret",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {
+					"AT": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "AT+1 (automatique)",
+					"AS2": "Crit+2 si la PR sol > 5",
+					"AS3": "Pi+3 à cheval et AT+2 à cheval contre les cibles à pied",
+					"AS4": "Augmente de 50 PO x 1D6 par décade les revenus d'un fief",
+					"AS5": "Obtient une bannière unique (voir document 'Occupation et loisirs de la noblesse')",
+					"AS6": "1 Honneur supplémentaire par duel remporté, participation à une bataille et par service rendu à un seigneur",
+					"AS7": "Donne les compétences 'Brochette de pécores' et 'Montjoie Sainte-Lucienne'"
+				},
+				"Competences": [
+					"Brochette de pécores",
+					"Montjoie Sainte-Lucienne"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "sénéchal",
+						"Name_M": "Sénéchal",
+						"Name_F": "Sénéchale",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "CHA+2 pour parler et donner des ordres à des militaires, guerriers ou chevaliers",
+							"AS2": "Le héros peut réduire les coûts d'1D4 Honneurs sur une épreuve de 'Charisme'-2",
+							"AS3": "La monture du héros a Pv+10, vitesse tactique +4m et vitesse de course +6m",
+							"AS4": "Le héros obtient un poste dans une ville qu'il fréquente beaucoup ou une ville proche",
+							"AS5": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Admis à la vénerie",
+							"Courtisan de la salle de bal",
+							"Pris pour rançon",
+							"Fils d'unijambiste",
+							"Prix pour rançon"
+						]
+					},
+					{
+						"ID": "seigneur_banneret",
+						"Name_M": "Seigneur banneret",
+						"Name_F": "Seigneur banneret",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Le héros gagne une amélioration de sa bannière unique (gratuite)",
+							"AS2": "Si le héros est à cheval: AT+1 pour tous les alliés",
+							"AS3": "Si le héros est à pied: PRD+1 pour tous les alliés",
+							"AS4": "Subir une blessure grave ou une hémorragie grave lors d'un combat donne 1 Honneur",
+							"AS5": "La monture du héros a Pv+35, vitesse tactique +4m, vitesse de course +10m et COU+2",
+							"AS6": "Pi+5 avec les armes d'hast et lances",
+							"AS7": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Vétéran de nombreuses guerres",
+							"Ici c'est Castillon pas Azincourt",
+							"Ma femme, mon fils et mon domaine",
+							"A l'aube, regardez à l'est",
+							"Oriflamme de Castel Mauro"
+						]
+					}
+				]
+			},
+			{
+				"ID": "cavalier_leger",
+				"Name_M": "Cavalier léger",
+				"Name_F": "Cavalière légère",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {},
+				"Attributs_specifiques": {
+					"AS1": "AD Tir+2 à cheval",
+					"AS2": "Pi+3 à cheval avec les armes à distance",
+					"AS3": "AT+1 et PRD+1 avec les armes à 1 main",
+					"AS4": "INT+2 pour comprendre le jargon militaire",
+					"AS5": "La monture du héros a vitesse tactique +4m et vitesse de course +10,",
+					"AS6": "Donne les compétences 'Ambidextrie', 'Renard et tornade' et 'Rochet d'Alexandra'"
+				},
+				"Competences": [
+					"Ambidextrie",
+					"Renard et tornade",
+					"Rochet d'Alexandra"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "hussard",
+						"Name_M": "Hussard",
+						"Name_F": "Hussarde",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "INT+2 pour les épreuves d'orientation",
+							"AS2": "CHA+2 auprès des militaires",
+							"AS3": "CHA-2 auprès des chevaliers et paladins",
+							"AS4": "CHA+2 pour intimider à cheval",
+							"AS5": "AD+2 à cheval",
+							"AS6": "La monture du héros a COU+2",
+							"AS7": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"J'ai passé l'âge des contes de fées",
+							"A la hussarde",
+							"Le cran des corbeaux",
+							"Pillages et paiements",
+							"Les ailes de Sobieski"
+						]
+					},
+					{
+						"ID": "cuirassier",
+						"Name_M": "Cuirassier",
+						"Name_F": "Cuirassière",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Le héros a PR nat+2 à cheval",
+							"AS2": "Le héros a AD tir+2 et Pi+3 avec des pistolets ou arbalètes à cheval",
+							"AS3": "Les charges à cheval avec des sabres ou des épées ont Pi+3 en plus des autres bonus",
+							"AS4": "Les projectiles non magiques et non ciblées contre le héros ont 1 chance sur 6 d'être déviés par son armure si celui-ci a un plastron avec un PR totale de 4 ou plus",
+							"AS5": "Le héros peut relancer une épreuve de 'Courage' et 'Chevaucher' ratée (sauf critique)",
+							"AS6": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Quand il est bon",
+							"Nous laisseras-tu dévoré par ces gens-là",
+							"L'infernale",
+							"Le Pew Pew des Scythes",
+							"Esquive la balle"
+						]
+					}
+				]
+			}
+		]
 	},
 	{
 		"ID": 18,
@@ -1562,6 +3060,245 @@
 			"AD": 8,
 			"FO": 8
 		},
-		"Max": {}
+		"Max": {},
+		"Specialisations": [
+			{
+				"ID": "etudiant_medecine",
+				"Name_M": "Etudiant en médecine",
+				"Name_F": "Etudiante en médecine",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {
+					"ES": 1
+				},
+				"Attributs_specifiques": {
+					"AS1": "ES+1 (automatique)",
+					"AS2": "INT+2 pour diagnostiquer une maladie ou un poison en fonction des symptômes",
+					"AS3": "Bonus de +1 aux épreuves de 'Premiers soins'",
+					"AS4": "Le héros peut relancer une épreuve de 'Premiers soins' ratée (sauf critique)",
+					"AS5": "Le héros peut utiliser 'Premiers soins' en combat (prend 2 assauts, seule l'esquive est possible mais esquiver rallonge le temps des soins d'1 assaut)",
+					"AS6": "La compétence 'Révisions de dernière minute' donne un bonus de +1 aux épreuves liées aux soins",
+					"AS7": "Donne les compétences 'On est en train de le perdre' et 'Transufion d'essence vitale'"
+				},
+				"Competences": [
+					"On est en train de le perdre",
+					"Transufion d'essence vitale"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "chirurgien_terrain",
+						"Name_M": "Chirurgien de terrain",
+						"Name_F": "Chirurgienne de terrain",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Chances d'attraper une maladie -20%",
+							"AS2": "Crit+5 pour les épreuves de soins",
+							"AS3": "Un critique à 'Premiers soins' donne 10Pv supplémentaires y compris si le maximum a déjà été atteint (les Pv en trop sont perdus lors du sommeil)",
+							"AS4": "Chaque assaut, les alliés à moins de 10m du héros regagnent 2Pv sur 1à3 au D6",
+							"AS5": "1 fois par maladie, le héros peut stopper temporairement (1D6h) les effets d'une maladie sur INT+1",
+							"AS6": "Le héros a accès aux recettes de l'ingénieur médecin en tant que spécialiste mais sans les bonus",
+							"AS7": "La compétence 'Premiers soins' donne Pv+6",
+							"AS8": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Don d'organes mystiques",
+							"Précision chirurgicale",
+							"Méthode paré",
+							"Raccomodeur de membres",
+							"Arrête Chochotte"
+						]
+					},
+					{
+						"ID": "guerrisseur",
+						"Name_M": "Guérisseur",
+						"Name_F": "Guérisseuse",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Chances d'attraper une maladie -5%",
+							"AS2": "Le temps de rétablissement d'une blessure grave, traitée par le héros est diminué de moitié",
+							"AS3": "Les alliés à moins de 10m du héros ont 20% de chances en moins d'attraper une maladie",
+							"AS4": "Le héros peut supprimer une mutation mineure avec 'Premiers soins'",
+							"AS5": "Le héros supprime passivem1ent 1% de corruption par jour pour tous les alliés à 50m",
+							"AS6": "1 fois par maladie, le héros peut supprimer toute maladie sur INT-1D6 suivi de 'Premiers soins'",
+							"AS7": "La compétence 'Premiers soins' rend 2D10 Pv et donne une résistance de 10% aux mnaladies pendant 8h",
+							"AS8": "Le héros a accès aux recettes de l'ingénieur médecin en tant que spécialiste mais sans les bonus",
+							"AS9": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Tout ça, c'est dans la tête",
+							"Ça doit juste être un gros rhume",
+							"Grog de guerrisseur",
+							"Remède maison",
+							"De l'eau-de-vie à l'au-delà"
+						]
+					}
+				]
+			},
+			{
+				"ID": "etudiant_arts_sciences",
+				"Name_M": "Etudiant en arts et sciences",
+				"Name_F": "Etudiante en arts et sciences",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {
+					"INT": 1,
+					"CHA": 1,
+					"AD": 1,
+					"RM": 2
+				},
+				"Attributs_specifiques": {
+					"AS1": "INT+1, CHA+1, AD+1, RM+2 (automatique)",
+					"AS2": "Le héros peut découvrir les effets d'un objet magique ou kharmique sur INT",
+					"AS3": "Le héros peut briser une malédiction sur INT-6, en cas d'échec critique perd 1D20+5 Pv",
+					"AS4": "Les armes de jet ont AD Tir+1 et Pi+3",
+					"AS5": "Donne les compétences 'Etude de faisabilité', 'Bricolo du dimanche', 'Désamorcer' et 'Moine copiste'"
+				},
+				"Competences": [
+					"Etude de faisabilité",
+					"Bricolo du dimanche",
+					"Désamorcer",
+					"Moine copiste"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "erudit",
+						"Name_M": "Erudit",
+						"Name_F": "Erudite",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "INT+2 pour les épreuves de 'Runes bizarres'",
+							"AS2": "INT+2 pour obtenir 1 indice à une énigme ou pour trouver un passage secret",
+							"AS3": "INT+3 pour obtenir des renseignements sur un lieu, une région ou une période",
+							"AS4": "1 fois par décade le héros peut récolter son sang pour produire 1 dose de sang d'érudit",
+							"AS5": "Les bonus d'INT comptent toujours pour les dégâts des parchemins",
+							"AS6": "Les Livres et parchemins coûtent 50% moins cher",
+							"AS7": "Le héros peut lire un livre de compétence à un allié illettré pour lui donner les compétences du livre",
+							"AS8": "Le héros peut relancer une épreuve de 'Runes bizarres' ratée (sauf critique)",
+							"AS9": "La compétence 'Révisions de dernière minute' donne Crit+2 pour les épreuves impliquant l'INT ou le CHA",
+							"AS10": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Examen post-mortem",
+							"Armure littéraire",
+							"Mode d'emploi",
+							"Savoir occulte",
+							"Edit des Dieux"
+						]
+					},
+					{
+						"ID": "savant",
+						"Name_M": "Savant",
+						"Name_F": "Savante",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {
+							"INT": 1
+						},
+						"Attributs_specifiques": {
+							"AS1": "INT+1 (automatique)",
+							"AS2": "Crit+3 pour la réalisation de recettes, de plats et de potions",
+							"AS3": "Les armes de jet, de tir et de sièges ont Portée+10m et ont 1D4 Pi supplémentaire",
+							"AS4": "Le héros peut relancer une épreuve de tir d'une arme à distance (sauf critique)",
+							"AS5": "Le héros a accès aux recettes de l'ingénieur alchimiste et mécanicien en tant que spécialiste mais sans les bonus",
+							"AS6": "Le héros a accès aux recettes de potions magiques mais doit utiliser des potions de mana, des cristaux ou d'autres formes de réserves d'énergie astrale pour les réaliser",
+							"AS7": "Le héros a accès aux recettes des manuels de chasseurs de monstres, vampires et sorcières",
+							"AS8": "1 chaudron et 1 alambic ne comptent pas dans le poids du sac",
+							"AS9": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Science infuse",
+							"Etude ballistique",
+							"Chimie élémentaire",
+							"Savant fou",
+							"Crocogolf"
+						]
+					}
+				]
+			},
+			{
+				"ID": "etudiant_arts_martiaux",
+				"Name_M": "Etudiant en arts martiaux",
+				"Name_F": "Etudiante en arts martiaux",
+				"Necessite_competence": [],
+				"Attributs_automatisables": {},
+				"Attributs_specifiques": {
+					"AS1": "AT+2 à mains nues, avec un bâton, un fleuret ou une arme d'entraînement",
+					"AS2": "AT+1 ou AD tir+2 pour les coups spéciaux, les AT ciblées et les maïtrises",
+					"AS3": "Les coups critiques ont PI+5",
+					"AS4": "Le héros peut relancer une épreuve d'AT, d'AD tir, de PRD et d'ES ratée par combat (sauf critique)",
+					"AS5": "Le héros peut relancer une épreuve de 'Forgeron' ratée (sauf critique)",
+					"AS6": "Le héros a accès aux recettes de l'ingénieur de couture en tant que spécialiste et un autre domaine de son choix parmi bois, cuir ou métal en tant que spécialisate",
+					"AS7": "Donne les compétences 'Entraînement intensif', 'Méditation' et 'Exercice de groupe'"
+				},
+				"Competences": [
+					"Entraînement intensif",
+					"Méditation",
+					"Exercice de groupe"
+				],
+				"SousSpecialisations": [
+					{
+						"ID": "maitre_arme",
+						"Name_M": "Maître d'armes",
+						"Name_F": "Maîtresse d'armes",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Le héros obtient 3 coups spéciaux, maîtrises ou gardes de son choix (1x)",
+							"AS2": "Apprendre un coup spécial, une maîtrise ou une garde ne prend jamais plus de 6h",
+							"AS3": "Le héros obtient 1 coup spécial, 1 maïtrise ou 1 garde de son choix à chaque passage de niveau",
+							"AS4": "Chaque décade, le héros peut enseigner 1 de ses coups spéciaux, maîtrise ou garde à un allié",
+							"AS5": "Le héros ne peut pas faire d'échec critique à un coup spécial",
+							"AS6": "Le héros peut choisir 3 types d'armes qui deviennent ses armes de prédilection (il a AT+1, PRD+1, Crit+1 et Pi+3 ou AD tir+2, Crit+1 et Pi+3 avec ces armes)",
+							"AS7": "A chaque fois que le héros rencontre un maître d'armes, il obtient un nouveau coup spécial, maîtrise ou garde de son choix (1x par maître d'armes)",
+							"AS8": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Le retour du fils d'unijambiste",
+							"Botte secrète",
+							"Souvenez-vous de ce que je vous ai appris",
+							"Ô rage, ô désespoir",
+							"Mon nom est Inigo Montoya"
+						]
+					},
+					{
+						"ID": "artisan_renomme",
+						"Name_M": "Artisan renommé",
+						"Name_F": "Artisane renommée",
+						"Necessite_competence": [],
+						"Attributs_automatisables": {},
+						"Attributs_specifiques": {
+							"AS1": "Crit+3 pour les épreuves de confection, fabrication, cuisine, production, création ou amélioration",
+							"AS2": "Chaque fois que le héros fabrique un objet, donne un bonus de +1 à la caractéristique de son choix",
+							"AS3": "Si le héros fait entre 1 et 6 lors de la fabrication d'un objet, donne un bonus de +1 à la caractéristique de son choix",
+							"AS4": "L'échec critique à une épreuve de fabrication, de réparation, d'aiguisage ou d'amélioration est compté comme un échec simple",
+							"AS5": "Le héros peut relancer la rupture de tous ses objets",
+							"AS6": "Le héros peut améloirer 1 fois toute arme ou protection compatible d'1 niveau de qualité sur une épreuve de confection avec 1 dose de chaque élément composant l'arme ou la protection",
+							"AS7": "Le héros peut recycler les armes et objets récupérés pour obtenir les composant à l'aide d'un four, d'une forge, d'une enclume ou d'aiguille à coudre",
+							"AS8": "Le héros a accès aux recettes d'ingénieur d'un domaine de son choix parmi bois, cuir, métal ou mécanique en tant que spécialiste",
+							"AS9": "Donne accès à 3 compétences au choix"
+						},
+						"Competences_obligatoires": [],
+						"Nombre_competences_choix": 3,
+						"Competences_choix": [
+							"Travail d'orfèvre",
+							"Réparations de fortune",
+							"Doctrine d'Héphaïstos",
+							"Forge stellaire",
+							"VULTROX 3000"
+						]
+					}
+				]
+			}
+		]
 	}
 ]

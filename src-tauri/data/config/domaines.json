@@ -1,0 +1,50 @@
+[
+    {
+        "Domaine": "L'Ordre",
+        "Description": "Le héros inflige Pi magiques+4, il a AT+1D4 contre le Chaos, Démons, Morts vivants et Brigands.\r\nSon arme peut éclairer à 5m pendant 1h sur épreuve COU.\r\nIl inflige Pi+2 par tranche de 5% de corruption de sa cible.\r\nIl a l’avantage à ses attaques ciblées à la tête."
+    },
+    {
+        "Domaine": "Le Chaos",
+        "Description": "Le héros inflige Pi magiques+4, il a AT+1D4 contre l’Ordre, Prêtres, Paladins, Druides et Gardes.\r\nSon arme inflige 1D4+1% de Corruption.\r\nIl inflige Pi+2 par tranche de 5% de corruption qu’il possède.\r\nIl a l’avantage à ses attaques ciblées à la tête."
+    },
+    {
+        "Domaine": "La Colère",
+        "Description": "Le héros inflige Pi contondants+4 ou ignore 4PR phy à chaque attaque sur épreuve COU.\r\nA chaque assaut, lorsqu’il subit une attaque, il inflige 1D6 Pi supplémentaires lors de sa prochaine attaque par tranche de 3Pi reçus (cumulable 3 fois).\r\nA chaque assaut, il a Bulldozer+1  sur épreuve FO.\r\nIl a PR nat+1."
+    },
+    {
+        "Domaine": "Le Savoir",
+        "Description": "Le héros inflige 4Pi qui ignorent la PR mag et phy à chaque attaque sur INT.\r\nA chaque assaut, lorsqu’il inflige des Pi, il gagne PR nat+1 jusqu’à son prochain tour par tranche de 5Pi infligés (cumulable 5 fois).\r\nA chaque assaut, il a Bizarre+11 sur épreuve CHA.\r\nIl a PR nat+1."
+    },
+    {
+        "Domaine": "La Perfection",
+        "Description": "Le héros inflige Hémorragie grave à chaque attaque sur épreuve AD.\r\nA chaque assaut, lorsqu’il subit une attaque, il a AT+1 lors de sa prochaine attaque par tranche de 3Pi reçus (cumulable 5 fois).\r\nA chaque assaut il a Rapide+11 sur épreuve PER.\r\nIl a PR nat+1."
+    },
+    {
+        "Domaine": "La Mort",
+        "Description": "Le héros inflige Pv-4 à chaque attaque sur épreuve INT.\r\nA chaque assaut, lorsqu’il inflige des Pi, il regagne 2Pv par tranche de 3Pi infligés (cumulable 5 fois).\r\nA chaque assaut il a Terrifiant+11 sur CHA.\r\nIl a PR nat+1."
+    },
+    {
+        "Domaine": "L'Oubli",
+        "Description": "Le héros inflige le désavantage à l’épreuve ES ou PRD de sa cible sur épreuve INT.\r\nA chaque assaut, lorsqu’il subit une attaque, il inflige Pv-1 par tranche de 3Pi reçus.\r\nA chaque assaut, il a Puissant+11 sur épreuve FO.\r\nIl a PR nat+1."
+    },
+    {
+        "Domaine": "La Vie",
+        "Description": "Le héros inflige Pi acide+4 (détruit 1PR phy) à chaque attaque sur épreuve INT.\r\nA chaque assaut, lorsqu’il inflige des Pi, il rend à ses alliés à 10m 1Pv par tranche de 3Pi infligés (cumulable 6 fois).\r\nA chaque assaut, il regagne 1D4 Pv sur épreuve INT.\r\nIl rend 1D4 Pv supplémentaires avec PREMIERS SOINS ou avec des potions de soin, élixirs de soin ou remèdes."
+    },
+    {
+        "Domaine": "Les Ténèbres",
+        "Description": "Le héros inflige Pi glace+4 à chaque attaque sur épreuve AD.\r\nA chaque assaut, lorsqu’il inflige des Pi, il a PRD+1 ou ES+1 jusqu’à son prochain tour par tranche de 3Pi infligés (cumulable 3 fois).\r\nA chaque assaut, la nuit ou en milieu sombre, il a l’avantage à un jet au choix sur épreuve COU.\r\nIl a nyctalopie totale."
+    },
+    {
+        "Domaine": "Le Sang",
+        "Description": "Le héros inflige Hémorragie grave à chaque attaque sur épreuve INT.\r\nA chaque assaut, lorsqu’il inflige des Pi, il vole à la cible, pour lui-même ou un allié à 10m, 1Pv par tranche de 3Pi infligés (cumulable 5 fois).\r\nA chaque assaut, il inflige Hémorragie simple à tous les ennemis au CàC sur épreuve AD.\r\nIl n’a pas besoin de soins après combat pour stopper les hémorragies."
+    },
+    {
+        "Domaine": "Les Cendres",
+        "Description": "Le héros inflige Pi feu+4 à chaque attaque sur épreuve CHA.\r\nA chaque assaut, lorsqu’il subit une attaque, il détruit 1PR phy ou 1PR mag de sa cible lors de sa prochaine attaque par tranche de 3Pi reçus (cumulable 5 fois).\r\nA chaque assaut, il inflige COU-1D4 à tous les ennemis au CàC jusqu’à la fin de son prochain tour sur épreuve FO.\r\nIl ignore 1D8 dégâts de chute."
+    },
+    {
+        "Domaine": "Les Cieux",
+        "Description": "Le héros inflige Pi foudre+4 à chaque attaque sur épreuve de PER.\r\nA chaque assaut, lorsqu’il inflige des Pi, il a MvT+2m par tranche de 3Pi infligés (cumulable 5 fois).\r\nA chaque assaut, il inflige le désavantage aux attaques ciblés de tous les ennemis au CàC sur épreuve CHA.\r\nIl a l’avantage à ses épreuves d’acrobatie et d’escalade."
+    }
+]
