@@ -132,26 +132,60 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
         }
     };
 
-    const getMissingRequirements = (req: Requirements, stats: Characteristics): string[] => {
-        const missing: string[] = [];
-        if (req.COUR && (stats.courage.naturel || 0) < req.COUR) missing.push(`COU ${req.COUR}`);
-        if (req.INT && (stats.intelligence.naturel || 0) < req.INT) missing.push(`INT ${req.INT}`);
-        if (req.CHA && (stats.charisme.naturel || 0) < req.CHA) missing.push(`CHA ${req.CHA}`);
-        if (req.AD && (stats.adresse.naturel || 0) < req.AD) missing.push(`AD ${req.AD}`);
-        if (req.FO && (stats.force.naturel || 0) < req.FO) missing.push(`FO ${req.FO}`);
-        return missing;
+    const getMissingMinRequirements = (req: Requirements, stats: Characteristics): string[] => {
+        const missingMin: string[] = [];
+        if (req.COUR && (stats.courage.naturel || 0) < req.COUR) missingMin.push(`COU ${req.COUR}`);
+        if (req.INT && (stats.intelligence.naturel || 0) < req.INT) missingMin.push(`INT ${req.INT}`);
+        if (req.CHA && (stats.charisme.naturel || 0) < req.CHA) missingMin.push(`CHA ${req.CHA}`);
+        if (req.AD && (stats.adresse.naturel || 0) < req.AD) missingMin.push(`AD ${req.AD}`);
+        if (req.FO && (stats.force.naturel || 0) < req.FO) missingMin.push(`FO ${req.FO}`);
+        return missingMin;
+    };
+
+    const getMissingMaxRequirements = (req: Requirements, stats: Characteristics): string[] => {
+        const missingMax: string[] = [];
+        if (req.COUR && (stats.courage.naturel || 0) > req.COUR) missingMax.push(`COU ${req.COUR}`);
+        if (req.INT && (stats.intelligence.naturel || 0) > req.INT) missingMax.push(`INT ${req.INT}`);
+        if (req.CHA && (stats.charisme.naturel || 0) > req.CHA) missingMax.push(`CHA ${req.CHA}`);
+        if (req.AD && (stats.adresse.naturel || 0) > req.AD) missingMax.push(`AD ${req.AD}`);
+        if (req.FO && (stats.force.naturel || 0) > req.FO) missingMax.push(`FO ${req.FO}`);
+        return missingMax;
     };
 
     const renderOptions = (items: (Origine | Metier)[]) => {
+        // Find current Origine to check for forbidden metiers
+        const currentOrigine = rules?.origines.find(o => o.name_m === identity.origine || o.name_f === identity.origine);
+
         const optionsWithStatus = items.map(item => {
             const isMale = identity.sexe === 'Masculin';
             const name = isMale ? item.name_m : item.name_f;
             // Fallback if empty name
             const label = name || (isMale ? item.name_f : item.name_m) || item.name_m;
 
-            const missing = getMissingRequirements(item.min, characterData.characteristics);
-            const isDisabled = missing.length > 0;
-            const displayLabel = isDisabled ? `${label} ( Min: ${missing.join(', ')} )` : label;
+            const missingMin = getMissingMinRequirements(item.min, characterData.characteristics);
+            const missingMax = getMissingMaxRequirements(item.max, characterData.characteristics);
+            let isDisabled = missingMin.length > 0 || missingMax.length > 0;
+            let displayLabel = label;
+            let isForbidden = false;
+
+            // Check if blocked by Origine
+            // We verify if it is a Metier (has specialisations) and if the current origin blocks it
+            if (currentOrigine && currentOrigine.metiers_impossibles && 'specialisations' in item) {
+                if (currentOrigine.metiers_impossibles.includes(String(item.id))) {
+                    isForbidden = true;
+                    isDisabled = true;
+                }
+            }
+
+            if (isForbidden) {
+                displayLabel = `${label} (Bloqué par l'origine)`;
+            } else if (missingMin.length > 0 && missingMax.length > 0) {
+                displayLabel = `${label} ( Min: ${missingMin.join(', ')} || Max: ${missingMax.join(', ')} )`;
+            } else if (missingMin.length > 0) {
+                displayLabel = `${label} ( Min: ${missingMin.join(', ')} )`;
+            } else if (missingMax.length > 0) {
+                displayLabel = `${label} ( Max: ${missingMax.join(', ')} )`;
+            }
 
             return {
                 id: item.id,

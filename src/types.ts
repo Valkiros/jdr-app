@@ -326,6 +326,7 @@ export interface Origine {
     min: Requirements;
     max: Requirements;
     vitesse: number;
+    metiers_impossibles?: string[];
     competences?: string[];
 }
 
@@ -362,7 +363,7 @@ export interface Specialisation {
 
 // Interface pour les métiers
 export interface Metier {
-    id: number;
+    id: string;
     name_m: string;
     name_f: string;
     min: Requirements;

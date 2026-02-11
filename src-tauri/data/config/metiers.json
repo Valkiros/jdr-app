@@ -1,6 +1,6 @@
 [
 	{
-		"ID": 1,
+		"ID": "guerrier",
 		"Name_M": "Guerrier",
 		"Name_F": "Guerrière",
 		"Min": {
@@ -243,7 +243,7 @@
 		]
 	},
 	{
-		"ID": 2,
+		"ID": "gladiateur",
 		"Name_M": "Gladiateur",
 		"Name_F": "Gladiateur",
 		"Min": {
@@ -486,7 +486,7 @@
 		]
 	},
 	{
-		"ID": 3,
+		"ID": "ninja",
 		"Name_M": "Ninja",
 		"Name_F": "Ninja",
 		"Min": {
@@ -791,7 +791,7 @@
 		]
 	},
 	{
-		"ID": 4,
+		"ID": "assassin",
 		"Name_M": "Assassin",
 		"Name_F": "Assassin",
 		"Min": {
@@ -1096,7 +1096,7 @@
 		]
 	},
 	{
-		"ID": 5,
+		"ID": "voleur",
 		"Name_M": "Voleur",
 		"Name_F": "Voleuse",
 		"Min": {
@@ -1265,7 +1265,7 @@
 		]
 	},
 	{
-		"ID": 6,
+		"ID": "ranger",
 		"Name_M": "Ranger",
 		"Name_F": "Ranger",
 		"Min": {
@@ -1278,7 +1278,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 7,
+		"ID": "menestrel",
 		"Name_M": "Ménestrel",
 		"Name_F": "Ménestrel",
 		"Min": {
@@ -1291,7 +1291,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 8,
+		"ID": "marchand",
 		"Name_M": "Marchand",
 		"Name_F": "Marchande",
 		"Min": {
@@ -1304,7 +1304,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 9,
+		"ID": "negociant",
 		"Name_M": "Négociant",
 		"Name_F": "Négociante",
 		"Min": {
@@ -1317,7 +1317,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 10,
+		"ID": "ingenieur",
 		"Name_M": "Ingénieur",
 		"Name_F": "Ingénieur",
 		"Min": {
@@ -1330,7 +1330,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 11,
+		"ID": "pirate",
 		"Name_M": "Pirate",
 		"Name_F": "Pirate",
 		"Min": {
@@ -1789,7 +1789,7 @@
 		]
 	},
 	{
-		"ID": 12,
+		"ID": "bourgeois",
 		"Name_M": "Bourgeois",
 		"Name_F": "Bourgeoise",
 		"Min": {
@@ -2034,7 +2034,7 @@
 		]
 	},
 	{
-		"ID": 13,
+		"ID": "noble",
 		"Name_M": "Noble",
 		"Name_F": "Noble",
 		"Min": {
@@ -2279,7 +2279,7 @@
 		]
 	},
 	{
-		"ID": 14,
+		"ID": "chamane",
 		"Name_M": "Chamane",
 		"Name_F": "Chamane",
 		"Min": {
@@ -2292,7 +2292,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 15,
+		"ID": "druide",
 		"Name_M": "Druide",
 		"Name_F": "Druide",
 		"Min": {
@@ -2305,7 +2305,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 16,
+		"ID": "cavalier",
 		"Name_M": "Cavalier",
 		"Name_F": "Cavalière",
 		"Min": {
@@ -2534,7 +2534,7 @@
 		]
 	},
 	{
-		"ID": 17,
+		"ID": "chevalier",
 		"Name_M": "Chevalier",
 		"Name_F": "Chevaleresse",
 		"Min": {
@@ -2763,7 +2763,7 @@
 		]
 	},
 	{
-		"ID": 18,
+		"ID": "bourreau",
 		"Name_M": "Bourreau",
 		"Name_F": "Bourreau",
 		"Min": {
@@ -2776,7 +2776,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 19,
+		"ID": "sbire",
 		"Name_M": "Sbire",
 		"Name_F": "Sbire",
 		"Min": {
@@ -2790,7 +2790,7 @@
 		}
 	},
 	{
-		"ID": 20,
+		"ID": "pretre_slanoush",
 		"Name_M": "Prêtre de Slanoush",
 		"Name_F": "Prêtresse de Slanoush",
 		"Min": {
@@ -2803,7 +2803,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 21,
+		"ID": "pretre_dlul",
 		"Name_M": "Prêtre de Dlul",
 		"Name_F": "Prêtresse de Dlul",
 		"Min": {
@@ -2816,7 +2816,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 22,
+		"ID": "pretre_youclidh",
 		"Name_M": "Prêtre de Youclidh",
 		"Name_F": "Prêtresse de Youclidh",
 		"Min": {
@@ -2829,7 +2829,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 23,
+		"ID": "pretre_adathie",
 		"Name_M": "Prêtre d'Adathie",
 		"Name_F": "Prêtresse d'Adathie",
 		"Min": {
@@ -2842,7 +2842,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 24,
+		"ID": "paladin_dlul",
 		"Name_M": "Paladin de Dlul",
 		"Name_F": "Paladin de Dlul",
 		"Min": {
@@ -2855,7 +2855,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 25,
+		"ID": "paladin_brave",
 		"Name_M": "Paladin de Brave",
 		"Name_F": "Paladin de Brave",
 		"Min": {
@@ -2868,7 +2868,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 26,
+		"ID": "paladin_slanoush",
 		"Name_M": "Paladin de Slanoush",
 		"Name_F": "Paladin de Slanoush",
 		"Min": {
@@ -2881,7 +2881,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 27,
+		"ID": "paladin_khornettoh",
 		"Name_M": "Paladin de Khornettoh",
 		"Name_F": "Paladin de Khornettoh",
 		"Min": {
@@ -2894,7 +2894,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 28,
+		"ID": "sorcier",
 		"Name_M": "Sorcier",
 		"Name_F": "Sorcière",
 		"Min": {
@@ -2907,7 +2907,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 29,
+		"ID": "mage",
 		"Name_M": "Mage",
 		"Name_F": "Mage",
 		"Min": {
@@ -2920,7 +2920,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 30,
+		"ID": "dompteur",
 		"Name_M": "Dompteur",
 		"Name_F": "Dompteuse",
 		"Min": {
@@ -2933,7 +2933,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 31,
+		"ID": "mage_pirate",
 		"Name_M": "Mage Pirate",
 		"Name_F": "Mage Pirate",
 		"Min": {
@@ -2946,7 +2946,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 32,
+		"ID": "soldat",
 		"Name_M": "Soldat",
 		"Name_F": "Soldat",
 		"Min": {
@@ -2959,7 +2959,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 33,
+		"ID": "officier",
 		"Name_M": "Officier",
 		"Name_F": "Officier",
 		"Min": {
@@ -2972,7 +2972,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 34,
+		"ID": "eclaireur",
 		"Name_M": "Eclaireur",
 		"Name_F": "Eclaireuse",
 		"Min": {
@@ -2985,7 +2985,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 35,
+		"ID": "soldat_lourd",
 		"Name_M": "Soldat lourd",
 		"Name_F": "Soldat lourd",
 		"Min": {
@@ -2998,7 +2998,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 36,
+		"ID": "medecin",
 		"Name_M": "Médecin",
 		"Name_F": "Médecin",
 		"Min": {
@@ -3011,7 +3011,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 37,
+		"ID": "armurier_artificier",
 		"Name_M": "Armurier-artificier",
 		"Name_F": "Armurière-artificière",
 		"Min": {
@@ -3024,7 +3024,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 38,
+		"ID": "auxilliaire_militaire",
 		"Name_M": "Auxilliaire militaire",
 		"Name_F": "Auxilliaire militaire",
 		"Min": {
@@ -3037,7 +3037,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 39,
+		"ID": "moine_peste",
 		"Name_M": "Moine de la Peste",
 		"Name_F": "Nonne de la Peste",
 		"Min": {
@@ -3050,7 +3050,7 @@
 		"Max": {}
 	},
 	{
-		"ID": 40,
+		"ID": "disciple",
 		"Name_M": "Disciple",
 		"Name_F": "Disciple",
 		"Min": {

@@ -311,12 +311,14 @@ pub struct Origine {
     pub max: Requirements,
     #[serde(alias = "Vitesse")]
     pub vitesse: i32,
+    #[serde(alias = "Metiers_impossibles", default)]
+    pub metiers_impossibles: Option<Vec<String>>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Metier {
     #[serde(alias = "ID")]
-    pub id: i32,
+    pub id: String,
     #[serde(alias = "Name_M")]
     pub name_m: String,
     #[serde(alias = "Name_F")]
