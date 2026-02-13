@@ -177,6 +177,18 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
                 }
             }
 
+            // Exception: Troll Ménestrel
+            // Si l'origine est Troll et le métier est Ménestrel, on autorise tout
+            if (currentOrigine && (currentOrigine.name_m === 'Troll' || currentOrigine.name_f === 'Troll')) {
+                if (item.name_m === 'Ménestrel' || item.name_f === 'Ménestrel') {
+                    isForbidden = false;
+                    isDisabled = false;
+                    // On vide les tableaux pour ne pas afficher les restrictions
+                    missingMin.length = 0;
+                    missingMax.length = 0;
+                }
+            }
+
             if (isForbidden) {
                 displayLabel = `${label} (Bloqué par l'origine)`;
             } else if (missingMin.length > 0 && missingMax.length > 0) {
