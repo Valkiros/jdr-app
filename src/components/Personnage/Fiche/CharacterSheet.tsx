@@ -17,6 +17,7 @@ import { StatusPanel } from '../Etat/StatusPanel';
 import { SacochesEtPoches } from '../SacochesEtPoches/SacochesEtPoches';
 import { SacPanel } from '../Sac/SacPanel';
 import { APE } from '../APE/APE';
+import { RichessePanel } from '../../Personnage/Richesse/RichessePanel';
 import { CharacterData, Equipement, Characteristics, Origine } from '../../../types';
 import { INITIAL_DATA } from '../../../constants';
 import { useRefContext } from '../../../context/RefContext';
@@ -112,7 +113,7 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
             });
     }, [characterId]);
 
-    const [activeTab, setActiveTab] = useState<'fiche' | 'equipement' | 'sacoches' | 'sac' | 'status' | 'competences' | 'ape'>('fiche');
+    const [activeTab, setActiveTab] = useState<'fiche' | 'equipement' | 'sacoches' | 'sac' | 'status' | 'competences' | 'ape' | 'richesse'>('fiche');
 
     // Computed Values for Characteristics Table
     // Computed Values for Characteristics Table
@@ -906,6 +907,12 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                 >
                     APE
                 </button>
+                <button
+                    onClick={() => setActiveTab('richesse')}
+                    className={`px-6 py-2 font-bold text-lg transition-colors ${activeTab === 'richesse' ? 'bg-leather text-parchment' : 'text-leather hover:bg-leather hover:text-parchment hover:bg-opacity-10'}`}
+                >
+                    Richesse
+                </button>
             </div>
 
             <div className={activeTab === 'fiche' ? 'space-y-6 animate-fade-in' : 'hidden'}>
@@ -1080,6 +1087,24 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                     ape={data.ape || []}
                     onApeChange={(ape) => setData({ ...data, ape })}
                     origin={data.identity.origine}
+                />
+            </div>
+
+            {/* Richesse Tab */}
+            <div className={activeTab === 'richesse' ? 'animate-fade-in' : 'hidden'}>
+                <RichessePanel
+                    richesse={data.richesse || {
+                        capacite_bourse: 0,
+                        status_points: { honneurs: 0, sm_sot: 0, mc_mot: 0 },
+                        monnaies: {
+                            beryllium: { sur_soi: 0, banque: 0, maison: 0, commun: 0 },
+                            thritil: { sur_soi: 0, banque: 0, maison: 0, commun: 0 },
+                            or: { sur_soi: 0, banque: 0, maison: 0, commun: 0 },
+                            argent: { sur_soi: 0, banque: 0, maison: 0, commun: 0 },
+                            cuivre: { sur_soi: 0, banque: 0, maison: 0, commun: 0 }
+                        }
+                    }}
+                    onChange={(newRichesse) => setData({ ...data, richesse: newRichesse })}
                 />
             </div>
 

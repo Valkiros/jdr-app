@@ -248,6 +248,7 @@ export interface CharacterData {
     competences_specialisation: CharacterCompetence[];
     competences_sous_specialisation: CharacterCompetence[];
     status: CharacterStatus;
+    richesse: RichesseData; // Ajout Richesse
 }
 
 // Interfaces pour la nouvelle page "État & Besoins"
@@ -281,6 +282,34 @@ export interface CharacterStatus {
     fatigue: Fatigue;
     alcohol: Alcohol;
     drug: Drug;
+}
+
+// Interfaces pour la Richesse
+export interface RichesseStatus {
+    honneurs: number;
+    sm_sot: number;
+    mc_mot: number;
+}
+
+export interface CurrencyValues {
+    sur_soi: number;
+    banque: number;
+    maison: number;
+    commun: number;
+}
+
+export interface RichesseMonnaies {
+    beryllium: CurrencyValues;
+    thritil: CurrencyValues;
+    or: CurrencyValues;
+    argent: CurrencyValues;
+    cuivre: CurrencyValues;
+}
+
+export interface RichesseData {
+    capacite_bourse: number;
+    status_points: RichesseStatus;
+    monnaies: RichesseMonnaies;
 }
 
 // Interface pour le résumé du personnage

@@ -87,5 +87,20 @@ export const INITIAL_DATA: CharacterData = {
             type: 'Aucune',
             jours_retard: 0
         }
+    },
+    richesse: {
+        capacite_bourse: 0,
+        status_points: {
+            honneurs: 0,
+            sm_sot: 0,
+            mc_mot: 0
+        },
+        monnaies: {
+            beryllium: { sur_soi: 0, banque: 0, maison: 0, commun: 0 },
+            thritil: { sur_soi: 0, banque: 0, maison: 0, commun: 0 },
+            or: { sur_soi: 0, banque: 0, maison: 0, commun: 0 },
+            argent: { sur_soi: 0, banque: 0, maison: 0, commun: 0 },
+            cuivre: { sur_soi: 0, banque: 0, maison: 0, commun: 0 }
+        }
     }
 };

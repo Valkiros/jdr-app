@@ -133,7 +133,7 @@ export const AccessoiresTable: React.FC<AccessoiresTableProps> = ({ items, onIte
 
                             <th className="p-2 w-28 text-center pt-2">Etat</th>
 
-                            <th className="p-2 w-20 text-center">Rupture</th>
+                            <th className="p-2 w-20 text-center">Rup</th>
                             <th className="p-2 w-16 text-center">Mod</th>
 
                             <th className="p-2">Effet</th>

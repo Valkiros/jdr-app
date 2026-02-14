@@ -154,7 +154,9 @@ export const ProtectionsTable: React.FC<ProtectionsTableProps> = ({ items, onIte
 
                             <th className="p-2 w-28 text-center pt-2">Etat</th>
 
-                            <th className="p-2 w-20 text-center">Rupture</th>
+                            <th className="p-2 w-24 text-center">Couvre</th>
+
+                            <th className="p-2 w-20 text-center">Rup</th>
                             <th className="p-2 w-16 text-center">Mod</th>
 
                             <th className="p-2">Effet</th>
@@ -264,6 +266,11 @@ export const ProtectionsTable: React.FC<ProtectionsTableProps> = ({ items, onIte
                                             <option value="Endommagé">Endommagé</option>
                                             <option value="Cassé">Cassé</option>
                                         </select>
+                                    </td>
+
+                                    {/* --- Couvre --- */}
+                                    <td className="p-2 text-center text-sm truncate max-w-[100px]" title={refItem?.raw?.details?.couvre || ''}>
+                                        {refItem?.raw?.details?.couvre || '-'}
                                     </td>
 
                                     {/* --- Rupture --- */}

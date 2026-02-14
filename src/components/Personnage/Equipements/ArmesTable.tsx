@@ -160,12 +160,12 @@ export const ArmesTable: React.FC<ArmesTableProps> = ({ items, onItemsChange, re
                             <th className="p-2 w-24">Type</th>
                             <th className="p-2 w-48">Nom</th>
                             <th className="p-2 w-24">Dégâts</th>
-                            <th className="p-2 w-20">Modif (PI)</th>
+                            <th className="p-2 w-20">Mod</th>
                             <th className="p-2 w-20">Bonus FO</th>
                             <th className="p-2 w-32">Total</th>
                             <th className="p-2 w-28">Etat</th>
-                            <th className="p-2 w-24">Rupture</th>
-                            <th className="p-2 w-20">Modif (Rup)</th>
+                            <th className="p-2 w-24">Rup</th>
+                            <th className="p-2 w-20">Mod</th>
                             <th className="p-2">Effet</th>
                             <th className="p-2 w-8"></th>
                         </tr>
