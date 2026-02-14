@@ -1,4 +1,4 @@
-import React, { useEffect, useState, forwardRef, useImperativeHandle } from 'react';
+import React, { useEffect, useState, forwardRef, useImperativeHandle, useCallback, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { invoke } from '@tauri-apps/api/core';
 import { applyCompetenceRules } from "../../../utils/competenceRules";
@@ -737,6 +737,42 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
         return totals;
     }, [data.characteristics.adresse.naturel, equippedValues, data.inventory, data.defenses, gameRules, data.identity.origine, refs]);
 
+    const globalModifiers = useMemo(() => {
+        const alc = getAlcoholModifiers(data.status || INITIAL_DATA.status);
+        return {
+            pi: (alc.leger.pi || 0) + (alc.fort.pi || 0) + (alc.gueule_de_bois.pi || 0)
+        };
+    }, [data.status]);
+
+    const handleMovementChange = useCallback((movement: any) => {
+        setDataState(prev => ({ ...prev, movement }));
+        if (!isInitialLoad.current) onDirtyChange?.(true);
+    }, [onDirtyChange]);
+
+    const handleMagicChange = useCallback((magic: any) => {
+        setDataState(prev => ({ ...prev, magic }));
+        if (!isInitialLoad.current) onDirtyChange?.(true);
+    }, [onDirtyChange]);
+
+    const handleMalusTeteChange = useCallback((val: number) => {
+        setDataState(prev => ({ ...prev, general: { ...prev.general, malus_tete: val } }));
+        if (!isInitialLoad.current) onDirtyChange?.(true);
+    }, [onDirtyChange]);
+
+    const handleDefenseChange = useCallback((defenses: any) => {
+        setDataState(prev => ({ ...prev, defenses }));
+        if (!isInitialLoad.current) onDirtyChange?.(true);
+    }, [onDirtyChange]);
+
+    const handleCharacteristicsChange = useCallback((characteristics: any) => {
+        setDataState(prev => ({ ...prev, characteristics }));
+        if (!isInitialLoad.current) onDirtyChange?.(true);
+    }, [onDirtyChange]);
+
+    const handleTempModifiersChange = useCallback((temp_modifiers: any) => {
+        setDataState(prev => ({ ...prev, temp_modifiers }));
+        if (!isInitialLoad.current) onDirtyChange?.(true);
+    }, [onDirtyChange]);
 
 
     if (characterLoading || refLoading) {
@@ -930,12 +966,9 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                                 course: computedStats.course
                             }}
                             computedDiscretion={computedStats.discretion}
-                            onMovementChange={(movement) => setData({ ...data, movement })}
-                            onMagicChange={(magic) => setData({ ...data, magic })}
-                            onMalusTeteChange={(val) => setData({
-                                ...data,
-                                general: { ...data.general, malus_tete: val }
-                            })}
+                            onMovementChange={handleMovementChange}
+                            onMagicChange={handleMagicChange}
+                            onMalusTeteChange={handleMalusTeteChange}
                         />
                     </div>
                     <div className="flex flex-col gap-6">
@@ -946,7 +979,7 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                                 speciale: computedStats.speciale,
                                 magique: computedStats.magique
                             }}
-                            onDefenseChange={(defenses) => setData({ ...data, defenses })}
+                            onDefenseChange={handleDefenseChange}
                         />
                     </div>
                 </div>
@@ -958,12 +991,8 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                         equippedValues={equippedValues}
                         inventory={data.inventory}
                         referenceOptions={refs}
-                        onChange={(characteristics) => setData({ ...data, characteristics })}
-                        globalModifiers={{
-                            pi: (getAlcoholModifiers(data.status || INITIAL_DATA.status).leger.pi || 0) +
-                                (getAlcoholModifiers(data.status || INITIAL_DATA.status).fort.pi || 0) +
-                                (getAlcoholModifiers(data.status || INITIAL_DATA.status).gueule_de_bois.pi || 0)
-                        }}
+                        onChange={handleCharacteristicsChange}
+                        globalModifiers={globalModifiers}
                     />
                 </div>
 
@@ -978,14 +1007,14 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                             protection_froid: computedStats.protection_froid,
                             protection_chaleur: computedStats.protection_chaleur
                         }}
-                        onChange={(magic) => setData({ ...data, magic })}
+                        onChange={handleMagicChange}
                     />
                 </div>
 
                 {/* Temp Modifiers - Bottom */}
                 <TempModifiersPanel
                     modifiers={data.temp_modifiers}
-                    onChange={(temp_modifiers) => setData({ ...data, temp_modifiers })}
+                    onChange={handleTempModifiersChange}
                 />
             </div>
 

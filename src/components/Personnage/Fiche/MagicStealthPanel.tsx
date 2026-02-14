@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MagicStealth, ProtectionValue, StatDetail } from '../../../types';
 import { Tooltip } from '../../Shared/Tooltip';
 import { CalculationDetails } from './CalculationDetails';
+import { SmartInput } from '../../Shared/SmartInput';
 
 
 interface MagicStealthPanelProps {
@@ -18,11 +19,11 @@ interface MagicStealthPanelProps {
     onChange: (stats: MagicStealth) => void;
 }
 
-export const MagicStealthPanel: React.FC<MagicStealthPanelProps> = ({ stats, computedMagic, onChange }) => {
+const MagicStealthPanelComponent: React.FC<MagicStealthPanelProps> = ({ stats, computedMagic, onChange }) => {
     const [hoveredInfo, setHoveredInfo] = useState<{ details: StatDetail, x: number, y: number } | null>(null);
 
-    const handleChange = (category: keyof MagicStealth, field: keyof ProtectionValue, value: string) => {
-        const num = parseInt(value) || 0;
+    const handleChange = (category: keyof MagicStealth, field: keyof ProtectionValue, value: string | number) => {
+        const num = typeof value === 'string' ? parseInt(value) || 0 : value;
         onChange({
             ...stats,
             [category]: { ...stats[category], [field]: num }
@@ -52,12 +53,8 @@ export const MagicStealthPanel: React.FC<MagicStealthPanelProps> = ({ stats, com
                 <label className="flex-1 text-sm font-bold text-leather leading-tight mr-1">{label}</label>
                 <div className="flex flex-col items-center relative">
                     <span className="text-[10px] uppercase opacity-60">Base</span>
-                    <input
-                        type="number"
-                        value={isComputed ? baseValue : (data.base || '')}
-                        onChange={(e) => !isComputed && handleChange(category, 'base', e.target.value)}
-                        readOnly={isComputed}
-                        className={`w-14 md:w-16 border border-leather/30 rounded text-center ${isComputed ? 'bg-black/5 text-leather-dark cursor-help font-bold' : 'bg-input-bg'}`}
+                    <div
+                        className="relative"
                         onMouseEnter={(e) => {
                             if (isComputed && details) {
                                 const rect = e.currentTarget.getBoundingClientRect();
@@ -69,16 +66,24 @@ export const MagicStealthPanel: React.FC<MagicStealthPanelProps> = ({ stats, com
                             }
                         }}
                         onMouseLeave={() => setHoveredInfo(null)}
-                    />
+                    >
+                        <SmartInput
+                            type="number"
+                            value={isComputed ? baseValue : (data.base || 0)}
+                            onCommit={(val) => !isComputed && handleChange(category, 'base', val)}
+                            readOnly={isComputed}
+                            className={`w-14 md:w-16 border border-leather/30 rounded text-center outline-none focus:border-leather ${isComputed ? 'bg-black/5 text-leather-dark cursor-help font-bold' : 'bg-input-bg'}`}
+                        />
+                    </div>
                 </div>
                 <span className="text-leather-light mt-4 px-1">+</span>
                 <div className="flex flex-col items-center">
                     <span className="text-[10px] uppercase opacity-60">Add.</span>
-                    <input
+                    <SmartInput
                         type="number"
-                        value={data.temp || ''}
-                        onChange={(e) => handleChange(category, 'temp', e.target.value)}
-                        className="w-14 md:w-16 bg-input-bg border border-leather/30 rounded text-center"
+                        value={data.temp || 0}
+                        onCommit={(val) => handleChange(category, 'temp', val)}
+                        className="w-14 md:w-16 bg-input-bg border border-leather/30 rounded text-center outline-none focus:border-leather"
                     />
                 </div>
                 <span className="text-leather-light mt-4 px-1">=</span>
@@ -124,3 +129,4 @@ export const MagicStealthPanel: React.FC<MagicStealthPanelProps> = ({ stats, com
         </div>
     );
 };
+export const MagicStealthPanel = React.memo(MagicStealthPanelComponent);

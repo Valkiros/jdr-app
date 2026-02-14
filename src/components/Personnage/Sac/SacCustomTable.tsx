@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { CustomSacItem } from '../../../types';
+import { SmartInput } from '../../Shared/SmartInput';
 import { v4 as uuidv4 } from 'uuid';
 
 interface SacCustomTableProps {
@@ -12,67 +13,35 @@ const SacCustomRow = React.memo(({ item, onUpdate, onRemove }: {
     onUpdate: (uid: string, field: keyof CustomSacItem, value: any) => void,
     onRemove: (uid: string) => void
 }) => {
-    // Local state to prevent re-renders on every keystroke
-    const [localNom, setLocalNom] = useState(item.nom);
-    const [localQuantite, setLocalQuantite] = useState(item.quantite === 0 ? '' : item.quantite.toString());
-    const [localPoids, setLocalPoids] = useState(item.poids === 0 ? '' : item.poids.toString());
-
-    // Sync from parent if changed externally
-    useEffect(() => { setLocalNom(item.nom); }, [item.nom]);
-    useEffect(() => { setLocalQuantite(item.quantite === 0 ? '' : item.quantite.toString()); }, [item.quantite]);
-    useEffect(() => { setLocalPoids(item.poids === 0 ? '' : item.poids.toString()); }, [item.poids]);
-
-    const handleBlurNom = () => {
-        if (localNom !== item.nom) {
-            onUpdate(item.uid, 'nom', localNom);
-        }
-    };
-
-    const handleBlurQuantite = () => {
-        const val = parseInt(localQuantite) || 0;
-        if (val !== item.quantite) {
-            onUpdate(item.uid, 'quantite', val);
-        }
-    };
-
-    const handleBlurPoids = () => {
-        const val = parseFloat(localPoids) || 0;
-        if (val !== item.poids) {
-            onUpdate(item.uid, 'poids', val);
-        }
-    };
+    // Local states removed in favor of SmartInput
 
     return (
         <tr className="border-b border-leather/10 hover:bg-leather/5 transition-colors">
             <td className="p-2 align-top pt-2">
-                <input
+                <SmartInput
                     type="text"
-                    value={localNom}
-                    onChange={(e) => setLocalNom(e.target.value)}
-                    onBlur={handleBlurNom}
+                    value={item.nom}
+                    onCommit={(val) => onUpdate(item.uid, 'nom', String(val))}
                     className="w-full bg-transparent border-b border-leather/20 focus:border-leather outline-none font-bold text-leather"
                     placeholder="Nom de l'objet..."
                 />
             </td>
             <td className="p-2 text-center align-top pt-2">
-                <input
+                <SmartInput
                     type="number"
-                    min="0"
-                    step="0.1"
-                    value={localPoids}
-                    onChange={(e) => setLocalPoids(e.target.value)}
-                    onBlur={handleBlurPoids}
+                    min={0}
+                    value={item.poids}
+                    onCommit={(val) => onUpdate(item.uid, 'poids', Number(val))}
                     className="w-16 text-center bg-transparent border-b border-leather/20 focus:border-leather outline-none font-medium text-ink-light"
                     placeholder="Poids"
                 />
             </td>
             <td className="p-2 text-center align-top pt-2">
-                <input
+                <SmartInput
                     type="number"
-                    min="0"
-                    value={localQuantite}
-                    onChange={(e) => setLocalQuantite(e.target.value)}
-                    onBlur={handleBlurQuantite}
+                    min={0}
+                    value={item.quantite}
+                    onCommit={(val) => onUpdate(item.uid, 'quantite', Number(val))}
                     className="w-12 text-center bg-transparent border-b border-leather/20 focus:border-leather outline-none font-medium"
                     placeholder="Qté"
                 />

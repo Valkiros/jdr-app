@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Vitals, ValueMax, Corruption, CorruptionOrigineRef, CorruptionPalierRef } from '../../../types';
 import { Tooltip } from '../../Shared/Tooltip';
+import { SmartInput } from '../../Shared/SmartInput';
 
 interface VitalsPanelProps {
     vitals: Vitals;
@@ -12,46 +13,19 @@ interface VitalsPanelProps {
     } | null;
 }
 
-const OnBlurInput: React.FC<{
-    value: number;
-    onChange: (val: string) => void;
-    className?: string;
-    description?: string; // Optional label for logging/debugging
-}> = ({ value, onChange, className }) => {
-    const [localValue, setLocalValue] = useState(String(value));
-
-    React.useEffect(() => {
-        setLocalValue(String(value));
-    }, [value]);
-
-    return (
-        <input
-            type="number"
-            value={localValue}
-            onChange={(e) => setLocalValue(e.target.value)}
-            onBlur={() => {
-                if (localValue !== String(value)) {
-                    onChange(localValue);
-                }
-            }}
-            className={className}
-        />
-    );
-};
-
 export const VitalsPanel: React.FC<VitalsPanelProps> = ({ vitals, onChange, origine, corruptionRules }) => {
     const [tooltipPosition, setTooltipPosition] = useState<{ x: number, y: number } | null>(null);
 
-    const handleValueMaxChange = (category: 'pv' | 'pm', field: keyof ValueMax, value: string) => {
-        const num = parseInt(value) || 0;
+    const handleValueMaxChange = (category: 'pv' | 'pm', field: keyof ValueMax, value: string | number) => {
+        const num = typeof value === 'string' ? parseInt(value) || 0 : value;
         onChange({
             ...vitals,
             [category]: { ...vitals[category], [field]: num }
         });
     };
 
-    const handleCorruptionChange = (field: keyof Corruption, value: string) => {
-        const num = parseInt(value) || 0;
+    const handleCorruptionChange = (field: keyof Corruption, value: string | number) => {
+        const num = typeof value === 'string' ? parseInt(value) || 0 : value;
         onChange({
             ...vitals,
             corruption: { ...vitals.corruption, [field]: num }
@@ -88,28 +62,29 @@ export const VitalsPanel: React.FC<VitalsPanelProps> = ({ vitals, onChange, orig
                 <div className="flex gap-2 text-center text-sm">
                     <div className="flex flex-col w-1/3">
                         <label className="text-[10px] uppercase opacity-70">Actuel</label>
-                        <OnBlurInput
+                        <SmartInput
+                            type="number"
                             value={data.current || 0}
-                            onChange={(val) => handleValueMaxChange(category, 'current', val)}
-                            className="bg-input-bg border border-leather/30 rounded px-1 w-full text-center"
+                            onCommit={(val) => handleValueMaxChange(category, 'current', val)}
+                            className="bg-input-bg border border-leather/30 rounded px-1 w-full text-center outline-none focus:border-leather"
                         />
                     </div>
                     <div className="flex flex-col w-1/3">
                         <label className="text-[10px] uppercase opacity-70">Max</label>
-                        <input
+                        <SmartInput
                             type="number"
-                            value={data.max || ''}
-                            onChange={(e) => handleValueMaxChange(category, 'max', e.target.value)}
-                            className="bg-input-bg border border-leather/30 rounded px-1 w-full text-center"
+                            value={data.max || 0}
+                            onCommit={(val) => handleValueMaxChange(category, 'max', val)}
+                            className="bg-input-bg border border-leather/30 rounded px-1 w-full text-center outline-none focus:border-leather"
                         />
                     </div>
                     <div className="flex flex-col w-1/3">
                         <label className="text-[10px] uppercase opacity-70">Add.</label>
-                        <input
+                        <SmartInput
                             type="number"
-                            value={data.temp || ''}
-                            onChange={(e) => handleValueMaxChange(category, 'temp', e.target.value)}
-                            className="bg-input-bg border border-leather/30 rounded px-1 w-full text-center font-bold"
+                            value={data.temp || 0}
+                            onCommit={(val) => handleValueMaxChange(category, 'temp', val)}
+                            className="bg-input-bg border border-leather/30 rounded px-1 w-full text-center font-bold outline-none focus:border-leather"
                         />
                     </div>
                 </div>
@@ -152,19 +127,20 @@ export const VitalsPanel: React.FC<VitalsPanelProps> = ({ vitals, onChange, orig
                 <div className="flex gap-2 text-center text-sm">
                     <div className="flex flex-col w-1/2">
                         <label className="text-[10px] uppercase opacity-70">Actuel</label>
-                        <OnBlurInput
+                        <SmartInput
+                            type="number"
                             value={vitals.corruption.current || 0}
-                            onChange={(val) => handleCorruptionChange('current', val)}
-                            className="bg-input-bg border border-leather/30 rounded px-1 w-full text-center"
+                            onCommit={(val) => handleCorruptionChange('current', val)}
+                            className="bg-input-bg border border-leather/30 rounded px-1 w-full text-center outline-none focus:border-leather"
                         />
                     </div>
                     <div className="flex flex-col w-1/2">
                         <label className="text-[10px] uppercase opacity-70">Par Jour</label>
-                        <input
+                        <SmartInput
                             type="number"
-                            value={vitals.corruption.daily || ''}
-                            onChange={(e) => handleCorruptionChange('daily', e.target.value)}
-                            className="bg-input-bg border border-leather/30 rounded px-1 w-full text-center"
+                            value={vitals.corruption.daily || 0}
+                            onCommit={(val) => handleCorruptionChange('daily', val)}
+                            className="bg-input-bg border border-leather/30 rounded px-1 w-full text-center outline-none focus:border-leather"
                         />
                     </div>
                 </div>

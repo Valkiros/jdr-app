@@ -2,6 +2,7 @@ import React from 'react';
 import { Equipement, RefEquipement } from '../../../types';
 import { v4 as uuidv4 } from 'uuid';
 import { SearchableSelect } from '../../Shared/SearchableSelect';
+import { SmartInput } from '../../Shared/SmartInput';
 
 interface PotionsTableProps {
     items: Equipement[];
@@ -70,11 +71,11 @@ export const PotionsTable: React.FC<PotionsTableProps> = ({ items, onItemsChange
                         return (
                             <tr key={item.uid} className="border-b border-leather/10 hover:bg-leather/5">
                                 <td className="p-2">
-                                    <input
+                                    <SmartInput
                                         type="number"
                                         // @ts-ignore
                                         value={item.quantite ?? ''}
-                                        onChange={(e) => handleUpdateField(item.uid, 'quantite', e.target.value === '' ? undefined : parseInt(e.target.value))}
+                                        onCommit={(val) => handleUpdateField(item.uid, 'quantite', val === '' ? undefined : Number(val))}
                                         className="w-full bg-input-bg text-ink border-b border-leather/20 text-center focus:border-leather outline-none font-bold"
                                         placeholder="0"
                                     />

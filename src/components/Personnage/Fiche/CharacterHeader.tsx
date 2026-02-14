@@ -5,6 +5,7 @@ import { readFile } from '@tauri-apps/plugin-fs';
 import { Identity, Vitals, CharacterData, GameRules, Origine, Metier, Requirements, Characteristics, GeneralStats } from '../../../types';
 import { VitalsPanel } from './VitalsPanel';
 import { Tooltip } from '../../Shared/Tooltip';
+import { SmartInput } from '../../Shared/SmartInput';
 
 interface CharacterHeaderProps {
     identity: Identity;
@@ -35,20 +36,6 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
             .then(setRules)
             .catch(err => console.error("Failed to load game rules:", err));
     }, []);
-
-    // Local state for Experience to prevent Level jumping while typing
-    const [localExperience, setLocalExperience] = useState(String(generalStats.experience || 0));
-
-    useEffect(() => {
-        setLocalExperience(String(generalStats.experience || 0));
-    }, [generalStats.experience]);
-
-    // Local state for Name
-    const [localName, setLocalName] = useState(identity.nom);
-
-    useEffect(() => {
-        setLocalName(identity.nom);
-    }, [identity.nom]);
 
     const handleIdentityChange = (field: keyof Identity, value: string) => {
         let newIdentity = { ...identity, [field]: value };
@@ -274,15 +261,9 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
 
                     <div className="flex flex-col">
                         <label className="text-xs font-bold uppercase text-leather-light">Nom</label>
-                        <input
-                            type="text"
-                            value={localName}
-                            onChange={(e) => setLocalName(e.target.value)}
-                            onBlur={() => {
-                                if (localName !== identity.nom) {
-                                    handleIdentityChange('nom', localName);
-                                }
-                            }}
+                        <SmartInput
+                            value={identity.nom}
+                            onCommit={(val) => handleIdentityChange('nom', String(val))}
                             className="w-full bg-transparent border-b border-leather focus:border-leather-dark outline-none py-1 font-serif text-lg text-leather-dark"
                             placeholder="Nom du personnage"
                         />
@@ -462,25 +443,19 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
                     </div>
                     <div className="flex flex-col">
                         <label className="text-xs font-bold uppercase text-leather-light">Expérience</label>
-                        <input
+                        <SmartInput
                             type="number"
-                            value={localExperience}
-                            onChange={(e) => setLocalExperience(e.target.value)}
-                            onBlur={() => {
-                                const newXp = parseInt(localExperience) || 0;
-                                if (newXp !== generalStats.experience) {
-                                    onGeneralChange({ ...generalStats, experience: newXp });
-                                }
-                            }}
+                            value={generalStats.experience || 0}
+                            onCommit={(val) => onGeneralChange({ ...generalStats, experience: Number(val) || 0 })}
                             className="w-full bg-transparent border-b border-leather focus:border-leather-dark outline-none py-1 font-serif text-lg text-leather-dark"
                         />
                     </div>
                     <div className="flex flex-col">
                         <label className="text-xs font-bold uppercase text-leather-light">Points de Destin</label>
-                        <input
+                        <SmartInput
                             type="number"
-                            value={generalStats.points_destin || ''}
-                            onChange={(e) => onGeneralChange({ ...generalStats, points_destin: parseInt(e.target.value) || 0 })}
+                            value={generalStats.points_destin || 0}
+                            onCommit={(val) => onGeneralChange({ ...generalStats, points_destin: Number(val) || 0 })}
                             className="w-full bg-transparent border-b border-leather focus:border-leather-dark outline-none py-1 font-serif text-lg text-leather-dark"
                         />
                     </div>

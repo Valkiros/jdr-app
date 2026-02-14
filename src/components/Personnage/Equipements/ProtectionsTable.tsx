@@ -2,6 +2,7 @@ import React from 'react';
 import { Equipement, RefEquipement } from '../../../types';
 import { v4 as uuidv4 } from 'uuid';
 import { SearchableSelect } from '../../Shared/SearchableSelect';
+import { SmartInput } from '../../Shared/SmartInput';
 import { calculateFinalRupture, getMaxRuptureOptions } from '../../../utils/sacUtils';
 import { Tooltip } from '../../Shared/Tooltip';
 
@@ -222,10 +223,10 @@ export const ProtectionsTable: React.FC<ProtectionsTableProps> = ({ items, onIte
                                     <td className="p-2 text-center font-bold">{calculateTotalPr(refPrSol, item.modif_pr_sol || 0)}</td>
                                     {/* Input de Modification */}
                                     <td className="p-2">
-                                        <input
-                                            type="text"
-                                            value={item.modif_pr_sol || ''}
-                                            onChange={(e) => handleUpdateField(item.uid, 'modif_pr_sol', parseInt(e.target.value) || 0)}
+                                        <SmartInput
+                                            type="number"
+                                            value={item.modif_pr_sol || 0}
+                                            onCommit={(val) => handleUpdateField(item.uid, 'modif_pr_sol', Number(val))}
                                             className="w-full p-1 bg-input-bg text-ink border-b border-leather-light focus:border-leather outline-none text-center"
                                             placeholder="+0"
                                         />
@@ -234,10 +235,10 @@ export const ProtectionsTable: React.FC<ProtectionsTableProps> = ({ items, onIte
                                     {/* --- PR Spéciale --- */}
                                     <td className="p-2 text-center font-bold">{calculateTotalPr(refPrSpe, item.modif_pr_spe || 0)}</td>
                                     <td className="p-2">
-                                        <input
-                                            type="text"
-                                            value={item.modif_pr_spe || ''}
-                                            onChange={(e) => handleUpdateField(item.uid, 'modif_pr_spe', parseInt(e.target.value) || 0)}
+                                        <SmartInput
+                                            type="number"
+                                            value={item.modif_pr_spe || 0}
+                                            onCommit={(val) => handleUpdateField(item.uid, 'modif_pr_spe', Number(val))}
                                             className="w-full p-1 bg-input-bg text-ink border-b border-leather-light focus:border-leather outline-none text-center"
                                             placeholder="+0"
                                         />
@@ -246,10 +247,10 @@ export const ProtectionsTable: React.FC<ProtectionsTableProps> = ({ items, onIte
                                     {/* --- PR Magique --- */}
                                     <td className="p-2 text-center font-bold">{calculateTotalPr(refPrMag, item.modif_pr_mag || 0)}</td>
                                     <td className="p-2">
-                                        <input
-                                            type="text"
-                                            value={item.modif_pr_mag || ''}
-                                            onChange={(e) => handleUpdateField(item.uid, 'modif_pr_mag', parseInt(e.target.value) || 0)}
+                                        <SmartInput
+                                            type="number"
+                                            value={item.modif_pr_mag || 0}
+                                            onCommit={(val) => handleUpdateField(item.uid, 'modif_pr_mag', Number(val))}
                                             className="w-full p-1 bg-input-bg text-ink border-b border-leather-light focus:border-leather outline-none text-center"
                                             placeholder="+0"
                                         />

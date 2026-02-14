@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sac, RefEquipement } from '../../../types';
 import { getItemWeight, getMaxRuptureOptions } from '../../../utils/sacUtils';
+import { SmartInput } from '../../Shared/SmartInput';
 import { Tooltip } from '../../Shared/Tooltip';
 
 interface SacTableProps {
@@ -36,22 +37,7 @@ const SacRow = React.memo(({ item, referenceOptions, onUpdateQuantity, onRemove,
     const showModProts = ['accessoires', 'protections'].includes(catLower);
     const showCharges = ['objets_magiques'].includes(catLower);
 
-    // Local state for notes
-    const [localNotes, setLocalNotes] = React.useState(item.notes || '');
-
-    // Tooltip state removed from here
-
-
-    // Sync local state
-    React.useEffect(() => {
-        setLocalNotes(item.notes || '');
-    }, [item.notes]);
-
-    const handleNotesBlur = () => {
-        if (onUpdateNotes && localNotes !== item.notes) {
-            onUpdateNotes(item.uid, localNotes);
-        }
-    };
+    // Local state for notes removed in favor of SmartInput
 
     return (
         <tr className="border-b border-leather/10 hover:bg-leather/5 transition-colors text-sm">
@@ -77,12 +63,11 @@ const SacRow = React.memo(({ item, referenceOptions, onUpdateQuantity, onRemove,
                 {/* Notes Field */}
                 {catLower === 'bouffes' && onUpdateNotes && (
                     <div className="mt-1">
-                        <input
+                        <SmartInput
                             type="text"
                             placeholder="Notes..."
-                            value={localNotes}
-                            onChange={(e) => setLocalNotes(e.target.value)}
-                            onBlur={handleNotesBlur}
+                            value={item.notes || ''}
+                            onCommit={(val) => onUpdateNotes(item.uid, String(val))}
                             className="text-xs text-ink bg-input-bg border-b border-leather/20 focus:border-leather outline-none italic w-full placeholder-leather/30 font-serif"
                         />
                     </div>
@@ -123,28 +108,28 @@ const SacRow = React.memo(({ item, referenceOptions, onUpdateQuantity, onRemove,
             <td className="p-2 text-center align-top pt-2">
                 {showModProts ? (
                     <div className="flex flex-col gap-1">
-                        <input
+                        <SmartInput
                             type="number"
                             title="Modif PR Solide"
                             placeholder="Sol."
                             value={item.modif_pr_sol || ''}
-                            onChange={(e) => onUpdateField(item.uid, 'modif_pr_sol', parseInt(e.target.value) || 0)}
+                            onCommit={(val) => onUpdateField(item.uid, 'modif_pr_sol', Number(val))}
                             className="w-12 bg-input-bg text-ink border-b border-leather/20 text-center focus:border-leather outline-none text-xs"
                         />
-                        <input
+                        <SmartInput
                             type="number"
                             title="Modif PR Magique"
                             placeholder="Mag."
                             value={item.modif_pr_mag || ''}
-                            onChange={(e) => onUpdateField(item.uid, 'modif_pr_mag', parseInt(e.target.value) || 0)}
+                            onCommit={(val) => onUpdateField(item.uid, 'modif_pr_mag', Number(val))}
                             className="w-12 bg-input-bg text-ink border-b border-leather/20 text-center focus:border-leather outline-none text-xs"
                         />
-                        <input
+                        <SmartInput
                             type="number"
                             title="Modif PR Spéciale"
                             placeholder="Spé."
                             value={item.modif_pr_spe || ''}
-                            onChange={(e) => onUpdateField(item.uid, 'modif_pr_spe', parseInt(e.target.value) || 0)}
+                            onCommit={(val) => onUpdateField(item.uid, 'modif_pr_spe', Number(val))}
                             className="w-12 bg-input-bg text-ink border-b border-leather/20 text-center focus:border-leather outline-none text-xs"
                         />
                     </div>
@@ -152,12 +137,13 @@ const SacRow = React.memo(({ item, referenceOptions, onUpdateQuantity, onRemove,
             </td>
 
             {/* Charges */}
+            {/* Charges */}
             <td className="p-2 text-center align-top pt-2">
                 {showCharges ? (
-                    <input
+                    <SmartInput
                         type="number"
-                        value={item.charges || ''}
-                        onChange={(e) => onUpdateField(item.uid, 'charges', parseInt(e.target.value) || 0)}
+                        value={item.charges || 0}
+                        onCommit={(val) => onUpdateField(item.uid, 'charges', Number(val))}
                         className="w-12 bg-input-bg text-ink border-b border-leather/20 text-center focus:border-leather outline-none text-xs"
                         placeholder="0"
                     />
@@ -172,14 +158,11 @@ const SacRow = React.memo(({ item, referenceOptions, onUpdateQuantity, onRemove,
 
             {/* Qté */}
             <td className="p-2 text-center align-top pt-2">
-                <input
+                <SmartInput
                     type="number"
-                    min="0"
-                    value={item.quantite || ''}
-                    onChange={(e) => {
-                        const val = parseInt(e.target.value);
-                        onUpdateQuantity(item.uid, isNaN(val) ? 0 : val);
-                    }}
+                    min={0}
+                    value={item.quantite || 0}
+                    onCommit={(val) => onUpdateQuantity(item.uid, Number(val))}
                     className="w-10 bg-input-bg text-ink border-b border-leather/20 text-center focus:border-leather outline-none font-medium text-xs"
                 />
             </td>

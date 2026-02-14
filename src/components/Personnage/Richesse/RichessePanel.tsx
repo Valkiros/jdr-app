@@ -1,5 +1,6 @@
 import React from 'react';
 import { RichesseData } from '../../../types';
+import { SmartInput } from '../../Shared/SmartInput';
 
 interface RichessePanelProps {
     richesse: RichesseData;
@@ -51,10 +52,10 @@ export const RichessePanel: React.FC<RichessePanelProps> = ({ richesse, onChange
                     <div className="p-4 bg-parchment/30 rounded-lg shadow-sm border border-leather/20">
                         <label className="block text-leather font-bold font-serif mb-2 text-center">Capacité de la bourse</label>
                         <div className="flex justify-center">
-                            <input
+                            <SmartInput
                                 type="number"
                                 value={richesse.capacite_bourse}
-                                onChange={(e) => updateField('capacite_bourse', parseFloat(e.target.value) || 0)}
+                                onCommit={(val) => updateField('capacite_bourse', Number(val))}
                                 className="w-24 p-2 bg-input-bg text-ink border-b border-leather-light focus:border-leather outline-none text-center font-bold text-lg"
                             />
                         </div>
@@ -66,28 +67,28 @@ export const RichessePanel: React.FC<RichessePanelProps> = ({ richesse, onChange
                         <div className="space-y-4">
                             <div>
                                 <label className="block text-sm text-ink-light font-medium mb-1">Honneurs</label>
-                                <input
+                                <SmartInput
                                     type="number"
                                     value={richesse.status_points.honneurs}
-                                    onChange={(e) => updateField('status_points.honneurs', parseFloat(e.target.value) || 0)}
+                                    onCommit={(val) => updateField('status_points.honneurs', Number(val))}
                                     className="w-full p-1 bg-input-bg text-ink border-b border-leather-light focus:border-leather outline-none text-center"
                                 />
                             </div>
                             <div>
                                 <label className="block text-sm text-ink-light font-medium mb-1">SM / SOT</label>
-                                <input
+                                <SmartInput
                                     type="number"
                                     value={richesse.status_points.sm_sot}
-                                    onChange={(e) => updateField('status_points.sm_sot', parseFloat(e.target.value) || 0)}
+                                    onCommit={(val) => updateField('status_points.sm_sot', Number(val))}
                                     className="w-full p-1 bg-input-bg text-ink border-b border-leather-light focus:border-leather outline-none text-center"
                                 />
                             </div>
                             <div>
                                 <label className="block text-sm text-ink-light font-medium mb-1">MC / MOT</label>
-                                <input
+                                <SmartInput
                                     type="number"
                                     value={richesse.status_points.mc_mot}
-                                    onChange={(e) => updateField('status_points.mc_mot', parseFloat(e.target.value) || 0)}
+                                    onCommit={(val) => updateField('status_points.mc_mot', Number(val))}
                                     className="w-full p-1 bg-input-bg text-ink border-b border-leather-light focus:border-leather outline-none text-center"
                                 />
                             </div>
@@ -113,10 +114,10 @@ export const RichessePanel: React.FC<RichessePanelProps> = ({ richesse, onChange
                                         <td className="p-3 font-medium">{currency.label}</td>
                                         {locations.map(loc => (
                                             <td key={loc.key} className="p-2">
-                                                <input
+                                                <SmartInput
                                                     type="number"
                                                     value={(richesse.monnaies as any)[currency.key][loc.key]}
-                                                    onChange={(e) => updateField(`monnaies.${currency.key}.${loc.key}`, parseFloat(e.target.value) || 0)}
+                                                    onCommit={(val) => updateField(`monnaies.${currency.key}.${loc.key}`, Number(val))}
                                                     className="w-full p-1 bg-input-bg text-ink border-b border-leather-light focus:border-leather outline-none text-center"
                                                 />
                                             </td>

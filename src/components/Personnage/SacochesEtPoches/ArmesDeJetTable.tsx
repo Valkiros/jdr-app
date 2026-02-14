@@ -2,6 +2,7 @@ import React from 'react';
 import { Equipement, RefEquipement } from '../../../types';
 import { v4 as uuidv4 } from 'uuid';
 import { SearchableSelect } from '../../Shared/SearchableSelect';
+import { SmartInput } from '../../Shared/SmartInput';
 import { calculateFinalRupture, getMaxRuptureOptions } from '../../../utils/sacUtils';
 
 interface ArmesDeJetTableProps {
@@ -115,10 +116,10 @@ export const ArmesDeJetTable: React.FC<ArmesDeJetTableProps> = ({ items, onItems
                                         {degatsStr} {refPi !== 0 ? `(${refPi > 0 ? '+' : ''}${refPi})` : ''}
                                     </td>
                                     <td className="p-2">
-                                        <input
+                                        <SmartInput
                                             type="number"
-                                            value={item.modif_pi || ''}
-                                            onChange={(e) => handleUpdateField(item.uid, 'modif_pi', parseInt(e.target.value) || 0)}
+                                            value={item.modif_pi || 0}
+                                            onCommit={(val) => handleUpdateField(item.uid, 'modif_pi', Number(val))}
                                             className="w-full bg-input-bg text-ink border-b border-leather/20 text-center focus:border-leather outline-none"
                                             placeholder="+0"
                                         />

@@ -2,6 +2,7 @@ import React from 'react';
 import { Equipement, RefEquipement } from '../../../types';
 import { v4 as uuidv4 } from 'uuid';
 import { SearchableSelect } from '../../Shared/SearchableSelect';
+import { SmartInput } from '../../Shared/SmartInput';
 import { calculateFinalRupture, getMaxRuptureOptions } from '../../../utils/sacUtils';
 
 interface AccessoiresTableProps {
@@ -164,10 +165,10 @@ export const AccessoiresTable: React.FC<AccessoiresTableProps> = ({ items, onIte
                                     {/* PR Solide */}
                                     <td className="p-2 text-center">{calculateTotalPr(basePrSol, item.modif_pr_sol)}</td>
                                     <td className="p-2">
-                                        <input
+                                        <SmartInput
                                             type="text"
-                                            value={item.modif_pr_sol || ''}
-                                            onChange={(e) => handleUpdateField(item.uid, 'modif_pr_sol', e.target.value)}
+                                            value={item.modif_pr_sol || 0}
+                                            onCommit={(val) => handleUpdateField(item.uid, 'modif_pr_sol', Number(val))}
                                             className="w-full p-1 bg-input-bg text-ink border-b border-leather-light focus:border-leather outline-none text-center"
                                             placeholder="+0"
                                         />
@@ -176,10 +177,10 @@ export const AccessoiresTable: React.FC<AccessoiresTableProps> = ({ items, onIte
                                     {/* PR Spéciale */}
                                     <td className="p-2 text-center">{calculateTotalPr(basePrSpe, item.modif_pr_spe)}</td>
                                     <td className="p-2">
-                                        <input
+                                        <SmartInput
                                             type="text"
-                                            value={item.modif_pr_spe || ''}
-                                            onChange={(e) => handleUpdateField(item.uid, 'modif_pr_spe', e.target.value)}
+                                            value={item.modif_pr_spe || 0}
+                                            onCommit={(val) => handleUpdateField(item.uid, 'modif_pr_spe', Number(val))}
                                             className="w-full p-1 bg-input-bg text-ink border-b border-leather-light focus:border-leather outline-none text-center"
                                             placeholder="+0"
                                         />
@@ -188,10 +189,10 @@ export const AccessoiresTable: React.FC<AccessoiresTableProps> = ({ items, onIte
                                     {/* PR Magique */}
                                     <td className="p-2 text-center">{calculateTotalPr(basePrMag, item.modif_pr_mag)}</td>
                                     <td className="p-2">
-                                        <input
+                                        <SmartInput
                                             type="text"
-                                            value={item.modif_pr_mag || ''}
-                                            onChange={(e) => handleUpdateField(item.uid, 'modif_pr_mag', e.target.value)}
+                                            value={item.modif_pr_mag || 0}
+                                            onCommit={(val) => handleUpdateField(item.uid, 'modif_pr_mag', Number(val))}
                                             className="w-full p-1 bg-input-bg text-ink border-b border-leather-light focus:border-leather outline-none text-center"
                                             placeholder="+0"
                                         />

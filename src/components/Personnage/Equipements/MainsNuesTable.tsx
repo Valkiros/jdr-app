@@ -2,6 +2,7 @@ import React from 'react';
 import { Equipement, RefEquipement } from '../../../types';
 import { v4 as uuidv4 } from 'uuid';
 import { SearchableSelect } from '../../Shared/SearchableSelect';
+import { SmartInput } from '../../Shared/SmartInput';
 import { calculateFinalRupture, getMaxRuptureOptions } from '../../../utils/sacUtils';
 
 interface MainsNuesTableProps {
@@ -203,10 +204,10 @@ export const MainsNuesTable: React.FC<MainsNuesTableProps> = ({ items, onItemsCh
                                         })()}
                                     </td>
                                     <td className="p-2">
-                                        <input
-                                            type="text"
-                                            value={item.modif_pi || ''}
-                                            onChange={(e) => handleUpdateField(item.uid, 'modif_pi', parseInt(e.target.value) || 0)}
+                                        <SmartInput
+                                            type="number"
+                                            value={item.modif_pi || 0}
+                                            onCommit={(val) => handleUpdateField(item.uid, 'modif_pi', Number(val))}
                                             className="w-full p-1 bg-input-bg text-ink border-b border-leather-light focus:border-leather outline-none text-center"
                                             placeholder="+0"
                                         />
@@ -251,7 +252,7 @@ export const MainsNuesTable: React.FC<MainsNuesTableProps> = ({ items, onItemsCh
                                         <select
                                             value={item.modif_rupture || 0}
                                             onChange={(e) => handleUpdateField(item.uid, 'modif_rupture', parseInt(e.target.value) || 0)}
-                                            className="w-full p-1 bg-input-bg text-ink border-b border-leather-light focus:border-leather outline-none text-center text-sm"
+                                            className="w-full bg-input-bg text-ink border-b border-leather/20 text-center focus:border-leather outline-none text-sm"
                                         >
                                             {getMaxRuptureOptions(getRefRupture(item.refId)).map(opt => (
                                                 <option key={opt} value={opt}>+{opt}</option>

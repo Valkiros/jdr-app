@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Defenses, ProtectionValue, StatDetail } from '../../../types';
 import { Tooltip } from '../../Shared/Tooltip';
 import { CalculationDetails } from '../Fiche/CalculationDetails';
+import { SmartInput } from '../../Shared/SmartInput';
 
 
 interface ProtectionsPanelProps {
@@ -14,11 +15,11 @@ interface ProtectionsPanelProps {
     onDefenseChange: (defenses: Defenses) => void;
 }
 
-export const ProtectionsPanel: React.FC<ProtectionsPanelProps> = ({ defenses, computedDefenses, onDefenseChange }) => {
+const ProtectionsPanelComponent: React.FC<ProtectionsPanelProps> = ({ defenses, computedDefenses, onDefenseChange }) => {
     const [hoveredInfo, setHoveredInfo] = useState<{ details: StatDetail, x: number, y: number } | null>(null);
 
-    const handleProtectionChange = (category: keyof Defenses, field: keyof ProtectionValue, value: string) => {
-        const num = parseInt(value) || 0;
+    const handleProtectionChange = (category: keyof Defenses, field: keyof ProtectionValue, value: string | number) => {
+        const num = typeof value === 'string' ? parseInt(value) || 0 : value;
         // @ts-ignore - Dynamic access to Defenses properties
         const currentProt = defenses[category] as ProtectionValue;
         onDefenseChange({
@@ -71,12 +72,8 @@ export const ProtectionsPanel: React.FC<ProtectionsPanelProps> = ({ defenses, co
                 <label className="flex-1 text-sm font-bold text-leather leading-tight mr-1">{label}</label>
                 <div className="flex flex-col items-center relative">
                     <span className="text-[10px] uppercase opacity-60">Base</span>
-                    <input
-                        type="number"
-                        value={isComputed ? baseValue : (data.base || '')}
-                        onChange={(e) => !isComputed && handleProtectionChange(category, 'base', e.target.value)}
-                        readOnly={isComputed}
-                        className={`w-14 md:w-16 border border-leather/30 rounded text-center ${isComputed ? 'bg-black/5 text-leather-dark cursor-help font-bold' : 'bg-input-bg'}`}
+                    <div
+                        className="relative"
                         onMouseEnter={(e) => {
                             if (isComputed && details) {
                                 const rect = e.currentTarget.getBoundingClientRect();
@@ -88,16 +85,24 @@ export const ProtectionsPanel: React.FC<ProtectionsPanelProps> = ({ defenses, co
                             }
                         }}
                         onMouseLeave={() => setHoveredInfo(null)}
-                    />
+                    >
+                        <SmartInput
+                            type="number"
+                            value={isComputed ? baseValue : (data.base || 0)}
+                            onCommit={(val) => !isComputed && handleProtectionChange(category, 'base', val)}
+                            readOnly={isComputed}
+                            className={`w-14 md:w-16 border border-leather/30 rounded text-center outline-none focus:border-leather ${isComputed ? 'bg-black/5 text-leather-dark cursor-help font-bold' : 'bg-input-bg'}`}
+                        />
+                    </div>
                 </div>
                 <span className="text-leather-light mt-4 px-1">+</span>
                 <div className="flex flex-col items-center">
                     <span className="text-[10px] uppercase opacity-60">Add.</span>
-                    <input
+                    <SmartInput
                         type="number"
-                        value={data.temp || ''}
-                        onChange={(e) => handleProtectionChange(category, 'temp', e.target.value)}
-                        className="w-14 md:w-16 bg-input-bg border border-leather/30 rounded text-center"
+                        value={data.temp || 0}
+                        onCommit={(val) => handleProtectionChange(category, 'temp', val)}
+                        className="w-14 md:w-16 bg-input-bg border border-leather/30 rounded text-center outline-none focus:border-leather"
                     />
                 </div>
                 <span className="text-leather-light mt-4 px-1">=</span>
@@ -142,3 +147,4 @@ export const ProtectionsPanel: React.FC<ProtectionsPanelProps> = ({ defenses, co
         </div>
     );
 };
+export const ProtectionsPanel = React.memo(ProtectionsPanelComponent);

@@ -9,71 +9,12 @@ interface StatusPanelProps {
     onDescriptionChange: (desc: string) => void;
 }
 
+import { SmartInput } from '../../Shared/SmartInput';
+
 // Helper Components for local state management
-const OnBlurInput: React.FC<{
-    value: number;
-    onChange: (val: number) => void;
-    className?: string;
-    min?: string | number;
-    hideZero?: boolean;
-}> = ({ value, onChange, className, min, hideZero }) => {
-    const [localValue, setLocalValue] = useState(hideZero && value === 0 ? '' : String(value));
+// OnBlurInput removed in favor of SmartInput
 
-    useEffect(() => {
-        if (hideZero && value === 0) {
-            setLocalValue('');
-        } else {
-            setLocalValue(String(value));
-        }
-    }, [value, hideZero]);
-
-    return (
-        <input
-            type="number"
-            min={min}
-            value={localValue}
-            onChange={(e) => setLocalValue(e.target.value)}
-            onBlur={() => {
-                let parsed = parseInt(localValue);
-                if (localValue.trim() === '') {
-                    parsed = 0;
-                }
-
-                if (!isNaN(parsed) && parsed !== value) {
-                    onChange(parsed);
-                }
-            }}
-            className={className}
-        />
-    );
-};
-
-const OnBlurTextArea: React.FC<{
-    value: string;
-    onChange: (val: string) => void;
-    placeholder?: string;
-    className?: string;
-}> = ({ value, onChange, placeholder, className }) => {
-    const [localValue, setLocalValue] = useState(value);
-
-    useEffect(() => {
-        setLocalValue(value);
-    }, [value]);
-
-    return (
-        <textarea
-            value={localValue}
-            onChange={(e) => setLocalValue(e.target.value)}
-            onBlur={() => {
-                if (localValue !== value) {
-                    onChange(localValue);
-                }
-            }}
-            placeholder={placeholder}
-            className={className}
-        />
-    );
-};
+// OnBlurTextArea removed in favor of SmartInput
 
 export const StatusPanel: React.FC<StatusPanelProps> = ({ status, description = '', onChange, onDescriptionChange }) => {
     // Derived state for calculation display
@@ -161,9 +102,10 @@ export const StatusPanel: React.FC<StatusPanelProps> = ({ status, description = 
                         ))}
                         <div className="flex flex-col">
                             <label className="text-[13px] font-bold uppercase text-leather-light mb-1">Sentir le danger à (m)</label>
-                            <OnBlurInput
+                            <SmartInput
+                                type="number"
                                 value={status.senses.sentir_danger || 0}
-                                onChange={(val) => updateStatus('senses', 'sentir_danger', val)}
+                                onCommit={(val) => updateStatus('senses', 'sentir_danger', Number(val))}
                                 className="p-2 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none"
                             />
                         </div>
@@ -200,10 +142,11 @@ export const StatusPanel: React.FC<StatusPanelProps> = ({ status, description = 
                         </div>
                         <div className="flex flex-col">
                             <label className="text-[13px] font-bold uppercase text-leather-light mb-1">Nombre d'heures</label>
-                            <OnBlurInput
-                                min="0"
+                            <SmartInput
+                                type="number"
+                                min={0}
                                 value={status.fatigue.nb_heure || 0}
-                                onChange={(val) => updateStatus('fatigue', 'nb_heure', val)}
+                                onCommit={(val) => updateStatus('fatigue', 'nb_heure', Number(val))}
                                 className="p-2 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none"
                             />
                         </div>
@@ -224,32 +167,32 @@ export const StatusPanel: React.FC<StatusPanelProps> = ({ status, description = 
                     <div className="space-y-4">
                         <div className="flex flex-col">
                             <label className="text-[13px] font-bold uppercase text-leather-light mb-1">Alcool Léger (Doses)</label>
-                            <OnBlurInput
-                                min="0"
-                                value={status.alcohol.leger || 0}
-                                onChange={(val) => updateStatus('alcohol', 'leger', val)}
+                            <SmartInput
+                                type="number"
+                                min={0}
+                                value={status.alcohol.leger || ''}
+                                onCommit={(val) => updateStatus('alcohol', 'leger', Number(val))}
                                 className="p-2 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none"
-                                hideZero
                             />
                         </div>
                         <div className="flex flex-col">
                             <label className="text-[13px] font-bold uppercase text-leather-light mb-1">Alcool Fort (Doses)</label>
-                            <OnBlurInput
-                                min="0"
-                                value={status.alcohol.fort || 0}
-                                onChange={(val) => updateStatus('alcohol', 'fort', val)}
+                            <SmartInput
+                                type="number"
+                                min={0}
+                                value={status.alcohol.fort || ''}
+                                onCommit={(val) => updateStatus('alcohol', 'fort', Number(val))}
                                 className="p-2 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none"
-                                hideZero
                             />
                         </div>
                         <div className="flex flex-col">
                             <label className="text-[13px] font-bold uppercase text-leather-light mb-1">Gueule de bois</label>
-                            <OnBlurInput
-                                min="0"
-                                value={status.alcohol.gueule_de_bois || 0}
-                                onChange={(val) => updateStatus('alcohol', 'gueule_de_bois', val)}
-                                className={`p-2 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none`}
-                                hideZero
+                            <SmartInput
+                                type="number"
+                                min={0}
+                                value={status.alcohol.gueule_de_bois || ''}
+                                onCommit={(val) => updateStatus('alcohol', 'gueule_de_bois', Number(val))}
+                                className="p-2 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none"
                             />
                         </div>
                     </div>
@@ -274,10 +217,11 @@ export const StatusPanel: React.FC<StatusPanelProps> = ({ status, description = 
                         </div>
                         <div className="flex flex-col">
                             <label className="text-[13px] font-bold uppercase text-leather-light mb-1">Jours de retard</label>
-                            <OnBlurInput
-                                min="0"
+                            <SmartInput
+                                type="number"
+                                min={0}
                                 value={status.drug?.jours_retard || 0}
-                                onChange={(val) => updateStatus('drug', 'jours_retard', val)}
+                                onCommit={(val) => updateStatus('drug', 'jours_retard', Number(val))}
                                 className="p-2 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none"
                             />
                         </div>
@@ -300,9 +244,10 @@ export const StatusPanel: React.FC<StatusPanelProps> = ({ status, description = 
                 <div className="bg-parchment/30 p-6 rounded-lg shadow-sm border border-leather/20 md:col-span-2 lg:col-span-2 flex flex-col">
                     <h2 className="text-xl font-bold text-leather mb-4 border-b border-leather/20 pb-2">Description</h2>
                     <div className="flex-1 min-h-[150px] flex flex-col">
-                        <OnBlurTextArea
+                        <SmartInput
+                            type="textarea"
                             value={description}
-                            onChange={(val) => onDescriptionChange(val)}
+                            onCommit={(val) => onDescriptionChange(String(val))}
                             placeholder="Description physique, signes particuliers..."
                             className="w-full flex-1 p-3 text-[13px] bg-input-bg border border-leather/30 rounded focus:border-leather outline-none resize-none font-serif leading-relaxed"
                         />

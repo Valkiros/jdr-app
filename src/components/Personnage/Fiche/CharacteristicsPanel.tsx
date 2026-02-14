@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Characteristics, CharacteristicColumn, Equipement } from '../../../types';
 import { Tooltip } from '../../Shared/Tooltip';
+import { SmartInput } from '../../Shared/SmartInput';
 import { CalculationDetails } from './CalculationDetails';
 import { calculateFinalRupture } from '../../../utils/sacUtils';
 
@@ -22,7 +23,7 @@ interface CharacteristicsPanelProps {
     };
 }
 
-export const CharacteristicsPanel: React.FC<CharacteristicsPanelProps> = ({
+const CharacteristicsPanelComponent: React.FC<CharacteristicsPanelProps> = ({
     characteristics,
     equippedValues,
     inventory = [],
@@ -140,10 +141,10 @@ export const CharacteristicsPanel: React.FC<CharacteristicsPanelProps> = ({
                                 <td className="p-2 text-left font-bold">{label}</td>
 
                                 <td className="p-2">
-                                    <input
+                                    <SmartInput
                                         type="number"
-                                        value={data.naturel || ''}
-                                        onChange={(e) => handleCharacteristicChange(key, 'naturel', e.target.value)}
+                                        value={data.naturel || 0}
+                                        onCommit={(val) => handleCharacteristicChange(key, 'naturel', String(val))}
                                         readOnly={key === 'degats'}
                                         className={`w-full bg-input-bg border border-leather/30 rounded text-center py-1 font-bold text-leather-dark ${key === 'degats' ? 'opacity-50 cursor-not-allowed' : ''}`}
                                     />
@@ -153,28 +154,28 @@ export const CharacteristicsPanel: React.FC<CharacteristicsPanelProps> = ({
 
                                 {/* Static Temp Modifiers Inputs */}
                                 <td className="p-2">
-                                    <input
+                                    <SmartInput
                                         type="number"
-                                        value={data.t1 || ''}
-                                        onChange={(e) => handleCharacteristicChange(key, 't1', e.target.value)}
+                                        value={data.t1 || 0}
+                                        onCommit={(val) => handleCharacteristicChange(key, 't1', String(val))}
                                         readOnly={key === 'degats'}
                                         className={`w-full bg-input-bg border border-leather/30 rounded text-center py-1 ${key === 'degats' ? 'opacity-50 cursor-not-allowed' : ''}`}
                                     />
                                 </td>
                                 <td className="p-2">
-                                    <input
+                                    <SmartInput
                                         type="number"
-                                        value={data.t2 || ''}
-                                        onChange={(e) => handleCharacteristicChange(key, 't2', e.target.value)}
+                                        value={data.t2 || 0}
+                                        onCommit={(val) => handleCharacteristicChange(key, 't2', String(val))}
                                         readOnly={key === 'degats'}
                                         className={`w-full bg-input-bg border border-leather/30 rounded text-center py-1 ${key === 'degats' ? 'opacity-50 cursor-not-allowed' : ''}`}
                                     />
                                 </td>
                                 <td className="p-2">
-                                    <input
+                                    <SmartInput
                                         type="number"
-                                        value={data.t3 || ''}
-                                        onChange={(e) => handleCharacteristicChange(key, 't3', e.target.value)}
+                                        value={data.t3 || 0}
+                                        onCommit={(val) => handleCharacteristicChange(key, 't3', String(val))}
                                         readOnly={key === 'degats'}
                                         className={`w-full bg-input-bg border border-leather/30 rounded text-center py-1 ${key === 'degats' ? 'opacity-50 cursor-not-allowed' : ''}`}
                                     />
@@ -380,3 +381,4 @@ export const CharacteristicsPanel: React.FC<CharacteristicsPanelProps> = ({
         </div>
     );
 };
+export const CharacteristicsPanel = React.memo(CharacteristicsPanelComponent);
