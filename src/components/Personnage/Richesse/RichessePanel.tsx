@@ -72,6 +72,7 @@ export const RichessePanel: React.FC<RichessePanelProps> = ({ richesse, onChange
                                     value={richesse.status_points.honneurs}
                                     onCommit={(val) => updateField('status_points.honneurs', Number(val))}
                                     className="w-full p-1 bg-input-bg text-ink border-b border-leather-light focus:border-leather outline-none text-center"
+                                    zeroDisplay="-"
                                 />
                             </div>
                             <div>
@@ -81,6 +82,7 @@ export const RichessePanel: React.FC<RichessePanelProps> = ({ richesse, onChange
                                     value={richesse.status_points.sm_sot}
                                     onCommit={(val) => updateField('status_points.sm_sot', Number(val))}
                                     className="w-full p-1 bg-input-bg text-ink border-b border-leather-light focus:border-leather outline-none text-center"
+                                    zeroDisplay="-"
                                 />
                             </div>
                             <div>
@@ -90,6 +92,7 @@ export const RichessePanel: React.FC<RichessePanelProps> = ({ richesse, onChange
                                     value={richesse.status_points.mc_mot}
                                     onCommit={(val) => updateField('status_points.mc_mot', Number(val))}
                                     className="w-full p-1 bg-input-bg text-ink border-b border-leather-light focus:border-leather outline-none text-center"
+                                    zeroDisplay="-"
                                 />
                             </div>
                         </div>
@@ -119,6 +122,7 @@ export const RichessePanel: React.FC<RichessePanelProps> = ({ richesse, onChange
                                                     value={(richesse.monnaies as any)[currency.key][loc.key]}
                                                     onCommit={(val) => updateField(`monnaies.${currency.key}.${loc.key}`, Number(val))}
                                                     className="w-full p-1 bg-input-bg text-ink border-b border-leather-light focus:border-leather outline-none text-center"
+                                                    zeroDisplay="-"
                                                 />
                                             </td>
                                         ))}

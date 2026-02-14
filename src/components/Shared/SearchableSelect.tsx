@@ -56,8 +56,12 @@ export const SearchableSelect: React.FC<SearchableSelectProps> = ({
 
         if (isOpen) {
             const handleScroll = (event: Event) => {
-                // If scroll stems from the dropdown content itself, don't close
-                if (dropdownRef.current && dropdownRef.current.contains(event.target as Node)) {
+                const target = event.target as Node;
+                // If scroll stems from the dropdown content itself or the input container (horizontal scroll while typing), don't close
+                if (
+                    (dropdownRef.current && dropdownRef.current.contains(target)) ||
+                    (containerRef.current && containerRef.current.contains(target))
+                ) {
                     return;
                 }
                 setIsOpen(false);

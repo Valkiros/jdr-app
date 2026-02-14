@@ -22,7 +22,8 @@ export const ArmesDeJetTable: React.FC<ArmesDeJetTableProps> = ({ items, onItems
             equipement_type: 'Armes_de_jet',
             etat: 'Intact',
             modif_pi: 0,
-            modif_rupture: 0
+            modif_rupture: 0,
+            quantite: 1
         };
         onItemsChange([...items, newItem]);
     };
@@ -70,6 +71,7 @@ export const ArmesDeJetTable: React.FC<ArmesDeJetTableProps> = ({ items, onItems
                 <table className="w-full text-left border-collapse min-w-[800px]">
                     <thead>
                         <tr className="text-xs font-bold text-leather uppercase tracking-wider border-b border-leather/20">
+                            <th className="p-2 w-16 text-center">Qté</th>
                             <th className="p-2 w-48">Nom</th>
                             <th className="p-2 w-24">Dégâts</th>
                             <th className="p-2 w-16">Modif PI</th>
@@ -104,6 +106,15 @@ export const ArmesDeJetTable: React.FC<ArmesDeJetTableProps> = ({ items, onItems
 
                             return (
                                 <tr key={item.uid} className="border-b border-leather/10 hover:bg-leather/5">
+                                    <td className="p-2">
+                                        <SmartInput
+                                            type="number"
+                                            value={item.quantite || 1}
+                                            onCommit={(val) => handleUpdateField(item.uid, 'quantite', Number(val))}
+                                            className="w-full bg-input-bg text-ink border-b border-leather/20 text-center focus:border-leather outline-none"
+                                        // min={1}
+                                        />
+                                    </td>
                                     <td className="p-2">
                                         <SearchableSelect
                                             options={referenceOptions.map(r => ({ id: r.id, label: r.nom }))}

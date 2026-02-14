@@ -17,6 +17,9 @@ interface SmartInputProps {
     min?: number;
     max?: number;
     title?: string;
+
+    // Custom display for 0 value (e.g. "-")
+    zeroDisplay?: string;
 }
 
 export const SmartInput: React.FC<SmartInputProps> = ({
@@ -29,7 +32,8 @@ export const SmartInput: React.FC<SmartInputProps> = ({
     readOnly,
     min,
     max,
-    title
+    title,
+    zeroDisplay
 }) => {
     // État local pour gérer la saisie fluide
     const [localValue, setLocalValue] = useState<string | number>('');
@@ -40,8 +44,12 @@ export const SmartInput: React.FC<SmartInputProps> = ({
     // mais ici on respecte la valeur passée. Si le parent passe 0, on affiche 0. 
     // Si le parent veut afficher vide pour 0, il doit passer "".
     useEffect(() => {
-        setLocalValue(value);
-    }, [value]);
+        if (value === 0 && zeroDisplay !== undefined) {
+            setLocalValue(zeroDisplay);
+        } else {
+            setLocalValue(value);
+        }
+    }, [value, zeroDisplay]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const val = e.target.value;
@@ -59,13 +67,19 @@ export const SmartInput: React.FC<SmartInputProps> = ({
         }
     };
 
+    const handleFocus = () => {
+        if (localValue === zeroDisplay) {
+            setLocalValue('');
+        }
+    };
+
     const handleBlur = () => {
         // Logique de validation / conversion avant commit
         let finalValue: string | number = localValue;
 
         if (type === 'number') {
             // Si c'est vide, on renvoie "" (ou 0 selon la logique souhaitée)
-            if (localValue === '') {
+            if (localValue === '' || localValue === zeroDisplay) {
                 // Pour les nombres, souvent on veut remettre à 0 si c'est vide
                 // SAUF si le user a explicitement demandé que ça reste vide (non demandé ici).
                 // La demande est: "Toutes les cellules à valeur doivent pouvoir être vide ("") et ne doivent pas réafficher 0 automatiquement (sauf si le joueur le note LUI-MÈME)"
@@ -102,14 +116,12 @@ export const SmartInput: React.FC<SmartInputProps> = ({
         if (finalValue !== value) {
             onCommit(finalValue);
         } else {
-            // Si c'était "0" (string) et que value est 0 (number), c'est pareil,
-            // mais on veut s'assurer que l'affichage local est propre (ex: "05" -> 5)
-            // Sauf si on veut garder le vide.
-            if (localValue === '' && value === 0) {
-                // Cas spécial : Le user a vidé le champ. Le parent a 0.
-                // Si on ne fait rien, on reste à "". C'est ce qu'on veut.
+            // If value hasn't changed effectively (e.g. 0 -> 0), 
+            // but we need to reset display to match specific format (like zeroDisplay)
+            if (finalValue === 0 && zeroDisplay !== undefined) {
+                setLocalValue(zeroDisplay);
             } else {
-                setLocalValue(value); // Reset au format propre
+                setLocalValue(value);
             }
         }
     };
@@ -136,6 +148,7 @@ export const SmartInput: React.FC<SmartInputProps> = ({
                 value={localValue}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                onFocus={handleFocus}
                 className={className}
                 placeholder={placeholder}
                 disabled={disabled}
@@ -151,6 +164,7 @@ export const SmartInput: React.FC<SmartInputProps> = ({
             value={localValue}
             onChange={handleChange}
             onBlur={handleBlur}
+            onFocus={handleFocus}
             onKeyDown={handleKeyDown}
             className={className}
             placeholder={placeholder}

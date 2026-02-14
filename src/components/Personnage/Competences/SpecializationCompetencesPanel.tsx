@@ -146,6 +146,23 @@ export const SpecializationCompetencesPanel: React.FC<SpecializationCompetencesP
         let newCompetences = [...competences];
         let hasChanges = false;
 
+        // 0. Update details for existing competencies if missing
+        newCompetences = newCompetences.map(c => {
+            const ref = referenceCompetences.find(r => r.nom === c.nom);
+            if (ref) {
+                // If description or tableau is missing/empty, and we have a ref, update it
+                if ((!c.description && ref.description) || (!c.tableau && ref.tableau)) {
+                    hasChanges = true;
+                    return {
+                        ...c,
+                        description: ref.description,
+                        tableau: ref.tableau
+                    };
+                }
+            }
+            return c;
+        });
+
         // 1. Enforce Required
         requiredComps.forEach(reqName => {
             const exists = newCompetences.find(c => c.nom === reqName);
