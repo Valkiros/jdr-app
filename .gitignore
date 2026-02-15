@@ -33,3 +33,6 @@ src-tauri/target
 # Backups
 backups/
 *.zip
+
+# Database
+game_data_v2.db
