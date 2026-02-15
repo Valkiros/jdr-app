@@ -85,6 +85,43 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
         invoke<any>('get_personnage', { id: characterId })
             .then(char => {
                 if (char && char.data) {
+                    let inventory = char.data.inventory || [];
+
+                    // --- AUTO-REPAIR INVENTORY IDs ---
+                    // Fix mismatch between stored refId (which might be old PK or Stable ID) and current DB PK
+                    if (refs.length > 0 && inventory.length > 0) {
+                        let changed = false;
+                        inventory = inventory.map((item: any) => {
+                            // 1. Check if current link is valid via PK
+                            const matchById = refs.find(r => r.id === item.refId);
+                            if (matchById) return item; // Link is good
+
+                            // 2. If broken, try to find by Stable ID (ref_id)
+                            // We check if item.refId matches a known ref_id in the DB
+                            const matchByStableId = refs.find(r => r.ref_id === item.refId);
+                            if (matchByStableId) {
+                                changed = true;
+                                return { ...item, refId: matchByStableId.id }; // UPDATE to current PK
+                            }
+
+                            // 3. Fallback: Match by Name
+                            const oldName = item.nom;
+                            if (oldName) {
+                                const matchByName = refs.find(r => r.nom === oldName);
+                                if (matchByName) {
+                                    changed = true;
+                                    return { ...item, refId: matchByName.id }; // UPDATE to current PK
+                                }
+                            }
+                            return item;
+                        });
+
+                        if (changed) {
+                            console.log("Inventory IDs repaired.");
+                        }
+                    }
+                    // ---------------------------------
+
                     const mergedData = {
                         ...INITIAL_DATA,
                         ...char.data,
@@ -96,7 +133,7 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                         magic: { ...INITIAL_DATA.magic, ...(char.data.magic || {}) },
                         characteristics: { ...INITIAL_DATA.characteristics, ...(char.data.characteristics || {}) },
                         temp_modifiers: { ...INITIAL_DATA.temp_modifiers, ...(char.data.temp_modifiers || {}) },
-                        inventory: char.data.inventory || [],
+                        inventory: inventory,
                         competences: char.data.competences || [],
                         competences_specialisation: char.data.competences_specialisation || [],
                         competences_sous_specialisation: char.data.competences_sous_specialisation || []
@@ -112,7 +149,7 @@ export const CharacterSheet = forwardRef<CharacterSheetHandle, CharacterSheetPro
                 setCharacterLoading(false);
                 isInitialLoad.current = false;
             });
-    }, [characterId]);
+    }, [characterId, refs]); // Added refs dependency to trigger repair if refs load after char
 
     const [activeTab, setActiveTab] = useState<'fiche' | 'equipement' | 'sacoches' | 'sac' | 'status' | 'competences' | 'ape' | 'richesse'>('fiche');
     const [showAdBonusModal, setShowAdBonusModal] = useState(false);

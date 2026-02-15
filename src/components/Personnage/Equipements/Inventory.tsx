@@ -134,57 +134,8 @@ export const Inventory: React.FC<InventoryProps> = ({ inventory, onInventoryChan
         onInventoryChange([...otherItems, ...itemsToSet]);
     };
 
-    // Auto-Relink Items after Sync (Fix broken IDs)
-    useEffect(() => {
-        if (refs.length === 0 || inventory.length === 0) return;
-
-        let changed = false;
-        const fixedInventory = inventory.map(item => {
-            // 1. Check if current link is valid
-            const matchById = refs.find(r => r.id === item.refId);
-            if (matchById) return item; // Link is good
-
-            // 2. If broken, try to find by Stable ID (ref_id is now the stable ID in our logic)
-            // We assume item.refId IS the stable ID now? No, item.refId is the stable ID.
-            // Wait, per user request: "REF_ID = les ids que j'ai créé moi-même... mes ID à moi"
-            // So item.refId SHOULD be stable. If link is broken, it means refId changed?
-            // User said: "ID = id spécifique à Supabase... REF_ID = mes ID à moi"
-            // So we link via item.refId === ref.ref_id
-
-            const matchByStableId = refs.find(r => r.ref_id === item.refId);
-            if (matchByStableId) {
-                // If we found it by ref_id, then everything is fine?
-                // The issue was when Supabase IDs changed but we were linking via Supabase ID.
-                // Now we link via ref_id?
-                // Let's ensure we are consistent.
-                return item;
-            }
-
-            // 3. Last Resort: Match by Name (if name is exact match)
-            // We cast item to any because 'nom' might exist in old data but not in type
-            const oldName = (item as any).nom;
-            if (oldName) {
-                const matchByNameLoose = refs.find(r => r.nom === oldName);
-
-                if (matchByNameLoose) {
-
-                    changed = true;
-                    return {
-                        ...item,
-                        refId: matchByNameLoose.ref_id // Use 'ref_id' (stable ID) not 'id'
-                    };
-                }
-            }
-
-            return item;
-
-            return item;
-        });
-
-        if (changed) {
-            onInventoryChange(fixedInventory);
-        }
-    }, [refs, inventory]);
+    // Auto-Relink logic moved to CharacterSheet.tsx to be global
+    // useEffect(() => { ... }, [refs, inventory]);
 
     const handleRemoveItem = (uid: string) => {
         onInventoryChange(inventory.filter(i => i.uid !== uid));

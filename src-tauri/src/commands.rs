@@ -199,9 +199,9 @@ pub fn create_personnage(name: String, state: State<AppState>) -> Result<String,
             "sous_specialisation": ""
         },
         "vitals": {
-            "pv": { "current": 10, "max": 10, "temp": 0 },
+            "pv": { "current": 0, "max": 0, "temp": 0 },
             "pm": { "current": 0, "max": 0, "temp": 0 },
-            "corruption": { "current": 0, "max": 100, "daily": 0 }
+            "corruption": { "current": 0, "max": 100, "daily": -1 }
         },
         "general": {
             "niveau": 1,
@@ -217,8 +217,8 @@ pub fn create_personnage(name: String, state: State<AppState>) -> Result<String,
             "bouclier_actif": false
         },
         "movement": {
-            "marche": { "base": 4, "temp": 0 },
-            "course": { "base": 10, "temp": 0 }
+            "marche": { "base": 0, "temp": 0 },
+            "course": { "base": 0, "temp": 0 }
         },
         "magic": {
             "magie_physique": { "base": 0, "temp": 0 },
@@ -585,4 +585,42 @@ pub fn get_competences() -> Result<Vec<Competence>, String> {
     let competences: Vec<Competence> = serde_json::from_str(json_content)
         .map_err(|e| format!("Failed to parse competences.json: {}", e))?;
     Ok(competences)
+}
+
+// --- DB VERSIONING COMMANDS ---
+
+#[tauri::command]
+pub fn get_local_db_version(state: State<AppState>) -> Result<String, String> {
+    let db = state.db.lock().map_err(|e| e.to_string())?;
+    // If not exists, return "0"
+    let version: Option<String> = db
+        .query_row(
+            "SELECT value FROM db_meta WHERE key = 'ref_version'",
+            [],
+            |row| row.get(0),
+        )
+        .optional()
+        .map_err(|e| e.to_string())?;
+
+    Ok(version.unwrap_or("0".to_string()))
+}
+
+#[tauri::command]
+pub fn update_local_db_version(version: String, state: State<AppState>) -> Result<(), String> {
+    let db = state.db.lock().map_err(|e| e.to_string())?;
+    db.execute(
+        "INSERT OR REPLACE INTO db_meta (key, value) VALUES ('ref_version', ?1)",
+        params![version],
+    )
+    .map_err(|e| e.to_string())?;
+    Ok(())
+}
+
+#[tauri::command]
+pub fn get_local_items_count(state: State<AppState>) -> Result<i64, String> {
+    let db = state.db.lock().map_err(|e| e.to_string())?;
+    let count: i64 = db
+        .query_row("SELECT COUNT(*) FROM ref_items", [], |row| row.get(0))
+        .map_err(|e| e.to_string())?;
+    Ok(count)
 }

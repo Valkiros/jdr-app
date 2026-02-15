@@ -50,3 +50,24 @@ Si vous avez modifié des fichiers qui on *aussi* été modifiés sur le serveur
 3. Choisissez quelle version garder (ou mélangez les deux manuellement).
 4. Sauvegardez le fichier.
 5. Faites `git add .` puis `git commit -m "Résolution conflit"` pour finir.
+
+---
+
+## 3. SOS : Réinitialiser (Tout effacer et reprendre de Github)
+
+> [!WARNING]
+> **ATTENTION : Cette commande supprime TOUT ce que vous avez fait localement qui n'a pas été envoyé sur Github.**
+> Utilisez ceci seulement si votre projet est "cassé" et que vous voulez revenir exactement à la version qui est en ligne.
+
+### Étape 1 : Forcer la réinitialisation
+Cette commande annule toutes vos modifications locales et remet les fichiers comme ils sont sur Github.
+```powershell
+git reset --hard origin/main
+```
+
+### Note importante
+Si vous avez des fichiers non suivis par git qui posent problème, vous pouvez aussi faire :
+```powershell
+git clean -fd
+```
+(Mais attention, cela supprime aussi les fichiers non suivis !)

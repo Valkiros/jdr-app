@@ -45,11 +45,18 @@ pub fn seed_reference_data(conn: &mut Connection, _app_handle: AppHandle) -> Res
     let base_path = Path::new("data/items");
 
     let categories = vec![
-        ("Mains_nues.json", "Main nue"),
+        ("Mains_nues.json", "Mains_nues"), // Fixed category name
         ("Armes.json", "Armes"),
         ("Protections.json", "Protections"),
         ("Accessoires.json", "Accessoires"),
         ("Sacs.json", "Sacs"),
+        ("Sacoches.json", "Sacoches"),
+        ("Potions.json", "Potions"),
+        ("Outils.json", "Outils"),
+        ("Munitions.json", "Munitions"),
+        ("Armes_de_jet.json", "Armes_de_jet"),
+        ("Pieges.json", "Pieges"),
+        ("Objets_magiques.json", "Objets_magiques"),
     ];
 
     let tx = conn.transaction().map_err(|e| e.to_string())?;
@@ -65,51 +72,17 @@ pub fn seed_reference_data(conn: &mut Connection, _app_handle: AppHandle) -> Res
         let items: Vec<SourceItem> = serde_json::from_str(&content).map_err(|e| e.to_string())?;
 
         for item in items {
-            let original_ref_id: i32 = item.id.trim().parse().unwrap_or(0);
-            let poids_grammes: f32 = item.poids.parse().unwrap_or(0.0);
-            let poids_kg = poids_grammes / 1000.0;
+            let ref_id: i32 = item.id.trim().parse().unwrap_or(0);
+            let nom = item.nom;
+            
+            // Map legacy fields to new JSON structure
+            let degats = serde_json::json!({
+                "degats": item.degats.unwrap_or_default(),
+                "pi": item.pi.unwrap_or("0".to_string()).trim().parse::<i32>().unwrap_or(0)
+            });
 
-            let esquive_bonus: i32 = item
-                .esquive
-                .as_deref()
-                .unwrap_or("0")
-                .trim()
-                .parse()
-                .unwrap_or(0);
-
-            let pi_value: i32 = item
-                .pi
-                .as_deref()
-                .unwrap_or("0")
-                .trim()
-                .parse()
-                .unwrap_or(0);
-
-            let rupture = item.rupture.unwrap_or_default();
-
-            let pr_mag: i32 = item
-                .pr_mag
-                .as_deref()
-                .unwrap_or("0")
-                .trim()
-                .parse()
-                .unwrap_or(0);
-
-            let pr_spe: i32 = item
-                .pr_spe
-                .as_deref()
-                .unwrap_or("0")
-                .trim()
-                .parse()
-                .unwrap_or(0);
-
-            let degats_pr = item.degats.or(item.pr).unwrap_or_default();
-            let description = item.effet.unwrap_or_default();
-            let item_type = item.item_type.unwrap_or_default();
-
-            // Construct characteristics JSON from individual fields
+            // Characteristics
             let mut caracs_map = serde_json::Map::new();
-
             let char_fields = [
                 ("courage", &item.courage),
                 ("intelligence", &item.intelligence),
@@ -120,33 +93,56 @@ pub fn seed_reference_data(conn: &mut Connection, _app_handle: AppHandle) -> Res
                 ("attaque", &item.attaque),
                 ("parade", &item.parade),
             ];
-
             for (key, val_opt) in char_fields {
                 if let Some(val_str) = val_opt {
                     if let Ok(val) = val_str.trim().parse::<i32>() {
                         if val != 0 {
-                            caracs_map
-                                .insert(key.to_string(), serde_json::Value::Number(val.into()));
+                            caracs_map.insert(key.to_string(), serde_json::Value::Number(val.into()));
                         }
                     }
                 }
             }
-
-            // Merge with existing 'caracteristiques' object if present
-            if let Some(serde_json::Value::Object(obj)) = &item.caracteristiques {
+             if let Some(serde_json::Value::Object(obj)) = &item.caracteristiques {
                 for (k, v) in obj {
                     caracs_map.insert(k.clone(), v.clone());
                 }
             }
+            let caracteristiques = serde_json::Value::Object(caracs_map);
 
-            let caracs_json = serde_json::Value::Object(caracs_map);
-            let caracs_str = caracs_json.to_string();
-            let aura = item.aura.unwrap_or_default();
+            // Protections
+            let protections = serde_json::json!({
+                "pr_sol": item.pr.unwrap_or("0".to_string()), // item.pr maps to pr_sol
+                "pr_mag": item.pr_mag.unwrap_or("0".to_string()),
+                "pr_spe": item.pr_spe.unwrap_or("0".to_string())
+            });
+
+            // Details (poids, aura, effet/description, rupture, esquive)
+            let details = serde_json::json!({
+                "poids": item.poids,
+                "aura": item.aura.unwrap_or_default(),
+                "effet": item.effet.unwrap_or_default(),
+                "type": item.item_type.unwrap_or_default(),
+                "rupture": item.rupture.unwrap_or_default(),
+                "esquive_bonus": item.esquive.unwrap_or("0".to_string())
+            });
+
+            let prix_info = serde_json::json!({}); // Empty for now
+            let craft = serde_json::json!({}); // Empty for now
 
             tx.execute(
-                "INSERT INTO ref_items (category, nom, poids, pi, rupture, esquive_bonus, degats_pr, pr_mag, pr_spe, item_type, description, caracteristiques, original_ref_id, aura)
-                 VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14)",
-                params![category, item.nom, poids_kg, pi_value, rupture, esquive_bonus, degats_pr, pr_mag, pr_spe, item_type, description, caracs_str, original_ref_id, aura],
+                "INSERT INTO ref_items (category, ref_id, nom, degats, caracteristiques, protections, prix_info, craft, details)
+                 VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9)",
+                params![
+                    category, 
+                    ref_id, 
+                    nom, 
+                    degats.to_string(), 
+                    caracteristiques.to_string(), 
+                    protections.to_string(), 
+                    prix_info.to_string(), 
+                    craft.to_string(), 
+                    details.to_string()
+                ],
             ).map_err(|e| e.to_string())?;
         }
     }

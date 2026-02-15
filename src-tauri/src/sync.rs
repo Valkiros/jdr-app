@@ -136,9 +136,11 @@ pub fn sync_ref_items(
 
             // Helper to stringify JSON fields, defaulting to "{}" if missing or null
             let json_str = |field: &str| -> String {
-                item.get(field)
-                    .map(|v| v.to_string())
-                    .unwrap_or_else(|| "{}".to_string())
+                match item.get(field) {
+                    Some(serde_json::Value::String(s)) => s.clone(), // Returns raw string content (e.g. "{\"pi\":2}")
+                    Some(v) => v.to_string(), // Serializes object/number/etc. to string
+                    None => "{}".to_string(),
+                }
             };
 
             let degats = json_str("degats");
@@ -164,7 +166,110 @@ pub fn sync_ref_items(
         }
     }
 
+    // NEW: Update local version after successful sync
+    // We try to fetch the remote version to store it locally
+    // If not found, we use a timestamp or "1" to just mark it as synced.
+    // Ideally, we reuse the check logic, but here inside the command it is easier to just update if we have the info.
+    // For now, let's just mark it as "synced" with a timestamp or if we can fetch the remote db_meta first.
+    // Simpler: Just set a "Synced at X" or similar?
+    // BETTER: The user wants proper versioning.
+    // Let's make a quick fetch to db_meta on remote to get the REAL version to store.
+
+    // ... Actually, the robust way is: check_remote gave us a version. We should probably pass it here?
+    // Or we fetch it again. Fetching again is safer.
+
+    // But we are inside a transaction. Network calls inside transaction are bad practice but here it's fine for a small app.
+    // However, to keep it simple, let's just do a separate query or assume the caller passed the version.
+    // Changing the signature breaks frontend? Yes.
+    // Let's just fetch db_meta here if possible.
+
+    // Actually, `check_remote_db_version` is what the frontend calls.
+    // `sync_ref_items` is what updates.
+    // So `sync_ref_items` should fetch the remote version and store it.
+
+    // fetching remote version...
+    let version_url = format!(
+        "{}/rest/v1/db_meta?key=eq.ref_version&select=value",
+        supabase_url
+    );
+    let v_res = client
+        .get(&version_url)
+        .header("apikey", &supabase_key)
+        .header("Authorization", format!("Bearer {}", token))
+        .send();
+
+    let mut new_version = "1".to_string(); // Default fallback
+    if let Ok(resp) = v_res {
+        if resp.status().is_success() {
+            let rows: Vec<serde_json::Value> = resp.json().unwrap_or_default();
+            if let Some(first) = rows.first() {
+                if let Some(val) = first.get("value").and_then(|v| v.as_str()) {
+                    new_version = val.to_string();
+                }
+            }
+        }
+    }
+
+    tx.execute(
+        "INSERT OR REPLACE INTO db_meta (key, value) VALUES ('ref_version', ?1)",
+        [new_version],
+    )
+    .map_err(|e| e.to_string())?;
+
     tx.commit().map_err(|e| e.to_string())?;
 
     Ok(format!("Successfully synced {} equipements.", count))
+}
+
+#[tauri::command]
+pub fn check_remote_db_version(
+    token: String,
+    supabase_url: String,
+    supabase_key: String,
+) -> Result<String, String> {
+    let client = Client::new();
+
+    // 1. Try to get explicit version from db_meta
+    let version_url = format!(
+        "{}/rest/v1/db_meta?key=eq.ref_version&select=value",
+        supabase_url
+    );
+    let response = client
+        .get(&version_url)
+        .header("apikey", &supabase_key)
+        .header("Authorization", format!("Bearer {}", token))
+        .send()
+        .map_err(|e| e.to_string())?;
+
+    if response.status().is_success() {
+        let rows: Vec<serde_json::Value> = response.json().map_err(|e| e.to_string())?;
+        if let Some(first) = rows.first() {
+            if let Some(val) = first.get("value").and_then(|v| v.as_str()) {
+                return Ok(val.to_string());
+            }
+        }
+    }
+
+    // 2. Fallback: Return a hash-like or count if db_meta missing
+    // We just return "unknown" or logic to force update?
+    // Let's return "COUNT:X"
+    let count_url = format!("{}/rest/v1/ref_items?select=id&limit=1", supabase_url);
+    let count_res = client
+        .get(&count_url)
+        .header("apikey", &supabase_key)
+        .header("Authorization", format!("Bearer {}", token))
+        .header("Prefer", "count=exact")
+        .send()
+        .map_err(|e| e.to_string())?;
+
+    // Extract Content-Range: 0-0/TOTAL
+    if let Some(range) = count_res.headers().get("Content-Range") {
+        if let Ok(s) = range.to_str() {
+            if let Some(total) = s.split('/').last() {
+                return Ok(format!("COUNT:{}", total));
+            }
+        }
+    }
+
+    Ok("0".to_string())
 }

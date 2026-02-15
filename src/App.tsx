@@ -16,6 +16,7 @@ import { AdminPanel } from "./components/Admin/AdminPanel";
 import { ThemeProvider } from "./context/ThemeContext";
 import { ThemeSelector } from "./components/Shared/ThemeSelector";
 import { ErrorBoundary } from "./components/Shared/ErrorBoundary";
+import { DatabaseUpdate } from "./components/Shared/DatabaseUpdate";
 
 // ... existing imports
 
@@ -264,6 +265,8 @@ function AppContent() {
         confirmLabel="Quitter sans sauvegarder"
         saveLabel="Sauvegarder et Quitter"
       />
+
+      <DatabaseUpdate />
     </div>
   );
 }
