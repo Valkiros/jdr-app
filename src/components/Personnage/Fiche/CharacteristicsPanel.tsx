@@ -330,7 +330,7 @@ const CharacteristicsPanelComponent: React.FC<CharacteristicsPanelProps> = ({
                 if (hoveredInfo.content) {
                     const details = hoveredInfo.content as DetailedValue;
                     return (
-                        <Tooltip visible={!!hoveredInfo} position={{ x: hoveredInfo.x, y: hoveredInfo.y }} title="Détail du calcul">
+                        <Tooltip visible={!!hoveredInfo} position={{ x: hoveredInfo.x, y: hoveredInfo.y }} title="Détail du calcul" requireCtrl={false}>
                             <CalculationDetails details={details} />
                         </Tooltip>
                     );
@@ -353,7 +353,7 @@ const CharacteristicsPanelComponent: React.FC<CharacteristicsPanelProps> = ({
                 const idDisplay = refItem?.ref_id || '-';
 
                 return (
-                    <Tooltip visible={!!hoveredInfo} position={{ x: hoveredInfo.x, y: hoveredInfo.y }} title={refItem?.nom || 'Objet Inconnu'}>
+                    <Tooltip visible={!!hoveredInfo} position={{ x: hoveredInfo.x, y: hoveredInfo.y }} title={refItem?.nom || 'Objet Inconnu'} requireCtrl={false}>
                         <div className="flex flex-col gap-1 text-xs min-w-[150px]">
                             <div className="flex justify-between items-center">
                                 <span className="text-tooltip-label font-medium">ID :</span>
