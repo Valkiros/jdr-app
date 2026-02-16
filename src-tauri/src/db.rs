@@ -30,7 +30,7 @@ pub struct AppState {
 }
 
 pub fn init_db() -> Result<Connection> {
-    let conn = Connection::open("../game_data_v2.db")?;
+    let conn = Connection::open("../codex_debilium.db")?;
 
     conn.execute(
         "CREATE TABLE IF NOT EXISTS personnages (
